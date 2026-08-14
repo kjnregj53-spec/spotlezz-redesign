@@ -5413,8 +5413,22 @@ section.lead-magnet-section,
 
 .branche-grid { margin-bottom: 28px !important; }
 
-/* De reveal-animatie mag de layout niet uit elkaar trekken */
-.reveal { transition-duration: 0.45s; }
+/* De reveal-animatie schaalde de hele sectie met scale(0.98). Daardoor wordt
+   alle tekst tijdens de animatie opnieuw gerasterd, wat onscherp oogt en een
+   dubbelbeeld geeft. Alleen verschuiven en infaden is rustiger. */
+.reveal {
+  transition-duration: 0.4s;
+  transform: translateY(16px);
+}
+.reveal.active, .reveal.is-visible { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .work-tile, .proof-card, .step-card, .factor-card {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
 
 @media (max-width: 900px) {
   .work-block, .steps-block, .compare-block, .proof-block, .faq-block,

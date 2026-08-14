@@ -73,7 +73,11 @@ createServer(async (req, res) => {
     }
 
     const body = await readFile(file);
-    res.writeHead(200, { 'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream' });
+    res.writeHead(200, {
+      'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream',
+      // Geen caching lokaal, anders kijk je na een build naar de oude pagina.
+      'Cache-Control': 'no-store, no-cache, must-revalidate',
+    });
     res.end(body);
   } catch (e) {
     res.writeHead(500, { 'Content-Type': 'text/plain' });
