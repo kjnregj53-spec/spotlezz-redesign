@@ -906,7 +906,8 @@ const DOWNLOADS = {
   'case-arena-gym.jpg': 'https://spotlezz.nl/wp-content/uploads/2026/03/sr4-1024x665.jpg',
   'branche-kantoor.jpg': 'https://spotlezz.nl/wp-content/uploads/2026/03/sr5-1024x665.jpg',
   'branche-vve.jpg': 'https://spotlezz.nl/wp-content/uploads/2026/03/sr6-1024x665.jpg',
-  'materiaal-producten.jpg': 'https://spotlezz.nl/wp-content/uploads/2026/03/DSC02837.jpg',
+  // Bewust de 1024-variant en niet het origineel van 2048x1365 (1,5 MB).
+  'materiaal-producten.jpg': 'https://spotlezz.nl/wp-content/uploads/2026/03/DSC02837-1024x683.jpg',
   'checklist-achtergrond.jpg': 'https://spotlezz.nl/wp-content/uploads/2026/01/we-visit-your-office.jpg',
   'professionele-schoonmaak.jpg': 'https://spotlezz.nl/wp-content/uploads/2026/02/professionele-schoonmaak.jpg',
   'kantoor-werkplek.jpg': 'https://spotlezz.nl/wp-content/uploads/2026/01/Office-11-1.jpg',
