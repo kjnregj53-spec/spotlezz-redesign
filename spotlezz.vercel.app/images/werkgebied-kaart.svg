@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Kaart van het werkgebied">
+  <rect width="640" height="360" fill="#EDF1F5"/>
+  <path d="M0 250 Q160 210 320 240 T640 220 L640 360 L0 360 Z" fill="#DCE6EF"/>
+  <circle cx="290" cy="170" r="12" fill="#FF5500"/>
+  <text x="290" y="150" font-family="Montserrat,Arial,sans-serif" font-size="16" font-weight="700" fill="#0D0D1A" text-anchor="middle">Almere</text>
+  <circle cx="400" cy="110" r="7" fill="#1B2EFF"/>
+  <text x="400" y="95" font-family="Montserrat,Arial,sans-serif" font-size="13" fill="#0D0D1A" text-anchor="middle">Lelystad</text>
+  <circle cx="150" cy="200" r="7" fill="#1B2EFF"/>
+  <text x="150" y="185" font-family="Montserrat,Arial,sans-serif" font-size="13" fill="#0D0D1A" text-anchor="middle">Amsterdam</text>
+  <circle cx="330" cy="290" r="7" fill="#1B2EFF"/>
+  <text x="330" y="315" font-family="Montserrat,Arial,sans-serif" font-size="13" fill="#0D0D1A" text-anchor="middle">Amersfoort</text>
+</svg>

@@ -1,39 +1,261 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Schema.org JSON-LD -->
+<title>VvE schoonmaak Almere, Lelystad en Amsterdam | Spotlezz</title>
+<meta name="description" content="Schoonmaak van trappenhuizen, galerijen, liften en bergingen voor VvE en beheerder. Vast team, vaste dag, een aanspreekpunt.">
+<link rel="canonical" href="https://spotlezz.nl/diensten/vve-schoonmaak/">
+<meta name="theme-color" content="#0D0D1A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/2027.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Spotlezz">
+<meta property="og:title" content="VvE schoonmaak Almere, Lelystad en Amsterdam | Spotlezz">
+<meta property="og:description" content="Schoonmaak van trappenhuizen, galerijen, liften en bergingen voor VvE en beheerder. Vast team, vaste dag, een aanspreekpunt.">
+<meta property="og:url" content="https://spotlezz.nl/diensten/vve-schoonmaak/">
+<meta property="og:image" content="https://spotlezz.nl/images/Container-1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VvE schoonmaak Almere, Lelystad en Amsterdam | Spotlezz">
+<meta name="twitter:description" content="Schoonmaak van trappenhuizen, galerijen, liften en bergingen voor VvE en beheerder. Vast team, vaste dag, een aanspreekpunt.">
+<meta name="twitter:image" content="https://spotlezz.nl/images/Container-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+<link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Vveschoonmaak",
-  "provider": {
-    "@type": "Organization",
-    "name": "Spotlezz"
-  },
-  "areaServed": "Almere, Flevoland, Amsterdam"
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "CleaningService"
+      ],
+      "@id": "https://spotlezz.nl/#organization",
+      "name": "Spotlezz",
+      "legalName": "Spotlezz B.V.",
+      "url": "https://spotlezz.nl/",
+      "logo": "https://spotlezz.nl/images/2027.png",
+      "image": "https://spotlezz.nl/images/Container-1.jpg",
+      "telephone": "+31367857028",
+      "email": "info@spotlezz.nl",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kiekstraat 59",
+        "postalCode": "1087 BR",
+        "addressLocality": "Amsterdam",
+        "addressCountry": "NL"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Almere"
+        },
+        {
+          "@type": "City",
+          "name": "Lelystad"
+        },
+        {
+          "@type": "City",
+          "name": "Amsterdam"
+        },
+        {
+          "@type": "City",
+          "name": "Amersfoort"
+        }
+      ],
+      "founder": {
+        "@id": "https://spotlezz.nl/#thirza"
+      },
+      "sameAs": [
+        "https://maps.app.goo.gl/7RzGUeLmPhhdLbwo7"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://spotlezz.nl/#thirza",
+      "name": "Thirza Mac Donald",
+      "jobTitle": "Oprichter",
+      "worksFor": {
+        "@id": "https://spotlezz.nl/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://spotlezz.nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Diensten",
+          "item": "https://spotlezz.nl/diensten/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "VvE-schoonmaak",
+          "item": "https://spotlezz.nl/diensten/vve-schoonmaak/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://spotlezz.nl/diensten/vve-schoonmaak/#service",
+      "name": "VvE-schoonmaak",
+      "description": "Schoonmaak van trappenhuizen, galerijen, liften en bergingen voor VvE en beheerder. Vast team, vaste dag, een aanspreekpunt.",
+      "url": "https://spotlezz.nl/diensten/vve-schoonmaak/",
+      "serviceType": "VvE-schoonmaak",
+      "provider": {
+        "@id": "https://spotlezz.nl/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Almere"
+        },
+        {
+          "@type": "City",
+          "name": "Lelystad"
+        },
+        {
+          "@type": "City",
+          "name": "Amsterdam"
+        },
+        {
+          "@type": "City",
+          "name": "Amersfoort"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "87",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Martijn van den Berg"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Sinds Spotlezz bij ons de kantoorschoonmaak verzorgt is het eindelijk consequent schoon. Ze reageren snel en de vaste schoonmaakster is een verademing."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Sarah de Wit"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Heel fijn team dat goed meedenkt. We hebben nooit meer klachten over de toiletten of de keuken. Een echte aanrader voor elk kantoor."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Jan-Willem Peters"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Topkwaliteit en altijd netjes op tijd. Onze medewerkers werken een stuk prettiger in een schoon kantoor. Ga zo door Spotlezz!"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie is bij een VvE het aanspreekpunt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Een bestuurslid of de beheerder, en bij ons een vaste contactpersoon. Wij hangen een logboek in de hal waarin bewoners meldingen kwijt kunnen, zodat het bestuur niet de tussenpersoon hoeft te zijn."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat kost een schoonmaakbedrijf per uur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Een uurtarief zegt weinig zolang niemand het pand heeft gezien. De prijs wordt bepaald door zes factoren: oppervlakte, frequentie, type ruimte, bezettingsgraad, tijdstip en extra werkzaamheden. Wij rekenen die factoren door in een offerte op maat en leggen per regel uit waar het bedrag vandaan komt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe snel kan een klant starten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Na akkoord starten wij vaak binnen 24 tot 48 uur, afhankelijk van de beschikbaarheid van teams in uw regio. Bij grotere panden plannen wij eerst een startdag in waarop wij het pand op niveau brengen, daarna gaat het reguliere programma in."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werken jullie met een vast team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Elk pand krijgt een vast team en een vaste eerste schoonmaker. Bij ziekte of vakantie valt iemand in die het pand kent en met hetzelfde werkprogramma werkt. Wisselende gezichten zijn de belangrijkste reden dat schoonmaak misgaat, dus daar sturen wij bewust op."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan de schoonmaak buiten werktijd of in het weekend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Wij werken in de ochtend voor kantoortijd, in de avond en in het weekend. Voor showrooms en sportscholen plannen wij standaard buiten openingstijd. U krijgt een vaste dag en een vast tijdvak, zodat u weet wanneer er iemand in het pand is."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
-<!-- FontAwesome Icons -->
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-<!-- CSS -->
-<link rel="stylesheet" href="../../style.css">
-<script src="https://unpkg.com/swup@4"></script>
 </head>
 <body>
 
 <!-- TOP BAR -->
+<a class="skip-link" href="#main">Naar de inhoud</a>
 <div class="top-bar">
   <div class="usp">
     <span>Innovatief en flexibel</span>
     <span>Jarenlange ervaring</span>
     <a href="https://maps.app.goo.gl/7RzGUeLmPhhdLbwo7" target="_blank" rel="noopener noreferrer" class="top-bar-review-link">
-      <i class="ph-fill ph-google-logo" style="color: #4285F4;"></i> Beoordeeld met 4.8/5 sterren door 87 klanten <span style="color:#FBBC04; margin-left:5px;">★★★★★</span>
+      <i class="ph-fill ph-google-logo" aria-hidden="true" style="color: #4285F4;"></i> Beoordeeld met 4,8/5 sterren door 87 klanten <span aria-hidden="true" style="color:#FBBC04; margin-left:5px;">★★★★★</span>
     </a>
   </div>
   <div class="contact-info">
@@ -41,75 +263,92 @@
     <a href="mailto:info@spotlezz.nl"><span style="font-weight: 600; margin-right: 4px;">E:</span> info@spotlezz.nl</a>
   </div>
 </div>
-
-<!-- HEADER -->
 <header>
   <div class="logo">
-    <a href="../../index.html"><img src="https://spotlezz.nl/wp-content/uploads/2026/01/2027.png" alt="Spotlezz Logo"></a>
+    <a href="/" aria-label="Spotlezz, naar de homepage"><img src="/images/2027.png" alt="Spotlezz" width="291" height="39" loading="eager" fetchpriority="high" decoding="async"></a>
   </div>
-  <nav>
+  <nav aria-label="Hoofdnavigatie">
     <div class="dropdown">
-      <a href="../../diensten/index.html" class="dropbtn">Diensten <i class="ph ph-caret-down" style="font-size: 12px; margin-left:4px;"></i></a>
+      <a href="/diensten/" class="dropbtn">Diensten <i class="ph ph-caret-down" aria-hidden="true" style="font-size: 12px; margin-left:4px;"></i></a>
       <div class="dropdown-content">
-        <a href="../../diensten/kantoor-schoonmaak/index.html">Kantoor schoonmaak</a>
-        <a href="../../diensten/hotel-schoonmaak/index.html">Hotel schoonmaak</a>
-        <a href="../../diensten/showroom-schoonmaak/index.html">Showroom schoonmaak</a>
-        <a href="../../diensten/fitnesscentrum-schoonmaak/index.html">Fitnesscentrum schoonmaak</a>
-        <a href="../../diensten/kinderopvang-schoonmaak/index.html">Kinderopvang schoonmaak</a>
-        <a href="../../diensten/vve-schoonmaak/index.html">VvE schoonmaak</a>
+        <span class="dropdown-heading">Voor wie</span>
+        <a href="/diensten/kantoor-schoonmaak/">Kantoor schoonmaak</a>
+        <a href="/diensten/hotel-schoonmaak/">Hotel schoonmaak</a>
+        <a href="/diensten/showroom-schoonmaak/">Showroom schoonmaak</a>
+        <a href="/diensten/fitnesscentrum-schoonmaak/">Fitnesscentrum schoonmaak</a>
+        <a href="/diensten/kinderopvang-schoonmaak/">Kinderopvang schoonmaak</a>
+        <a href="/diensten/vve-schoonmaak/">VvE schoonmaak</a>
+        <span class="dropdown-heading">Wat we doen</span>
+        <a href="/diensten/glasbewassing/">Glasbewassing</a>
+        <a href="/diensten/vloeronderhoud/">Vloeronderhoud</a>
+        <a href="/diensten/opleveringsschoonmaak/">Opleveringsschoonmaak</a>
+        <a href="/diensten/hygieneservice/">Hygiëneservice</a>
       </div>
     </div>
-    <a href="../../klantcases/index.html">Klantcases</a>
-    <a href="../../locaties/almere/index.html">Locaties</a>
-    <a href="../../veelgestelde-vragen/index.html">Veelgestelde vragen</a>
-    <a href="../../vacatures/index.html">Vacatures</a>
-    <a href="../../over-ons/index.html">Over ons</a>
-    <a href="../../contact/index.html">Contact</a>
+    <a href="/klantcases/">Klantcases</a>
+    <a href="/locaties/">Locaties</a>
+    <a href="/veelgestelde-vragen/">Veelgestelde vragen</a>
+    <a href="/over-ons/">Over ons</a>
+    <a href="/contact/">Contact</a>
   </nav>
   <div class="header-ctas">
-    <a href="../../quote/index.html" class="btn btn-orange">Offerte aanvragen </a>
+    <a href="/offerte-aanvragen/" class="btn btn-orange">Offerte aanvragen</a>
   </div>
-  <i class="ph ph-list mobile-menu-btn" onclick="toggleMobileMenu()"></i>
+  <button type="button" class="mobile-menu-btn" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileNav" onclick="toggleMobileMenu()"><i class="ph ph-list" aria-hidden="true"></i></button>
 </header>
-
-<!-- MOBILE NAV OVERLAY -->
-<div class="mobile-nav-overlay" id="mobileNav">
+<div class="mobile-nav-overlay" id="mobileNav" hidden>
   <div class="mobile-nav-header">
-    <img src="https://spotlezz.nl/wp-content/uploads/2026/01/2027.png" alt="Spotlezz Logo">
-    <i class="ph ph-x close-menu-btn" onclick="toggleMobileMenu()"></i>
+    <img src="/images/2027.png" alt="Spotlezz" width="291" height="39" loading="eager" fetchpriority="high" decoding="async">
+    <button type="button" class="close-menu-btn" aria-label="Menu sluiten" onclick="toggleMobileMenu()"><i class="ph ph-x" aria-hidden="true"></i></button>
   </div>
   <div class="mobile-nav-links">
-    <a href="../index.html">Diensten</a>
-    <a href="index.html" class="sub-link">- Vve schoonmaak</a>
-    <a href="../hotel-schoonmaak/index.html" class="sub-link">- Hotel schoonmaak</a>
-    <a href="../showroom-schoonmaak/index.html" class="sub-link">- Showroom schoonmaak</a>
-    <a href="../fitnesscentrum-schoonmaak/index.html" class="sub-link">- Fitnesscentrum schoonmaak</a>
-    <a href="../kinderopvang-schoonmaak/index.html" class="sub-link">- Kinderopvang schoonmaak</a>
-    <a href="index.html" class="sub-link">- VvE schoonmaak</a>
-    <a href="../../vacatures/index.html">Vacatures</a>
-    <a href="../../over-ons/index.html">Over ons</a>
-    <a href="../../contact/index.html">Contact</a>
+    <a href="/diensten/">Diensten</a>
+    <a href="/diensten/kantoor-schoonmaak/" class="sub-link">Kantoor schoonmaak</a>
+    <a href="/diensten/hotel-schoonmaak/" class="sub-link">Hotel schoonmaak</a>
+    <a href="/diensten/showroom-schoonmaak/" class="sub-link">Showroom schoonmaak</a>
+    <a href="/diensten/fitnesscentrum-schoonmaak/" class="sub-link">Fitnesscentrum schoonmaak</a>
+    <a href="/diensten/kinderopvang-schoonmaak/" class="sub-link">Kinderopvang schoonmaak</a>
+    <a href="/diensten/vve-schoonmaak/" class="sub-link">VvE schoonmaak</a>
+    <a href="/diensten/glasbewassing/" class="sub-link">Glasbewassing</a>
+    <a href="/diensten/vloeronderhoud/" class="sub-link">Vloeronderhoud</a>
+    <a href="/diensten/opleveringsschoonmaak/" class="sub-link">Opleveringsschoonmaak</a>
+    <a href="/diensten/hygieneservice/" class="sub-link">Hygiëneservice</a>
+    <a href="/klantcases/">Klantcases</a>
+    <a href="/locaties/">Locaties</a>
+    <a href="/veelgestelde-vragen/">Veelgestelde vragen</a>
+    <a href="/over-ons/">Over ons</a>
+    <a href="/contact/">Contact</a>
+    <a href="/offerte-aanvragen/" class="btn btn-orange" style="margin-top:16px;">Offerte aanvragen</a>
   </div>
 </div>
+<main id="main">
+<div class="crumb-bar">
+  <nav class="crumb" aria-label="Kruimelpad">
+    <a href="/">Home</a><span class="crumb-sep" aria-hidden="true">›</span><a href="/diensten/">Diensten</a><span class="crumb-sep" aria-hidden="true">›</span><span aria-current="page">VvE-schoonmaak</span>
+  </nav>
+  <div class="crumb-proof">
+    <span class="crumb-stars" aria-hidden="true">★★★★★</span>
+    <span>4,8/5 uit 87 beoordelingen</span>
+    <a href="tel:0367857028">036-785 7028</a>
+  </div>
+</div>
+
+
+<!-- HEADER -->
+
+
+<!-- MOBILE NAV OVERLAY -->
+
 
 
 <main>
 
 <!-- BREADCRUMB -->
-<div class="breadcrumbs" style="padding: 15px 5%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E1E4EA; background: #fff;">
-  <div style="font-size: 11px; color: #6B7280; font-weight: 500;">
-    <a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> &rsaquo; 
-    <a href="../index.html" style="color: inherit; text-decoration: none;">Diensten</a> &rsaquo; 
-    <b style="color: var(--nacht);">VvE schoonmaak</b>
-  </div>
-  <div style="font-size: 10.5px; color: #6B7280;">
-    <span style="color: var(--vuur);">★★★★★</span> 4,8/5 &middot; 87 beoordelingen &middot; 036-785 7028
-  </div>
-</div>
+
 
 
 <!-- KS HERO -->
-<section class="ks-hero" style="background-image: url('https://spotlezz.nl/wp-content/uploads/2026/01/66cf9f5b0c337de9e5a2c919_image1.webp-4-scaled.jpg');">
+<section class="ks-hero" style="background-image: url('/images/sfeer-3.jpg');">
   <div class="ks-hero-overlay"></div>
   <div class="ks-hero-container" style="position: relative; z-index: 2; display: flex; gap: 40px; max-width: 1200px; width: 100%; align-items: flex-start; justify-content: space-between; padding: 0 5%; margin: 0 auto;">
     <div class="ks-hero-content" style="max-width: 600px; flex: 1;">
@@ -136,8 +375,8 @@
 <!-- ANTWOORDBLOK (POGO-SCHILD) -->
 <section class="trust-bar" style="border-top: none; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; z-index: 3; margin: -30px auto 40px; border-radius: 12px; max-width: 1100px; padding: 25px 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
   <div style="text-align: center; border-right: 1px solid #E1E4EA;">
-    <b style="display: block; font-size: 24px; font-weight: 700;">&euro; xx/uur</b>
-    <span style="font-size: 12px; color: #6B7280; text-transform: uppercase;">Vanafprijs</span>
+    <b style="display: block; font-size: 24px; font-weight: 700;">Op maat</b>
+    <span style="font-size: 12px; color: #6B7280; text-transform: uppercase;">Prijsopbouw</span>
   </div>
   <div style="text-align: center; border-right: 1px solid #E1E4EA;">
     <b style="display: block; font-size: 24px; font-weight: 700;">1x tot 5x pw</b>
@@ -157,7 +396,7 @@
 <!-- INTRODUCTIE -->
 <section class="ks-text-image" style="padding-top: 60px; padding-bottom: 20px;">
   <div class="ks-ti-image">
-    <img src="https://spotlezz.nl/wp-content/uploads/2026/02/professionele-schoonmaak.jpg" alt="VvE Schoonmaak">
+    <img src="/images/professionele-schoonmaak.jpg" alt="VvE Schoonmaak" width="1000" height="558" loading="lazy" decoding="async">
   </div>
   <div class="ks-ti-content">
     <h2>VvE Schoonmaak</h2>
@@ -186,7 +425,7 @@
 <!-- WAAROM SPOTLEZZ? -->
 <section class="ks-text-image ks-reverse">
   <div class="ks-ti-image">
-    <img src="https://spotlezz.nl/wp-content/uploads/2026/01/Office-11-2-1.jpg" alt="Waarom Spotlezz">
+    <img src="/images/kantoor-detail.jpg" alt="Waarom Spotlezz" width="1000" height="1000" loading="lazy" decoding="async">
   </div>
   <div class="ks-ti-content">
     <h2>Waarom Spotlezz?</h2>
@@ -203,7 +442,7 @@
 <!-- HET VERSCHIL ZIT IN DE DETAILS -->
 <section class="ks-text-image">
   <div class="ks-ti-image">
-    <img src="https://spotlezz.nl/wp-content/uploads/2026/01/Office-11-1.jpg" alt="Schoonmaak details">
+    <img src="/images/kantoor-werkplek.jpg" alt="Schoonmaak details" width="1000" height="1000" loading="lazy" decoding="async">
   </div>
   <div class="ks-ti-content">
     <h2>Het verschil zit in de details</h2>
@@ -265,25 +504,25 @@
   <p class="ks-hiw-subtitle">Wij geloven in een transparante, efficiënte en stressvrije aanpak. Binnen 4 simpele stappen ben je verzekerd van een Spotlezz VvE pand.</p>
   
   <div class="ks-hiw-cards">
-    <div class="ks-hiw-card" style="background-image: url('https://spotlezz.nl/wp-content/uploads/2026/01/we-visit-your-office.jpg');">
+    <div class="ks-hiw-card" style="background-image: url('/images/checklist-achtergrond.jpg');">
       <div class="ks-hiw-card-content">
         <h3>1. We bezoeken jouw kantoor</h3>
         <p>Een van onze experts komt langs om de ruimte te inventariseren en jullie wensen in kaart te brengen.</p>
       </div>
     </div>
-    <div class="ks-hiw-card" style="background-image: url('https://spotlezz.nl/wp-content/uploads/2026/01/You-get-a-quote.jpg');">
+    <div class="ks-hiw-card" style="background-image: url('/images/stap-offerte.jpg');">
       <div class="ks-hiw-card-content">
         <h3>2. Je ontvangt een offerte</h3>
         <p>Binnen 24 uur sturen wij een transparante en op maat gemaakte offerte.</p>
       </div>
     </div>
-    <div class="ks-hiw-card" style="background-image: url('https://spotlezz.nl/wp-content/uploads/2026/01/Your-dedicated-team-starts-cleaning.jpg');">
+    <div class="ks-hiw-card" style="background-image: url('/images/stap-team-start.jpg');">
       <div class="ks-hiw-card-content">
         <h3>3. Jouw vaste team start</h3>
         <p>Na akkoord start ons vaste, getrainde team volgens het afgesproken werkprogramma.</p>
       </div>
     </div>
-    <div class="ks-hiw-card" style="background-image: url('https://spotlezz.nl/wp-content/uploads/2026/01/You-see-the-result.jpg');">
+    <div class="ks-hiw-card" style="background-image: url('/images/stap-resultaat.jpg');">
       <div class="ks-hiw-card-content">
         <h3>4. Geniet van het resultaat</h3>
         <p>Jullie werken in een frisse, schone omgeving. Wij sturen wekelijks een rapportage ter controle.</p>
@@ -330,16 +569,16 @@
 <section class="ks-eigen-foto" style="padding: 0 5% 80px; max-width: 1200px; margin: 0 auto;">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
     <div style="height: 250px; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-      <img src="https://spotlezz.nl/wp-content/uploads/2026/03/sr2-1024x665.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Spotlezz team aan het werk">
-      <div style="position: absolute; top: 15px; left: 15px; background: #fff; padding: 5px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dark);">Eigen foto &middot; team aan het werk</div>
+      <img src="/images/team-aan-het-werk.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Spotlezz team aan het werk" width="1024" height="665" loading="lazy" decoding="async">
+      <div style="position: absolute; top: 15px; left: 15px; background: #fff; padding: 5px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dark);">Ons team aan het werk</div>
     </div>
     <div style="height: 250px; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-      <img src="https://spotlezz.nl/wp-content/uploads/2026/03/sr1-1024x665.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Schoon pand">
-      <div style="position: absolute; top: 15px; left: 15px; background: #fff; padding: 5px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dark);">Eigen foto &middot; het pand</div>
+      <img src="/images/pand-interieur.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Schoon pand" width="1024" height="665" loading="lazy" decoding="async">
+      <div style="position: absolute; top: 15px; left: 15px; background: #fff; padding: 5px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dark);">Een pand uit ons werkgebied</div>
     </div>
     <div style="height: 250px; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-      <img src="https://spotlezz.nl/wp-content/uploads/2026/02/professionele-schoonmaak.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Schoonmaak materiaal">
-      <div style="position: absolute; top: 15px; left: 15px; background: #fff; padding: 5px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dark);">Eigen foto &middot; materiaal</div>
+      <img src="/images/professionele-schoonmaak.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Schoonmaak materiaal" width="1000" height="558" loading="lazy" decoding="async">
+      <div style="position: absolute; top: 15px; left: 15px; background: #fff; padding: 5px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dark);">Materiaal en producten</div>
     </div>
   </div>
 </section>
@@ -350,20 +589,50 @@
     <h2>Onze tevreden klanten</h2>
     <p>Spotlezz werkt samen met diverse toonaangevende bedrijven in de regio. Wij zijn trots op de langdurige relaties die we opbouwen door consistent hoge kwaliteit te leveren.</p>
     <div class="ks-client-logos">
-      <div class="logo-box"><img src="https://spotlezz.nl/wp-content/uploads/2026/01/kersvers-logo-2.png.png" alt="Kersvers"></div>
-      <div class="logo-box"><img src="https://spotlezz.nl/wp-content/uploads/2026/01/logo-1.png.png" alt="Logo"></div>
-      <div class="logo-box"><img src="https://spotlezz.nl/wp-content/uploads/2026/01/image002_edited.jpg.png" alt="Edited Logo"></div>
-      <div class="logo-box"><img src="https://spotlezz.nl/wp-content/uploads/2026/02/image6.png" alt="Client 4"></div>
+      <div class="logo-box"><img src="/images/kersvers.png" alt="Kersvers" width="400" height="127" loading="lazy" decoding="async"></div>
+      <div class="logo-box"><img src="/images/klantlogo-1.png" alt="Logo" width="441" height="131" loading="lazy" decoding="async"></div>
+      <div class="logo-box"><img src="/images/klantlogo-2.png" alt="Edited Logo" width="441" height="131" loading="lazy" decoding="async"></div>
+      <div class="logo-box"><img src="/images/klantlogo-3.png" alt="Client 4" width="800" height="419" loading="lazy" decoding="async"></div>
     </div>
   </div>
   
   <div class="ks-check">
     <h2>De Spotlezz-check</h2>
     <p>Ontdek in 1 minuut of je huidige schoonmaak de juiste is. Vul je e-mail in en ontvang de checklist in je mailbox.</p>
-    <form class="ks-check-form">
-      <input type="email" placeholder="Jouw e-mailadres" required="">
-      <button type="submit" class="btn btn-orange">Vraag de checklist aan</button>
-    </form>
+    <form class="sp-form quick-quote" id="sq-vve-schoonmaak" data-form="offerte" novalidate>
+  <p class="quick-quote-title">Snelofferte</p>
+  <div class="form-group">
+    <label for="sq-vve-schoonmaak-dienst">Welke dienst</label>
+    <select id="sq-vve-schoonmaak-dienst" name="dienst">
+      <option value="Kantoorschoonmaak">Kantoorschoonmaak</option>
+      <option value="Hotelschoonmaak">Hotelschoonmaak</option>
+      <option value="Showroomschoonmaak">Showroomschoonmaak</option>
+      <option value="Fitnesscentrumschoonmaak">Fitnesscentrumschoonmaak</option>
+      <option value="Kinderopvangschoonmaak">Kinderopvangschoonmaak</option>
+      <option value="VvE-schoonmaak" selected>VvE-schoonmaak</option>
+      <option value="Glasbewassing">Glasbewassing</option>
+      <option value="Vloeronderhoud">Vloeronderhoud</option>
+      <option value="Opleveringsschoonmaak">Opleveringsschoonmaak</option>
+      <option value="Hygiëneservice">Hygiëneservice</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="sq-vve-schoonmaak-oppervlakte">Oppervlakte in m²</label>
+    <input type="number" id="sq-vve-schoonmaak-oppervlakte" name="oppervlakte" min="1" inputmode="numeric" placeholder="Bijvoorbeeld 450">
+  </div>
+  <div class="form-group">
+    <label for="sq-vve-schoonmaak-email">E-mailadres <span aria-hidden="true">*</span></label>
+    <input type="email" id="sq-vve-schoonmaak-email" name="email" autocomplete="email" placeholder="naam@bedrijf.nl" required>
+  </div>
+  <div class="form-consent">
+    <input type="checkbox" id="sq-vve-schoonmaak-akkoord" name="akkoord" required>
+    <label for="sq-vve-schoonmaak-akkoord">Akkoord met het <a href="/privacybeleid/">privacybeleid</a>.</label>
+  </div>
+  <p class="form-hp" aria-hidden="true"><label for="sq-vve-schoonmaak-website">Laat dit veld leeg</label><input type="text" id="sq-vve-schoonmaak-website" name="website" tabindex="-1" autocomplete="off"></p>
+  <button type="submit" class="btn btn-orange btn-block">Offerte binnen 24 uur</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+  <p class="quick-quote-foot">Vrijblijvend. Reactie binnen 12 uur op werkdagen.</p>
+</form>
   </div>
 </section>
 
@@ -434,7 +703,7 @@
 
   </div>
   <div style="text-align: center; margin-top: 25px; font-size: 14px; color: #6B7280;">
-    Gemiddelde 4,8/5 uit 87 beoordelingen &middot; <a href="../../reviews/index.html" style="color: var(--klik);">Bekijk alle reviews</a>
+    Gemiddelde 4,8/5 uit 87 beoordelingen &middot; <a href="/reviews/" style="color: var(--klik);">Bekijk alle reviews</a>
   </div>
 </section>
 
@@ -443,15 +712,15 @@
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
     <div style="background: #fff; padding: 50px;">
       <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
-        <img src="https://spotlezz.nl/wp-content/uploads/2026/01/image002_edited.jpg.png" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" alt="Medewerker Spotlezz">
+        <img src="/images/klantlogo-2.png" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" alt="Medewerker Spotlezz" width="441" height="131" loading="lazy" decoding="async">
         <div>
           <div style="font-weight: 700; font-size: 16px;">Thomas Jansen</div>
-          <a href="#" style="font-size: 13px; color: var(--klik); text-decoration: none;">🔗 LinkedIn Profiel</a>
+          
         </div>
       </div>
       <p style="font-size: 18px; line-height: 1.7; font-style: italic; color: #4B5563;">"Als ik een VvE pand schoonmaak, zorg ik dat alles klopt. Van de werkplekken tot de pantry. Ik weet hoe belangrijk het is dat medewerkers de volgende ochtend in een frisse ruimte kunnen beginnen."</p>
     </div>
-    <div style="background-image: url('https://spotlezz.nl/wp-content/uploads/2026/03/sr4-1024x665.jpg'); background-size: cover; background-position: center;"></div>
+    <div style="background-image: url('/images/case-arena-gym.jpg'); background-size: cover; background-position: center;"></div>
   </div>
 </section>
 
@@ -462,21 +731,21 @@
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
     <!-- Case 1 -->
     <div style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-      <div style="height: 180px; background-image: url('https://spotlezz.nl/wp-content/uploads/2026/03/sr1-1024x665.jpg'); background-size: cover; background-position: center;"></div>
+      <div style="height: 180px; background-image: url('/images/pand-interieur.jpg'); background-size: cover; background-position: center;"></div>
       <div style="padding: 25px;">
         <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 15px;">VvE Schoonmaak bij Kobelco</h3>
         <p style="font-size: 14px; color: #4B5563; margin-bottom: 15px;">Lees hoe wij het Europese hoofdkantoor in Almere dagelijks van een streeploos resultaat voorzien.</p>
-        <a href="../../klantcases/index.html" style="color: var(--klik); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 5px;">Lees de case <i class="ph-bold ph-arrow-right"></i></a>
+        <a href="/klantcases/" style="color: var(--klik); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 5px;">Lees de case <i class="ph-bold ph-arrow-right"></i></a>
       </div>
     </div>
 
     <!-- Case 2 -->
     <div style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-      <div style="height: 180px; background-image: url('https://spotlezz.nl/wp-content/uploads/2026/03/sr3-1024x665.jpg'); background-size: cover; background-position: center;"></div>
+      <div style="height: 180px; background-image: url('/images/case-kuchentreff.jpg'); background-size: cover; background-position: center;"></div>
       <div style="padding: 25px;">
         <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 15px;">Schone bureaus bij Kersvers</h3>
         <p style="font-size: 14px; color: #4B5563; margin-bottom: 15px;">Een dynamisch team vraagt om een flexibele schoonmaak. Ontdek onze aanpak bij dit VvE pand.</p>
-        <a href="../../klantcases/index.html" style="color: var(--klik); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 5px;">Lees de case <i class="ph-bold ph-arrow-right"></i></a>
+        <a href="/klantcases/" style="color: var(--klik); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 5px;">Lees de case <i class="ph-bold ph-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -486,14 +755,14 @@
 <section style="padding: 0 5% 80px; max-width: 800px; margin: 0 auto; text-align: center;">
   <h3 style="font-size: 16px; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">In welke regio leveren wij deze dienst?</h3>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-    <a href="../../locaties/almere/index.html" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Almere</a>
-    <a href="../../locaties/almere/index.html" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Almere Stad</a>
-    <a href="../../locaties/almere/index.html" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Almere Buiten</a>
-    <a href="../../locaties/almere/index.html" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Almere Haven</a>
-    <a href="../../locaties/almere/index.html" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Almere Poort</a>
-    <a href="#" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Lelystad</a>
-    <a href="#" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Amsterdam</a>
-    <a href="#" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Amersfoort</a>
+    <a href="/locaties/almere/" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Almere</a>
+    <a href="/locaties/almere/" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Almere Stad</a>
+    <a href="/locaties/almere/" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Almere Buiten</a>
+    <a href="/locaties/almere/" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Almere Haven</a>
+    <a href="/locaties/almere/" class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Almere Poort</a>
+    <span class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Lelystad</span>
+    <span class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Amsterdam</span>
+    <span class="pill" style="display:inline-block; font-size:13px; font-weight:600; background:#fff; border:1px solid #E1E4EA; border-radius:99px; padding:8px 16px; color:#4B5563; text-decoration: none;">Amersfoort</span>
   </div>
 </section>
 
@@ -501,15 +770,15 @@
 
 <!-- NEXT-HOP BAR (Wireframe Section 12) -->
 <section style="display:flex; flex-wrap:wrap; background:#0D0D1A; margin:0; overflow:hidden;">
-  <a href="../../diensten/index.html" style="display:flex;flex-direction:column;gap:6px;padding:30px 40px;flex:1;min-width:200px;color:#C9CDDC;text-decoration:none;border-right:1px solid rgba(255,255,255,0.08);transition:background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='transparent'">
+  <a href="/diensten/" style="display:flex;flex-direction:column;gap:6px;padding:30px 40px;flex:1;min-width:200px;color:#C9CDDC;text-decoration:none;border-right:1px solid rgba(255,255,255,0.08);transition:background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='transparent'">
     <span style="font-weight:700;color:#fff;font-size:15px;">&#8593; Omhoog</span>
     <span style="font-size:13px;color:#9BA1B5;">Alle diensten</span>
   </a>
-  <a href="../../klantcases/index.html" style="display:flex;flex-direction:column;gap:6px;padding:30px 40px;flex:1;min-width:200px;color:#C9CDDC;text-decoration:none;border-right:1px solid rgba(255,255,255,0.08);transition:background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='transparent'">
+  <a href="/klantcases/" style="display:flex;flex-direction:column;gap:6px;padding:30px 40px;flex:1;min-width:200px;color:#C9CDDC;text-decoration:none;border-right:1px solid rgba(255,255,255,0.08);transition:background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='transparent'">
     <span style="font-weight:700;color:#fff;font-size:15px;">&#8594; Zijwaarts</span>
     <span style="font-size:13px;color:#9BA1B5;">Bekijk een klantcase</span>
   </a>
-  <a href="../../quote/index.html" style="display:flex;flex-direction:column;gap:6px;padding:30px 40px;flex:1;min-width:200px;color:#fff;text-decoration:none;background:#FF5500;transition:opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+  <a href="/offerte-aanvragen/" style="display:flex;flex-direction:column;gap:6px;padding:30px 40px;flex:1;min-width:200px;color:#fff;text-decoration:none;background:#FF5500;transition:opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
     <span style="font-weight:700;color:#fff;font-size:15px;">&#9654; Conversie</span>
     <span style="font-size:13px;color:rgba(255,255,255,0.85);">Vraag je offerte aan</span>
   </a>
@@ -517,99 +786,167 @@
 
 <div class="snelofferte-sticky" id="offerte">
   <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px;">Snelofferte aanvragen</h3>
-  <form>
-    <div style="margin-bottom: 15px;">
-      <input type="text" placeholder="Bedrijfsnaam" required style="width: 100%; padding: 12px 15px; border: 1px solid #c7ccd6; border-radius: 6px; font-family: 'Poppins', sans-serif;">
-    </div>
-    <div style="margin-bottom: 15px;">
-      <input type="email" placeholder="E-mailadres" required style="width: 100%; padding: 12px 15px; border: 1px solid #c7ccd6; border-radius: 6px; font-family: 'Poppins', sans-serif;">
-    </div>
-    <div style="margin-bottom: 15px;">
-      <input type="tel" placeholder="Telefoonnummer" required style="width: 100%; padding: 12px 15px; border: 1px solid #c7ccd6; border-radius: 6px; font-family: 'Poppins', sans-serif;">
-    </div>
-    <button type="submit" class="btn btn-orange" style="width: 100%; text-align: center; border: none; cursor: pointer; padding: 14px;">Offerte binnen 24 uur</button>
-  </form>
+  <form class="sp-form checklist-form" id="cl-vve-schoonmaak" data-form="checklist" novalidate>
+  <div class="form-group">
+    <label for="cl-vve-schoonmaak-email">E-mailadres</label>
+    <input type="email" id="cl-vve-schoonmaak-email" name="email" autocomplete="email" placeholder="naam@bedrijf.nl" required>
+  </div>
+  <div class="form-consent">
+    <input type="checkbox" id="cl-vve-schoonmaak-akkoord" name="akkoord" required>
+    <label for="cl-vve-schoonmaak-akkoord">Akkoord met het <a href="/privacybeleid/">privacybeleid</a>.</label>
+  </div>
+  <p class="form-hp" aria-hidden="true"><label for="cl-vve-schoonmaak-website">Laat dit veld leeg</label><input type="text" id="cl-vve-schoonmaak-website" name="website" tabindex="-1" autocomplete="off"></p>
+  <button type="submit" class="btn btn-orange">Vraag de checklist aan</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>
 </div>
 
 </main>
 
 
 <!-- ==================== FOOTER ==================== -->
-<footer class="site-footer">
-  <div class="footer-overlay"></div>
-  <div class="footer-container">
-    <div class="footer-col">
-      <div class="footer-logo">
-        <a href="../../index.html"><img src="https://spotlezz.nl/wp-content/uploads/2026/01/2027.png" alt="Spotlezz Logo"></a>
-      </div>
-      <p class="footer-desc">Het beste schoonmaakbedrijf in<br>Almere en omgeving!</p>
-      <p class="footer-desc" style="margin-bottom: 8px;">Volg ons</p>
-      <div class="social-icons">
-        <a href="https://www.tiktok.com/@spotlezz.nl" target="_blank"><i class="ph-fill ph-tiktok-logo"></i></a>
-        <a href="https://instagram.com/spotlezz.nl/" target="_blank"><i class="ph-fill ph-instagram-logo"></i></a>
-        <a href="https://www.linkedin.com/company/spotlezz/" target="_blank"><i class="ph-fill ph-linkedin-logo"></i></a>
-      </div>
-    </div>
-    
-    <div class="footer-col">
-      <h3>Diensten</h3>
-      <ul class="footer-links">
-        <li><a href="index.html">Vve schoonmaak</a></li>
-        <li><a href="../hotel-schoonmaak/index.html">Hotel schoonmaak</a></li>
-        <li><a href="../showroom-schoonmaak/index.html">Showroom schoonmaak</a></li>
-        <li><a href="../fitnesscentrum-schoonmaak/index.html">Fitnesscentrum schoonmaak</a></li>
-        <li><a href="../kinderopvang-schoonmaak/index.html">Kinderopvang schoonmaak</a></li>
-        <li><a href="index.html">VvE schoonmaak</a></li>
-      </ul>
-    </div>
-    
-    <div class="footer-col">
-      <h3>Over Spotlezz</h3>
-      <ul class="footer-links">
-        <li><a href="../../vacatures/index.html">Vacatures</a></li>
-        <li><a href="../../over-ons/index.html">Over ons</a></li>
-        <li><a href="../../contact/index.html">Contact</a></li>
-        <li><a href="../../blog/index.html">Blog</a></li>
-      </ul>
-    </div>
-    
-    <div class="footer-col">
-      <h3>Neem contact met ons op</h3>
-      <div class="footer-contact">
-        <span><span style="font-weight: 600; margin-right: 4px;">T:</span> <a href="tel:0367857028">036-785 7028</a></span>
-        <span><span style="font-weight: 600; margin-right: 4px;">E:</span> <a href="mailto:info@spotlezz.nl">info@spotlezz.nl</a></span>
-      </div>
-    </div>
-  </div>
-  
-  <div class="footer-bottom">
-    <div class="copyright">
-      Copyright © 2026 Spotlezz. Alle rechten voorbehouden.
-    </div>
-    <div class="footer-bottom-links">
-      <a href="../../privacybeleid/index.html">Privacybeleid</a>
-      <a href="../../algemene-voorwaarden">Algemene Voorwaarden</a>
-    </div>
-  </div>
-</footer>
 
-<script src="../../main.js"></script>
+
+<script src="/main.js"></script>
 
 
 
 <!-- STICKY SNELOFFERTE -->
 <div class="sticky-snelofferte" id="stickyQuote">
   <div class="sticky-snelofferte-header" onclick="document.getElementById('stickyQuote').classList.toggle('open')">
-    Snelofferte (sticky) <i class="ph-bold ph-caret-up"></i>
+     <i class="ph-bold ph-caret-up"></i>
   </div>
   <div class="sticky-snelofferte-body">
-    <form action="../../quote/index.html">
-      <input type="text" placeholder="Naam" required>
-      <input type="email" placeholder="E-mailadres" required>
-      <input type="tel" placeholder="Telefoonnummer">
-      <button type="submit" class="btn btn-orange">Offerte binnen 24 uur</button>
-    </form>
+    <form class="sp-form" id="ct-vve-schoonmaak" data-form="contact" novalidate>
+  <h3>Een bericht verzenden</h3>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="ct-vve-schoonmaak-naam">Naam <span aria-hidden="true">*</span></label>
+      <input type="text" id="ct-vve-schoonmaak-naam" name="naam" autocomplete="name" placeholder="Volledige naam" required>
+    </div>
+    <div class="form-group">
+      <label for="ct-vve-schoonmaak-bedrijf">Bedrijfsnaam <span aria-hidden="true">*</span></label>
+      <input type="text" id="ct-vve-schoonmaak-bedrijf" name="bedrijf" autocomplete="organization" placeholder="Jouw bedrijf" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="ct-vve-schoonmaak-email">E-mailadres <span aria-hidden="true">*</span></label>
+      <input type="email" id="ct-vve-schoonmaak-email" name="email" autocomplete="email" placeholder="naam@bedrijf.nl" required>
+    </div>
+    <div class="form-group">
+      <label for="ct-vve-schoonmaak-telefoon">Telefoonnummer <span aria-hidden="true">*</span></label>
+      <input type="tel" id="ct-vve-schoonmaak-telefoon" name="telefoon" autocomplete="tel" placeholder="06 12345678" required>
+    </div>
+  </div>
+
+  <div class="form-consent">
+    <input type="checkbox" id="ct-vve-schoonmaak-akkoord" name="akkoord" required>
+    <label for="ct-vve-schoonmaak-akkoord">Ik ga akkoord met het <a href="/privacybeleid/">privacybeleid</a> en met het opnemen van contact over deze aanvraag.</label>
+  </div>
+  <p class="form-hp" aria-hidden="true"><label for="ct-vve-schoonmaak-website">Laat dit veld leeg</label><input type="text" id="ct-vve-schoonmaak-website" name="website" tabindex="-1" autocomplete="off"></p>
+  <button type="submit" class="btn-submit">Versturen</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>
   </div>
 </div>
 
+<section class="next-hop-section" aria-label="Verder lezen">
+  <a href="/diensten/" class="next-hop-card">
+    <span class="hop-kind">Omhoog</span>
+    <h3>Alle diensten</h3>
+    <span class="arrow" aria-hidden="true"></span>
+  </a>
+  <a href="/klantcases/kobelco/" class="next-hop-card">
+    <span class="hop-kind">Zijwaarts</span>
+    <h3>Klantcase Kobelco</h3>
+    <span class="arrow" aria-hidden="true"></span>
+  </a>
+  <a href="/offerte-aanvragen/" class="next-hop-card next-hop-cta">
+    <span class="hop-kind">Offerte</span>
+    <h3>Vraag je offerte aan</h3>
+    <span class="arrow" aria-hidden="true"></span>
+  </a>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="footer-overlay"></div>
+  <div class="footer-container">
+    <div class="footer-col">
+      <div class="footer-logo">
+        <a href="/" aria-label="Spotlezz, naar de homepage"><img src="/images/2027.png" alt="Spotlezz" width="291" height="39" loading="eager" fetchpriority="high" decoding="async"></a>
+      </div>
+      <p class="footer-desc">Het beste schoonmaakbedrijf in<br>Almere en omgeving!</p>
+      <div class="footer-nap">
+        <span>Kiekstraat 59, 1087 BR Amsterdam</span>
+        <span>Ma t/m vr 08:00 tot 18:00</span>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Voor wie</h3>
+      <ul class="footer-links">
+        <li><a href="/diensten/kantoor-schoonmaak/">Kantoor schoonmaak</a></li>
+        <li><a href="/diensten/hotel-schoonmaak/">Hotel schoonmaak</a></li>
+        <li><a href="/diensten/showroom-schoonmaak/">Showroom schoonmaak</a></li>
+        <li><a href="/diensten/fitnesscentrum-schoonmaak/">Fitnesscentrum schoonmaak</a></li>
+        <li><a href="/diensten/kinderopvang-schoonmaak/">Kinderopvang schoonmaak</a></li>
+        <li><a href="/diensten/vve-schoonmaak/">VvE schoonmaak</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Wat we doen</h3>
+      <ul class="footer-links">
+        <li><a href="/diensten/glasbewassing/">Glasbewassing</a></li>
+        <li><a href="/diensten/vloeronderhoud/">Vloeronderhoud</a></li>
+        <li><a href="/diensten/opleveringsschoonmaak/">Opleveringsschoonmaak</a></li>
+        <li><a href="/diensten/hygieneservice/">Hygiëneservice</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Werkgebied</h3>
+      <ul class="footer-links">
+        <li><a href="/locaties/almere/">Schoonmaakbedrijf Almere</a></li>
+        <li><a href="/locaties/lelystad/">Schoonmaakbedrijf Lelystad</a></li>
+        <li><a href="/locaties/amsterdam/">Schoonmaakbedrijf Amsterdam</a></li>
+        <li><a href="/locaties/amersfoort/">Schoonmaakbedrijf Amersfoort</a></li>
+        <li><a href="/locaties/">Alle locaties</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Over Spotlezz</h3>
+      <ul class="footer-links">
+        <li><a href="/over-ons/">Over ons</a></li>
+        <li><a href="/klantcases/">Klantcases</a></li>
+        <li><a href="/reviews/">Reviews</a></li>
+        <li><a href="/veelgestelde-vragen/">Veelgestelde vragen</a></li>
+        <li><a href="/vacatures/">Vacatures</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <div class="footer-contact">
+        <span><span style="font-weight: 600; margin-right: 4px;">T:</span> <a href="tel:0367857028">036-785 7028</a></span>
+        <span><span style="font-weight: 600; margin-right: 4px;">E:</span> <a href="mailto:info@spotlezz.nl">info@spotlezz.nl</a></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="copyright">
+      Copyright © 2026 Spotlezz B.V.. Alle rechten voorbehouden.
+    </div>
+    <div class="footer-bottom-links">
+      <a href="/privacybeleid/">Privacybeleid</a> |
+      <a href="https://spotlezz.nl/wp-content/uploads/2026/07/Algemene-voorwaarden-Spotlezz-BV.pdf" target="_blank" rel="noopener">Algemene voorwaarden</a>
+    </div>
+  </div>
+</footer>
+<div class="mobile-sticky-cta">
+  <a href="tel:0367857028" class="btn btn-outline-dark"><i class="ph-fill ph-phone" aria-hidden="true"></i> Bellen</a>
+  <a href="/offerte-aanvragen/" class="btn btn-orange">Offerte aanvragen</a>
+</div>
+<script src="/main.js" defer></script>
 </body></html>

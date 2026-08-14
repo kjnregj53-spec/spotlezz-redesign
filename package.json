@@ -1,0 +1,11 @@
+{
+  "name": "spotlezz-redesign",
+  "private": true,
+  "type": "module",
+  "description": "Statische site voor Spotlezz. De HTML in spotlezz.vercel.app/ wordt gegenereerd door build/.",
+  "scripts": {
+    "build": "git checkout -- spotlezz.vercel.app && node build/build.mjs",
+    "build:assets": "git checkout -- spotlezz.vercel.app && node build/build.mjs --assets",
+    "dev": "node build/serve.mjs 4321"
+  }
+}

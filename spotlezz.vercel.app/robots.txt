@@ -1,0 +1,6 @@
+# robots.txt voor https://spotlezz.nl
+User-agent: *
+Allow: /
+Disallow: /what-we-have-done.html
+
+Sitemap: https://spotlezz.nl/sitemap.xml
