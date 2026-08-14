@@ -5236,24 +5236,53 @@ main { display: block; }
   max-width: var(--shell); margin: 30px auto 0; padding: 0 5% 60px;
   display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 16px;
 }
-.next-hop-card {
-  background: var(--text-dark); color: #fff; border-radius: var(--radius);
-  padding: 26px 24px; text-decoration: none;
-  display: flex; flex-direction: column; gap: 6px;
+/* De oorspronkelijke stylesheet zet .next-hop-card met !important op een witte
+   achtergrond en verbergt de pijl. Op een lichte pagina gaf dat witte tekst op
+   wit. Daarom hier ook !important, anders wint de oude regel. */
+.next-hop-section .next-hop-card {
+  background: var(--text-dark) !important;
+  background-image: none !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: var(--radius) !important;
+  padding: 24px !important;
+  text-decoration: none;
+  display: flex !important;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left !important;
+  box-shadow: none !important;
   transition: transform 0.2s ease, background 0.2s ease;
 }
-.next-hop-card:hover { transform: translateY(-3px); }
-.next-hop-card .hop-kind {
-  font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #9ba1b5; font-weight: 700;
+.next-hop-section .next-hop-card::before { display: none !important; }
+.next-hop-section .next-hop-card:hover { transform: translateY(-3px) !important; box-shadow: none !important; }
+.next-hop-section .next-hop-card .hop-kind {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: #9ba1b5 !important; font-weight: 700;
 }
-.next-hop-card h3 { font-size: 18px; color: #fff; margin: 0; }
-.next-hop-card .arrow::before { content: "\2192"; font-size: 20px; }
-.next-hop-cta { background: var(--accent-orange); }
-.next-hop-cta .hop-kind { color: rgba(255, 255, 255, 0.75); }
+.next-hop-section .next-hop-card h3 {
+  font-size: 18px !important; color: #fff !important; margin: 0 !important;
+}
+.next-hop-section .next-hop-card:hover h3 { color: #fff !important; }
+.next-hop-section .next-hop-card .arrow { display: inline-block !important; }
+.next-hop-section .next-hop-card .arrow::before { content: "\2192"; font-size: 20px; }
+.next-hop-section .next-hop-cta { background: var(--accent-orange) !important; }
+.next-hop-section .next-hop-cta .hop-kind { color: rgba(255, 255, 255, 0.8) !important; }
 
 /* --- footer ----------------------------------------------------------- */
 
 .footer-container { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 30px; }
+
+/* Het logo stond op een vaste breedte zonder bovengrens en liep daardoor
+   92 pixels de kolom "Voor wie" in. */
+.site-footer .footer-logo img,
+.mobile-nav-header img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: 38px;
+}
+.site-footer .footer-col { min-width: 0; }
 .footer-nap { display: grid; gap: 5px; font-size: 13px; color: rgba(255, 255, 255, 0.7); margin-top: 14px; }
 .mobile-sticky-cta { display: none; gap: 10px; }
 .mobile-sticky-cta .btn { flex: 1; text-align: center; }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Sjablonen voor de pagina's die nieuw gebouwd worden.
  * Elk sjabloon volgt de blokvolgorde uit het bijbehorende wireframe.
  */
@@ -24,7 +24,7 @@ const kase = (slug) => CASES.find((c) => c.slug === slug);
 function caseCard(c) {
   return `    <article class="proof-card">
       <a href="/klantcases/${c.slug}/" class="proof-media" tabindex="-1" aria-label="Klantcase ${esc(c.client)}">
-        <img src="/images/case-${c.slug}.jpg" alt="Schoonmaak bij ${esc(c.client)} in ${esc(c.city)}" width="1024" height="665" loading="lazy">
+        <img src="${c.image}" alt="Spotlezz aan het werk bij ${esc(c.client)}, ${esc(c.branche.toLowerCase())} in ${esc(c.city)}" loading="lazy">
       </a>
       <div class="proof-body">
         <span class="proof-meta">${esc(c.branche)} &middot; ${esc(c.city)}</span>
@@ -39,7 +39,7 @@ function photoRow(items) {
   return `<section class="photo-row" aria-label="Beeld">
   <div class="photo-grid">
 ${items.map((p) => `    <figure class="photo-item">
-      <img src="${p.src}" alt="${esc(p.alt)}" width="1024" height="665" loading="lazy">
+      <img src="${p.src}" alt="${esc(p.alt)}" loading="lazy">
       <figcaption>${esc(p.caption)}</figcaption>
     </figure>`).join('\n')}
   </div>
@@ -59,7 +59,7 @@ function employeeBlock(e, photo) {
     <blockquote><p>${esc(e.quote)}</p></blockquote>
   </div>
   <figure class="person-photo">
-    <img src="${photo}" alt="${esc(e.name)}, ${esc(e.role.toLowerCase())} bij Spotlezz, aan het werk" width="1024" height="665" loading="lazy">
+    <img src="${photo}" alt="Medewerkers van Spotlezz aan het werk" loading="lazy">
   </figure>
 </section>`;
 }
@@ -219,14 +219,14 @@ ${steps}
 </section>
 
 ${photoRow([
-  { src: '/images/team-aan-het-werk.jpg', alt: `Spotlezz team aan het werk tijdens ${s.service.toLowerCase()} in Almere`, caption: 'Ons team aan het werk' },
-  { src: '/images/pand-interieur.jpg', alt: `Interieur van een pand waar Spotlezz ${s.service.toLowerCase()} verzorgt`, caption: 'Het type ruimte dat wij doen' },
-  { src: '/images/materiaal-producten.jpg', alt: 'Ecologische schoonmaakmiddelen en materiaal van Spotlezz', caption: 'Materiaal en producten' },
+  { src: '/images/stap-team-start.jpg', alt: `Twee medewerkers van Spotlezz aan het werk tijdens ${s.service.toLowerCase()}`, caption: 'Ons team aan het werk' },
+  { src: '/images/kantoor-detail.jpg', alt: `Detailwerk tijdens ${s.service.toLowerCase()} door Spotlezz`, caption: 'Het verschil zit in het detail' },
+  { src: '/images/materiaal-producten.jpg', alt: 'Medewerker van Spotlezz met microvezeldoek en ecologische reiniger', caption: 'Materiaal en producten' },
 ])}
 
 ${reviewBlock(REVIEWS.slice(0, 3))}
 
-${employeeBlock(c.employee, '/images/team-aan-het-werk.jpg')}
+${employeeBlock(c.employee, '/images/stap-resultaat.jpg')}
 
 <section class="proof-block">
   <h2>Klantcases</h2>
@@ -314,7 +314,7 @@ ${wijken.map((w) => `    <a href="/locaties/${w.slug}/" class="pill">${esc(w.nam
         telephone: SITE.phoneIntl,
         email: SITE.email,
         priceRange: '$$',
-        image: SITE.origin + '/images/team-aan-het-werk.jpg',
+        image: SITE.origin + '/images/og-deelafbeelding.jpg',
         address: postalAddress(),
         areaServed: { '@type': isWijk ? 'Place' : 'City', name: ct.name },
         openingHoursSpecification: [{
@@ -374,7 +374,7 @@ ${answerBlock({ paragraph: esc(c.answer), facts: c.facts })}
   <div class="local-proof">
 ${caseCard(cs)}
     <figure class="review-card review-card-local">
-      <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+      <div class="review-stars" aria-label="5 van de 5 sterren">â˜…â˜…â˜…â˜…â˜…</div>
       <blockquote><p>${esc(c.review)}</p></blockquote>
       <figcaption>
         <span class="review-avatar" aria-hidden="true">${esc(c.reviewer.initial)}</span>
@@ -400,12 +400,12 @@ ${c.area.map((p) => `  <p>${esc(p)}</p>`).join('\n')}
 </section>
 
 ${photoRow([
-  { src: '/images/team-aan-het-werk.jpg', alt: `Spotlezz team aan het werk in ${ct.name}`, caption: `Ons team in ${ct.name}` },
-  { src: '/images/pand-interieur.jpg', alt: `Kantoorpand in ${ct.name} dat Spotlezz schoonmaakt`, caption: 'Een pand uit ons werkgebied' },
-  { src: '/images/materiaal-producten.jpg', alt: `Materiaal en ecologische producten van Spotlezz in ${ct.name}`, caption: 'Materiaal en producten' },
+  { src: '/images/stap-team-start.jpg', alt: 'Twee medewerkers van Spotlezz aan het werk in een kantoor', caption: 'Ons team aan het werk' },
+  { src: '/images/branche-kantoor-schoon.jpg', alt: 'Kantoorpand uit het werkgebied van Spotlezz', caption: 'Een pand uit ons werkgebied' },
+  { src: '/images/materiaal-producten.jpg', alt: 'Medewerker van Spotlezz met microvezeldoek en ecologische reiniger', caption: 'Materiaal en producten' },
 ])}
 
-${employeeBlock(c.team, '/images/team-aan-het-werk.jpg')}
+${employeeBlock(c.team, '/images/stap-resultaat.jpg')}
 
 <section class="faq-block">
   <h2>Veelgestelde vragen over schoonmaak in ${esc(ct.name)}</h2>
@@ -709,7 +709,7 @@ export function reviewsPage() {
   const cards = REVIEWS.map((r) => {
     const s = svc(r.branche);
     return `    <figure class="review-card">
-      <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+      <div class="review-stars" aria-label="5 van de 5 sterren">â˜…â˜…â˜…â˜…â˜…</div>
       <blockquote><p>${esc(r.text)}</p></blockquote>
       <figcaption>
         <span class="review-avatar" aria-hidden="true">${esc(r.initial)}</span>

@@ -88,20 +88,27 @@ function replaceHead(html, newHead) {
 /* Links, afbeeldingen en placeholders                                 */
 /* ================================================================== */
 
+/**
+ * De sr-bestanden van spotlezz.nl zijn voorgerenderde branchekaarten met het
+ * opschrift in de pixels gebrand. In het branchegrid klopt dat opschrift, maar
+ * overal daarbuiten niet. Daarom staan hier de van tekst ontdane versies
+ * (-schoon), en zet addBrancheLabels de originelen alleen in het grid terug.
+ * Zie build/prepare-images.ps1.
+ */
 const IMAGE_MAP = {
   '2027.png': '/images/2027.png',
-  'image2.png': '/images/logisnext.png',
-  'image-29.png': '/images/kobelco.png',
-  'image-28-1.png': '/images/floor.png',
-  'kersvers-logo-2.png.png': '/images/kersvers.png',
-  'sr1-1024x665.jpg': '/images/pand-interieur.jpg',
-  'sr2-1024x665.jpg': '/images/team-aan-het-werk.jpg',
-  'sr3-1024x665.jpg': '/images/case-kuchentreff.jpg',
-  'sr4-1024x665.jpg': '/images/case-arena-gym.jpg',
-  'sr5-1024x665.jpg': '/images/branche-kantoor.jpg',
-  'sr6-1024x665.jpg': '/images/branche-vve.jpg',
+  'image2.png': '/images/klant-innovally.png',
+  'image-29.png': '/images/klant-mitsubishi-heavy-industries.png',
+  'image-28-1.png': '/images/klant-arenagym.png',
+  'kersvers-logo-2.png.png': '/images/klant-mitsubishi-logisnext.png',
+  'sr1-1024x665.jpg': '/images/pand-interieur-schoon.jpg',
+  'sr2-1024x665.jpg': '/images/team-aan-het-werk-schoon.jpg',
+  'sr3-1024x665.jpg': '/images/case-kuchentreff-schoon.jpg',
+  'sr4-1024x665.jpg': '/images/case-arena-gym-schoon.jpg',
+  'sr5-1024x665.jpg': '/images/branche-kantoor-schoon.jpg',
+  'sr6-1024x665.jpg': '/images/branche-vve-schoon.jpg',
   'DSC02837.jpg': '/images/materiaal-producten.jpg',
-  'professional-cleaning.jpg': '/images/pand-interieur.jpg',
+  'professional-cleaning.jpg': '/images/professionele-schoonmaak.jpg',
   'we-visit-your-office.jpg': '/images/checklist-achtergrond.jpg',
   'Spotlezz-checkist-def.jpg': '/images/Spotlezz-checkist-def.jpg',
   'Container-1.jpg': '/images/Container-1.jpg',
@@ -109,9 +116,9 @@ const IMAGE_MAP = {
   'professionele-schoonmaak.jpg': '/images/professionele-schoonmaak.jpg',
   'Office-11-1.jpg': '/images/kantoor-werkplek.jpg',
   'Office-11-2-1.jpg': '/images/kantoor-detail.jpg',
-  'logo-1.png.png': '/images/klantlogo-1.png',
-  'image002_edited.jpg.png': '/images/klantlogo-2.png',
-  'image6.png': '/images/klantlogo-3.png',
+  'logo-1.png.png': '/images/klant-wilmar-afbouw.png',
+  'image002_edited.jpg.png': '/images/klant-alliance.png',
+  'image6.png': '/images/klant-innovally.png',
   'Background.jpg': '/images/achtergrond.jpg',
   'Background-1.jpg': '/images/achtergrond-2.jpg',
   'Checklist-vertical.jpg': '/images/checklist-preview.jpg',
@@ -226,11 +233,13 @@ async function fixImages(html) {
     if (!srcMatch) continue;
     let out = tag;
 
-    if (!/\swidth=/i.test(out) || !/\sheight=/i.test(out)) {
-      const dim = await dimensionsFor(srcMatch[1]);
-      if (dim) {
-        out = out.replace(/\s*\/?>$/, ` width="${dim.w}" height="${dim.h}">`);
-      }
+    // Altijd opnieuw uitlezen. Bij een vervangen bestand blijft anders de oude
+    // verhouding in de HTML staan, en dan rekent de browser met een beeldkader
+    // dat niet klopt.
+    const dim = await dimensionsFor(srcMatch[1]);
+    if (dim) {
+      out = out.replace(/\s+width="\d+"/i, '').replace(/\s+height="\d+"/i, '');
+      out = out.replace(/\s*\/?>$/, ` width="${dim.w}" height="${dim.h}">`);
     }
     if (!/\sloading=/i.test(out)) out = out.replace(/\s*\/?>$/, ' loading="lazy">');
     if (!/\sdecoding=/i.test(out)) out = out.replace(/\s*\/?>$/, ' decoding="async">');
@@ -239,6 +248,139 @@ async function fixImages(html) {
   }
   // Het logo in de header is boven de vouw en moet juist meteen laden
   html = html.replace(/(<img[^>]*\/images\/2027\.png[^>]*)\sloading="lazy"/gi, '$1 loading="eager" fetchpriority="high"');
+  return html;
+}
+
+/**
+ * Zet beelden op de rol waar ze bij horen en corrigeert de klantnamen.
+ *
+ * De bestandsnamen van de logo's klopten geen van alle, en die verkeerde naam
+ * stond ook in de alt-tekst. Een schermlezer noemde daardoor de verkeerde klant.
+ * Daarnaast werd het ALLIANCE-klantlogo op zes pagina's als pasfoto van een
+ * medewerker gebruikt.
+ */
+const ALT_CORRECTIES = [
+  [/alt="Logisnext"/g, 'alt="Innovally"'],
+  [/alt="Kobelco"(?!\s*Kantoor)/g, 'alt="Mitsubishi Heavy Industries"'],
+  [/alt="Floor"/g, 'alt="ARENAGYM"'],
+  [/alt="Kersvers"/g, 'alt="Mitsubishi Logisnext Europe"'],
+  [/alt="Logo"/g, 'alt="Wilmar Afbouw"'],
+  [/alt="Edited Logo"/g, 'alt="Alliance Möbel-Einkauf"'],
+];
+
+/**
+ * De bronbestanden verwijzen inmiddels naar lokale paden, dus IMAGE_MAP (dat
+ * alleen spotlezz.nl-URL's omzet) raakt ze niet meer. Deze tabel zet de oude
+ * lokale namen om naar de juiste variant.
+ */
+const LOCAL_REMAP = {
+  // Foto's met ingebakken opschrift naar hun van tekst ontdane versie
+  '/images/pand-interieur.jpg': '/images/pand-interieur-schoon.jpg',
+  '/images/team-aan-het-werk.jpg': '/images/team-aan-het-werk-schoon.jpg',
+  '/images/case-kuchentreff.jpg': '/images/case-kuchentreff-schoon.jpg',
+  '/images/case-arena-gym.jpg': '/images/case-arena-gym-schoon.jpg',
+  '/images/branche-kantoor.jpg': '/images/branche-kantoor-schoon.jpg',
+  '/images/branche-vve.jpg': '/images/branche-vve-schoon.jpg',
+  // Kobelco is een kantoor, geen showroom. Deze wees naar de showroomfoto.
+  '/images/case-kobelco.jpg': '/images/branche-kantoor-schoon.jpg',
+  // Klantlogo's onder hun werkelijke merknaam
+  '/images/logisnext.png': '/images/klant-innovally.png',
+  '/images/kobelco.png': '/images/klant-mitsubishi-heavy-industries.png',
+  '/images/floor.png': '/images/klant-arenagym.png',
+  '/images/kersvers.png': '/images/klant-mitsubishi-logisnext.png',
+  '/images/klantlogo-1.png': '/images/klant-wilmar-afbouw.png',
+  '/images/klantlogo-2.png': '/images/klant-alliance.png',
+  '/images/klantlogo-3.png': '/images/klant-innovally.png',
+  // Staand portret was als deelafbeelding ongeschikt
+  '/images/Container-1.jpg': '/images/og-deelafbeelding.jpg',
+};
+
+/**
+ * Zoekt per klantnaam het dichtstbijzijnde beeld ervoor en zet daar de foto
+ * neer die bij de branche van die klant hoort.
+ */
+function koppelCaseBeeld(html, rel) {
+  // Op een casedetailpagina geldt het beeld voor de hele pagina.
+  const detail = CASES.find((c) => rel === `klantcases/${c.slug}/index.html`);
+  if (detail) {
+    return html.replace(
+      /background-image:\s*url\(['"]?\/images\/[a-zA-Z0-9._-]+\.jpg['"]?\)/g,
+      `background-image: url('${detail.image}')`
+    );
+  }
+
+  // Kersvers komt op de cases-hub voor maar heeft geen eigen casepagina en
+  // staat dus niet in CASES. De kaart heet "Schone bureaus", dus een kantoor.
+  const extra = [{ client: 'Kersvers', image: '/images/kantoor-detail.jpg' }];
+
+  // Elders: per kaart, herkend aan de klantnaam in een kop. Die kop luidt soms
+  // alleen "Kobelco" en soms "Kantoorschoonmaak bij Kobelco", dus wordt binnen
+  // de kop gezocht en niet op de volledige tekst.
+  for (const c of [...CASES, ...extra]) {
+    const naamRe = new RegExp(`<h[1-4][^>]*>[^<]*\\b${c.client}\\b[^<]*</h[1-4]>`, 'g');
+    let m;
+    while ((m = naamRe.exec(html))) {
+      const vanaf = Math.max(0, m.index - 1600);
+      const stuk = html.slice(vanaf, m.index);
+      const beeldRe = /(background-image:\s*url\(['"]?|<img[^>]*\ssrc=")(\/images\/[a-zA-Z0-9._-]+\.jpg)/g;
+      let laatste = null, b;
+      while ((b = beeldRe.exec(stuk))) laatste = b;
+      if (!laatste || laatste[2] === c.image) continue;
+      const absoluut = vanaf + laatste.index + laatste[1].length;
+      html = html.slice(0, absoluut) + c.image + html.slice(absoluut + laatste[2].length);
+      naamRe.lastIndex = m.index + 1;
+    }
+  }
+  return html;
+}
+
+function fixImageRoles(html, rel) {
+  for (const [oud, nieuw] of Object.entries(LOCAL_REMAP)) {
+    html = html.split(oud + '"').join(nieuw + '"');
+    html = html.split(oud + "'").join(nieuw + "'");
+    html = html.split(oud + ')').join(nieuw + ')');
+  }
+  for (const [re, vervanging] of ALT_CORRECTIES) html = html.replace(re, vervanging);
+
+  // Bij de medewerkerscitaten stond een logo als rond pasfotootje: op de
+  // branchepagina's het ALLIANCE-klantlogo, op /over-ons/ het Spotlezz-logo
+  // zelf, uitgerekt naar een cirkel van 50 pixels. Een logo is geen gezicht.
+  // Tot er echte portretten zijn, een neutrale initiaal.
+  html = html.replace(
+    /<img\b[^>]*\/images\/(?:klant-[a-z-]+|2027)\.png[^>]*alt="Medewerker Spotlezz"[^>]*>/g,
+    '<span class="person-avatar" aria-hidden="true">S</span>'
+  );
+
+  // Het fotopaneel naast dat citaat toonde de kinderopvangfoto, ongeacht de
+  // branche van de pagina. Vervangen door een neutrale teamfoto.
+  html = html.replace(
+    /background-image:\s*url\(['"]?\/images\/case-arena-gym(?:-schoon)?\.jpg['"]?\)/g,
+    "background-image: url('/images/stap-team-start.jpg')"
+  );
+
+  // Klantcases moeten de branche van die klant tonen. Na het wegsnijden van de
+  // opschriften klopte het onderwerp nog steeds niet: Kobelco (kantoor) kreeg
+  // een showroom, KuchenTreff (keukenshowroom) een hotelkamer en Arena Gym
+  // (sportschool) een kinderopvang. Het beeld wordt nu aan de klant gekoppeld
+  // en niet aan de oude bestandsnaam.
+  html = koppelCaseBeeld(html, rel);
+
+  // Homepage, sectie "Spotlezz in de praktijk". De drie badges beloven team,
+  // resultaat en materiaal; de beelden toonden dat geen van drieën.
+  if (rel === 'index.html') {
+    const praktijk = [
+      ['/images/case-arena-gym-schoon.jpg', '/images/stap-team-start.jpg'],
+      ['/images/pand-interieur-schoon.jpg', '/images/stap-resultaat.jpg'],
+    ];
+    const start = html.indexOf('Spotlezz in de praktijk');
+    if (start !== -1) {
+      const eind = html.indexOf('</section>', start);
+      let blok = html.slice(start, eind);
+      for (const [van, naar] of praktijk) blok = blok.split(van).join(naar);
+      html = html.slice(0, start) + blok + html.slice(eind);
+    }
+  }
+
   return html;
 }
 
@@ -306,10 +448,28 @@ function addBrancheLabels(html) {
   return html.replace(
     /<a href="\/diensten\/([a-z0-9-]+)\/"([^>]*)class="branche-card"([^>]*)>([\s\S]*?)<\/a>/g,
     (m, slug, pre, post, inner) => {
-      if (inner.includes('branche-label')) return m;
       const s = ALL_SERVICES.find((x) => x.slug === slug);
       if (!s) return m;
-      const label = `\n      <span class="branche-label">${esc(s.short)} schoonmaak <span class="branche-arrow" aria-hidden="true">&rarr;</span></span>\n    `;
+      const naam = `${esc(s.short)} schoonmaak`;
+
+      if (inner.includes('branche-label')) {
+        // Op /diensten/ bestond het label al, maar zonder tekst: alleen een
+        // pijl, omdat de naam in de foto gebrand zat. Nu de foto schoon is,
+        // moet de tekst er alsnog in.
+        // Tags, HTML-entiteiten en witruimte eraf. Wat overblijft is de
+        // eventuele echte labeltekst.
+        const zonderTags = inner
+          .replace(/<[^>]+>/g, '')
+          .replace(/&[a-zA-Z]+;|&#\d+;/g, '')
+          .replace(/[\s→]/g, '');
+        if (zonderTags.length > 0) return m;
+        return m.replace(
+          /(<div class="branche-label">)/,
+          `$1${naam} `
+        );
+      }
+
+      const label = `\n      <span class="branche-label">${naam} <span class="branche-arrow" aria-hidden="true">&rarr;</span></span>\n    `;
       return `<a href="/diensten/${slug}/"${pre}class="branche-card"${post}>${inner}${label}</a>`;
     }
   );
@@ -387,9 +547,14 @@ function applyChrome(html, { trail, hop, mainStart = true }) {
   html = r.html;
   r = cutBlock(html, /<div class="mobile-sticky-cta">/i, 'div');
   html = r.html;
-  // Bestaande next-hop weghalen; we zetten er zelf een terug
-  r = cutBlock(html, /<section class="next-hop-section"/i, 'section');
-  html = r.html;
+  // Bestaande next-hop weghalen; we zetten er zelf een terug. De class staat
+  // niet altijd alleen: op sommige pagina's is het "next-hop-section reveal",
+  // en dan miste een exacte match hem.
+  for (let i = 0; i < 3; i++) {
+    const n = cutBlock(html, /<section[^>]*class="[^"]*next-hop-section/i, 'section');
+    if (!n.found) break;
+    html = n.html;
+  }
   // Oude losse breadcrumb-balken
   for (let i = 0; i < 3; i++) {
     const b = cutBlock(html, /<div class="(?:crumb-bar|breadcrumb[a-z-]*)"/i, 'div');
@@ -729,6 +894,7 @@ async function patchExisting() {
 
     // Links, afbeeldingen, placeholders
     html = rewriteLinks(html, cfg.meta.path);
+    html = fixImageRoles(html, rel);
     html = addBrancheLabels(html);
     html = compactInlinePadding(html);
     html = fluidType(html);
@@ -824,6 +990,7 @@ async function moveQuotePage() {
   });
   html = replaceForms(html, [contactForm({ id: 'offerteForm', heading: 'Vraag een offerte aan', submit: 'Offerte aanvragen' })]);
   html = rewriteLinks(html, '/offerte-aanvragen/');
+  html = fixImageRoles(html, 'offerte-aanvragen/index.html');
   html = stripPlaceholders(html);
   html = html.replace(/<a href="#"([^>]*)>([\s\S]*?)<\/a>/g, '<span$1>$2</span>');
   html = compactInlinePadding(html);

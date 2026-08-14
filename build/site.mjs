@@ -121,19 +121,28 @@ export const CITIES = [
 /* Klantcases                                                          */
 /* ------------------------------------------------------------------ */
 
+/**
+ * `image` wijst bewust naar de van tekst ontdane variant die bij de branche van
+ * die klant hoort. Eerder toonde de Kobelco-kaart een showroomfoto met
+ * "Showroom schoonmaak" erin gebrand, de KuchenTreff-kaart een hotelkamer en de
+ * Arena Gym-kaart een kinderopvang.
+ */
 export const CASES = [
   { slug: 'kobelco', client: 'Kobelco', branche: 'Kantoor', city: 'Almere',
-    logo: '/images/kobelco.png',
+    logo: '/images/klant-mitsubishi-heavy-industries.png',
+    image: '/images/branche-kantoor-schoon.jpg',
     h1: 'Nul klachten in achttien maanden bij Kobelco in Almere',
     teaser: 'Lees hoe wij het Europese hoofdkantoor in Almere dagelijks van een streeploos resultaat voorzien.',
     services: ['kantoor-schoonmaak', 'glasbewassing', 'hygieneservice'] },
   { slug: 'kuchentreff', client: 'KuchenTreff', branche: 'Showroom', city: 'Almere',
-    logo: '/images/floor.png',
+    logo: '/images/klant-alliance.png',
+    image: '/images/pand-interieur-schoon.jpg',
     h1: 'Een streeploze showroom bij KuchenTreff, ook op zaterdag',
     teaser: 'Streeploze showroom en schone werkplekken voor medewerkers en klanten.',
     services: ['showroom-schoonmaak', 'glasbewassing', 'vloeronderhoud'] },
   { slug: 'arena-gym', client: 'Arena Gym', branche: 'Sportschool', city: 'Almere',
-    logo: '/images/logisnext.png',
+    logo: '/images/klant-arenagym.png',
+    image: '/images/team-aan-het-werk-schoon.jpg',
     h1: 'Van klachten over de kleedkamers naar een 8,7 bij Arena Gym',
     teaser: 'Dagelijkse dieptereiniging van sportapparatuur, kleedkamers en douches.',
     services: ['fitnesscentrum-schoonmaak', 'hygieneservice', 'vloeronderhoud'] },
@@ -203,7 +212,7 @@ export function organizationNode() {
     legalName: SITE.legalName,
     url: SITE.origin + '/',
     logo: SITE.origin + '/images/2027.png',
-    image: SITE.origin + '/images/Container-1.jpg',
+    image: SITE.origin + '/images/og-deelafbeelding.jpg',
     telephone: SITE.phoneIntl,
     email: SITE.email,
     priceRange: '$$',
@@ -278,7 +287,10 @@ export function breadcrumbNode(trail) {
 /* ------------------------------------------------------------------ */
 
 /** Alles in <head> behalve de paginaspecifieke JSON-LD. */
-export function head({ title, description, path, noindex = false, ogImage = '/images/Container-1.jpg' }) {
+// Open Graph verwacht liggend 1.91:1. Container-1.jpg stond hier eerder en is
+// een staand portret van 984x1528, dat in elke deelkaart onherkenbaar werd
+// bijgesneden. Zie build/prepare-images.ps1.
+export function head({ title, description, path, noindex = false, ogImage = '/images/og-deelafbeelding.jpg' }) {
   const canonical = SITE.origin + path;
   return `<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
