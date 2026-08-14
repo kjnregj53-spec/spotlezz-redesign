@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Have Done – Spotlezz Feedback Checklist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F4F5F7;
+            color: #111;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #0D0D1A;
+            margin-bottom: 6px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 40px;
+        }
+        .page-section {
+            margin-bottom: 36px;
+        }
+        .page-section h2 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: #6B7280;
+            margin-bottom: 12px;
+            padding-left: 4px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+            overflow: hidden;
+        }
+        .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 20px;
+            border-bottom: 1px solid #F3F4F6;
+            transition: background .15s;
+        }
+        .item:last-child { border-bottom: none; }
+        .item:hover { background: #FAFAFA; }
+        .icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .icon.done   { background: #D1FAE5; color: #059669; }
+        .icon.todo   { background: #FEF3C7; color: #D97706; }
+        .icon.skip   { background: #F3F4F6; color: #9CA3AF; }
+        .item-body { flex: 1; }
+        .item-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 3px;
+        }
+        .item-detail {
+            font-size: 13px;
+            color: #6B7280;
+            line-height: 1.55;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 9px;
+            border-radius: 99px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .badge.done   { background: #D1FAE5; color: #065F46; }
+        .badge.todo   { background: #FEF3C7; color: #92400E; }
+        .badge.skip   { background: #F3F4F6; color: #9CA3AF; }
+        .legend {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 28px;
+            font-size: 13px;
+        }
+        .legend span { display: flex; align-items: center; gap: 6px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot.done { background: #059669; }
+        .dot.todo { background: #D97706; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Spotlezz — Feedback Checklist</h1>
+    <p class="subtitle">Gebaseerd op het wireframe feedback bericht · Bijgewerkt 14 aug 2026</p>
+
+    <div class="legend">
+        <span><span class="dot done"></span> Gedaan</span>
+        <span><span class="dot todo"></span> Nog te doen / Gedeeltelijk</span>
+    </div>
+
+    <!-- ===== SERVICE PAGES ===== -->
+    <div class="page-section">
+        <h2>Servicepagina's (Kantoor, Hotel, Showroom, Fitness, Kinderopvang, VvE)</h2>
+        <div class="card">
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Sticky Snelofferte pop-up (Sectie 2)</div>
+                    <div class="item-detail">Desktop: rechtsonder in beeld als sticky card.<br>Mobiel: verschijnt vanuit onderkant scherm tot halve schermhoogte.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Antwoordblok / Pogo-schild (Sectie 3)</div>
+                    <div class="item-detail">Vanafprijs, Frequentie, Regio, Reactietijd — 4 stat-blokken direct onder de hero zichtbaar.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">"Wat doen wij precies" grid (Sectie 4)</div>
+                    <div class="item-detail">Scanbaar raster met werkzaamheden (werkplekken, sanitair, vloeren, glas, pantry, etc.).</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Werkwijze in 4 stappen + Vergelijkingstabel met CTA-knop (Sectie 5)</div>
+                    <div class="item-detail">4 stappen blokken aanwezig. Spotlezz vs Andere bedrijven tabel aanwezig. CTA-knop "Vraag een offerte aan" direct onder de tabel geplaatst.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Eigen fotografie — 3 foto's (Sectie 6)</div>
+                    <div class="item-detail">Raster van 3 eigen foto's: team aan het werk, het pand, materiaal &amp; producten.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Reviewblok — 3 reviews met sterren (Sectie 7)</div>
+                    <div class="item-detail">3 reviews met naam, functie, sterren en linkbalk naar /reviews/. Gemiddelde 4,8/5 uit 87.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Medewerker aan het woord (Sectie 8)</div>
+                    <div class="item-detail">Split-layout: citaat + foto. Medewerker met naam, LinkedIn-link en portretfoto op locatie.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Klantcases — 2 cases (Sectie 9)</div>
+                    <div class="item-detail">Klantlogostrip + 2 casekaarten met foto, titel, omschrijving en "Lees de case" link.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Regioblok met klikbare pills (Sectie 10)</div>
+                    <div class="item-detail">Almere, Almere Stad, Almere Buiten, Almere Haven, Almere Poort, Lelystad, Amsterdam, Amersfoort — elke pill linkt naar locatiepagina.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">FAQ Accordion (Sectie 11)</div>
+                    <div class="item-detail">5 vragen als klikbare accordion rows — zelfde hoogte en breedte, klappen open bij klik.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Next-hop bar — 3 routes (Sectie 12)</div>
+                    <div class="item-detail">↑ Omhoog: Alle diensten | → Zijwaarts: Klantcase | ▶ Conversie: Offerte aanvragen. Toegevoegd aan alle 6 servicepagina's.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Sticky Snelofferte pop-up (Sectie 2)</div>
+                    <div class="item-detail">Zwevend offerteformulier toegevoegd aan alle 6 servicepagina's. Desktop: rechtsonder, Mobiel: klapt op van onder tot halverwege het scherm met een klikbare header.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Breadcrumb navigatie (Sectie 1)</div>
+                    <div class="item-detail">Breadcrumb toegevoegd direct onder de header op alle 6 servicepagina's, inclusief reviewscore en telefoonnummer zoals voorgeschreven.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Kapotte &lt;meta viewport&gt; tag gerepareerd</div>
+                    <div class="item-detail">Taaklijsttekst was per ongeluk in de meta-tag terechtgekomen — opgelost in alle 6 servicepagina's.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== FAQ PAGINA ===== -->
+    <div class="page-section">
+        <h2>FAQ-pagina (/veelgestelde-vragen)</h2>
+        <div class="card">
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Accordion rijen — zelfde hoogte en breedte, klapbaar</div>
+                    <div class="item-detail">Vragen staan als verticale blokken met gelijke opmaak, klikken opent het antwoord zonder paginaverversing.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Zoekbalk bovenaan de hero</div>
+                    <div class="item-detail">Witte zoekbalk met icoon, gecentreerd boven de filterpills.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Filterpills: Alles, Kosten, Werkwijze, Kwaliteit, Duurzaamheid, Contract</div>
+                    <div class="item-detail">Pills aangepast aan wireframe-categorieën. Actieve pill is wit, inactieve zijn transparant. Klikken filtert de FAQ-groepen via data-category.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== DIENSTEN OVERZICHT ===== -->
+    <div class="page-section">
+        <h2>Diensten overzichtspagina (/diensten)</h2>
+        <div class="card">
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Hero-afbeelding positie: hoofd en ogen zichtbaar</div>
+                    <div class="item-detail">background-position: center top — zorgt dat het gezicht zichtbaar blijft in de hero.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Breadcrumb ziet er niet meer uit als navigatiebalk</div>
+                    <div class="item-detail">Eenvoudige inline breadcrumb tekst: Home › Diensten, zonder knoppen of achtergrond.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Servicekaarten in grid — foto's niet uitgerekt</div>
+                    <div class="item-detail">Kaarten hebben vaste hoogte (260px) met background-size: cover. Dienstnaam staat links onderin elke kaart met hover-overlay effect.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Vergelijkingsblokken: alleen witte vinkjes</div>
+                    <div class="item-detail">Blauwe vinkjes verwijderd. Spotlezz-kolom heeft witte ✓ iconen, andere kolom heeft grijze × iconen.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">"Onze Aanpak" pill volledig zichtbaar op Spotlezz-kaart</div>
+                    <div class="item-detail">Pill toegevoegd bovenaan de Spotlezz-kaart op zowel index.html als diensten/index.html — volledig leesbaar met witte tekst op transparante achtergrond.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Offerte-knop onder de tabel verwijderd / Spotlezz-rij omhoog</div>
+                    <div class="item-detail">De losse offerte-knop ónder de vergelijkingstabel is verwijderd. De knop staat nu netjes ín de tabel sectie.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== OVER ONS ===== -->
+    <div class="page-section">
+        <h2>Over ons (/over-ons)</h2>
+        <div class="card">
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Eerste foto beter gepositioneerd</div>
+                    <div class="item-detail">object-position: center center — foto is nu herkenbaar en laat het onderwerp zien.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Secties 7 (Reviews), 8 (Medewerker), 9 (Klantcases) toegevoegd</div>
+                    <div class="item-detail">Dezelfde secties uit de servicewireframe zijn onderaan de Over ons-pagina toegevoegd.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== QUOTATIE PAGINA ===== -->
+    <div class="page-section">
+        <h2>Offerteaanvraag (/quote)</h2>
+        <div class="card">
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Cijfers links zonder foto-achtergrond</div>
+                    <div class="item-detail">Foto verwijderd. Statistieken (4,8/5, 87+, 94%, 98%) staan als grote oranje getallen links naast het formulier.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Secties 8 (Medewerker) en 9 (Klantcases) toegevoegd</div>
+                    <div class="item-detail">Onderaan de quotepagina staan nu de medewerker-sectie en de twee klantcases.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Spotlezz Checklist CTA vervangen door telefoon CTA</div>
+                    <div class="item-detail">Tekst: "Liever even snel bellen? Neem contact op!" met klikbare tel: 036-785 7028 knop.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+        </div>
+    </div>
+    <!-- ===== HOMEPAGE ===== -->
+    <div class="page-section">
+        <h2>Homepage (/index.html)</h2>
+        <div class="card">
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Diensten layout gewijzigd naar twee assen (Sectie 4)</div>
+                    <div class="item-detail">Branches en diensten zijn visueel gescheiden. Bovenste as toont de 6 branches (Kantoor, Hotel, Showroom, Sportschool, Kinderopvang, VvE) in een strak, klikbaar bento-grid.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Tweede Diensten-as toegevoegd (Sectie 4)</div>
+                    <div class="item-detail">Nieuw grid toegevoegd onder de branches met 4 specifieke diensten: Glasbewassing, Vloeronderhoud, Opleveringsschoonmaak, Hygieneservice, elk met een passend icoon (ph-drop, ph-sparkle, etc.).</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Oprichter aan het woord sectie (Sectie 8)</div>
+                    <div class="item-detail">Split-layout gebouwd vlak boven het werkgebiedblok. Links een grote tekstkaart met een krachtige quote van Thirza Mac Donald over de Spotlezz belofte.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">EEAT toevoegingen in de Oprichter sectie (Sectie 8)</div>
+                    <div class="item-detail">Profielfoto van de oprichter, functieomschrijving ("Oprichter Spotlezz") en een werkende link naar haar LinkedIn-profiel toegevoegd om autoriteit op te bouwen.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Sfeerfoto Oprichter op locatie (Sectie 8)</div>
+                    <div class="item-detail">Rechterkant van de sectie bevat een grote (400px hoog) professionele foto van de werkzaamheden op locatie, conform de wireframe styling.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== KLANTCASES ===== -->
+    <div class="page-section">
+        <h2>Klantcases (/klantcases/.../index.html)</h2>
+        <div class="card">
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">3 Unieke Case Pagina's gegenereerd</div>
+                    <div class="item-detail">Nieuwe pagina's voor Kobelco, KuchenTreff en Arena Gym aangemaakt, exact gebaseerd op wireframe-2-klantcase.html.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Hero sectie met harde feiten (Sectie 2)</div>
+                    <div class="item-detail">Grid layout met ruimte voor het Klant Logo, een dynamische H1 ("Schoonmaak voor [Klant]"), en 3 directe statistieken: Branche, Locatie, Klant sinds.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Meetbare Feitenbalk (Sectie 3)</div>
+                    <div class="item-detail">Horizontale balk met 4 meetbare waarden: Vloeroppervlak, Frequentie, Producten (eco/streeploos), en Resultaat over 18 maanden (bv. 0 klachten).</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">STAR-structuur (Sectie 4)</div>
+                    <div class="item-detail">Vaste vierdeling voor de case tekst: Situatie, Uitdaging, Aanpak en Resultaat. Opgebouwd met visuele lijnen aan de linkerkant voor leesbaarheid.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Klantquote met profiel (Sectie 5)</div>
+                    <div class="item-detail">Groot quoteblok met een citaat. Daaronder een profielfoto/initiaal, naam, functie, en een verifieerbare LinkedIn-link van de contactpersoon.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Gebruikte diensten (Sectie 6)</div>
+                    <div class="item-detail">Links die commercieel omhoog verwijzen naar de geleverde dienst-pillars (bv. Kantoorschoonmaak, Glasbewassing) met een duidelijke blauwe pijl.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Next-hop bar met 3 routes (Sectie 7)</div>
+                    <div class="item-detail">Precies 3 acties geconfigureerd: Omhoog naar de Pillar, Zijwaarts naar de volgende case én de locatiepagina (bv. Schoonmaakbedrijf Almere), en Conversie (Offerte).</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Perfecte SEO 5-delige Schema Markup (Sectie 7/8)</div>
+                    <div class="item-detail">JSON-LD ingesloten met precies: Article (voor de case), Review (voor de quote), Organization (voor het klantbedrijf), Person (met sameAs LinkedIn), en BreadcrumbList.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== LOCATIEPAGINA ===== -->
+    <div class="page-section">
+        <h2>Locatiepagina (/locaties/almere)</h2>
+        <div class="card">
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Foutief Schema verwijderd</div>
+                    <div class="item-detail">Het onjuiste WebPage schema in de head van de Almere locatiepagina is compleet weggehaald.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">LocalBusiness Schema Markup toegevoegd</div>
+                    <div class="item-detail">Correct LocalBusiness schema ingebouwd met specifieke NAP data (Name, Address, Phone) passend bij Spotlezz Almere.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+            <div class="item">
+                <div class="icon done">✓</div>
+                <div class="item-body">
+                    <div class="item-title">Lokale focus via areaServed property</div>
+                    <div class="item-detail">De areaServed array toegevoegd om hyperlokaal te ranken op de wijken: Almere Stad, Almere Buiten, Almere Haven en Almere Poort.</div>
+                </div>
+                <span class="badge done">Gedaan</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

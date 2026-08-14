@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klantcase: KuchenTreff | Spotlezz</title>
+  <meta name="description" content="Lees de Spotlezz klantcase over KuchenTreff. Wij verzorgen de schoonmaak in Lelystad voor de branche Showroom.">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Klantcase: KuchenTreff",
+      "author": {
+        "@type": "Organization",
+        "name": "Spotlezz"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Lisa de Groot",
+        "sameAs": "https://linkedin.com/"
+      },
+      "itemReviewed": {
+        "@type": "Organization",
+        "name": "Spotlezz"
+      },
+      "reviewBody": "Een streeploze showroom is ons visitekaartje. Spotlezz snapt dit als geen ander en levert altijd de hoogste kwaliteit af."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "KuchenTreff",
+      "url": "https://KuchenTreff.nl"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lisa de Groot",
+      "jobTitle": "Showroom Manager, KuchenTreff",
+      "sameAs": "https://linkedin.com/"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://spotlezz.nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Klantcases",
+          "item": "https://spotlezz.nl/klantcases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "KuchenTreff"
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <link rel="stylesheet" href="../../style.css">
+  
+  <style>
+    .case-hero { padding: 60px 5%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px; align-items: flex-start; }
+    .case-hero h1 { font-size: 38px; font-weight: 800; color: var(--nacht); margin-bottom: 20px; font-family: 'Montserrat', sans-serif; }
+    .case-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 25px; }
+    .c-stat { background: #fff; border: 1px solid #E1E4EA; border-radius: 4px; padding: 10px 6px; text-align: center; }
+    .c-stat b { display: block; font-size: 15px; font-weight: 700; color: var(--nacht); font-family: 'Montserrat', sans-serif; }
+    .c-stat span { font-size: 9.5px; color: #7C8595; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+    
+    .feitenbalk { background: #fff; padding: 0 5%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 0 auto 40px; max-width: 1200px; }
+    
+    .star-structuur { max-width: 800px; margin: 60px auto; }
+    .star-block { background: #fff; border: 1px solid #E1E4EA; padding: 25px; margin-bottom: 8px; border-radius: 4px; border-left: 2px solid var(--vuur); }
+    .star-block h3 { font-size: 12px; font-weight: 700; margin-bottom: 10px; color: #6B7280; text-transform: uppercase; letter-spacing: .05em; }
+    .star-block p { color: #4B5563; font-size: 15px; line-height: 1.7; }
+    
+    .case-quote { max-width: 800px; margin: 60px auto; background: #fff; border-left: 3px solid var(--vuur); border-radius: 0 4px 4px 0; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+    
+    .diensten-gebruikt { max-width: 1200px; margin: 60px auto; padding: 0 5%; }
+    .dg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 15px; }
+    .dg-card { background: var(--block); border: 1px dashed var(--line); padding: 12px; border-radius: 4px; font-size: 14px; font-weight: 600; color: var(--nacht); text-decoration: none; }
+    .dg-card span { display: block; font-size: 10.5px; color: var(--klik); margin-top: 6px; font-weight: 700; }
+    
+    .next-hop-bar { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 8px; background: var(--nacht); padding: 10px; border-radius: 5px; max-width: 1200px; margin: 0 auto; }
+    .hop-item { background: #1C1E30; border-radius: 4px; padding: 15px; color: #C9CDDC; font-size: 13px; text-decoration: none; transition: background 0.3s; display: flex; flex-direction: column; justify-content: center; }
+    .hop-item:hover { background: #2A2D43; }
+    .hop-item b { display: block; color: #fff; font-size: 13px; margin-bottom: 4px; font-weight: 700; }
+    .hop-item.conversie { background: var(--vuur); color: #fff; }
+    .hop-item.conversie b { color: #fff; }
+    .hop-item.conversie:hover { opacity: 0.9; }
+    
+    @media (max-width: 900px) {
+        .case-hero, .feitenbalk, .dg-grid, .next-hop-bar { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body style="background: var(--canvas);">
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="usp">
+    <span>Innovatief en flexibel</span>
+    <span>Jarenlange ervaring</span>
+    <a href="#" class="top-bar-review-link">
+      <i class="ph-fill ph-google-logo" style="color: #4285F4;"></i> Beoordeeld met 4.8/5 sterren
+    </a>
+  </div>
+  <div class="contact-info">
+    <a href="tel:0367857028"><span style="font-weight: 600; margin-right: 4px;">T:</span> 036-785 7028</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header style="background: #fff; border-bottom: 1px solid #E1E4EA;">
+  <div class="logo">
+    <a href="../../index.html"><img src="https://spotlezz.nl/wp-content/uploads/2026/01/2027.png" alt="Spotlezz Logo"></a>
+  </div>
+  <nav>
+    <div class="dropdown">
+      <a href="../../diensten/index.html" class="dropbtn">Diensten <i class="ph ph-caret-down"></i></a>
+      <div class="dropdown-content">
+        <a href="../../diensten/kantoor-schoonmaak/index.html">Kantoor schoonmaak</a>
+        <a href="../../diensten/hotel-schoonmaak/index.html">Hotel schoonmaak</a>
+        <a href="../../diensten/showroom-schoonmaak/index.html">Showroom schoonmaak</a>
+        <a href="../../diensten/fitnesscentrum-schoonmaak/index.html">Fitnesscentrum schoonmaak</a>
+        <a href="../../diensten/kinderopvang-schoonmaak/index.html">Kinderopvang schoonmaak</a>
+        <a href="../../diensten/vve-schoonmaak/index.html">VvE schoonmaak</a>
+      </div>
+    </div>
+    <a href="../../klantcases/index.html">Klantcases</a>
+    <a href="../../locaties/almere/index.html">Locaties</a>
+    <a href="../../veelgestelde-vragen/index.html">Veelgestelde vragen</a>
+    <a href="../../over-ons/index.html">Over ons</a>
+    <a href="../../contact/index.html">Contact</a>
+  </nav>
+  <div class="header-ctas">
+    <a href="../../quote/index.html" class="btn btn-orange">Offerte aanvragen</a>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumbs" style="margin: 20px 5% 0; max-width: 1200px; margin-left: auto; margin-right: auto; display: flex; justify-content: space-between; align-items: center;">
+  <div style="font-size: 11px; color: #6B7280; font-weight: 500;"><a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> &rsaquo; <a href="../index.html" style="color: inherit; text-decoration: none;">Klantcases</a> &rsaquo; <b style="color: var(--nacht);">KuchenTreff</b></div>
+  <div style="font-size: 10.5px; color: #6B7280;"><span style="color: var(--vuur);">★★★★★</span> 4,8/5 &middot; 87 beoordelingen &middot; 036-785 7028</div>
+</div>
+
+<!-- HERO -->
+<section class="case-hero reveal">
+  <div>
+    <div style="width: 120px; height: 38px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #7C8595; background: var(--block); border: 1px dashed var(--line); border-radius: 4px; margin-bottom: 20px; font-weight: 700;">LOGO KuchenTreff</div>
+    <h1 style="font-size: 34px; font-weight: 700; margin-top: 12px; line-height: 1.2;">Schoonmaak voor KuchenTreff</h1>
+    <div class="case-stats">
+      <div class="c-stat"><b>Showroom</b><span>Branche</span></div>
+      <div class="c-stat"><b>Lelystad</b><span>Locatie</span></div>
+      <div class="c-stat"><b>2023</b><span>Klant sinds</span></div>
+    </div>
+  </div>
+  <div style="min-height: 250px; border-radius: 6px; overflow: hidden; background-image: url('https://spotlezz.nl/wp-content/uploads/2026/03/sr3-1024x665.jpg'); background-size: cover; background-position: center; border: 1px solid #E1E4EA;"></div>
+</section>
+
+<!-- FEITENBALK -->
+<section class="reveal">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+    <div style="font-size: 9.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #7C8595; margin-bottom: 7px;">Feitenbalk</div>
+  </div>
+  <div class="feitenbalk">
+    <div class="c-stat" style="border-radius: 4px; padding: 10px 6px;"><b>1.200 m²</b><span>Vloeroppervlak</span></div>
+    <div class="c-stat" style="border-radius: 4px; padding: 10px 6px;"><b>3x per week</b><span>Frequentie</span></div>
+    <div class="c-stat" style="border-radius: 4px; padding: 10px 6px;"><b>Streeploos / Eco</b><span>Producten</span></div>
+    <div class="c-stat" style="border-radius: 4px; padding: 10px 6px;"><b>100% tevreden</b><span>In 18 maanden</span></div>
+  </div>
+</section>
+
+<!-- STAR STRUCTUUR -->
+<section style="padding: 0 5%;" class="reveal">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <div style="font-size: 9.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #7C8595; margin-bottom: 7px;">STAR-structuur</div>
+  </div>
+  <div class="star-structuur" style="margin-top: 0;">
+    <div class="star-block">
+      <h3>De Situatie: wat was er aan de hand voor Spotlezz?</h3>
+      <p>De keukenshowroom van KuchenTreff wordt dagelijks door tientallen potentiële klanten bezocht. Stof en vingerafdrukken op hoogglans keukens waren een groot probleem.</p>
+    </div>
+    <div class="star-block">
+      <h3>De Uitdaging: wat maakte dit lastig?</h3>
+      <p>Het leveren van een absolute showroom-glans. Vingerafdrukken op gitzwarte, matte of hoogglans keukens vereisen specifieke middelen en een oog voor detail.</p>
+    </div>
+    <div class="star-block">
+      <h3>Onze Aanpak: vast team, schoonmaakplan, wekelijkse controles</h3>
+      <p>Onze specialisten maken gebruik van microvezeltechniek en streeploze ecologische reinigingsmiddelen. Het vaste team controleert elke showopstelling minutieus.</p>
+    </div>
+    <div class="star-block">
+      <h3>Het Resultaat: meetbaar, met cijfers en contractverlenging</h3>
+      <p>De showroom ziet er elke ochtend weer uitnodigend en onberispelijk uit. Dit draagt direct bij aan de beleving van de klant en ondersteunt de verkopers in hun werk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KLANT QUOTE -->
+<section style="padding: 0 5%;" class="reveal">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <div style="font-size: 9.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #7C8595; margin-bottom: 7px;">Klantquote (groot)</div>
+  </div>
+  <div class="case-quote" style="margin-top: 0;">
+    <p style="font-size: 18px; font-weight: 500; font-style: normal; line-height: 1.5; color: var(--nacht); margin-bottom: 20px;">"Een streeploze showroom is ons visitekaartje. Spotlezz snapt dit als geen ander en levert altijd de hoogste kwaliteit af."</p>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="width: 44px; height: 44px; border-radius: 50%; background: #C7CCD6; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; color: #fff;">L</div>
+      <div>
+        <div style="font-weight: 600; font-size: 14px; color: var(--nacht);">Lisa de Groot, Showroom Manager, KuchenTreff</div>
+        <a href="https://linkedin.com" target="_blank" style="font-size: 10.5px; color: #7C8595; text-decoration: none; display: flex; align-items: center; gap: 4px; margin-top: 4px;">🔗 LinkedIn-profiel contactpersoon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GEBRUIKTE DIENSTEN -->
+<section class="diensten-gebruikt reveal" style="margin-bottom: 40px;">
+  <div style="font-size: 9.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #7C8595; margin-bottom: 7px;">Gebruikte diensten</div>
+  <div class="dg-grid" style="margin-top: 0;">
+    <a href="../../diensten/showroom-schoonmaak/index.html" class="dg-card">Showroomschoonmaak <span>→ pillar</span></a>
+<a href="../../diensten/index.html" class="dg-card">Glasbewassing <span>→ pillar</span></a>
+
+  </div>
+</section>
+
+<!-- NEXT HOP BAR -->
+<section style="padding: 0 5% 80px;" class="reveal">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="font-size: 9.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #7C8595; margin-bottom: 7px;">Next-hop bar &middot; exact 3 routes</div>
+  </div>
+  <div class="next-hop-bar">
+    <a href="../../diensten/showroom-schoonmaak/index.html" class="hop-item">
+      <b>↑ Omhoog</b>
+      Showroomschoonmaak
+    </a>
+    <div class="hop-item" style="display: flex; flex-direction: column; justify-content: center; background: #1C1E30;">
+      <b>→ Zijwaarts</b>
+      <div style="display: flex; gap: 8px;">
+        <a href="../arena-gym/index.html" style="color: #C9CDDC; text-decoration: none;">Volgende case</a> &middot; 
+        <a href="../../locaties/lelystad/index.html" style="color: #C9CDDC; text-decoration: none;">Schoonmaakbedrijf Lelystad</a>
+      </div>
+    </div>
+    <a href="../../quote/index.html" class="hop-item conversie">
+      <b>▶ Conversie</b>
+      Ook zo'n resultaat? Offerte aanvragen
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" style="background: #fff; border-top: 1px solid #E1E4EA; margin-top: 40px;">
+  <div class="footer-bottom">
+    <div class="footer-container" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; max-width: 1200px; margin: 0 auto; color: #6B7280; font-size: 13px;">
+      <p>&copy; 2026 Spotlezz. Alle rechten voorbehouden.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../../script.js"></script>
+</body>
+</html>
