@@ -16,9 +16,9 @@ export const LOCATION_CONTENT = {
     h1: 'Schoonmaakbedrijf Almere',
     title: 'Schoonmaakbedrijf Almere voor kantoren, hotels en VvE | Spotlezz',
     description: 'Schoonmaakbedrijf in Almere met vaste teams in Stad, Buiten, Haven en Poort. Binnen 12 uur een afspraak. Bekijk ons werkgebied en lokale klanten.',
-    intro: 'Almere is onze thuisbasis. Wij rijden hier dagelijks door alle vier de stadsdelen en kennen de bedrijventerreinen, de aanrijtijden en de spitsdrukte op de Hogering uit ervaring in plaats van uit een routeplanner.',
+    intro: 'Almere is onze thuisbasis. Onze hoofdvestiging staat aan het Spinnakerplantsoen en wij rijden hier dagelijks door alle vier de stadsdelen. De bedrijventerreinen, de aanrijtijden en de spitsdrukte op de Hogering kennen wij uit ervaring in plaats van uit een routeplanner.',
     answer:
-      'Spotlezz is een zakelijk schoonmaakbedrijf uit Almere en werkt in Almere Stad, Almere Buiten, Almere Haven en Almere Poort. Wij maken kantoren, hotels, showrooms, sportscholen, kinderopvang en VvE-complexen schoon met vaste teams. Binnen 12 uur na uw aanvraag staat er een afspraak.',
+      'Spotlezz is een zakelijk schoonmaakbedrijf met de hoofdvestiging in Almere en werkt in Almere Stad, Almere Buiten, Almere Haven en Almere Poort. Wij maken kantoren, hotels, showrooms, sportscholen, kinderopvang en VvE-complexen schoon met vaste teams. Binnen 12 uur na uw aanvraag staat er een afspraak.',
     facts: [
       { value: '4 stadsdelen', label: 'Dekking' },
       { value: '< 12 uur', label: 'Reactietijd' },
@@ -103,12 +103,12 @@ export const LOCATION_CONTENT = {
   amsterdam: {
     h1: 'Schoonmaakbedrijf Amsterdam',
     title: 'Schoonmaakbedrijf Amsterdam voor kantoren en hotels | Spotlezz',
-    description: 'Schoonmaakbedrijf in Amsterdam voor kantoren, hotels en showrooms. Bezoekadres in Amsterdam, vaste teams, binnen 12 uur een afspraak.',
-    intro: 'Ons bezoekadres staat in Amsterdam en wij werken hier voor kantoren, hotels en showrooms. Amsterdam vraagt om andere planning dan Flevoland: laden en lossen, venstertijden en betaald parkeren bepalen mede hoe een ronde eruitziet.',
+    description: 'Schoonmaakbedrijf in Amsterdam voor kantoren, hotels en showrooms. Vaste teams vanuit Almere, binnen 12 uur een afspraak.',
+    intro: 'Wij werken in Amsterdam voor kantoren, hotels en showrooms. De stad vraagt om andere planning dan Flevoland: laden en lossen, venstertijden en betaald parkeren bepalen mede hoe een ronde eruitziet.',
     answer:
-      'Spotlezz werkt in Amsterdam voor kantoren, hotels, showrooms en bedrijfspanden. Ons bezoekadres is Kiekstraat 59 in Amsterdam. Wij stemmen de rondes af op venstertijden en bereikbaarheid per stadsdeel, en binnen 12 uur na uw aanvraag staat er een afspraak.',
+      'Spotlezz werkt in Amsterdam voor kantoren, hotels, showrooms en bedrijfspanden. Onze teams rijden vanuit de hoofdvestiging in Almere en werken per stadsdeel in vaste clusters. Wij stemmen de rondes af op venstertijden en bereikbaarheid, en binnen 12 uur na uw aanvraag staat er een afspraak.',
     facts: [
-      { value: 'Bezoekadres', label: 'Kiekstraat 59' },
+      { value: '30 min', label: 'Vanaf Almere' },
       { value: '< 12 uur', label: 'Reactietijd' },
       { value: 'Venstertijden', label: 'Ingepland' },
       { value: '87', label: 'Beoordelingen' },
@@ -129,11 +129,11 @@ export const LOCATION_CONTENT = {
       'Bereikbaarheid is het tweede planningspunt. In grote delen van de stad geldt betaald parkeren en op sommige plekken een venstertijd voor laden en lossen. Voor het aanvoeren van machines bij vloeronderhoud of een glasbewassing met hoogwerker moet dat vooraf geregeld zijn, inclusief een eventuele vergunning voor het plaatsen op de openbare weg. Bij panden in het centrum plannen wij dat soort werk daarom bij voorkeur in het weekend.',
       'Hotels zijn in Amsterdam een aparte tak. Daar werkt de kamerschoonmaak in het venster tussen check-out en check-in, en de publieke ruimtes in de rustige uren van de dag. Bij een hoge bezetting schalen wij het team op die dag op in plaats van de rondes in te korten, want een half gedane kamer valt een gast eerder op dan een kamer die een uur later klaar is.',
       'Voor showrooms in en rond de stad geldt dat glas het belangrijkste onderdeel is. Grote glaspartijen aan een drukke weg vervuilen hier sneller dan in Flevoland, simpelweg door de verkeersintensiteit. Wij rijden op die adressen een kortere glascyclus dan wij elders zouden voorstellen.',
-      'Ons bezoekadres aan de Kiekstraat is het administratieve adres van Spotlezz en geen inlooplocatie voor klanten. Afspraken maken wij altijd op uw eigen locatie, omdat wij een offerte pas kunnen onderbouwen als wij het pand hebben gezien.',
+      'Onze hoofdvestiging staat in Almere, aan het Spinnakerplantsoen. Vanuit daar rijden de teams naar Amsterdam. Een intake doen wij altijd bij u op locatie en niet bij ons, omdat wij een offerte pas kunnen onderbouwen als wij het pand hebben gezien.',
     ],
     faq: [
       { q: 'Hebben jullie een vestiging in Amsterdam?',
-        a: 'Ons bezoekadres is Kiekstraat 59 in Amsterdam. Dat is het administratieve adres en geen inlooplocatie. Intakes doen wij altijd bij u op locatie, omdat wij een offerte pas kunnen onderbouwen als wij het pand hebben gezien.' },
+        a: 'Nee, onze hoofdvestiging staat in Almere aan het Spinnakerplantsoen. Onze teams rijden vanuit daar naar Amsterdam. Intakes doen wij altijd bij u op locatie, omdat wij een offerte pas kunnen onderbouwen als wij het pand hebben gezien.' },
       { q: 'Hoe gaan jullie om met venstertijden en parkeren?',
         a: 'Voor reguliere rondes is dat zelden een probleem. Voor werk met machines, zoals vloeronderhoud of glasbewassing met een hoogwerker, regelen wij de toegang vooraf en plannen wij in het centrum bij voorkeur in het weekend.' },
       { q: 'Werken jullie ook voor hotels in Amsterdam?',

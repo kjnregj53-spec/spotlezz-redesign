@@ -54,6 +54,19 @@ gaat. Het gaat om:
 
 Deze staan in `build/content-services.mjs` en `build/content-locations.mjs`.
 
+## 3b. Postcode van de hoofdvestiging
+
+Het adres staat nu overal als **Spinnakerplantsoen 38, Almere**, met KVK
+42089069, en Almere is als hoofdvestiging aangemerkt. Wat nog ontbreekt is de
+postcode. Die staat bewust nergens ingevuld in plaats van geraden.
+
+Geef de postcode door, dan komt hij in `build/site.mjs` bij `SITE.address` en
+verschijnt hij automatisch in het NAP-blok, de footer en het LocalBusiness-schema.
+
+Controleer daarbij of de gegevens exact overeenkomen met het Google
+Bedrijfsprofiel. Een NAP die op een teken afwijkt van het profiel kost lokale
+zichtbaarheid.
+
 ## 4. LinkedIn-profielen en de portretfoto
 
 De LinkedIn-links stonden op `#` en op het algemene `https://linkedin.com`. Die

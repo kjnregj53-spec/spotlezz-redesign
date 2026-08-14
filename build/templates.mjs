@@ -6,7 +6,7 @@
 import {
   SITE, BRANCHES, SERVICES, ALL_SERVICES, CITIES, CASES, REVIEWS,
   esc, jsonld, organizationNode, founderNode, ratingWithReviews, breadcrumbNode,
-  ORG_ID, FOUNDER_ID,
+  ORG_ID, FOUNDER_ID, addressLine, postalAddress,
   head, skipLink, topBar, header, mobileNav, breadcrumb, nextHop, footer,
   stickyCta, scripts, contactForm, quickQuoteForm, checklistForm,
   answerBlock, reviewBlock, faqAccordion, faqSchema, regionBlock,
@@ -289,16 +289,14 @@ ${wijken.map((w) => `    <a href="/locaties/${w.slug}/" class="pill">${esc(w.nam
 
   const andere = CITIES.filter((x) => x.slug !== slug && (isWijk ? true : x.type === 'stad' || x.parent === 'almere'));
 
-  // Spotlezz heeft een bezoekadres in Amsterdam en verder geen vestigingen.
-  // Dat eerlijk benoemen is beter dan op elke stadspagina hetzelfde adres
-  // tonen alsof het een lokaal filiaal is.
-  const adres = `${esc(SITE.address.street)}, ${esc(SITE.address.postalCode)} ${esc(SITE.address.city)}`;
+  // De hoofdvestiging staat in Almere. Op de Almeerse pagina's is dat het
+  // bezoekadres, elders benoemen wij het als hoofdvestiging waar de teams
+  // vandaan rijden. Nooit hetzelfde adres tonen alsof het een lokaal filiaal is.
+  const adres = esc(addressLine());
   const isAlmere = slug === 'almere' || ct.parent === 'almere';
-  const napAdres = slug === 'amsterdam'
+  const napAdres = isAlmere
     ? `<li><strong>Bezoekadres</strong> ${adres}</li>`
-    : isAlmere
-      ? `<li><strong>Standplaats</strong> Onze teams rijden vanuit Almere. Postadres: ${adres}.</li>`
-      : `<li><strong>Hoofdkantoor</strong> ${adres}. Wij hebben geen vestiging in ${esc(ct.name)}; onze teams rijden hiernaartoe vanuit Almere.</li>`;
+    : `<li><strong>Hoofdvestiging</strong> ${adres}. Onze teams rijden vanuit Almere naar ${esc(ct.name)}.</li>`;
 
   const ld = jsonld({
     '@context': 'https://schema.org',
@@ -317,13 +315,7 @@ ${wijken.map((w) => `    <a href="/locaties/${w.slug}/" class="pill">${esc(w.nam
         email: SITE.email,
         priceRange: '$$',
         image: SITE.origin + '/images/team-aan-het-werk.jpg',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: SITE.address.street,
-          postalCode: SITE.address.postalCode,
-          addressLocality: SITE.address.city,
-          addressCountry: SITE.address.country,
-        },
+        address: postalAddress(),
         areaServed: { '@type': isWijk ? 'Place' : 'City', name: ct.name },
         openingHoursSpecification: [{
           '@type': 'OpeningHoursSpecification',

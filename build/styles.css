@@ -592,6 +592,102 @@ header .logo { flex: none; }
 
 nav a.is-current { color: var(--accent-orange); }
 
+/* --- lange woorden ------------------------------------------------------
+   "Schoonmaakbedrijf" en "Opleveringsschoonmaak" passen op smallere kolommen
+   niet op een regel en liepen dan buiten hun container. Nederlands afbreken
+   werkt hier omdat <html lang="nl"> is gezet.
+   ---------------------------------------------------------------------- */
+
+h1, h2, h3, h4, .branche-label, .work-tile h3, .proof-body h3 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.hero-content h1 { max-width: 100%; }
+
+/* --- branchekaarten -----------------------------------------------------
+   De labels stonden op white-space: nowrap binnen een kaart met
+   overflow: hidden, waardoor "Showroom schoonmaak" werd afgeknipt tot
+   "howroom schoonmaak". Nu schaalt de tekst mee en mag hij afbreken.
+   ---------------------------------------------------------------------- */
+
+.branche-label {
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  font-size: clamp(14px, 1.35vw, 18px);
+  line-height: 1.25;
+  white-space: normal;
+  gap: 6px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+.branche-arrow { flex: none; }
+.branche-scrim {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.12) 45%, transparent 70%);
+}
+
+/* --- compacter ----------------------------------------------------------
+   De losse secties stonden op 80 tot 100px verticale padding. Bij elkaar gaf
+   dat een pagina die vooral uit witruimte bestond.
+   ---------------------------------------------------------------------- */
+
+.work-block, .steps-block, .compare-block, .proof-block, .faq-block,
+.region-block, .prose-block, .photo-row, .review-section, .person-block {
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+.hub-hero { padding-top: 34px; padding-bottom: 22px; }
+.pillar-hero, .loc-hero { padding-top: 34px; padding-bottom: 30px; gap: 34px; }
+.answer-inner { padding-top: 28px; padding-bottom: 28px; }
+.qa-page { padding-top: 28px; }
+.short-answer { margin-bottom: 30px; }
+.factor-block { margin-bottom: 30px; }
+.next-hop-section { margin-top: 18px; padding-bottom: 40px; }
+
+/* Bestaande secties uit de oorspronkelijke opzet */
+section.comparison-section,
+section.checklist-cta-section,
+section.clients-ticker-section,
+section.ks-reviews,
+section.portfolio-section,
+section.clean-kwaliteit-section,
+section.mensenwerk-section,
+section.werkgebieden-section,
+section.faq-section,
+section.contact-section,
+section.lead-magnet-section,
+#diensten {
+  padding-top: 44px !important;
+  padding-bottom: 44px !important;
+}
+
+.branche-grid { margin-bottom: 28px !important; }
+
+/* De reveal-animatie mag de layout niet uit elkaar trekken */
+.reveal { transition-duration: 0.45s; }
+
+@media (max-width: 900px) {
+  .work-block, .steps-block, .compare-block, .proof-block, .faq-block,
+  .region-block, .prose-block, .photo-row, .review-section, .person-block {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+  section.comparison-section,
+  section.checklist-cta-section,
+  section.clients-ticker-section,
+  section.ks-reviews,
+  section.portfolio-section,
+  section.clean-kwaliteit-section,
+  section.mensenwerk-section,
+  section.werkgebieden-section,
+  section.faq-section,
+  section.contact-section,
+  section.lead-magnet-section,
+  #diensten {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+
 /* --- print ------------------------------------------------------------- */
 
 @media print {

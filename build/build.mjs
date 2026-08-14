@@ -30,7 +30,7 @@ import {
   servicePage, locationPage, locationsHub, faqHub, faqDetailPage, reviewsPage,
 } from './templates.mjs';
 
-import { FAQ_DETAILS, faqForService, HOME_FAQ } from './content-faq.mjs';
+import { FAQ_DETAILS, faqForService, HOME_FAQ, ALL_FAQ } from './content-faq.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..', 'spotlezz.vercel.app');
@@ -242,6 +242,79 @@ async function fixImages(html) {
   return html;
 }
 
+/**
+ * Vaste lettergroottes in inline styles maken vloeiend. De hero stond op een
+ * harde 64px, waardoor de kop op een smal scherm buiten zijn container liep en
+ * je alleen de eerste helft van het woord zag.
+ */
+function fluidType(html) {
+  return html.replace(/font-size:\s*(\d+)px/gi, (m, px) => {
+    const n = parseInt(px, 10);
+    if (n < 30) return m;
+    const min = Math.max(20, Math.round(n * 0.52));
+    const pref = (n / 12).toFixed(1);
+    return `font-size: clamp(${min}px, ${pref}vw, ${n}px)`;
+  });
+}
+
+/**
+ * De homepage droeg negentien FAQ-vragen. Volgens het wireframe horen daar
+ * er vijf te staan, met de rest op de hub. Dat scheelde ruim 2.800 pixels
+ * pagina en haalt de dubbeling met /veelgestelde-vragen/ weg.
+ */
+function trimHomeFaq(html) {
+  const start = html.search(/<div class="faq-right">/);
+  if (start === -1) return html;
+  const end = blockEnd(html, start, 'div');
+  const vervanging = `<div class="faq-right">
+${faqAccordion(HOME_FAQ, { idPrefix: 'home-faq' })}
+      <p class="faq-more"><a href="/veelgestelde-vragen/">Bekijk alle veelgestelde vragen</a></p>
+    </div>`;
+  return html.slice(0, start) + vervanging + html.slice(end);
+}
+
+/**
+ * Het oprichtersblok stond twee keer op de homepage, met twee verschillende
+ * citaten van dezelfde persoon achter elkaar. Dat leest als een bouwfout.
+ * Wij houden de versie met de doorklik naar het team.
+ */
+function removeDuplicateFounder(html) {
+  const r = cutBlock(html, /<section class="mensenwerk-section[^"]*"/i, 'section');
+  return r.html;
+}
+
+/**
+ * Verticale padding in inline styles terugbrengen. Verschillende secties
+ * stonden op 80 tot 100 pixels boven en onder, wat bij elkaar een pagina gaf
+ * die vooral uit witruimte bestond. Horizontale padding blijft ongemoeid.
+ */
+function compactInlinePadding(html) {
+  return html.replace(/padding:\s*(\d+)px\s+([^;"']+)/gi, (m, top, rest) => {
+    const px = parseInt(top, 10);
+    if (px < 60) return m;
+    return `padding: 44px ${rest}`;
+  });
+}
+
+/**
+ * De branchekaarten op de homepage waren alleen een foto met een aria-label.
+ * Er stond geen zichtbare tekst op, terwijl de stylesheet daar wel een
+ * .branche-label voor heeft. Zonder tekst is het voor een bezoeker gokken
+ * waar hij op klikt en heeft de link geen anchortekst.
+ */
+function addBrancheLabels(html) {
+  return html.replace(
+    /<a href="\/diensten\/([a-z0-9-]+)\/"([^>]*)class="branche-card"([^>]*)>([\s\S]*?)<\/a>/g,
+    (m, slug, pre, post, inner) => {
+      if (inner.includes('branche-label')) return m;
+      const s = ALL_SERVICES.find((x) => x.slug === slug);
+      if (!s) return m;
+      const label = `\n      <span class="branche-label">${esc(s.short)} schoonmaak <span class="branche-arrow" aria-hidden="true">&rarr;</span></span>\n    `;
+      return `<a href="/diensten/${slug}/"${pre}class="branche-card"${post}>${inner}${label}</a>`;
+    }
+  );
+}
+
 /** Verwijdert wireframe-labels die als echte tekst zijn meegeleverd. */
 function stripPlaceholders(html) {
   const drops = [
@@ -260,6 +333,10 @@ function stripPlaceholders(html) {
     /&#8594;\s*pillar/g,
   ];
   for (const re of drops) html = html.replace(re, '');
+
+  // De vergelijkkaart droeg twee keer het label "Onze aanpak": een keer als
+  // inline div en een keer via .compare-spotlezz::before uit de stylesheet.
+  html = html.replace(/<div style="background: rgba\(255,255,255,0\.2\)[^"]*">\s*Onze Aanpak\s*<\/div>\s*/gi, '');
 
   // Bijschriften bij de foto's lazen als instructie aan de bouwer in plaats
   // van als tekst voor de bezoeker.
@@ -652,6 +729,13 @@ async function patchExisting() {
 
     // Links, afbeeldingen, placeholders
     html = rewriteLinks(html, cfg.meta.path);
+    html = addBrancheLabels(html);
+    html = compactInlinePadding(html);
+    html = fluidType(html);
+    if (rel === 'index.html') {
+      html = trimHomeFaq(html);
+      html = removeDuplicateFounder(html);
+    }
     html = stripPlaceholders(html);
     if (cfg.branche) html = fixPhotoPlaceholders(html, cfg.branche.service.toLowerCase());
 
@@ -711,9 +795,14 @@ async function generateNew() {
 async function moveQuotePage() {
   const from = path.join(ROOT, 'quote', 'index.html');
   const to = path.join(ROOT, 'offerte-aanvragen', 'index.html');
-  if (!existsSync(from)) return;
 
-  let html = await readFile(from, 'utf8');
+  // Bij de eerste build komt de bron uit /quote/. Daarna is die map weg en
+  // werken wij verder op /offerte-aanvragen/ zelf, zodat de pagina bij elke
+  // build gewoon meegaat in plaats van te bevriezen op de eerste versie.
+  const bron = existsSync(from) ? from : (existsSync(to) ? to : null);
+  if (!bron) return;
+
+  let html = await readFile(bron, 'utf8');
   const trail = [{ label: 'Home', href: '/' }, { label: 'Offerte aanvragen', href: '/offerte-aanvragen/' }];
 
   html = replaceHead(html, head({
@@ -737,12 +826,14 @@ async function moveQuotePage() {
   html = rewriteLinks(html, '/offerte-aanvragen/');
   html = stripPlaceholders(html);
   html = html.replace(/<a href="#"([^>]*)>([\s\S]*?)<\/a>/g, '<span$1>$2</span>');
+  html = compactInlinePadding(html);
+  html = fluidType(html);
   html = await fixImages(html);
 
   await mkdir(path.dirname(to), { recursive: true });
   await writeFile(to, html, 'utf8');
   await rm(path.join(ROOT, 'quote'), { recursive: true, force: true });
-  log('verplaatst: /quote/ -> /offerte-aanvragen/');
+  log(bron === from ? 'verplaatst: /quote/ -> /offerte-aanvragen/' : 'bijgewerkt: /offerte-aanvragen/');
 }
 
 /* ================================================================== */

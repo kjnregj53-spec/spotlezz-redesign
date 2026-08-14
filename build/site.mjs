@@ -26,10 +26,12 @@ export const SITE = {
   reviewCount: '87',
   googleMaps: 'https://maps.app.goo.gl/7RzGUeLmPhhdLbwo7',
   terms: 'https://spotlezz.nl/wp-content/uploads/2026/07/Algemene-voorwaarden-Spotlezz-BV.pdf',
+  kvk: '42089069',
+  // Hoofdvestiging. Postcode nog aan te vullen, zie build/TE-CONTROLEREN.md.
   address: {
-    street: 'Kiekstraat 59',
-    postalCode: '1087 BR',
-    city: 'Amsterdam',
+    street: 'Spinnakerplantsoen 38',
+    postalCode: '',
+    city: 'Almere',
     country: 'NL',
   },
   openingHours: 'Ma t/m vr 08:00 tot 18:00',
@@ -176,6 +178,23 @@ export const jsonld = (obj) =>
 export const ORG_ID = `${SITE.origin}/#organization`;
 export const FOUNDER_ID = `${SITE.origin}/#thirza`;
 
+/** Adres als losse regel, zonder lege postcode. */
+export const addressLine = () =>
+  [SITE.address.street, [SITE.address.postalCode, SITE.address.city].filter(Boolean).join(' ')]
+    .filter(Boolean).join(', ');
+
+export function postalAddress() {
+  const a = {
+    '@type': 'PostalAddress',
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressRegion: 'Flevoland',
+    addressCountry: SITE.address.country,
+  };
+  if (SITE.address.postalCode) a.postalCode = SITE.address.postalCode;
+  return a;
+}
+
 export function organizationNode() {
   return {
     '@type': ['Organization', 'CleaningService'],
@@ -188,12 +207,12 @@ export function organizationNode() {
     telephone: SITE.phoneIntl,
     email: SITE.email,
     priceRange: '$$',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: SITE.address.street,
-      postalCode: SITE.address.postalCode,
-      addressLocality: SITE.address.city,
-      addressCountry: SITE.address.country,
+    address: postalAddress(),
+    vatID: undefined,
+    identifier: {
+      '@type': 'PropertyValue',
+      propertyID: 'KVK',
+      value: SITE.kvk,
     },
     openingHoursSpecification: [{
       '@type': 'OpeningHoursSpecification',
@@ -423,8 +442,9 @@ export function footer() {
       </div>
       <p class="footer-desc">Het beste schoonmaakbedrijf in<br>Almere en omgeving!</p>
       <div class="footer-nap">
-        <span>${esc(SITE.address.street)}, ${esc(SITE.address.postalCode)} ${esc(SITE.address.city)}</span>
+        <span>${esc(addressLine())}</span>
         <span>${esc(SITE.openingHours)}</span>
+        <span>KVK ${esc(SITE.kvk)}</span>
       </div>
     </div>
 

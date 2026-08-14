@@ -46,10 +46,15 @@
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Kiekstraat 59",
-        "postalCode": "1087 BR",
-        "addressLocality": "Amsterdam",
+        "streetAddress": "Spinnakerplantsoen 38",
+        "addressLocality": "Almere",
+        "addressRegion": "Flevoland",
         "addressCountry": "NL"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "KVK",
+        "value": "42089069"
       },
       "openingHoursSpecification": [
         {
@@ -211,6 +216,7 @@
 <!-- TOP BAR -->
 <a class="skip-link" href="#main">Naar de inhoud</a>
 <a class="skip-link" href="#main">Naar de inhoud</a>
+<a class="skip-link" href="#main">Naar de inhoud</a>
 <div class="top-bar">
   <div class="usp">
     <span>Innovatief en flexibel</span>
@@ -288,6 +294,9 @@
 <main id="main">
 
 
+<main id="main">
+
+
 
 <!-- HEADER -->
 
@@ -306,7 +315,7 @@
     </a>
     
     <p style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #5bc0eb; font-weight: 700;">Voor kantoren, hotels en VvE's</p>
-    <h1 style="font-size: 64px; line-height: 1.1; margin-bottom: 10px; font-weight: 700; font-family: 'Montserrat', sans-serif;">Schoonmaakbedrijf in <span>Almere</span></h1>
+    <h1 style="font-size: clamp(33px, 5.3vw, 64px); line-height: 1.1; margin-bottom: 10px; font-weight: 700; font-family: 'Montserrat', sans-serif;">Schoonmaakbedrijf in <span>Almere</span></h1>
     <h2 style="font-size: 28px; font-weight: 600; color: #fff; margin-bottom: 20px;">Schoon. Schoner. Spotlezz.</h2>
     <p>Professionele bedrijfsschoonmaak met oog voor detail en liefde voor onze planeet. De meest betrouwbare partner voor uw kantoor.</p>
     
@@ -370,33 +379,45 @@
 
 
 <!-- TWO-AXIS SERVICES NAV (BENTO BOX) -->
-<section id="diensten" class="reveal" style="padding: 80px 5%; max-width: 1400px; margin: 0 auto;">
+<section id="diensten" class="reveal" style="padding: 44px 5%; max-width: 1400px; margin: 0 auto;">
   
   <h3 style="font-size: 24px; font-weight: 700; color: var(--klik); margin-bottom: 20px;">Voor wie (branche)</h3>
     <div class="branche-grid">
     <a href="/diensten/kantoor-schoonmaak/" class="branche-card" aria-label="Lees meer over Kantoor schoonmaak">
       <img src="/images/branche-kantoor.jpg" alt="" class="branche-img" width="1024" height="665" loading="lazy" decoding="async">
       <div class="branche-scrim"></div>
+
+      <span class="branche-label">Kantoor schoonmaak <span class="branche-arrow" aria-hidden="true">&rarr;</span></span>
     </a>
     <a href="/diensten/hotel-schoonmaak/" class="branche-card" aria-label="Lees meer over Hotel schoonmaak">
       <img src="/images/case-kuchentreff.jpg" alt="" class="branche-img" width="1024" height="665" loading="lazy" decoding="async">
       <div class="branche-scrim"></div>
+
+      <span class="branche-label">Hotel schoonmaak <span class="branche-arrow" aria-hidden="true">&rarr;</span></span>
     </a>
     <a href="/diensten/showroom-schoonmaak/" class="branche-card" aria-label="Lees meer over Showroom schoonmaak">
       <img src="/images/pand-interieur.jpg" alt="" class="branche-img" width="1024" height="665" loading="lazy" decoding="async">
       <div class="branche-scrim"></div>
+
+      <span class="branche-label">Showroom schoonmaak <span class="branche-arrow" aria-hidden="true">&rarr;</span></span>
     </a>
     <a href="/diensten/fitnesscentrum-schoonmaak/" class="branche-card" aria-label="Lees meer over Sportschool schoonmaak">
       <img src="/images/team-aan-het-werk.jpg" alt="" class="branche-img" width="1024" height="665" loading="lazy" decoding="async">
       <div class="branche-scrim"></div>
+
+      <span class="branche-label">Sportschool schoonmaak <span class="branche-arrow" aria-hidden="true">&rarr;</span></span>
     </a>
     <a href="/diensten/kinderopvang-schoonmaak/" class="branche-card" aria-label="Lees meer over Kinderopvang schoonmaak">
       <img src="/images/case-arena-gym.jpg" alt="" class="branche-img" width="1024" height="665" loading="lazy" decoding="async">
       <div class="branche-scrim"></div>
+
+      <span class="branche-label">Kinderopvang schoonmaak <span class="branche-arrow" aria-hidden="true">&rarr;</span></span>
     </a>
     <a href="/diensten/vve-schoonmaak/" class="branche-card" aria-label="Lees meer over VvE schoonmaak">
       <img src="/images/branche-vve.jpg" alt="" class="branche-img" width="1024" height="665" loading="lazy" decoding="async">
       <div class="branche-scrim"></div>
+
+      <span class="branche-label">VvE schoonmaak <span class="branche-arrow" aria-hidden="true">&rarr;</span></span>
     </a>
   </div>
 
@@ -436,7 +457,6 @@
   <div class="comparison-grid">
     <!-- Spotlezz Card -->
     <div class="compare-card compare-spotlezz">
-      <div style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); padding: 8px 16px; border-radius: 99px; font-size: 13px; font-weight: 700; display: inline-block; color: #fff; margin-bottom: 20px;">Onze Aanpak</div>
       <h3>Spotlezz</h3>
       <ul class="compare-list">
         <li>Toegewijd en vast team</li>
@@ -468,16 +488,16 @@
 
 
 <!-- ==================== CHECKLIST CTA ==================== -->
-<section class="checklist-cta-section" style="padding: 60px 5%; background: #fff;">
+<section class="checklist-cta-section" style="padding: 44px 5%; background: #fff;">
   <div style="background: #ffffff; text-align: center; border-radius: 16px; max-width: 900px; margin: 0 auto; padding: 50px 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.03);">
-    <h2 style="color: var(--primary-blue); font-size: 32px; font-weight: 700; margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">Spotlezz Schoonmaak Checklist</h2>
+    <h2 style="color: var(--primary-blue); font-size: clamp(20px, 2.7vw, 32px); font-weight: 700; margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">Spotlezz Schoonmaak Checklist</h2>
     <p style="color: var(--text-dark); max-width: 650px; margin: 0 auto 30px; line-height: 1.6; font-size: 16px;">Ontdek de 10 verborgen plekken in je kantoor die de meeste bacteriën bevatten. Download onze gratis checklist en verhoog direct de hygiëne op de werkvloer.</p>
     <a href="/checklist/" class="btn btn-orange" style="display: inline-flex; border-radius: 50px; padding: 14px 30px; font-weight: 600;">Download de Checklist </a>
   </div>
 </section>
 
 <!-- EIGEN FOTOGRAFIE -->
-<section style="padding: 60px 5%; max-width: 1200px; margin: 0 auto;">
+<section style="padding: 44px 5%; max-width: 1200px; margin: 0 auto;">
   <div style="text-align: center; margin-bottom: 40px;">
     <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">Spotlezz in de praktijk</h2>
     <p style="color: #6a737d; max-width: 600px; margin: 0 auto;">Bekijk ons team aan het werk, het materiaal dat wij gebruiken en de panden die wij dagelijks schoonhouden.</p>
@@ -526,7 +546,7 @@
 
 
 <!-- REVIEWBLOK (Sectie 7) -->
-<section class="ks-reviews" style="padding: 80px 5%; max-width: 1200px; margin: 0 auto;">
+<section class="ks-reviews" style="padding: 44px 5%; max-width: 1200px; margin: 0 auto;">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
     
     <div style="background: #fff; border-radius: 12px; padding: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid var(--vuur);">
@@ -647,30 +667,10 @@
   </div>
 </section>
 <!-- ==================== MENSENWERK (OPRICHTER) SECTION ==================== -->
-<section class="mensenwerk-section reveal" style="padding: 100px 5%; background: #fff; max-width: 1200px; margin: 0 auto;">
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-    
-    <div class="founder-card" style="background: #f8fafc; border: 1px solid #e1e4ea; border-radius: 12px; padding: 40px;">
-      <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px;">
-        <img src="/images/pand-interieur.jpg" alt="Thirza Mac Donald" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" width="1024" height="665" loading="lazy" decoding="async">
-        <div>
-          <h3 style="font-size: 20px; font-weight: 700; color: var(--text-dark); margin: 0;">Thirza Mac Donald</h3>
-          <div style="color: #6b7280; font-size: 14px; font-weight: 500;">Oprichter Spotlezz</div>
-          
-        </div>
-      </div>
-      <p style="color: #4b5563; font-size: 16px; line-height: 1.7; font-style: italic;">"Schoonmaken is en blijft mensenwerk. Een schoonmaakbedrijf zonder toegewijde gezichten is inwisselbaar. Daarom investeren we in ons team, en bouwen we aan duurzame relaties met onze klanten."</p>
-    </div>
 
-    <div class="founder-image" style="border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
-      <img src="/images/team-aan-het-werk.jpg" alt="Spotlezz Team" style="width: 100%; height: auto; display: block;" width="1024" height="665" loading="lazy" decoding="async">
-    </div>
-    
-  </div>
-</section>
 
 <!-- ==================== OPRICHTER AAN HET WOORD ==================== -->
-<section class="reveal" style="padding: 100px 5%; max-width: 1200px; margin: 0 auto;">
+<section class="reveal" style="padding: 44px 5%; max-width: 1200px; margin: 0 auto;">
   <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px; align-items: center;">
     
     <div style="background: #fff; border: 1px solid #E1E4EA; border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
@@ -695,7 +695,7 @@
 </section>
 
 <!-- ==================== WERKGEBIEDEN SECTION ==================== -->
-<section id="locaties" class="werkgebieden-section reveal" style="padding: 100px 5%; background: var(--light-grey);">
+<section id="locaties" class="werkgebieden-section reveal" style="padding: 44px 5%; background: var(--light-grey);">
   <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
     
     <div class="map-visual" style="border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.08); background: #fff;">
@@ -703,7 +703,7 @@
     </div>
 
     <div class="locations-content">
-      <h2 style="font-size: 38px; font-weight: 700; margin-bottom: 20px; color: var(--primary-blue);">Ons Werkgebied</h2>
+      <h2 style="font-size: clamp(20px, 3.2vw, 38px); font-weight: 700; margin-bottom: 20px; color: var(--primary-blue);">Ons Werkgebied</h2>
       <p style="color: #555; font-size: 16px; margin-bottom: 30px; line-height: 1.7;">Wij zijn actief in heel Flevoland en omliggende gebieden. Altijd in de buurt voor de beste, snelste en meest betrouwbare service.</p>
       
       <div class="location-pills" style="display: flex; flex-wrap: wrap; gap: 10px;">
@@ -731,45 +731,64 @@
     </div>
     
     <div class="faq-right">
-      <h4 class="faq-category">Prijs &amp; proces</h4>
-      <div class="faq-item"><div class="faq-question">Wat kost schoonmaak per uur?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Neem contact met ons op voor een offerte op maat.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">Hoe werkt het offertetraject?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>We plannen een afspraak, bespreken uw wensen en sturen een voorstel op maat.</p></div></div></div>
-      
-      <h4 class="faq-category">Wat we doen</h4>
-      <div class="faq-item"><div class="faq-question">Wat doet een schoonmaker tijdens een ronde?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Volgens het afgesproken plan worden alle ruimtes grondig en professioneel schoongemaakt.</p></div></div></div>
-      
-      <h4 class="faq-category">Een bedrijf kiezen</h4>
-      <div class="faq-item"><div class="faq-question">Welke vragen moet ik stellen aan een schoonmaakbedrijf?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Vraag altijd naar certificeringen, werkwijze, vaste teams en duurzaamheid.</p></div></div></div>
-
-      <h4 class="faq-category">Kwaliteit</h4>
-      <div class="faq-item"><div class="faq-question">Hoe waarborgen jullie kwaliteitscontrole?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Wij voeren wekelijkse kwaliteitscontroles uit en evalueren regelmatig met onze klanten.</p></div></div></div>
-
-      <h4 class="faq-category">Het team</h4>
-      <div class="faq-item"><div class="faq-question">Zijn jullie medewerkers gediplomeerd?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Ja, ons team is intern opgeleid en beschikt over de nodige certificaten.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">Zijn jullie medewerkers herkenbaar?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Ja, al onze schoonmakers dragen professionele bedrijfskleding van Spotlezz.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">Werken jullie met een vast team?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Ja, wij geloven in een vast team voor elk pand zodat je vertrouwde gezichten ziet.</p></div></div></div>
-
-      <h4 class="faq-category">Flexibiliteit</h4>
-      <div class="faq-item"><div class="faq-question">Kan de schoonmaak buiten werktijd of in het weekend?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Ja, wij zijn zeer flexibel en maken ook buiten kantooruren of in het weekend schoon.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">Dag- of avondschoonmaak: wat is het verschil?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Dagschoonmaak zorgt voor zichtbaarheid en direct contact, avondschoonmaak voorkomt overlast tijdens werktijd.</p></div></div></div>
-
-      <h4 class="faq-category">Starten</h4>
-      <div class="faq-item"><div class="faq-question">Hoe snel kan een klant starten?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Vaak kunnen wij al binnen 24 tot 48 uur na akkoord starten met de werkzaamheden.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">Hoe ziet het starttraject eruit?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Na akkoord wordt de planning gemaakt en volgt een introductie van het team.</p></div></div></div>
-
-      <h4 class="faq-category">Duurzaamheid</h4>
-      <div class="faq-item"><div class="faq-question">Gebruiken jullie milieuvriendelijke middelen?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Ja, wij gebruiken uitsluitend ecologische en biologisch afbreekbare producten.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">Kunnen jullie schoonmaken zonder chemische middelen?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Absoluut, onze producten bevatten geen schadelijke chemicaliën.</p></div></div></div>
-
-      <h4 class="faq-category">Specialisaties</h4>
-      <div class="faq-item"><div class="faq-question">Wat valt onder specialistische schoonmaak?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Onder andere dieptereiniging, vloeronderhoud en glasbewassing vallen hieronder.</p></div></div></div>
-
-      <h4 class="faq-category">Service</h4>
-      <div class="faq-item"><div class="faq-question">Zijn jullie 24/7 bereikbaar bij calamiteiten?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Ja, in geval van nood staan we altijd razendsnel voor je klaar.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">Heb ik een vast contactpersoon?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Ja, je hebt altijd één vast aanspreekpunt voor al je vragen.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">Hoe houden jullie mij op de hoogte?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Via korte lijntjes, regelmatige evaluaties en ons communicatielogboek.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">Bieden jullie ook sanitaire artikelen aan?<span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Ja, we kunnen ook de volledige sanitaire voorzieningen regelen (toiletpapier, zeep, etc).</p></div></div></div>
-
+<div class="faq-list">
+  <div class="faq-item">
+    <h3 class="faq-question-wrap">
+      <button type="button" class="faq-question" id="home-faq-q0" aria-expanded="false" aria-controls="home-faq-a0">
+        <span>Wat kost een schoonmaakbedrijf per uur?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </button>
+    </h3>
+    <div class="faq-answer" id="home-faq-a0" role="region" aria-labelledby="home-faq-q0" hidden>
+      <div class="faq-answer-inner"><p>Een uurtarief zegt weinig zolang niemand het pand heeft gezien. De prijs wordt bepaald door zes factoren: oppervlakte, frequentie, type ruimte, bezettingsgraad, tijdstip en extra werkzaamheden. Wij rekenen die factoren door in een offerte op maat en leggen per regel uit waar het bedrag vandaan komt.</p></div>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question-wrap">
+      <button type="button" class="faq-question" id="home-faq-q1" aria-expanded="false" aria-controls="home-faq-a1">
+        <span>Hoe vaak moet een kantoor schoongemaakt worden?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </button>
+    </h3>
+    <div class="faq-answer" id="home-faq-a1" role="region" aria-labelledby="home-faq-q1" hidden>
+      <div class="faq-answer-inner"><p>Voor de meeste kantoren is twee tot drie keer per week het omslagpunt. Sanitair en pantry zijn dan altijd op orde, terwijl u niet betaalt voor dagelijkse rondes op werkplekken die maar half bezet zijn. Bij meer dan dertig medewerkers of veel bezoek per dag is vijf keer per week doorgaans goedkoper dan periodiek herstelwerk.</p></div>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question-wrap">
+      <button type="button" class="faq-question" id="home-faq-q2" aria-expanded="false" aria-controls="home-faq-a2">
+        <span>Kan de schoonmaak buiten werktijd of in het weekend?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </button>
+    </h3>
+    <div class="faq-answer" id="home-faq-a2" role="region" aria-labelledby="home-faq-q2" hidden>
+      <div class="faq-answer-inner"><p>Ja. Wij werken in de ochtend voor kantoortijd, in de avond en in het weekend. Voor showrooms en sportscholen plannen wij standaard buiten openingstijd. U krijgt een vaste dag en een vast tijdvak, zodat u weet wanneer er iemand in het pand is.</p></div>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question-wrap">
+      <button type="button" class="faq-question" id="home-faq-q3" aria-expanded="false" aria-controls="home-faq-a3">
+        <span>Hoe borgen jullie de kwaliteit?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </button>
+    </h3>
+    <div class="faq-answer" id="home-faq-a3" role="region" aria-labelledby="home-faq-q3" hidden>
+      <div class="faq-answer-inner"><p>Met wekelijkse controles op basis van de Spotlezz-checklist die op uw pand is afgestemd, een logboek in het pand en vier evaluatiegesprekken per jaar. U heeft daarnaast een vast aanspreekpunt, zodat een melding niet in een algemene inbox blijft liggen.</p></div>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question-wrap">
+      <button type="button" class="faq-question" id="home-faq-q4" aria-expanded="false" aria-controls="home-faq-a4">
+        <span>Zijn de producten veilig voor mijn team?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </button>
+    </h3>
+    <div class="faq-answer" id="home-faq-a4" role="region" aria-labelledby="home-faq-q4" hidden>
+      <div class="faq-answer-inner"><p>Wij werken met ecologische, biologisch afbreekbare middelen zonder agressieve chemicaliën. Dat is prettiger voor het binnenklimaat en noodzakelijk op plekken als kinderopvang en horeca. Op verzoek leveren wij de productbladen aan voor uw RI&E.</p></div>
+    </div>
+  </div>
+</div>
+      <p class="faq-more"><a href="/veelgestelde-vragen/">Bekijk alle veelgestelde vragen</a></p>
     </div>
   </div>
 </section>
@@ -848,10 +867,10 @@
 
 
 <!-- LEAD MAGNET -->
-<section id="check" class="lead-magnet-section" style="background-image: url('/images/checklist-achtergrond.jpg'); background-size: cover; background-position: center; position: relative; padding: 80px 5%; margin: 40px auto; max-width: 1400px; border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: flex-start;">
+<section id="check" class="lead-magnet-section" style="background-image: url('/images/checklist-achtergrond.jpg'); background-size: cover; background-position: center; position: relative; padding: 44px 5%; margin: 40px auto; max-width: 1400px; border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: flex-start;">
   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(20, 30, 45, 0.85); z-index: 1;"></div>
   <div class="lead-magnet-content" style="position: relative; z-index: 2; color: #fff; max-width: 600px;">
-    <h2 style="font-size: 38px; margin-bottom: 20px; font-weight: 700; font-family: 'Montserrat', sans-serif;">De Spotlezz-check</h2>
+    <h2 style="font-size: clamp(20px, 3.2vw, 38px); margin-bottom: 20px; font-weight: 700; font-family: 'Montserrat', sans-serif;">De Spotlezz-check</h2>
     <p style="font-size: 16px; line-height: 1.6; margin-bottom: 30px; opacity: 0.9; font-weight: 300;">Ontdek in 1 minuut of je huidige schoonmaak de juiste is. Vul je e-mail in en ontvang de checklist in je mailbox.</p>
     <form class="sp-form checklist-form" id="homeChecklist" data-form="checklist" novalidate>
   <div class="form-group">
@@ -876,6 +895,9 @@
 
 
 <!-- Swiper JS CDN -->
+
+</main>
+
 
 </main>
 
@@ -907,8 +929,9 @@
       </div>
       <p class="footer-desc">Het beste schoonmaakbedrijf in<br>Almere en omgeving!</p>
       <div class="footer-nap">
-        <span>Kiekstraat 59, 1087 BR Amsterdam</span>
+        <span>Spinnakerplantsoen 38, Almere</span>
         <span>Ma t/m vr 08:00 tot 18:00</span>
+        <span>KVK 42089069</span>
       </div>
     </div>
 

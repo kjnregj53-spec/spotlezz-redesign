@@ -228,22 +228,39 @@ function initFaqHub() {
    5. SCROLL REVEAL, met respect voor prefers-reduced-motion
    --------------------------------------------------------------------- */
 
+/**
+ * De bestaande stylesheet verbergt .reveal met opacity 0 en maakt het weer
+ * zichtbaar via de class `active`. De nieuwe componenten gebruiken
+ * `is-visible`. Beide moeten gezet worden, anders blijft een halve pagina
+ * onzichtbaar en zie je alleen witruimte.
+ */
+function show(el) {
+  el.classList.add('active');
+  el.classList.add('is-visible');
+}
+
 function initReveal() {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var items = document.querySelectorAll('.reveal, .work-tile, .proof-card, .step-card, .factor-card');
   if (reduce || !('IntersectionObserver' in window)) {
-    Array.prototype.forEach.call(items, function (el) { el.classList.add('is-visible'); });
+    Array.prototype.forEach.call(items, show);
     return;
   }
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+        show(entry.target);
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0, rootMargin: '300px 0px 300px 0px' });
   Array.prototype.forEach.call(items, function (el) { io.observe(el); });
+
+  // Vangnet. Content mag nooit onzichtbaar blijven doordat een observer om
+  // welke reden dan ook niet afvuurt.
+  window.setTimeout(function () {
+    Array.prototype.forEach.call(items, show);
+  }, 2500);
 }
 
 /* ---------------------------------------------------------------------
