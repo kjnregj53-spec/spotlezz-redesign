@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wireframe: Klantcase | Qlickr x Spotlezz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --nacht:#0D0D1A; --klik:#1B2EFF; --vuur:#FF5500;
+  --paper:#FFFFFF; --canvas:#F4F5F7; --block:#E6E9EE; --block2:#DCE0E7;
+  --line:#C7CCD6; --ink:#0D0D1A; --mute:#6B7280;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,-apple-system,"Segoe UI",sans-serif;
+  background:var(--canvas); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.disp{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em}
+
+/* ---------- doc header ---------- */
+.doc{max-width:1240px;margin:0 auto;padding:0 24px 80px}
+.mast{background:var(--nacht);color:#fff;margin:0 -24px 0;padding:34px 24px 30px}
+.mast-in{max-width:1192px;margin:0 auto}
+.brand{font-family:"Space Grotesk";font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#8A8FA3}
+.brand b{color:#fff}
+.brand .x{color:var(--vuur);margin:0 6px}
+.mast h1{font-size:34px;font-weight:700;margin-top:10px}
+.mast h1 em{font-style:normal;color:var(--klik);background:#fff;padding:0 8px;border-radius:3px}
+.mast p{color:#A7ACBD;margin-top:8px;max-width:760px;font-size:15px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;padding:3px 8px;border-radius:3px;white-space:nowrap;font-family:"Space Grotesk"}
+.t-seo{background:var(--klik);color:#fff}
+.t-eeat{background:var(--vuur);color:#fff}
+.t-pogo{background:#0D0D1A;color:#fff}
+.t-cta{background:#00A86B;color:#fff}
+.t-schema{background:#fff;color:#0D0D1A;border:1.5px solid #0D0D1A}
+.mast .t-schema{background:transparent;color:#fff;border-color:#4A4F63}
+
+/* ---------- rows ---------- */
+.row{display:grid;grid-template-columns:52px 1fr 320px;gap:0;background:var(--paper);
+  border:1px solid #E1E4EA;border-top:none}
+.row:first-of-type{border-top:1px solid #E1E4EA;border-radius:6px 6px 0 0}
+.row:last-of-type{border-radius:0 0 6px 6px}
+.num{background:var(--nacht);color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:15px;
+  display:flex;justify-content:center;padding-top:22px}
+.wf{padding:22px;border-right:1px solid #E1E4EA;background:#FBFBFC}
+.note{padding:22px 20px;background:#fff}
+.note h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.note p{font-size:13px;color:#4B5563;margin-bottom:10px}
+.note .tags{display:flex;flex-wrap:wrap;gap:5px}
+.note .why{font-size:12px;color:#6B7280;border-left:2px solid var(--vuur);padding-left:9px;margin-top:10px}
+
+/* ---------- wireframe primitives ---------- */
+.b{background:var(--block);border:1px dashed var(--line);border-radius:4px;padding:12px;position:relative}
+.b.solid{border-style:solid}
+.b.dark{background:var(--nacht);color:#fff;border-color:var(--nacht)}
+.b.img{background:repeating-linear-gradient(45deg,#DDE1E7,#DDE1E7 6px,#E6E9EE 6px,#E6E9EE 12px);
+  min-height:110px;display:flex;align-items:center;justify-content:center}
+.b.img span{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7C8595;
+  background:#fff;padding:3px 8px;border-radius:3px}
+.lbl{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7C8595;margin-bottom:7px;
+  font-family:"Space Grotesk"}
+.b.dark .lbl{color:#7F86A0}
+.ln{height:8px;background:#CDD2DA;border-radius:2px;margin-bottom:6px}
+.ln.s{width:45%} .ln.m{width:70%} .ln.l{width:92%}
+.ln.h1{height:18px;width:80%;background:#0D0D1A;margin-bottom:10px}
+.ln.h2{height:13px;width:55%;background:#4B5262;margin-bottom:8px}
+.grid{display:grid;gap:8px}
+.g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)} .g6{grid-template-columns:repeat(6,1fr)}
+.split{display:grid;grid-template-columns:1.25fr 1fr;gap:12px}
+.btn{display:inline-block;font-size:11px;font-weight:700;padding:8px 14px;border-radius:4px;
+  font-family:"Space Grotesk"}
+.btn.p{background:var(--vuur);color:#fff}
+.btn.s{background:#fff;color:var(--nacht);border:1.5px solid var(--nacht)}
+.crumb{font-size:11px;color:#6B7280;font-family:"Space Grotesk";font-weight:500}
+.crumb b{color:var(--nacht)}
+.pill{display:inline-block;font-size:10px;font-weight:600;background:#fff;border:1px solid var(--line);
+  border-radius:99px;padding:3px 9px;margin:0 4px 4px 0;color:#4B5563}
+.stat{text-align:center;background:#fff;border:1px solid var(--line);border-radius:4px;padding:10px 6px}
+.stat b{display:block;font-family:"Space Grotesk";font-size:15px}
+.stat span{font-size:9.5px;color:#7C8595;text-transform:uppercase;letter-spacing:.05em}
+.acc{background:#fff;border:1px solid var(--line);border-radius:4px;padding:9px 11px;margin-bottom:5px;
+  display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#374151}
+.acc i{font-style:normal;color:#9CA3AF}
+.hop{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;background:var(--nacht);padding:10px;border-radius:5px}
+.hop div{background:#1C1E30;border-radius:4px;padding:10px;color:#C9CDDC;font-size:11px}
+.hop div:last-child{background:var(--vuur);color:#fff;font-weight:700}
+.hop b{display:block;color:#fff;font-size:11px;margin-bottom:2px;font-family:"Space Grotesk"}
+.q{background:#fff;border-left:3px solid var(--vuur);padding:11px 13px;border-radius:0 4px 4px 0}
+.q .ln{background:#D6DAE1}
+.face{width:34px;height:34px;border-radius:50%;background:#C7CCD6;flex:none}
+.fx{display:flex;gap:10px;align-items:center}
+.mini{font-size:10.5px;color:#7C8595;margin-top:6px}
+.star{color:var(--vuur);font-size:12px;letter-spacing:1px}
+
+/* ---------- foot ---------- */
+.foot{background:#fff;border:1px solid #E1E4EA;border-radius:6px;padding:26px;margin-top:28px}
+.foot h2{font-size:19px;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:9px}
+.foot li{font-size:13.5px;color:#374151;padding-left:18px;position:relative}
+.foot li:before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;background:var(--klik);border-radius:2px}
+.foot code{background:var(--canvas);border:1px solid #E1E4EA;border-radius:3px;padding:1px 5px;
+  font-size:12px;font-family:ui-monospace,Menlo,monospace}
+.sectitle{font-family:"Space Grotesk";font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#7C8595;margin:32px 0 12px}
+
+@media(max-width:900px){
+  .row{grid-template-columns:38px 1fr}
+  .note{grid-column:2;border-top:1px dashed #E1E4EA}
+  .wf{border-right:none}
+  .split,.g4,.g6,.g3{grid-template-columns:1fr}
+  .hop{grid-template-columns:1fr}
+}
+@media print{body{background:#fff}.row{break-inside:avoid}}
+</style></head><body><div class="doc">
+<header class="mast"><div class="mast-in">
+<div class="brand"><b>Qlickr</b><span class="x">&times;</span>Spotlezz &nbsp;&middot;&nbsp; Wireframe</div>
+<h1>Klantcase</h1>
+<p>Deze pagina hoeft niet te ranken. Zijn taak is twijfel wegnemen op het moment dat iemand bijna wegklikt, en autoriteit doorgeven aan de pillar. Richtlijn: 600 tot 900 woorden. Het bewijs bestaat al (Kobelco, KuchenTreff, Arena Gym, Het Event Atelier, Woonstudio Joy, Burgman), het moet alleen worden uitgeschreven.</p>
+<div class="legend">
+<span class="tag t-seo">SEO</span>
+<span class="tag t-eeat">EEAT</span>
+<span class="tag t-pogo">Anti-pogo</span>
+<span class="tag t-cta">Conversie</span>
+<span class="tag t-schema">Schema</span>
+</div>
+</div></header>
+<div class="sectitle">Paginaopbouw van boven naar beneden</div>
+<div class="row">
+<div class="num">1</div>
+<div class="wf"><div class="b dark" style="padding:10px 12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+<div style="font-family:'Space Grotesk';font-weight:700;font-size:13px">Spotlezz.</div>
+<div style="display:flex;gap:12px;font-size:10.5px;color:#9BA1B5">
+<span>Diensten &#9662;</span><span>Klantcases</span><span>Locaties</span><span>Veelgestelde vragen</span><span>Over ons</span><span>Contact</span></div>
+<div class="btn p" style="padding:6px 11px;font-size:10px">Offerte aanvragen</div>
+</div></div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:7px;padding:0 2px">
+<div class="crumb">Home &rsaquo; Klantcases &rsaquo; <b>Kobelco</b></div>
+<div style="font-size:10.5px;color:#6B7280"><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4,8/5 &middot; 87 beoordelingen &middot; 036-785 7028</div>
+</div></div>
+<div class="note"><h3>Navigatie en breadcrumb</h3><p>Zelfde vaste balk. Breadcrumb toont het pad terug naar de cases-hub.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span><span class="tag t-schema">Schema</span></div></div>
+</div><div class="row">
+<div class="num">2</div>
+<div class="wf"><div class="split">
+<div>
+<div class="b" style="width:120px;height:38px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#7C8595">LOGO KLANT</div>
+<div class="ln h1" style="margin-top:12px"></div><div class="ln h1" style="width:60%"></div>
+<div class="grid g3" style="margin-top:14px">
+<div class="stat"><b>Kantoor</b><span>Branche</span></div>
+<div class="stat"><b>Almere</b><span>Locatie</span></div>
+<div class="stat"><b>2024</b><span>Klant sinds</span></div>
+</div></div>
+<div class="b img" style="min-height:150px"><span>Foto op locatie &middot; team in actie</span></div>
+</div></div>
+<div class="note"><h3>Hero met harde feiten</h3><p>H1 als resultaatzin, niet als klantnaam alleen. Branche, locatie en klant-sinds direct zichtbaar. Echte foto op locatie, geen stockbeeld.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-eeat">EEAT</span></div><div class="why">Stockfoto's zijn een EEAT-lek. Een echte foto van het echte pand met het echte team is het verschil tussen zeggen en bewijzen.</div></div>
+</div><div class="row">
+<div class="num">3</div>
+<div class="wf"><div class="lbl">Feitenbalk</div>
+<div class="grid g4">
+<div class="stat"><b>4.500 m&sup2;</b><span>Vloeroppervlak</span></div>
+<div class="stat"><b>5x per week</b><span>Frequentie</span></div>
+<div class="stat"><b>100% eco</b><span>Producten</span></div>
+<div class="stat"><b>0 klachten</b><span>In 18 maanden</span></div>
+</div></div>
+<div class="note"><h3>Meetbaar bewijs</h3><p>Vier harde cijfers. Zonder cijfers is een case marketing, met cijfers is het bewijs.</p><div class="tags"><span class="tag t-eeat">EEAT</span><span class="tag t-pogo">Anti-pogo</span></div><div class="why">Dit is ook het blok dat een offerteaanvraag mentaal voorbereidt: de bezoeker rekent zijn eigen pand hierlangs.</div></div>
+</div><div class="row">
+<div class="num">4</div>
+<div class="wf"><div class="lbl">STAR-structuur</div>
+<div class="b solid" style="background:#fff;margin-bottom:8px"><div class="ln h2" style="width:32%"></div><div class="ln l"></div><div class="ln m"></div><div class="mini">De situatie: wat was er aan de hand voor Spotlezz?</div></div>
+<div class="b solid" style="background:#fff;margin-bottom:8px"><div class="ln h2" style="width:36%"></div><div class="ln l"></div><div class="ln m"></div><div class="mini">De uitdaging: wat maakte dit lastig?</div></div>
+<div class="b solid" style="background:#fff;margin-bottom:8px"><div class="ln h2" style="width:30%"></div><div class="ln l"></div><div class="ln l"></div><div class="ln m"></div><div class="mini">Onze aanpak: vast team, schoonmaakplan, wekelijkse controles</div></div>
+<div class="b solid" style="background:#fff"><div class="ln h2" style="width:34%"></div><div class="ln l"></div><div class="ln m"></div><div class="mini">Het resultaat: meetbaar, met cijfers en contractverlenging</div></div></div>
+<div class="note"><h3>Situatie, uitdaging, aanpak, resultaat</h3><p>Vaste vierdeling. Dit is wat een case geloofwaardig maakt in plaats van een uitgerekte testimonial.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-eeat">EEAT</span></div><div class="why">Google leest deze structuur als originele, ervaringsgedreven content. Dat is de eerste E van EEAT en die kun je niet faken.</div></div>
+</div><div class="row">
+<div class="num">5</div>
+<div class="wf"><div class="lbl">Klantquote (groot)</div>
+<div class="q" style="padding:18px">
+<div class="ln h2" style="width:88%"></div><div class="ln h2" style="width:66%"></div>
+<div class="fx" style="margin-top:14px"><div class="face" style="width:44px;height:44px"></div>
+<div><div class="ln" style="width:130px;height:9px"></div><div class="ln" style="width:190px;height:6px;margin:0"></div>
+<div class="mini" style="margin-top:4px">&#128279; LinkedIn-profiel contactpersoon</div></div></div>
+</div></div>
+<div class="note"><h3>Quote met gezicht en functie</h3><p>Naam, functie, bedrijf, foto en LinkedIn-link. Anonieme quotes tellen niet mee voor EEAT. Review-schema.</p><div class="tags"><span class="tag t-eeat">EEAT</span><span class="tag t-schema">Schema</span></div><div class="why">Uit het voorstel: LinkedIn-links van contactpersonen. Een quote met een verifieerbaar profiel erachter is een verificeerbare claim.</div></div>
+</div><div class="row">
+<div class="num">6</div>
+<div class="wf"><div class="lbl">Gebruikte diensten</div>
+<div class="grid g3">
+<div class="b">Kantoorschoonmaak<div class="mini" style="color:#1B2EFF;font-weight:700">&#8594; pillar</div></div>
+<div class="b">Glasbewassing<div class="mini" style="color:#1B2EFF;font-weight:700">&#8594; pillar</div></div>
+<div class="b">Hygieneservice<div class="mini" style="color:#1B2EFF;font-weight:700">&#8594; pillar</div></div>
+</div></div>
+<div class="note"><h3>Links omhoog naar de pillars</h3><p>Elke case linkt met een commercieel anchor omhoog naar de dienstpagina's die zijn geleverd. Dit is waar de case zijn linkwaarde afgeeft.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span></div><div class="why">De case hoeft zelf niet te ranken. Zijn werk is: twijfel wegnemen en autoriteit doorgeven aan de pillar.</div></div>
+</div><div class="row">
+<div class="num">7</div>
+<div class="wf"><div class="lbl">Next-hop bar &middot; exact 3 routes</div>
+<div class="hop"><div><b>&#8593; Omhoog</b>Kantoorschoonmaak</div><div><b>&#8594; Zijwaarts</b>Volgende case &middot; Schoonmaakbedrijf Almere</div><div><b>&#9656; Conversie</b>Ook zo'n resultaat? Offerte aanvragen</div></div></div>
+<div class="note"><h3>Next-hop bar</h3><p>Omhoog naar de pillar, zijwaarts naar de volgende case en naar de locatiepagina van die stad, en de offerte-CTA.</p><div class="tags"><span class="tag t-pogo">Anti-pogo</span><span class="tag t-cta">Conversie</span></div></div>
+</div>
+<div class="foot">
+<h2>Schema en regels voor dit paginatype</h2>
+<ul><li><code>Article</code> op de case zelf.</li><li><code>Review</code> met de klantquote, naam en functie.</li><li><code>Organization</code> voor de klant, gekoppeld aan het echte bedrijf.</li><li><code>Person</code> voor de contactpersoon met LinkedIn als <code>sameAs</code>.</li><li><code>BreadcrumbList</code>.</li><li>Cases-hub is filterbaar op branche en op stad.</li><li>Elke case linkt omhoog naar minimaal een dienst-pillar en zijwaarts naar de locatiepagina van die stad.</li></ul>
+</div>
+<div class="foot" style="margin-top:14px">
+<h2>De drie vaste pogo-stick regels</h2>
+<ul>
+<li><b>Intent-match binnen 5 seconden.</b> Boven de vouw staat het zoekwoord letterlijk, plus regio, reviewscore en reactietijd.</li>
+<li><b>Volledigheid op de pagina zelf.</b> Prijs, frequentie, regio en reactietijd worden hier beantwoord, niet op Google.</li>
+<li><b>Gestuurde volgende hop.</b> Exact drie routes onderaan: een omhoog, een zijwaarts, een conversie. Nooit meer, nooit minder.</li>
+</ul>
+</div>
+</div></body></html>

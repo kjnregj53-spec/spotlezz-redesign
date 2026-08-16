@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wireframe: Locatiepagina | Qlickr x Spotlezz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --nacht:#0D0D1A; --klik:#1B2EFF; --vuur:#FF5500;
+  --paper:#FFFFFF; --canvas:#F4F5F7; --block:#E6E9EE; --block2:#DCE0E7;
+  --line:#C7CCD6; --ink:#0D0D1A; --mute:#6B7280;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,-apple-system,"Segoe UI",sans-serif;
+  background:var(--canvas); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.disp{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em}
+
+/* ---------- doc header ---------- */
+.doc{max-width:1240px;margin:0 auto;padding:0 24px 80px}
+.mast{background:var(--nacht);color:#fff;margin:0 -24px 0;padding:34px 24px 30px}
+.mast-in{max-width:1192px;margin:0 auto}
+.brand{font-family:"Space Grotesk";font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#8A8FA3}
+.brand b{color:#fff}
+.brand .x{color:var(--vuur);margin:0 6px}
+.mast h1{font-size:34px;font-weight:700;margin-top:10px}
+.mast h1 em{font-style:normal;color:var(--klik);background:#fff;padding:0 8px;border-radius:3px}
+.mast p{color:#A7ACBD;margin-top:8px;max-width:760px;font-size:15px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;padding:3px 8px;border-radius:3px;white-space:nowrap;font-family:"Space Grotesk"}
+.t-seo{background:var(--klik);color:#fff}
+.t-eeat{background:var(--vuur);color:#fff}
+.t-pogo{background:#0D0D1A;color:#fff}
+.t-cta{background:#00A86B;color:#fff}
+.t-schema{background:#fff;color:#0D0D1A;border:1.5px solid #0D0D1A}
+.mast .t-schema{background:transparent;color:#fff;border-color:#4A4F63}
+
+/* ---------- rows ---------- */
+.row{display:grid;grid-template-columns:52px 1fr 320px;gap:0;background:var(--paper);
+  border:1px solid #E1E4EA;border-top:none}
+.row:first-of-type{border-top:1px solid #E1E4EA;border-radius:6px 6px 0 0}
+.row:last-of-type{border-radius:0 0 6px 6px}
+.num{background:var(--nacht);color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:15px;
+  display:flex;justify-content:center;padding-top:22px}
+.wf{padding:22px;border-right:1px solid #E1E4EA;background:#FBFBFC}
+.note{padding:22px 20px;background:#fff}
+.note h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.note p{font-size:13px;color:#4B5563;margin-bottom:10px}
+.note .tags{display:flex;flex-wrap:wrap;gap:5px}
+.note .why{font-size:12px;color:#6B7280;border-left:2px solid var(--vuur);padding-left:9px;margin-top:10px}
+
+/* ---------- wireframe primitives ---------- */
+.b{background:var(--block);border:1px dashed var(--line);border-radius:4px;padding:12px;position:relative}
+.b.solid{border-style:solid}
+.b.dark{background:var(--nacht);color:#fff;border-color:var(--nacht)}
+.b.img{background:repeating-linear-gradient(45deg,#DDE1E7,#DDE1E7 6px,#E6E9EE 6px,#E6E9EE 12px);
+  min-height:110px;display:flex;align-items:center;justify-content:center}
+.b.img span{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7C8595;
+  background:#fff;padding:3px 8px;border-radius:3px}
+.lbl{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7C8595;margin-bottom:7px;
+  font-family:"Space Grotesk"}
+.b.dark .lbl{color:#7F86A0}
+.ln{height:8px;background:#CDD2DA;border-radius:2px;margin-bottom:6px}
+.ln.s{width:45%} .ln.m{width:70%} .ln.l{width:92%}
+.ln.h1{height:18px;width:80%;background:#0D0D1A;margin-bottom:10px}
+.ln.h2{height:13px;width:55%;background:#4B5262;margin-bottom:8px}
+.grid{display:grid;gap:8px}
+.g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)} .g6{grid-template-columns:repeat(6,1fr)}
+.split{display:grid;grid-template-columns:1.25fr 1fr;gap:12px}
+.btn{display:inline-block;font-size:11px;font-weight:700;padding:8px 14px;border-radius:4px;
+  font-family:"Space Grotesk"}
+.btn.p{background:var(--vuur);color:#fff}
+.btn.s{background:#fff;color:var(--nacht);border:1.5px solid var(--nacht)}
+.crumb{font-size:11px;color:#6B7280;font-family:"Space Grotesk";font-weight:500}
+.crumb b{color:var(--nacht)}
+.pill{display:inline-block;font-size:10px;font-weight:600;background:#fff;border:1px solid var(--line);
+  border-radius:99px;padding:3px 9px;margin:0 4px 4px 0;color:#4B5563}
+.stat{text-align:center;background:#fff;border:1px solid var(--line);border-radius:4px;padding:10px 6px}
+.stat b{display:block;font-family:"Space Grotesk";font-size:15px}
+.stat span{font-size:9.5px;color:#7C8595;text-transform:uppercase;letter-spacing:.05em}
+.acc{background:#fff;border:1px solid var(--line);border-radius:4px;padding:9px 11px;margin-bottom:5px;
+  display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#374151}
+.acc i{font-style:normal;color:#9CA3AF}
+.hop{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;background:var(--nacht);padding:10px;border-radius:5px}
+.hop div{background:#1C1E30;border-radius:4px;padding:10px;color:#C9CDDC;font-size:11px}
+.hop div:last-child{background:var(--vuur);color:#fff;font-weight:700}
+.hop b{display:block;color:#fff;font-size:11px;margin-bottom:2px;font-family:"Space Grotesk"}
+.q{background:#fff;border-left:3px solid var(--vuur);padding:11px 13px;border-radius:0 4px 4px 0}
+.q .ln{background:#D6DAE1}
+.face{width:34px;height:34px;border-radius:50%;background:#C7CCD6;flex:none}
+.fx{display:flex;gap:10px;align-items:center}
+.mini{font-size:10.5px;color:#7C8595;margin-top:6px}
+.star{color:var(--vuur);font-size:12px;letter-spacing:1px}
+
+/* ---------- foot ---------- */
+.foot{background:#fff;border:1px solid #E1E4EA;border-radius:6px;padding:26px;margin-top:28px}
+.foot h2{font-size:19px;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:9px}
+.foot li{font-size:13.5px;color:#374151;padding-left:18px;position:relative}
+.foot li:before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;background:var(--klik);border-radius:2px}
+.foot code{background:var(--canvas);border:1px solid #E1E4EA;border-radius:3px;padding:1px 5px;
+  font-size:12px;font-family:ui-monospace,Menlo,monospace}
+.sectitle{font-family:"Space Grotesk";font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#7C8595;margin:32px 0 12px}
+
+@media(max-width:900px){
+  .row{grid-template-columns:38px 1fr}
+  .note{grid-column:2;border-top:1px dashed #E1E4EA}
+  .wf{border-right:none}
+  .split,.g4,.g6,.g3{grid-template-columns:1fr}
+  .hop{grid-template-columns:1fr}
+}
+@media print{body{background:#fff}.row{break-inside:avoid}}
+</style></head><body><div class="doc">
+<header class="mast"><div class="mast-in">
+<div class="brand"><b>Qlickr</b><span class="x">&times;</span>Spotlezz &nbsp;&middot;&nbsp; Wireframe</div>
+<h1>Locatiepagina</h1>
+<p>Vangt de lokale zoekintentie af en bewijst dat Spotlezz er echt actief is. Dit is de pagina waarmee 'schoonmaakbedrijf in Almere' van positie 15 naar de Top 5 moet. Zelfde wireframe voor de wijkpagina's (Almere Stad, Buiten, Haven, Poort) en voor de dienst x locatie pagina's (kantoor, hotel en VvE in Amsterdam, Lelystad en Amersfoort). Richtlijn: 800 tot 1.200 unieke woorden per stad.</p>
+<div class="legend">
+<span class="tag t-seo">SEO</span>
+<span class="tag t-eeat">EEAT</span>
+<span class="tag t-pogo">Anti-pogo</span>
+<span class="tag t-cta">Conversie</span>
+<span class="tag t-schema">Schema</span>
+</div>
+</div></header>
+<div class="sectitle">Paginaopbouw van boven naar beneden</div>
+<div class="row">
+<div class="num">1</div>
+<div class="wf"><div class="b dark" style="padding:10px 12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+<div style="font-family:'Space Grotesk';font-weight:700;font-size:13px">Spotlezz.</div>
+<div style="display:flex;gap:12px;font-size:10.5px;color:#9BA1B5">
+<span>Diensten &#9662;</span><span>Klantcases</span><span>Locaties</span><span>Veelgestelde vragen</span><span>Over ons</span><span>Contact</span></div>
+<div class="btn p" style="padding:6px 11px;font-size:10px">Offerte aanvragen</div>
+</div></div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:7px;padding:0 2px">
+<div class="crumb">Home &rsaquo; Locaties &rsaquo; <b>Schoonmaakbedrijf Almere</b></div>
+<div style="font-size:10.5px;color:#6B7280"><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4,8/5 &middot; 87 beoordelingen &middot; 036-785 7028</div>
+</div></div>
+<div class="note"><h3>Navigatie en breadcrumb</h3><p>Locaties staan als eigen hub in de hoofdnavigatie.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span><span class="tag t-schema">Schema</span></div></div>
+</div><div class="row">
+<div class="num">2</div>
+<div class="wf"><div class="split">
+<div>
+<div class="ln h1" style="width:85%"></div>
+<div class="ln l" style="margin-top:10px"></div><div class="ln m"></div>
+<div style="margin:12px 0 4px">
+<span class="pill">&#10003; Binnen 12 uur een afspraak</span><span class="pill">&#10003; Vaste teams in de regio</span>
+<span class="pill">&#9733; 4,8/5</span></div>
+<div style="margin-top:10px"><span class="btn p">Offerte Almere</span> <span class="btn s">Bel 036-785 7028</span></div>
+</div>
+<div>
+<div class="b img" style="min-height:120px"><span>Kaart &middot; werkgebied en klanten</span></div>
+<div class="b solid" style="background:#fff;margin-top:8px">
+<div class="lbl">NAP-blok</div>
+<div class="ln m" style="height:7px"></div><div class="ln l" style="height:7px"></div><div class="ln s" style="height:7px"></div>
+<div class="mini">Naam, adres, telefoon, openingstijden &middot; LocalBusiness-schema</div>
+</div></div></div></div>
+<div class="note"><h3>Hero, kaart en NAP</h3><p>H1 is exact het zoekwoord: <b>Schoonmaakbedrijf Almere</b>. Kaart met het echte werkgebied en een NAP-blok dat exact matcht met het Google Bedrijfsprofiel.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-eeat">EEAT</span><span class="tag t-schema">Schema</span></div><div class="why">Dit is de pagina die van positie 15 naar de Top 5 moet. Zij vecht niet met de homepage: home is merk plus dienst, deze pagina is werkgebied, wijken en lokaal bewijs.</div></div>
+</div><div class="row">
+<div class="num">3</div>
+<div class="wf"><div class="lbl">Antwoordblok</div>
+<div class="b solid" style="background:#fff">
+<div class="ln l"></div><div class="ln l"></div><div class="ln m"></div>
+<div class="grid g4" style="margin-top:12px">
+<div class="stat"><b>&euro; xx/uur</b><span>Vanafprijs</span></div>
+<div class="stat"><b>&lt; 12 uur</b><span>Reactietijd</span></div>
+<div class="stat"><b>4 teams</b><span>In de regio</span></div>
+<div class="stat"><b>87</b><span>Beoordelingen</span></div>
+</div></div></div>
+<div class="note"><h3>Antwoordblok</h3><p>Zelfde principe als op de pillar: prijs, reactietijd en lokale capaciteit direct beantwoord.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span></div></div>
+</div><div class="row">
+<div class="num">4</div>
+<div class="wf"><div class="lbl">Lokaal bewijs &middot; dit blok maakt of breekt de pagina</div>
+<div class="grid g6" style="margin-bottom:10px">
+<div class="b" style="min-height:32px"></div><div class="b" style="min-height:32px"></div><div class="b" style="min-height:32px"></div>
+<div class="b" style="min-height:32px"></div><div class="b" style="min-height:32px"></div><div class="b" style="min-height:32px"></div>
+</div>
+<div class="split">
+<div class="b solid" style="background:#fff;padding:0;overflow:hidden">
+<div class="b img" style="border:none;border-radius:0;min-height:90px"><span>Foto klant in Almere</span></div>
+<div style="padding:11px"><div class="ln h2" style="width:70%"></div><div class="ln l"></div>
+<div class="mini" style="color:#1B2EFF;font-weight:700">&#8594; Lees de case: Kobelco Almere</div></div></div>
+<div class="q"><div class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="ln l" style="margin-top:6px"></div><div class="ln l"></div><div class="ln m"></div>
+<div class="fx" style="margin-top:10px"><div class="face"></div><div><div class="ln" style="width:80px;height:7px"></div>
+<div class="ln" style="width:110px;height:5px;margin:0"></div></div></div>
+<div class="mini">Lokale review met naam en bedrijf uit Almere</div></div>
+</div></div>
+<div class="note"><h3>Lokale klanten, case en review</h3><p>Klantlogo's uit die stad, een lokale case en een lokale review. Zonder dit blok is de pagina een doorway-pagina en zakt hij weg.</p><div class="tags"><span class="tag t-eeat">EEAT</span><span class="tag t-pogo">Anti-pogo</span></div><div class="why">Dit is de harde eis uit het voorstel: lokale relevantie met echte klantcases. Geen lokaal bewijs betekent: geen pagina bouwen.</div></div>
+</div><div class="row">
+<div class="num">5</div>
+<div class="wf"><div class="lbl">Diensten in deze stad &middot; top 3, niet alle 13</div>
+<div class="grid g3">
+<div class="b">Kantoorschoonmaak Almere<div class="mini" style="color:#1B2EFF;font-weight:700">&#8594; meer</div></div>
+<div class="b">VvE-schoonmaak Almere<div class="mini" style="color:#1B2EFF;font-weight:700">&#8594; meer</div></div>
+<div class="b">Kinderopvangschoonmaak Almere<div class="mini" style="color:#1B2EFF;font-weight:700">&#8594; meer</div></div>
+</div>
+<div class="lbl" style="margin-top:14px">Wijken</div>
+<div><span class="pill">Almere Stad</span><span class="pill">Almere Buiten</span>
+<span class="pill">Almere Haven</span><span class="pill">Almere Poort</span></div></div>
+<div class="note"><h3>Diensten en wijken</h3><p>Drie diensten, niet dertien. En de vier wijkpagina's uit het voorstel: Almere Stad, Buiten, Haven en Poort.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span></div><div class="why">Meer dan drie doorkliks veroorzaakt keuzestress. De volledige dienstenlijst staat op de hub, niet hier.</div></div>
+</div><div class="row">
+<div class="num">6</div>
+<div class="wf"><div class="lbl">Werkgebied &middot; unieke lokale tekst</div>
+<div class="b solid" style="background:#fff">
+<div class="ln h2" style="width:46%"></div>
+<div class="ln l"></div><div class="ln l"></div><div class="ln l"></div><div class="ln m"></div>
+<div class="mini">Bedrijventerreinen, wijken, reistijd, avondroosters. Per stad echt anders geschreven, geen zoek-en-vervang.</div>
+</div></div>
+<div class="note"><h3>Uniek werkgebiedblok</h3><p>Minimaal 500 unieke woorden per stad. Concrete bedrijventerreinen, wijken en hoe snel je er bent.</p><div class="tags"><span class="tag t-seo">SEO</span></div><div class="why">Zoek-en-vervang met alleen de stadsnaam is de snelste manier om deze hele laag waardeloos te maken.</div></div>
+</div><div class="row">
+<div class="num">7</div>
+<div class="wf"><div class="lbl">Eigen fotografie &middot; geen stockbeeld</div>
+<div class="grid g3">
+<div class="b img" style="min-height:120px"><span>Eigen foto &middot; team in deze stad</span></div>
+<div class="b img" style="min-height:120px"><span>Eigen foto &middot; herkenbaar pand of bedrijventerrein</span></div>
+<div class="b img" style="min-height:120px"><span>Eigen foto &middot; klant in deze stad</span></div>
+</div>
+<div class="mini">Alt-tekst met zoekwoord plus locatie. Bestandsnaam beschrijvend. Geen afbeeldingen meer vanaf de stagingomgeving.</div></div>
+<div class="note"><h3>Eigen foto's uit deze stad</h3><p>Foto's die aantoonbaar in deze stad zijn gemaakt. Alt-tekst met het zoekwoord plus de stadsnaam.</p><div class="tags"><span class="tag t-eeat">EEAT</span><span class="tag t-seo">SEO</span></div><div class="why">Een locatiepagina met stockbeeld is een doorway-pagina met een fotolaagje. Echt lokaal beeld is het snelste bewijs dat je er ook echt komt.</div></div>
+</div><div class="row">
+<div class="num">8</div>
+<div class="wf"><div class="lbl">Het team in deze regio</div>
+<div class="split">
+<div class="b solid" style="background:#fff">
+<div class="fx"><div class="face" style="width:46px;height:46px"></div>
+<div><div class="ln" style="width:110px;height:9px"></div><div class="ln" style="width:150px;height:6px;margin:0"></div>
+<div class="mini" style="margin-top:4px">&#128279; LinkedIn-profiel</div></div></div>
+<div class="ln l" style="margin-top:11px"></div><div class="ln l"></div><div class="ln m"></div>
+<div class="mini">De vaste schoonmaker die in deze stad werkt, met foto en LinkedIn</div>
+</div>
+<div class="b img"><span>Foto op locatie</span></div>
+</div></div>
+<div class="note"><h3>Lokaal team</h3><p>Wie komt er daadwerkelijk langs in Almere? Foto, naam, LinkedIn. Person-schema.</p><div class="tags"><span class="tag t-eeat">EEAT</span><span class="tag t-schema">Schema</span></div><div class="why">Een schoonmaakbedrijf dat een gezicht heeft in de stad is geloofwaardiger dan een postbusadres. Dit is letterlijk de E van Experience.</div></div>
+</div><div class="row">
+<div class="num">9</div>
+<div class="wf"><div class="lbl">Lokale FAQ</div>
+<div class="acc"><span>Wat kost een schoonmaakbedrijf in Almere?</span><i>+</i></div>
+<div class="acc"><span>Hoe snel zijn jullie in Almere ter plaatse?</span><i>+</i></div>
+<div class="acc"><span>Werken jullie ook in de avond in Almere?</span><i>+</i></div>
+<div class="acc"><span>Hoe borgen jullie de kwaliteit?</span><i>+</i></div>
+<div class="acc"><span>Zijn de producten veilig voor mijn team?</span><i>+</i></div>
+<div class="mini">&#8594; Bekijk alle veelgestelde vragen</div></div>
+<div class="note"><h3>Lokale FAQ (3 tot 5)</h3><p>Stadspecifieke vragen, geen kopie van de landelijke FAQ. FAQPage-schema.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-schema">Schema</span><span class="tag t-pogo">Anti-pogo</span></div></div>
+</div><div class="row">
+<div class="num">10</div>
+<div class="wf"><div class="lbl">Andere locaties</div>
+<div><span class="pill">Lelystad</span><span class="pill">Amsterdam</span><span class="pill">Amersfoort</span>
+<span class="pill">Hilversum</span><span class="pill">Zeewolde</span><span class="pill">Utrecht</span><span class="pill">Diemen</span></div></div>
+<div class="note"><h3>Locatie-carrousel</h3><p>Onderlinge links tussen de locatiepagina's. Houdt de hele laag in de index.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span></div></div>
+</div><div class="row">
+<div class="num">11</div>
+<div class="wf"><div class="lbl">Next-hop bar &middot; exact 3 routes</div>
+<div class="hop"><div><b>&#8593; Omhoog</b>Alle locaties</div><div><b>&#8594; Zijwaarts</b>Bekijk onze diensten &middot; Case in Almere</div><div><b>&#9656; Conversie</b>Offerte voor Almere</div></div></div>
+<div class="note"><h3>Next-hop bar</h3><p>Plus een prominente belknop, want lokale zoekers bellen vaker dan ze een formulier invullen.</p><div class="tags"><span class="tag t-pogo">Anti-pogo</span><span class="tag t-cta">Conversie</span></div></div>
+</div>
+<div class="foot">
+<h2>Schema en regels voor dit paginatype</h2>
+<ul><li><code>LocalBusiness</code> van het type <code>CleaningService</code>, met <code>areaServed</code> per stad en wijk.</li><li><code>FAQPage</code> op de lokale FAQ.</li><li><code>AggregateRating</code> op het reviewblok.</li><li><code>Person</code> op het lokale team.</li><li><code>BreadcrumbList</code>.</li><li><b>Doorway-regel:</b> publiceer een dienst x locatie pagina pas bij minimaal drie van de vier: een echte klant in die stad, een citeerbare quote of case, een lokaal team, en een concrete lokale invalshoek. Anders blijft het een stadsblok binnen de locatiepagina.</li><li>Google Bedrijfsprofiel per stad waar een fysiek adres of aantoonbare aanwezigheid is. Zonder GBP scoort deze pagina niet in de local pack.</li></ul>
+</div>
+<div class="foot" style="margin-top:14px">
+<h2>De drie vaste pogo-stick regels</h2>
+<ul>
+<li><b>Intent-match binnen 5 seconden.</b> Boven de vouw staat het zoekwoord letterlijk, plus regio, reviewscore en reactietijd.</li>
+<li><b>Volledigheid op de pagina zelf.</b> Prijs, frequentie, regio en reactietijd worden hier beantwoord, niet op Google.</li>
+<li><b>Gestuurde volgende hop.</b> Exact drie routes onderaan: een omhoog, een zijwaarts, een conversie. Nooit meer, nooit minder.</li>
+</ul>
+</div>
+</div></body></html>

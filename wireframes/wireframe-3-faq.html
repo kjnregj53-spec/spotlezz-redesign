@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wireframe: FAQ | Qlickr x Spotlezz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --nacht:#0D0D1A; --klik:#1B2EFF; --vuur:#FF5500;
+  --paper:#FFFFFF; --canvas:#F4F5F7; --block:#E6E9EE; --block2:#DCE0E7;
+  --line:#C7CCD6; --ink:#0D0D1A; --mute:#6B7280;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,-apple-system,"Segoe UI",sans-serif;
+  background:var(--canvas); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.disp{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em}
+
+/* ---------- doc header ---------- */
+.doc{max-width:1240px;margin:0 auto;padding:0 24px 80px}
+.mast{background:var(--nacht);color:#fff;margin:0 -24px 0;padding:34px 24px 30px}
+.mast-in{max-width:1192px;margin:0 auto}
+.brand{font-family:"Space Grotesk";font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#8A8FA3}
+.brand b{color:#fff}
+.brand .x{color:var(--vuur);margin:0 6px}
+.mast h1{font-size:34px;font-weight:700;margin-top:10px}
+.mast h1 em{font-style:normal;color:var(--klik);background:#fff;padding:0 8px;border-radius:3px}
+.mast p{color:#A7ACBD;margin-top:8px;max-width:760px;font-size:15px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;padding:3px 8px;border-radius:3px;white-space:nowrap;font-family:"Space Grotesk"}
+.t-seo{background:var(--klik);color:#fff}
+.t-eeat{background:var(--vuur);color:#fff}
+.t-pogo{background:#0D0D1A;color:#fff}
+.t-cta{background:#00A86B;color:#fff}
+.t-schema{background:#fff;color:#0D0D1A;border:1.5px solid #0D0D1A}
+.mast .t-schema{background:transparent;color:#fff;border-color:#4A4F63}
+
+/* ---------- rows ---------- */
+.row{display:grid;grid-template-columns:52px 1fr 320px;gap:0;background:var(--paper);
+  border:1px solid #E1E4EA;border-top:none}
+.row:first-of-type{border-top:1px solid #E1E4EA;border-radius:6px 6px 0 0}
+.row:last-of-type{border-radius:0 0 6px 6px}
+.num{background:var(--nacht);color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:15px;
+  display:flex;justify-content:center;padding-top:22px}
+.wf{padding:22px;border-right:1px solid #E1E4EA;background:#FBFBFC}
+.note{padding:22px 20px;background:#fff}
+.note h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.note p{font-size:13px;color:#4B5563;margin-bottom:10px}
+.note .tags{display:flex;flex-wrap:wrap;gap:5px}
+.note .why{font-size:12px;color:#6B7280;border-left:2px solid var(--vuur);padding-left:9px;margin-top:10px}
+
+/* ---------- wireframe primitives ---------- */
+.b{background:var(--block);border:1px dashed var(--line);border-radius:4px;padding:12px;position:relative}
+.b.solid{border-style:solid}
+.b.dark{background:var(--nacht);color:#fff;border-color:var(--nacht)}
+.b.img{background:repeating-linear-gradient(45deg,#DDE1E7,#DDE1E7 6px,#E6E9EE 6px,#E6E9EE 12px);
+  min-height:110px;display:flex;align-items:center;justify-content:center}
+.b.img span{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7C8595;
+  background:#fff;padding:3px 8px;border-radius:3px}
+.lbl{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7C8595;margin-bottom:7px;
+  font-family:"Space Grotesk"}
+.b.dark .lbl{color:#7F86A0}
+.ln{height:8px;background:#CDD2DA;border-radius:2px;margin-bottom:6px}
+.ln.s{width:45%} .ln.m{width:70%} .ln.l{width:92%}
+.ln.h1{height:18px;width:80%;background:#0D0D1A;margin-bottom:10px}
+.ln.h2{height:13px;width:55%;background:#4B5262;margin-bottom:8px}
+.grid{display:grid;gap:8px}
+.g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)} .g6{grid-template-columns:repeat(6,1fr)}
+.split{display:grid;grid-template-columns:1.25fr 1fr;gap:12px}
+.btn{display:inline-block;font-size:11px;font-weight:700;padding:8px 14px;border-radius:4px;
+  font-family:"Space Grotesk"}
+.btn.p{background:var(--vuur);color:#fff}
+.btn.s{background:#fff;color:var(--nacht);border:1.5px solid var(--nacht)}
+.crumb{font-size:11px;color:#6B7280;font-family:"Space Grotesk";font-weight:500}
+.crumb b{color:var(--nacht)}
+.pill{display:inline-block;font-size:10px;font-weight:600;background:#fff;border:1px solid var(--line);
+  border-radius:99px;padding:3px 9px;margin:0 4px 4px 0;color:#4B5563}
+.stat{text-align:center;background:#fff;border:1px solid var(--line);border-radius:4px;padding:10px 6px}
+.stat b{display:block;font-family:"Space Grotesk";font-size:15px}
+.stat span{font-size:9.5px;color:#7C8595;text-transform:uppercase;letter-spacing:.05em}
+.acc{background:#fff;border:1px solid var(--line);border-radius:4px;padding:9px 11px;margin-bottom:5px;
+  display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#374151}
+.acc i{font-style:normal;color:#9CA3AF}
+.hop{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;background:var(--nacht);padding:10px;border-radius:5px}
+.hop div{background:#1C1E30;border-radius:4px;padding:10px;color:#C9CDDC;font-size:11px}
+.hop div:last-child{background:var(--vuur);color:#fff;font-weight:700}
+.hop b{display:block;color:#fff;font-size:11px;margin-bottom:2px;font-family:"Space Grotesk"}
+.q{background:#fff;border-left:3px solid var(--vuur);padding:11px 13px;border-radius:0 4px 4px 0}
+.q .ln{background:#D6DAE1}
+.face{width:34px;height:34px;border-radius:50%;background:#C7CCD6;flex:none}
+.fx{display:flex;gap:10px;align-items:center}
+.mini{font-size:10.5px;color:#7C8595;margin-top:6px}
+.star{color:var(--vuur);font-size:12px;letter-spacing:1px}
+
+/* ---------- foot ---------- */
+.foot{background:#fff;border:1px solid #E1E4EA;border-radius:6px;padding:26px;margin-top:28px}
+.foot h2{font-size:19px;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:9px}
+.foot li{font-size:13.5px;color:#374151;padding-left:18px;position:relative}
+.foot li:before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;background:var(--klik);border-radius:2px}
+.foot code{background:var(--canvas);border:1px solid #E1E4EA;border-radius:3px;padding:1px 5px;
+  font-size:12px;font-family:ui-monospace,Menlo,monospace}
+.sectitle{font-family:"Space Grotesk";font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#7C8595;margin:32px 0 12px}
+
+@media(max-width:900px){
+  .row{grid-template-columns:38px 1fr}
+  .note{grid-column:2;border-top:1px dashed #E1E4EA}
+  .wf{border-right:none}
+  .split,.g4,.g6,.g3{grid-template-columns:1fr}
+  .hop{grid-template-columns:1fr}
+}
+@media print{body{background:#fff}.row{break-inside:avoid}}
+</style></head><body><div class="doc">
+<header class="mast"><div class="mast-in">
+<div class="brand"><b>Qlickr</b><span class="x">&times;</span>Spotlezz &nbsp;&middot;&nbsp; Wireframe</div>
+<h1>FAQ <em>hub en detail</em></h1>
+<p>Twee lagen. Een hub met alle vragen gegroepeerd per thema, en detailpagina's voor vragen met echt zoekvolume. De vraaggerichte content uit het voorstel ('wat kost een schoonmaakbedrijf in Almere', 'hoe kies je een schoonmaakbedrijf') landt hier. Omdat de blog buiten de structuur blijft, is dit de volledige informatieve laag van de site.</p>
+<div class="legend">
+<span class="tag t-seo">SEO</span>
+<span class="tag t-eeat">EEAT</span>
+<span class="tag t-pogo">Anti-pogo</span>
+<span class="tag t-cta">Conversie</span>
+<span class="tag t-schema">Schema</span>
+</div>
+</div></header>
+<div class="sectitle">Paginaopbouw van boven naar beneden</div>
+<div class="row">
+<div class="num">1</div>
+<div class="wf"><div class="b dark" style="padding:10px 12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+<div style="font-family:'Space Grotesk';font-weight:700;font-size:13px">Spotlezz.</div>
+<div style="display:flex;gap:12px;font-size:10.5px;color:#9BA1B5">
+<span>Diensten &#9662;</span><span>Klantcases</span><span>Locaties</span><span>Veelgestelde vragen</span><span>Over ons</span><span>Contact</span></div>
+<div class="btn p" style="padding:6px 11px;font-size:10px">Offerte aanvragen</div>
+</div></div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:7px;padding:0 2px">
+<div class="crumb">Home &rsaquo; Veelgestelde vragen &rsaquo; Kosten &rsaquo; <b>Wat kost een schoonmaakbedrijf per uur?</b></div>
+<div style="font-size:10.5px;color:#6B7280"><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4,8/5 &middot; 87 beoordelingen &middot; 036-785 7028</div>
+</div></div>
+<div class="note"><h3>Navigatie en breadcrumb</h3><p>Drie niveaus diep: hub, thema, vraag. De breadcrumb maakt het thema klikbaar zodat de bezoeker zijwaarts kan.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span><span class="tag t-schema">Schema</span></div></div>
+</div><div class="row">
+<div class="num">2</div>
+<div class="wf"><div class="lbl">Hub-variant &middot; /veelgestelde-vragen/</div>
+<div class="ln h1" style="width:62%"></div>
+<div class="b solid" style="background:#fff;margin:10px 0"><div class="ln" style="width:100%;height:20px;background:#EDEFF3;margin:0"></div>
+<div class="mini">Zoek een vraag...</div></div>
+<div><span class="pill">Alles</span><span class="pill">Kosten</span><span class="pill">Werkwijze</span>
+<span class="pill">Kwaliteit</span><span class="pill">Duurzaamheid</span><span class="pill">Contract</span></div>
+<div class="lbl" style="margin-top:12px">Kosten</div>
+<div class="acc"><span>Wat kost een schoonmaakbedrijf in Almere?</span><i>&#8594; volledig antwoord</i></div>
+<div class="acc"><span>Wat kost een schoonmaakbedrijf per uur?</span><i>&#8594; volledig antwoord</i></div>
+<div class="acc"><span>Hoe wordt een offerte opgebouwd?</span><i>+</i></div>
+<div class="lbl" style="margin-top:10px">Werkwijze</div>
+<div class="acc"><span>Hoe vaak moet een kantoor schoongemaakt worden?</span><i>&#8594; volledig antwoord</i></div>
+<div class="acc"><span>Maken jullie ook buiten kantooruren schoon?</span><i>+</i></div></div>
+<div class="note"><h3>FAQ-hub</h3><p>Alle vragen gegroepeerd per thema, met zoekveld en filters. Vragen met eigen zoekvolume krijgen een eigen detailpagina, de rest blijft accordion.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-schema">Schema</span><span class="tag t-pogo">Anti-pogo</span></div><div class="why">Vervangt de losse FAQ-blokken die nu op elke pagina gedupliceerd staan. Duplicate content wordt zo een geconcentreerde hub.</div></div>
+</div><div class="row">
+<div class="num">3</div>
+<div class="wf"><div class="lbl">Detailpagina &middot; het korte antwoord</div>
+<div class="ln h1" style="width:78%"></div>
+<div class="b solid" style="background:#fff;border-left:3px solid #1B2EFF;margin-top:12px">
+<div class="lbl" style="color:#1B2EFF">&#9656; Het korte antwoord</div>
+<div class="ln l"></div><div class="ln l"></div><div class="ln m"></div>
+<div class="mini">40 tot 60 woorden, met een concreet getal of bandbreedte</div>
+</div></div>
+<div class="note"><h3>Kort antwoord bovenaan</h3><p>Het antwoord staat als eerste, niet als conclusie. Snippet- en AI Overview-kandidaat.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span></div><div class="why">Dit blok bestaat volledig om de terugsprong te voorkomen. Wie geen getal ziet, gaat het bij de concurrent halen.</div></div>
+</div><div class="row">
+<div class="num">4</div>
+<div class="wf"><div class="lbl">Verdieping &middot; welke factoren bepalen de prijs</div>
+<div class="ln h2" style="width:50%"></div>
+<div class="grid g3" style="margin:8px 0 10px">
+<div class="b">Oppervlakte in m&sup2;</div><div class="b">Frequentie per week</div><div class="b">Type ruimte</div>
+</div>
+<div class="grid g3" style="margin-bottom:12px">
+<div class="b">Bezettingsgraad</div><div class="b">Tijdstip (dag of avond)</div><div class="b">Extra werkzaamheden</div>
+</div>
+<div class="split">
+<div><div class="ln l"></div><div class="ln l"></div><div class="ln l"></div><div class="ln m"></div>
+<div class="mini">Uitleg per factor in lopende tekst, scanbaar met tussenkoppen</div></div>
+<div class="b img" style="min-height:130px"><span>Eigen foto &middot; situatie op locatie</span></div>
+</div></div>
+<div class="note"><h3>Verdieping op de prijsfactoren</h3><p>Geen prijstabel per branche. In plaats daarvan leggen we uit welke factoren de prijs bepalen: oppervlakte, frequentie, type ruimte, bezetting, tijdstip en extra werk.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span></div><div class="why">Een tabel met vaste bedragen per branche belooft meer dan Spotlezz waar kan maken zonder het pand gezien te hebben. Uitleggen wat de prijs stuurt geeft dezelfde duidelijkheid zonder het risico.</div></div>
+</div><div class="row">
+<div class="num">5</div>
+<div class="wf"><div class="lbl">Conversieblok &middot; kies een van de twee varianten</div>
+<div class="split">
+<div class="b solid" style="background:#fff">
+<div class="lbl" style="color:#1B2EFF">Variant A &middot; e-mailmagneet</div>
+<div class="grid g3" style="gap:6px">
+<div class="ln" style="height:24px;background:#EDEFF3;margin:0"></div>
+<div class="ln" style="height:24px;background:#EDEFF3;margin:0"></div>
+<div class="ln" style="height:24px;background:#EDEFF3;margin:0"></div>
+</div>
+<div class="ln" style="height:24px;background:#EDEFF3;width:100%;margin-top:6px"></div>
+<div class="mini">m&sup2; &middot; frequentie &middot; branche &middot; e-mailadres</div>
+<div class="btn p" style="display:block;text-align:center;margin-top:8px">Ontvang je indicatie per mail</div>
+<div class="mini">De uitkomst gaat naar de inbox. Levert een lead op, ook als de bezoeker nog niet wil bellen.</div>
+</div>
+<div class="b solid" style="background:#fff">
+<div class="lbl" style="color:#FF5500">Variant B &middot; vanaf-prijs per m&sup2;</div>
+<div class="stat" style="padding:14px"><b style="font-size:22px">vanaf &euro; x,xx</b><span>per m&sup2; per beurt</span></div>
+<div class="b" style="background:#FFF6E8;border-color:#F0C98A;margin-top:8px">
+<div class="lbl" style="color:#A9702A">&#9888; Disclaimer, altijd zichtbaar</div>
+<div class="ln l" style="background:#E3CBA4"></div><div class="ln m" style="background:#E3CBA4"></div>
+<div class="mini" style="color:#8A6428">Dit is een vanaf-prijs. De uiteindelijke prijs hangt af van oppervlakte, frequentie, type ruimte, bezetting en tijdstip, en wordt op locatie besproken.</div>
+</div>
+<div class="btn p" style="display:block;text-align:center;margin-top:8px">Plan een rondgang</div>
+</div>
+</div></div>
+<div class="note"><h3>Conversieblok: magneet of vanaf-prijs</h3><p>Twee opties, kies er een. <b>Variant A:</b> de calculator is een e-mailmagneet. De bezoeker vult m&sup2;, frequentie en branche in en krijgt de indicatie per mail, dus je hebt een lead. <b>Variant B:</b> je toont een vanaf-prijs per m&sup2; met een duidelijke disclaimer erbij dat het een vanaf-prijs is die afhangt van meerdere factoren en op locatie wordt besproken.</p><div class="tags"><span class="tag t-cta">Conversie</span><span class="tag t-pogo">Anti-pogo</span></div><div class="why">Beide varianten lossen hetzelfde probleem op: de bezoeker die geen getal ziet, gaat het bij de concurrent halen. Variant A levert een e-mailadres op, variant B levert vertrouwen op. Wat je niet moet doen is helemaal geen getal noemen.</div></div>
+</div><div class="row">
+<div class="num">6</div>
+<div class="wf"><div class="lbl">Next-hop bar &middot; exact 3 routes</div>
+<div class="hop"><div><b>&#8593; Omhoog</b>Alle veelgestelde vragen</div><div><b>&#8594; Zijwaarts</b>Kantoorschoonmaak &middot; Klantcase Kobelco</div><div><b>&#9656; Conversie</b>Offerte op maat aanvragen</div></div></div>
+<div class="note"><h3>Next-hop bar</h3><p>Omhoog naar de FAQ-hub, zijwaarts naar de pillar die de vraag beantwoordt, plus de conversie.</p><div class="tags"><span class="tag t-pogo">Anti-pogo</span><span class="tag t-cta">Conversie</span></div></div>
+</div>
+<div class="foot">
+<h2>Schema en regels voor dit paginatype</h2>
+<ul><li><code>FAQPage</code> op de hub, <code>QAPage</code> op elke detailpagina.</li><li><code>BreadcrumbList</code> drie niveaus diep: hub, thema, vraag.</li><li>Geen prijstabel per branche. De prijsfactoren worden uitgelegd, de prijs zelf komt uit het conversieblok.</li><li>Geen auteursblok, reviewblok of gerelateerde vragen op dit paginatype. Die staan op de pillar, de case en de locatiepagina. Hier houden we het antwoord kort en sturen we direct door.</li><li>Een vraag krijgt alleen een eigen detailpagina bij aantoonbaar zoekvolume. Anders blijft hij accordion op de hub.</li><li>Elk FAQ-artikel linkt omhoog naar precies een pillar. Niet naar drie.</li></ul>
+</div>
+<div class="foot" style="margin-top:14px">
+<h2>De drie vaste pogo-stick regels</h2>
+<ul>
+<li><b>Intent-match binnen 5 seconden.</b> Boven de vouw staat het zoekwoord letterlijk, plus regio, reviewscore en reactietijd.</li>
+<li><b>Volledigheid op de pagina zelf.</b> Prijs, frequentie, regio en reactietijd worden hier beantwoord, niet op Google.</li>
+<li><b>Gestuurde volgende hop.</b> Exact drie routes onderaan: een omhoog, een zijwaarts, een conversie. Nooit meer, nooit minder.</li>
+</ul>
+</div>
+</div></body></html>

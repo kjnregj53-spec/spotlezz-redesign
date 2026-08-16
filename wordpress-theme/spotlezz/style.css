@@ -1,0 +1,18 @@
+/*
+Theme Name: Spotlezz
+Theme URI: https://spotlezz.nl
+Author: Qlickr x Spotlezz
+Author URI: https://spotlezz.nl
+Description: Custom theme voor Spotlezz. Gebouwd op het wireframe-audit-traject in audit/WORDPRESS-BUILD-PLAN.md. Content wordt via ACF-veldgroepen beheerd door de klant (tekst + afbeeldingen), structuur en schema-uitvoer zijn theme-code.
+Version: 0.1.0 (fase 4A — foundation)
+Requires at least: 6.4
+Requires PHP: 8.0
+Text Domain: spotlezz
+*/
+
+/*
+Dit bestand bevat opzettelijk alleen de verplichte theme-header.
+De echte styling wordt geladen via assets/css/theme.css (zie inc/enqueue.php),
+zodat WordPress' vereiste voor een style.css met een geldige header niet
+vermengd raakt met de daadwerkelijke CSS-onderhoudsstroom.
+*/

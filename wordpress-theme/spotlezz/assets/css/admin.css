@@ -1,0 +1,5 @@
+/* Minimale styling voor de native Site Options-fallbackpagina (inc/site-options.php).
+   Alleen relevant zolang ACF nog niet actief is. */
+.toplevel_page_spotlezz-site-options .form-table th {
+	width: 260px;
+}

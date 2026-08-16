@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wireframe FINAL: Dienst detail (pillar) | Qlickr x Spotlezz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --nacht:#0D0D1A; --klik:#1B2EFF; --vuur:#FF5500;
+  --paper:#FFFFFF; --canvas:#F4F5F7; --block:#E6E9EE; --block2:#DCE0E7;
+  --line:#C7CCD6; --ink:#0D0D1A; --mute:#6B7280; --wijz:#00A86B;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,-apple-system,"Segoe UI",sans-serif;
+  background:var(--canvas); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.disp{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em}
+.doc{max-width:1240px;margin:0 auto;padding:0 24px 80px}
+.mast{background:var(--nacht);color:#fff;margin:0 -24px 0;padding:34px 24px 30px}
+.mast-in{max-width:1192px;margin:0 auto}
+.brand{font-family:"Space Grotesk";font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#8A8FA3}
+.brand b{color:#fff}
+.brand .x{color:var(--vuur);margin:0 6px}
+.mast h1{font-size:34px;font-weight:700;margin-top:10px}
+.mast h1 em{font-style:normal;color:var(--klik);background:#fff;padding:0 8px;border-radius:3px}
+.mast p{color:#A7ACBD;margin-top:8px;max-width:820px;font-size:15px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;padding:3px 8px;border-radius:3px;white-space:nowrap;font-family:"Space Grotesk"}
+.t-seo{background:var(--klik);color:#fff}
+.t-eeat{background:var(--vuur);color:#fff}
+.t-pogo{background:#0D0D1A;color:#fff}
+.t-cta{background:#00A86B;color:#fff}
+.t-schema{background:#fff;color:#0D0D1A;border:1.5px solid #0D0D1A}
+.t-fix{background:#B91C1C;color:#fff}
+.mast .t-schema{background:transparent;color:#fff;border-color:#4A4F63}
+.row{display:grid;grid-template-columns:52px 1fr 340px;gap:0;background:var(--paper);
+  border:1px solid #E1E4EA;border-top:none}
+.row:first-of-type{border-top:1px solid #E1E4EA;border-radius:6px 6px 0 0}
+.row:last-of-type{border-radius:0 0 6px 6px}
+.num{background:var(--nacht);color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:15px;
+  display:flex;justify-content:center;padding-top:22px}
+.wf{padding:22px;border-right:1px solid #E1E4EA;background:#FBFBFC}
+.note{padding:22px 20px;background:#fff}
+.note h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.note p{font-size:13px;color:#4B5563;margin-bottom:10px}
+.note .tags{display:flex;flex-wrap:wrap;gap:5px}
+.note .why{font-size:12px;color:#6B7280;border-left:2px solid var(--vuur);padding-left:9px;margin-top:10px}
+.note .fix{font-size:12px;color:#7A1212;border-left:2px solid #B91C1C;padding-left:9px;margin-top:10px;background:#FEF2F2;padding:8px 9px;border-radius:0 4px 4px 0}
+.b{background:var(--block);border:1px dashed var(--line);border-radius:4px;padding:12px;position:relative}
+.b.solid{border-style:solid}
+.b.dark{background:var(--nacht);color:#fff;border-color:var(--nacht)}
+.b.img{background:repeating-linear-gradient(45deg,#DDE1E7,#DDE1E7 6px,#E6E9EE 6px,#E6E9EE 12px);
+  min-height:110px;display:flex;align-items:center;justify-content:center}
+.b.img span{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7C8595;
+  background:#fff;padding:3px 8px;border-radius:3px}
+.b.link{border-color:var(--klik);position:relative}
+.b.link:after{content:"↗ link";position:absolute;top:6px;right:8px;font-size:8.5px;font-weight:700;color:var(--klik);
+  letter-spacing:.05em;text-transform:uppercase}
+.lbl{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7C8595;margin-bottom:7px;
+  font-family:"Space Grotesk"}
+.b.dark .lbl{color:#7F86A0}
+.ln{height:8px;background:#CDD2DA;border-radius:2px;margin-bottom:6px}
+.ln.s{width:45%} .ln.m{width:70%} .ln.l{width:92%}
+.ln.h1{height:18px;width:80%;background:#0D0D1A;margin-bottom:10px}
+.ln.h2{height:13px;width:55%;background:#4B5262;margin-bottom:8px}
+.grid{display:grid;gap:8px}
+.g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)} .g6{grid-template-columns:repeat(6,1fr)}
+.split{display:grid;grid-template-columns:1.25fr 1fr;gap:12px}
+.btn{display:inline-block;font-size:11px;font-weight:700;padding:8px 14px;border-radius:4px;
+  font-family:"Space Grotesk"}
+.btn.p{background:var(--vuur);color:#fff}
+.btn.s{background:#fff;color:var(--nacht);border:1.5px solid var(--nacht)}
+.crumb{font-size:11px;color:#6B7280;font-family:"Space Grotesk";font-weight:500}
+.crumb b{color:var(--nacht)}
+.pill{display:inline-block;font-size:10px;font-weight:600;background:#fff;border:1px solid var(--klik);
+  border-radius:99px;padding:3px 9px;margin:0 4px 4px 0;color:var(--klik)}
+.pill.dead{border-color:#DC2626;color:#DC2626;text-decoration:line-through}
+.stat{text-align:center;background:#fff;border:1px solid var(--line);border-radius:4px;padding:10px 6px}
+.stat b{display:block;font-family:"Space Grotesk";font-size:15px}
+.stat span{font-size:9.5px;color:#7C8595;text-transform:uppercase;letter-spacing:.05em}
+.acc{background:#fff;border:1px solid var(--line);border-radius:4px;padding:9px 11px;margin-bottom:5px;
+  display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#374151}
+.acc i{font-style:normal;color:#9CA3AF}
+.hop{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;background:var(--nacht);padding:10px;border-radius:5px}
+.hop div{background:#1C1E30;border-radius:4px;padding:10px;color:#C9CDDC;font-size:11px}
+.hop div:last-child{background:var(--vuur);color:#fff;font-weight:700}
+.hop b{display:block;color:#fff;font-size:11px;margin-bottom:2px;font-family:"Space Grotesk"}
+.q{background:#fff;border-left:3px solid var(--vuur);padding:11px 13px;border-radius:0 4px 4px 0}
+.q .ln{background:#D6DAE1}
+.face{width:34px;height:34px;border-radius:50%;background:#C7CCD6;flex:none}
+.fx{display:flex;gap:10px;align-items:center}
+.mini{font-size:10.5px;color:#7C8595;margin-top:6px}
+.star{color:var(--vuur);font-size:12px;letter-spacing:1px}
+.foot{background:#fff;border:1px solid #E1E4EA;border-radius:6px;padding:26px;margin-top:28px}
+.foot h2{font-size:19px;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:9px}
+.foot li{font-size:13.5px;color:#374151;padding-left:18px;position:relative}
+.foot li:before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;background:var(--klik);border-radius:2px}
+.foot code{background:var(--canvas);border:1px solid #E1E4EA;border-radius:3px;padding:1px 5px;
+  font-size:12px;font-family:ui-monospace,Menlo,monospace}
+.sectitle{font-family:"Space Grotesk";font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#7C8595;margin:32px 0 12px}
+.changelog{background:#fff;border:1.5px solid var(--wijz);border-radius:6px;padding:22px 26px;margin-bottom:28px}
+.changelog h2{font-size:16px;margin-bottom:10px;color:var(--wijz)}
+.changelog li{font-size:13px;color:#374151;margin-bottom:6px;padding-left:16px;position:relative}
+.changelog li:before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;background:var(--wijz);border-radius:1px}
+.changelog code{background:var(--canvas);border:1px solid #E1E4EA;border-radius:3px;padding:1px 5px;font-size:12px;font-family:ui-monospace,Menlo,monospace}
+@media(max-width:900px){
+  .row{grid-template-columns:38px 1fr}
+  .note{grid-column:2;border-top:1px dashed #E1E4EA}
+  .wf{border-right:none}
+  .split,.g4,.g6,.g3{grid-template-columns:1fr}
+  .hop{grid-template-columns:1fr}
+}
+@media print{body{background:#fff}.row{break-inside:avoid}}
+</style></head><body><div class="doc">
+<header class="mast"><div class="mast-in">
+<div class="brand"><b>Qlickr</b><span class="x">&times;</span>Spotlezz &nbsp;&middot;&nbsp; Wireframe &middot; FINAL v2</div>
+<h1>Dienst detail <em>(pillar)</em></h1>
+<p>Zwaarste pagina van de site. Geldt voor de zes branche-pillars (kantoor, hotel, showroom, sportschool, kinderopvang, VvE) en de vier dienst-pillars (glasbewassing, vloeronderhoud, opleveringsschoonmaak, hygieneservice). Deze versie legt vast wat de audit tegen kantoor-schoonmaak en glasbewassing vond.</p>
+<div class="legend">
+<span class="tag t-seo">SEO</span><span class="tag t-eeat">EEAT</span><span class="tag t-pogo">Anti-pogo</span>
+<span class="tag t-cta">Conversie</span><span class="tag t-schema">Schema</span><span class="tag t-fix">Fix t.o.v. huidige bouw</span>
+</div>
+</div></header>
+
+<div class="changelog">
+<h2>Wat is er veranderd t.o.v. wireframe v1, en waarom</h2>
+<ul>
+<li>Rij 1 heeft nu een harde regel tegen dubbele chrome: kantoor-schoonmaak bevat momenteel <b>zes</b> <code>&lt;main&gt;</code>-tags, vijf dubbele skip-links, en <b>twee losse next-hop bars</b> naast elkaar (een handgebouwde en de nieuwe getemplate versie) — zie audit §0 en §2.</li>
+<li>Rij 9 (klantcases) heeft nu een harde regel dat elke case naar een <em>bestaande</em> URL linkt. De huidige kantoor-schoonmaak-pagina noemt een tweede case "Kersvers" — die pagina bestaat niet, alleen <code>kobelco</code>, <code>kuchentreff</code> en <code>arena-gym</code> bestaan. Dat is een dode link, geen contentkeuze.</li>
+<li>Rij 8 (medewerker) heeft nu een harde regel dat de medewerker een <code>Person</code>-node in de JSON-LD krijgt. Op zowel kantoor-schoonmaak als glasbewassing ontbreekt dat volledig — alleen de oprichter heeft een Person-schema. Kantoor-schoonmaak toont bovendien het verkeerde voorletter-avatar ("S" naast de naam Thomas Jansen).</li>
+<li>Rij 10 (regioblok) heeft nu een harde regel dat alle acht pills linken. Op kantoor-schoonmaak zijn de Almere-pills wel links, maar Lelystad, Amsterdam en Amersfoort zijn dode <code>&lt;span&gt;</code>'s.</li>
+</ul>
+</div>
+
+<div class="sectitle">Paginaopbouw van boven naar beneden</div>
+
+<div class="row">
+<div class="num">1</div>
+<div class="wf"><div class="b dark" style="padding:10px 12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+<div style="font-family:'Space Grotesk';font-weight:700;font-size:13px">Spotlezz.</div>
+<div style="display:flex;gap:12px;font-size:10.5px;color:#9BA1B5">
+<span>Diensten &#9662;</span><span>Klantcases</span><span>Locaties</span><span>Veelgestelde vragen</span><span>Over ons</span><span>Contact</span></div>
+<div class="btn p" style="padding:6px 11px;font-size:10px">Offerte aanvragen</div>
+</div></div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:7px;padding:0 2px">
+<div class="crumb">Home &rsaquo; Diensten &rsaquo; <b>Kantoorschoonmaak</b></div>
+<div style="font-size:10.5px;color:#6B7280"><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4,8/5 &middot; 87 beoordelingen &middot; 036-785 7028</div>
+</div></div>
+<div class="note"><h3>Navigatie en breadcrumb</h3><p>Ongewijzigd qua opzet.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span><span class="tag t-schema">Schema</span></div><div class="fix"><b>Build-regel, hard:</b> deze balk komt precies één keer voor. <code>diensten/kantoor-schoonmaak/index.html</code> bevat nu zes <code>&lt;main id="main"&gt;</code>-tags en vijf dubbele skip-links (zelfde idempotentie-bug als op de homepage, zie audit §0) — en daarbovenop nog een eigen probleem: een handgebouwde next-hop bar (regel 794-807) staat naast de getemplate versie (regel 885-901). Twee next-hop bars op één pagina kan niet.</div></div>
+</div>
+
+<div class="row">
+<div class="num">2</div>
+<div class="wf"><div class="split">
+<div>
+<div class="ln h1"></div><div class="ln h1" style="width:55%"></div>
+<div class="ln l" style="margin-top:12px"></div><div class="ln m"></div>
+<div style="margin:12px 0 4px">
+<span class="pill">&#10003; Afspraak binnen 12 uur</span><span class="pill">&#10003; Vast aanspreekpunt</span>
+<span class="pill">&#10003; 94% verlengt het contract</span></div>
+<div style="margin-top:10px"><span class="btn p">Offerte aanvragen</span> <span class="btn s">Bel 036-785 7028</span></div>
+</div>
+<div class="b solid" style="background:#fff">
+<div class="lbl">Snelofferte (sticky)</div>
+<div class="ln" style="height:26px;background:#EDEFF3;width:100%"></div>
+<div class="ln" style="height:26px;background:#EDEFF3;width:100%"></div>
+<div class="ln" style="height:26px;background:#EDEFF3;width:100%"></div>
+<div class="btn p" style="display:block;text-align:center;margin-top:8px">Offerte binnen 24 uur</div>
+</div></div></div>
+<div class="note"><h3>Hero met intent-match</h3><p>Ongewijzigd: H1 met zoekwoord plus regio, snelofferte direct in beeld.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-cta">Conversie</span><span class="tag t-pogo">Anti-pogo</span></div></div>
+</div>
+
+<div class="row">
+<div class="num">3</div>
+<div class="wf"><div class="lbl">Antwoordblok &middot; het pogo-schild</div>
+<div class="b solid" style="background:#fff">
+<div class="ln h2" style="width:30%"></div>
+<div class="ln l"></div><div class="ln l"></div><div class="ln m"></div>
+<div class="grid g4" style="margin-top:12px">
+<div class="stat"><b>zie FAQ</b><span>Prijsfactoren</span></div>
+<div class="stat"><b>1x tot 5x pw</b><span>Frequentie</span></div>
+<div class="stat"><b>Almere e.o.</b><span>Regio</span></div>
+<div class="stat"><b>&lt; 12 uur</b><span>Reactietijd</span></div>
+</div></div></div>
+<div class="note"><h3>Antwoordblok (40 tot 60 woorden)</h3><p>Ongewijzigd. De vanafprijs-tegel blijft vervangen door een link naar de prijsfactoren-FAQ, zoals in de huidige bouw — dat was een bewuste, goede keuze en staat correct geïmplementeerd.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span></div></div>
+</div>
+
+<div class="row">
+<div class="num">4</div>
+<div class="wf"><div class="lbl">Wat doen wij precies &middot; elk blok linkt naar een dienst-pillar</div>
+<div class="grid g4">
+<div class="b link">Werkplekken</div>
+<div class="b link">Sanitair<div class="mini">&#8594; hygieneservice</div></div>
+<div class="b link">Vloeren<div class="mini">&#8594; vloeronderhoud</div></div>
+<div class="b link">Glas &amp; kozijnen<div class="mini">&#8594; glasbewassing</div></div>
+</div>
+<div class="grid g4" style="margin-top:8px">
+<div class="b">Pantry</div><div class="b">Contactpunten</div>
+<div class="b link">Tapijt<div class="mini">&#8594; tapijtreiniging</div></div>
+<div class="b">Beeldschermen</div>
+</div></div>
+<div class="note"><h3>Werkzaamheden, scanbaar</h3><p>Ongewijzigd. Dit blok stond er in de gecontroleerde pagina's goed bij.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span></div></div>
+</div>
+
+<div class="row">
+<div class="num">5</div>
+<div class="wf"><div class="lbl">Werkwijze in 4 stappen</div>
+<div class="grid g4">
+<div class="b"><b style="font-family:'Space Grotesk'">1</b><div class="ln l" style="margin-top:6px"></div><div class="ln m"></div></div>
+<div class="b"><b style="font-family:'Space Grotesk'">2</b><div class="ln l" style="margin-top:6px"></div><div class="ln m"></div></div>
+<div class="b"><b style="font-family:'Space Grotesk'">3</b><div class="ln l" style="margin-top:6px"></div><div class="ln m"></div></div>
+<div class="b"><b style="font-family:'Space Grotesk'">4</b><div class="ln l" style="margin-top:6px"></div><div class="ln m"></div></div>
+</div>
+<div class="lbl" style="margin-top:16px">Spotlezz versus andere bedrijven</div>
+<div class="grid g2">
+<div class="b dark"><div class="lbl">Spotlezz</div><div class="ln l" style="background:#3A3F55"></div><div class="ln l" style="background:#3A3F55"></div><div class="ln m" style="background:#3A3F55"></div></div>
+<div class="b"><div class="lbl">Andere bedrijven</div><div class="ln l"></div><div class="ln l"></div><div class="ln m"></div></div>
+</div>
+<div style="text-align:center;margin-top:14px">
+<span class="btn p" style="padding:11px 22px;font-size:12px">Vraag een offerte aan</span>
+<div class="mini">Vrijblijvend &middot; reactie binnen 12 uur</div></div></div>
+<div class="note"><h3>Werkwijze, vergelijkingstabel en CTA</h3><p>Ongewijzigd t.o.v. v1.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-cta">Conversie</span></div></div>
+</div>
+
+<div class="row">
+<div class="num">6</div>
+<div class="wf"><div class="lbl">Eigen fotografie &middot; geen stockbeeld</div>
+<div class="grid g3">
+<div class="b img" style="min-height:120px"><span>Eigen foto &middot; team aan het werk</span></div>
+<div class="b img" style="min-height:120px"><span>Eigen foto &middot; het pand of de ruimte</span></div>
+<div class="b img" style="min-height:120px"><span>Eigen foto &middot; materiaal en producten</span></div>
+</div>
+<div class="mini">Alt-tekst met zoekwoord plus locatie. Geen afbeeldingen vanaf de stagingomgeving.</div></div>
+<div class="note"><h3>Eigen foto's</h3><p>Ongewijzigd. Wacht op echte fotografie van de klant, zie fase 2 van het traject.</p><div class="tags"><span class="tag t-eeat">EEAT</span><span class="tag t-seo">SEO</span></div></div>
+</div>
+
+<div class="row">
+<div class="num">7</div>
+<div class="wf"><div class="lbl">Reviewblok</div>
+<div class="grid g3">
+<div class="q"><div class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="ln l" style="margin-top:6px"></div><div class="ln m"></div></div>
+<div class="q"><div class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="ln l" style="margin-top:6px"></div><div class="ln s"></div></div>
+<div class="q"><div class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="ln l" style="margin-top:6px"></div><div class="ln m"></div></div>
+</div>
+<div class="mini">Gemiddelde 4,8/5 uit 87 beoordelingen &middot; AggregateRating-schema</div></div>
+<div class="note"><h3>Reviewblok</h3><p>Ongewijzigd.</p><div class="tags"><span class="tag t-eeat">EEAT</span><span class="tag t-schema">Schema</span></div></div>
+</div>
+
+<div class="row">
+<div class="num">8</div>
+<div class="wf"><div class="lbl">Medewerker aan het woord</div>
+<div class="split">
+<div class="b solid" style="background:#fff">
+<div class="fx"><div class="face" style="width:46px;height:46px"></div>
+<div><div class="ln" style="width:110px;height:9px"></div><div class="ln" style="width:150px;height:6px;margin:0"></div>
+<div class="mini" style="margin-top:4px">&#128279; LinkedIn-profiel (echte URL)</div></div></div>
+<div class="ln l" style="margin-top:11px"></div><div class="ln l"></div><div class="ln m"></div>
+<div class="mini">Citaat van de vaste schoonmaker die dit type pand doet</div>
+</div>
+<div class="b img"><span>Foto op locatie</span></div>
+</div></div>
+<div class="note"><h3>Medewerker aan het woord</h3><p>Ongewijzigd qua opzet.</p><div class="tags"><span class="tag t-eeat">EEAT</span><span class="tag t-schema">Schema</span></div><div class="fix"><b>Build-regel, hard:</b> deze medewerker krijgt een <code>Person</code>-node in de pagina's JSON-LD <code>@graph</code>, net als de oprichter al heeft. Op kantoor-schoonmaak (Thomas Jansen) en glasbewassing (Ramon de Vries) ontbreekt dat volledig. Kantoor-schoonmaak toont bovendien het verkeerde voorletter-avatar — "S" naast de naam "Thomas Jansen".</div></div>
+</div>
+
+<div class="row">
+<div class="num">9</div>
+<div class="wf"><div class="lbl">Klantcases &middot; de bewijslaag, exact 2 bestaande cases</div>
+<div class="grid g6" style="margin-bottom:12px">
+<div class="b" style="min-height:34px"></div><div class="b" style="min-height:34px"></div><div class="b" style="min-height:34px"></div>
+<div class="b" style="min-height:34px"></div><div class="b" style="min-height:34px"></div><div class="b" style="min-height:34px"></div>
+</div>
+<div class="grid g2">
+<div class="b solid link" style="background:#fff;padding:0;overflow:hidden">
+<div class="b img" style="border:none;border-radius:0"><span>Foto Kobelco</span></div>
+<div style="padding:12px"><div class="ln h2" style="width:65%"></div><div class="ln l"></div><div class="ln m"></div>
+<div class="mini" style="color:#1B2EFF;font-weight:700">&#8594; /klantcases/kobelco/</div></div></div>
+<div class="b solid link" style="background:#fff;padding:0;overflow:hidden">
+<div class="b img" style="border:none;border-radius:0"><span>Foto KuchenTreff</span></div>
+<div style="padding:12px"><div class="ln h2" style="width:60%"></div><div class="ln l"></div><div class="ln m"></div>
+<div class="mini" style="color:#1B2EFF;font-weight:700">&#8594; /klantcases/kuchentreff/</div></div></div>
+</div></div>
+<div class="note"><h3>Klantcase-blok (exact 2)</h3><p>Ongewijzigd qua opzet: twee cases uit dezelfde branche.</p><div class="tags"><span class="tag t-eeat">EEAT</span><span class="tag t-pogo">Anti-pogo</span></div><div class="fix"><b>Build-regel, hard:</b> alleen linken naar cases die echt bestaan (<code>kobelco</code>, <code>kuchentreff</code>, <code>arena-gym</code>). De huidige kantoor-schoonmaak-pagina noemt een tweede case "Schone bureaus bij Kersvers" — <code>/klantcases/kersvers/</code> bestaat niet. Dat is een dode link/404-risico, geen contentkeuze die iemand bewust heeft gemaakt.</div></div>
+</div>
+
+<div class="row">
+<div class="num">10</div>
+<div class="wf"><div class="lbl">In welke regio leveren wij deze dienst? &middot; alle acht linken</div>
+<div>
+<span class="pill">Almere</span><span class="pill">Almere Stad</span><span class="pill">Almere Buiten</span>
+<span class="pill">Almere Haven</span><span class="pill">Almere Poort</span>
+<span class="pill dead">Lelystad</span><span class="pill dead">Amsterdam</span><span class="pill dead">Amersfoort</span>
+</div>
+<div class="mini">Rode/doorgestreepte pills: nu dode &lt;span&gt;'s zonder href op kantoor-schoonmaak — moeten &lt;a&gt; worden</div></div>
+<div class="note"><h3>Regioblok</h3><p>Ongewijzigd qua opzet.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-pogo">Anti-pogo</span></div><div class="fix"><b>Build-regel, hard:</b> alle acht pills zijn <code>&lt;a href&gt;</code>. Op kantoor-schoonmaak zijn de vijf Almere-pills correct gelinkt, maar Lelystad, Amsterdam en Amersfoort zijn platte <code>&lt;span&gt;</code>'s zonder link.</div></div>
+</div>
+
+<div class="row">
+<div class="num">11</div>
+<div class="wf"><div class="lbl">FAQ-sectie</div>
+<div class="acc"><span>Wat kost dit per maand?</span><i>+</i></div>
+<div class="acc"><span>Hoe vaak komen jullie?</span><i>+</i></div>
+<div class="acc"><span>Werken jullie buiten kantooruren?</span><i>+</i></div>
+<div class="acc"><span>Hoe borgen jullie de kwaliteit?</span><i>+</i></div>
+<div class="acc"><span>Zijn de producten veilig voor mijn team?</span><i>+</i></div>
+<div class="mini">&#8594; Bekijk alle veelgestelde vragen</div></div>
+<div class="note"><h3>FAQ-sectie</h3><p>Ongewijzigd.</p><div class="tags"><span class="tag t-seo">SEO</span><span class="tag t-eeat">EEAT</span><span class="tag t-schema">Schema</span></div></div>
+</div>
+
+<div class="row">
+<div class="num">12</div>
+<div class="wf"><div class="lbl">Next-hop bar &middot; exact 1 bar, exact 3 routes</div>
+<div class="hop"><div><b>&#8593; Omhoog</b>Alle diensten</div><div><b>&#8594; Zijwaarts</b>Bekijk een klantcase</div><div><b>&#9656; Conversie</b>Vraag je offerte aan</div></div></div>
+<div class="note"><h3>Next-hop bar</h3><p>Ongewijzigd.</p><div class="tags"><span class="tag t-pogo">Anti-pogo</span><span class="tag t-cta">Conversie</span></div><div class="fix"><b>Build-regel, hard:</b> precies één next-hop bar. Zie rij 1 — kantoor-schoonmaak heeft er nu twee.</div></div>
+</div>
+
+<div class="foot">
+<h2>Schema en regels voor dit paginatype</h2>
+<ul><li><code>Service</code> op de dienst zelf.</li><li><code>FAQPage</code> op de FAQ-sectie.</li><li><code>AggregateRating</code> (4,8 uit 87).</li><li><code>Person</code> op zowel de medewerker als de oprichter — nu ontbreekt de medewerker.</li><li><code>BreadcrumbList</code>.</li><li>Linkt OMLAAG naar: twee <b>bestaande</b> cases, de bijbehorende FAQ-vragen, alle acht locatiepagina's, en de gerelateerde dienst-pillars.</li></ul>
+</div>
+<div class="foot" style="margin-top:14px">
+<h2>De drie vaste pogo-stick regels</h2>
+<ul>
+<li><b>Intent-match binnen 5 seconden.</b> Boven de vouw staat het zoekwoord letterlijk, plus regio, reviewscore en reactietijd.</li>
+<li><b>Volledigheid op de pagina zelf.</b> Prijs, frequentie, regio en reactietijd worden hier beantwoord, niet op Google.</li>
+<li><b>Gestuurde volgende hop.</b> Exact drie routes onderaan: een omhoog, een zijwaarts, een conversie. Nooit meer, nooit minder.</li>
+</ul>
+</div>
+</div></body></html>

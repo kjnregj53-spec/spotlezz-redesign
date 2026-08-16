@@ -1,2 +1,11 @@
 ﻿node_modules/
 .DS_Store
+
+# Local WordPress preview environment (fase 4B/4C QA) — third-party
+# WordPress core download, generated DB dir, runtime logs, and local-only
+# secrets. Reports and screenshots from the preview ARE tracked (see
+# local-preview/*.md, local-preview/screenshots/).
+local-preview/wordpress/
+local-preview/mysql-data/
+local-preview/*.log
+local-preview/salts.txt
