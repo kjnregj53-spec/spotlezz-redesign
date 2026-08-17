@@ -27,38 +27,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</svg>
 		</button>
 	</div>
+	<?php $diensten_nav_groups = spotlezz_diensten_nav_groups(); ?>
 	<div class="mobile-nav-links">
-		<?php
-		if ( has_nav_menu( 'primary' ) ) {
-			wp_nav_menu(
-				array(
-					'theme_location' => 'primary',
-					'container'      => false,
-					'menu_class'     => 'mobile-menu',
-					'depth'          => 2,
-				)
-			);
-		} else {
-			/**
-			 * Fallback zolang er nog geen menu is aangemaakt — dezelfde vijf
-			 * hubs als de desktop-fallback in
-			 * template-parts/header/navigation.php. Ontbrak hier eerder:
-			 * zonder geregistreerd menu toonde de mobiele overlay nul
-			 * navigatielinks (alleen de offerte-knop) — gevonden tijdens het
-			 * klik-testen van het mobiele menu in de fase-4B-preview.
-			 */
-			?>
-			<ul class="mobile-menu mobile-menu-fallback">
-				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'pillar' ) ?: home_url( '/diensten/' ) ); ?>"><?php esc_html_e( 'Diensten', 'spotlezz' ); ?></a></li>
-				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'case' ) ?: home_url( '/klantcases/' ) ); ?>"><?php esc_html_e( 'Klantcases', 'spotlezz' ); ?></a></li>
-				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'locatie' ) ?: home_url( '/locaties/' ) ); ?>"><?php esc_html_e( 'Locaties', 'spotlezz' ); ?></a></li>
-				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'vraag' ) ?: home_url( '/veelgestelde-vragen/' ) ); ?>"><?php esc_html_e( 'Veelgestelde vragen', 'spotlezz' ); ?></a></li>
-				<li><a href="<?php echo esc_url( home_url( '/over-ons/' ) ); ?>"><?php esc_html_e( 'Over ons', 'spotlezz' ); ?></a></li>
-				<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'spotlezz' ); ?></a></li>
-			</ul>
-			<?php
-		}
-		?>
+		<a href="<?php echo esc_url( get_post_type_archive_link( 'pillar' ) ?: home_url( '/diensten/' ) ); ?>" class="<?php echo esc_attr( ltrim( spotlezz_nav_is_current( 'diensten' ) ) ); ?>"><?php esc_html_e( 'Diensten', 'spotlezz' ); ?></a>
+		<?php foreach ( array_merge( $diensten_nav_groups['voor_wie'], $diensten_nav_groups['wat_we_doen'] ) as $pillar ) : ?>
+			<a href="<?php echo esc_url( get_permalink( $pillar ) ); ?>" class="sub-link"><?php echo esc_html( get_the_title( $pillar ) ); ?></a>
+		<?php endforeach; ?>
+		<a href="<?php echo esc_url( get_post_type_archive_link( 'case' ) ?: home_url( '/klantcases/' ) ); ?>" class="<?php echo esc_attr( ltrim( spotlezz_nav_is_current( 'klantcases' ) ) ); ?>"><?php esc_html_e( 'Klantcases', 'spotlezz' ); ?></a>
+		<a href="<?php echo esc_url( get_post_type_archive_link( 'locatie' ) ?: home_url( '/locaties/' ) ); ?>" class="<?php echo esc_attr( ltrim( spotlezz_nav_is_current( 'locaties' ) ) ); ?>"><?php esc_html_e( 'Locaties', 'spotlezz' ); ?></a>
+		<a href="<?php echo esc_url( get_post_type_archive_link( 'vraag' ) ?: home_url( '/veelgestelde-vragen/' ) ); ?>" class="<?php echo esc_attr( ltrim( spotlezz_nav_is_current( 'faq' ) ) ); ?>"><?php esc_html_e( 'Veelgestelde vragen', 'spotlezz' ); ?></a>
+		<a href="<?php echo esc_url( home_url( '/over-ons/' ) ); ?>" class="<?php echo esc_attr( ltrim( spotlezz_nav_is_current( 'over-ons' ) ) ); ?>"><?php esc_html_e( 'Over ons', 'spotlezz' ); ?></a>
+		<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="<?php echo esc_attr( ltrim( spotlezz_nav_is_current( 'contact' ) ) ); ?>"><?php esc_html_e( 'Contact', 'spotlezz' ); ?></a>
+	</div>
+	<div class="mobile-nav-ctas">
 		<a href="<?php echo esc_url( home_url( '/offerte-aanvragen/' ) ); ?>" class="btn btn-orange">
 			<?php esc_html_e( 'Offerte aanvragen', 'spotlezz' ); ?>
 		</a>

@@ -21,7 +21,7 @@ function spotlezz_register_post_types() {
 		'pillar',
 		array(
 			'labels'       => array(
-				'name'          => __( 'Diensten (pillars)', 'spotlezz' ),
+				'name'          => __( 'Diensten', 'spotlezz' ),
 				'singular_name' => __( 'Dienst-pillar', 'spotlezz' ),
 				'add_new_item'  => __( 'Nieuwe dienst-pillar toevoegen', 'spotlezz' ),
 			),
@@ -78,7 +78,7 @@ function spotlezz_register_post_types() {
 		'vraag',
 		array(
 			'labels'       => array(
-				'name'          => __( 'FAQ-vragen', 'spotlezz' ),
+				'name'          => __( 'Veelgestelde vragen', 'spotlezz' ),
 				'singular_name' => __( 'Vraag', 'spotlezz' ),
 				'add_new_item'  => __( 'Nieuwe vraag toevoegen', 'spotlezz' ),
 			),

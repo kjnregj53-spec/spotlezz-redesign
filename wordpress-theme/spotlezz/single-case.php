@@ -50,6 +50,8 @@ while ( have_posts() ) :
 			return $pillar instanceof WP_Post && 'publish' === $pillar->post_status;
 		}
 	);
+
+	spotlezz_page_hero( $headline, spotlezz_get_option( 'page_hero_diensten_cases' ) );
 	?>
 	<article <?php post_class( 'case-single' ); ?> id="post-<?php the_ID(); ?>">
 
@@ -59,7 +61,6 @@ while ( have_posts() ) :
 				<?php if ( is_array( $logo ) && ! empty( $logo['url'] ) ) : ?>
 					<img class="case-logo" src="<?php echo esc_url( $logo['url'] ); ?>" alt="<?php echo esc_attr( spotlezz_image_alt( $logo, get_the_title() ) ); ?>" loading="lazy" decoding="async">
 				<?php endif; ?>
-				<h1><?php echo esc_html( $headline ); ?></h1>
 				<?php if ( $branche || $locatie || $sinds ) : ?>
 					<?php
 					$hero_stats = array();

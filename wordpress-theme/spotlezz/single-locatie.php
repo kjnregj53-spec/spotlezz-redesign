@@ -30,22 +30,19 @@ while ( have_posts() ) :
 	$review_score = spotlezz_get_option( 'review_score' );
 	$review_count = spotlezz_get_option( 'review_count' );
 	$phone        = spotlezz_get_option( 'phone' );
+
+	$locatie_titel = sprintf(
+		/* translators: %s: plaatsnaam */
+		__( 'Schoonmaakbedrijf %s', 'spotlezz' ),
+		get_the_title()
+	);
+	spotlezz_page_hero( $locatie_titel, spotlezz_get_option( 'page_hero_locaties' ) );
 	?>
 	<article <?php post_class( 'locatie-single' ); ?> id="post-<?php the_ID(); ?>">
 
 		<!-- Rij 2: hero, kaart, NAP -->
 		<header class="locatie-hero">
 			<div class="locatie-hero-main">
-				<h1>
-					<?php
-					printf(
-						/* translators: %s: plaatsnaam */
-						esc_html__( 'Schoonmaakbedrijf %s', 'spotlezz' ),
-						esc_html( get_the_title() )
-					);
-					?>
-				</h1>
-
 				<?php if ( ! $has_proof && current_user_can( 'edit_theme_options' ) ) : ?>
 					<p class="placeholder-note content-placeholder">
 						<?php
@@ -96,10 +93,23 @@ while ( have_posts() ) :
 					</div>
 				<?php endif; ?>
 				<div class="nap-block">
-					<span class="lbl"><?php esc_html_e( 'NAP-blok', 'spotlezz' ); ?></span>
-					<p><?php echo esc_html( spotlezz_get_option( 'org_name' ) ); ?></p>
-					<p><?php echo esc_html( spotlezz_get_option( 'address_street' ) ); ?>, <?php echo esc_html( spotlezz_get_option( 'address_postcode' ) ); ?> <?php echo esc_html( spotlezz_get_option( 'address_city' ) ); ?></p>
-					<p><?php echo esc_html( $phone ); ?></p>
+					<h2><?php esc_html_e( 'Gegevens en werkgebied', 'spotlezz' ); ?></h2>
+					<ul class="nap-list">
+						<li><strong><?php esc_html_e( 'Naam', 'spotlezz' ); ?></strong> <?php echo esc_html( spotlezz_get_option( 'org_name' ) ); ?></li>
+						<?php if ( $phone ) : ?>
+							<li><strong><?php esc_html_e( 'Telefoon', 'spotlezz' ); ?></strong> <a href="tel:<?php echo esc_attr( spotlezz_get_option( 'phone_intl' ) ); ?>"><?php echo esc_html( $phone ); ?></a></li>
+						<?php endif; ?>
+						<?php $email = spotlezz_get_option( 'email' ); ?>
+						<?php if ( '' !== $email ) : ?>
+							<li><strong><?php esc_html_e( 'E-mail', 'spotlezz' ); ?></strong> <a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a></li>
+						<?php endif; ?>
+						<?php $hours = spotlezz_get_option( 'opening_hours' ); ?>
+						<?php if ( '' !== $hours ) : ?>
+							<li><strong><?php esc_html_e( 'Openingstijden', 'spotlezz' ); ?></strong> <?php echo esc_html( $hours ); ?></li>
+						<?php endif; ?>
+						<li><strong><?php esc_html_e( 'Werkgebied', 'spotlezz' ); ?></strong> <?php echo esc_html( get_the_title() ); ?> <?php esc_html_e( 'en omgeving', 'spotlezz' ); ?></li>
+						<li><strong><?php esc_html_e( 'Bezoekadres', 'spotlezz' ); ?></strong> <?php echo esc_html( trim( spotlezz_get_option( 'address_street' ) . ', ' . spotlezz_get_option( 'address_city' ), ', ' ) ); ?></li>
+					</ul>
 				</div>
 			</div>
 		</header>

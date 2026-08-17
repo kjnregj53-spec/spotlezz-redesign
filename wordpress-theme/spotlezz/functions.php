@@ -31,6 +31,7 @@ $spotlezz_includes = array(
 	'inc/acf-case.php',        // fase 4C: klantcase-veldgroep (WORDPRESS-BUILD-PLAN §3.3)
 	'inc/acf-locatie.php',     // fase 4C: locatie-veldgroep (WORDPRESS-BUILD-PLAN §3.4)
 	'inc/acf-vraag.php',       // fase 4C: FAQ-detail-veldgroep (WORDPRESS-BUILD-PLAN §3.5)
+	'inc/acf-standalone-pages.php', // veldgroepen voor Contact/Over ons/Checklist/Vacatures/Offerte/Reviews
 	'inc/schema.php',          // JSON-LD architectuur (Organization, Person, BreadcrumbList, ...)
 	'inc/breadcrumbs.php',     // kruimelpad-component + schema
 	'inc/components.php',      // herbruikbare component-functies (next-hop bar, etc.)

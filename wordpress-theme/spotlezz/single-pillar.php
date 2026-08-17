@@ -21,59 +21,66 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 	$post_id = get_the_ID();
+
+	/* ==================================================================
+	 * 1-2. Hero — 1-op-1 van de referentie's .ks-hero: badge + H1 + intro +
+	 *      pills + knoppen allemaal ÓP de foto, i.p.v. een dunne foto-band
+	 *      (spotlezz_page_hero, alleen breadcrumb+H1) met de rest van de
+	 *      inhoud daaronder op een aparte witte sectie. Zelfde full-bleed-
+	 *      patroon als de homepage-hero (hero-full-bleed, APPROVED §5.1),
+	 *      hier hergebruikt i.p.v. page_hero() — expliciet gevraagd nadat
+	 *      de dunne versie "afgesneden/onduidelijk" oogde.
+	 * ================================================================== */
+	$hero_image_url  = spotlezz_get_option( 'page_hero_pillar' );
+	$hero_style      = $hero_image_url ? ' style="background-image:url(' . esc_url( $hero_image_url ) . ')"' : '';
+	$pillar_hero_h1  = spotlezz_field( 'hero_h1', $post_id, get_the_title() );
+	$hero_kicker     = spotlezz_field( 'hero_kicker', $post_id, '' );
+	$hero_intro      = spotlezz_field( 'hero_intro', $post_id, '' );
+	$usps            = array_filter(
+		array(
+			spotlezz_field( 'usp_1', $post_id, '' ),
+			spotlezz_field( 'usp_2', $post_id, '' ),
+			spotlezz_field( 'usp_3', $post_id, '' ),
+		)
+	);
+	$phone_raw       = spotlezz_get_option( 'phone_raw' );
 	?>
+	<section class="hero hero-full-bleed pillar-hero-full<?php echo $hero_image_url ? '' : ' hero-placeholder'; ?>"<?php echo $hero_style; // phpcs:ignore -- $hero_style is built with esc_url() above. ?>>
+		<div class="hero-overlay"></div>
+		<div class="hero-content">
+			<?php spotlezz_breadcrumb(); ?>
+			<span class="trust-badge"><?php spotlezz_review_badge(); ?></span>
+			<?php if ( $hero_kicker ) : ?>
+				<p class="hero-kicker"><?php echo esc_html( $hero_kicker ); ?></p>
+			<?php endif; ?>
+			<h1><?php echo esc_html( $pillar_hero_h1 ); ?></h1>
+			<?php if ( $hero_intro ) : ?>
+				<p class="hero-intro"><?php echo esc_html( $hero_intro ); ?></p>
+			<?php endif; ?>
+			<?php if ( ! empty( $usps ) ) : ?>
+				<div class="usp-pills">
+					<?php foreach ( $usps as $usp ) : ?>
+						<span class="pill pill-check-light">&#10003; <?php echo esc_html( $usp ); ?></span>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
+			<div class="hero-buttons">
+				<a href="<?php echo esc_url( home_url( '/offerte-aanvragen/' ) ); ?>" class="btn btn-orange"><?php esc_html_e( 'Offerte aanvragen', 'spotlezz' ); ?></a>
+				<?php if ( '' !== $phone_raw ) : ?>
+					<a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-outline-white"><?php echo esc_html( sprintf( /* translators: %s: telefoonnummer */ __( 'Bel %s', 'spotlezz' ), spotlezz_get_option( 'phone' ) ) ); ?></a>
+				<?php endif; ?>
+			</div>
+		</div>
+	</section>
 	<article <?php post_class( 'pillar-single' ); ?> id="post-<?php the_ID(); ?>">
 
 		<?php
 		/* ==================================================================
-		 * 1-2. Hero + snelofferte-kaart (geen embedded formulier — zie
-		 *      PHASE-4C-PLAN.md beslissing 5: visuele CTA nu, echte
-		 *      formulier-verzendlaag is een latere, aparte stap)
+		 * 1-op-1 van de referentie's .trust-bar: de statenkaart schuift
+		 * direct onder de hero-foto over de rand heen, dus moet hier staan —
+		 * als eerste in <article>, met niets ertussenin.
 		 * ================================================================== */
-		$hero_kicker = spotlezz_field( 'hero_kicker', $post_id, '' );
-		$usps        = array_filter(
-			array(
-				spotlezz_field( 'usp_1', $post_id, '' ),
-				spotlezz_field( 'usp_2', $post_id, '' ),
-				spotlezz_field( 'usp_3', $post_id, '' ),
-			)
-		);
-		?>
-		<section class="pillar-hero">
-			<div class="pillar-hero-content">
-				<?php if ( $hero_kicker ) : ?>
-					<p class="hero-kicker hero-kicker-light"><?php echo esc_html( $hero_kicker ); ?></p>
-				<?php endif; ?>
-				<h1><?php echo esc_html( spotlezz_field( 'hero_h1', $post_id, get_the_title() ) ); ?></h1>
-				<?php $hero_intro = spotlezz_field( 'hero_intro', $post_id, '' ); ?>
-				<?php if ( $hero_intro ) : ?>
-					<p class="pillar-hero-intro"><?php echo esc_html( $hero_intro ); ?></p>
-				<?php endif; ?>
-				<?php if ( ! empty( $usps ) ) : ?>
-					<div class="usp-pills">
-						<?php foreach ( $usps as $usp ) : ?>
-							<span class="pill pill-check">&#10003; <?php echo esc_html( $usp ); ?></span>
-						<?php endforeach; ?>
-					</div>
-				<?php endif; ?>
-			</div>
-			<div class="pillar-hero-cta-card">
-				<h2><?php esc_html_e( 'Snelofferte', 'spotlezz' ); ?></h2>
-				<p><?php esc_html_e( 'Vraag een offerte op maat aan. Reactie binnen 12 uur.', 'spotlezz' ); ?></p>
-				<a href="<?php echo esc_url( home_url( '/offerte-aanvragen/' ) ); ?>" class="btn btn-orange"><?php esc_html_e( 'Offerte binnen 24 uur', 'spotlezz' ); ?></a>
-				<?php $phone_raw = spotlezz_get_option( 'phone_raw' ); ?>
-				<?php if ( '' !== $phone_raw ) : ?>
-					<a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-outline-dark"><?php echo esc_html( spotlezz_get_option( 'phone' ) ); ?></a>
-				<?php endif; ?>
-			</div>
-		</section>
-
-		<?php
-		/* ==================================================================
-		 * 3. Antwoordblok
-		 * ================================================================== */
-		$answer_intro = spotlezz_field( 'answer_intro', $post_id, '' );
-		$stats        = array(
+		$stats = array(
 			array(
 				'value' => __( 'zie FAQ', 'spotlezz' ),
 				'label' => __( 'Prijsfactoren', 'spotlezz' ),
@@ -91,18 +98,36 @@ while ( have_posts() ) :
 				'label' => spotlezz_field( 'stat_reactietijd_label', $post_id, __( 'Reactietijd', 'spotlezz' ) ),
 			),
 		);
+		spotlezz_stat_block( $stats, true );
 		?>
-		<section class="answer-block">
-			<?php if ( $answer_intro ) : ?>
+
+		<?php
+		/* ==================================================================
+		 * 3. Antwoordintro + prijslink (de statenkaart zelf staat nu boven
+		 *    de pillar-hero-sectie, zie boven)
+		 * ================================================================== */
+		$answer_intro = spotlezz_field( 'answer_intro', $post_id, '' );
+		?>
+		<?php if ( $answer_intro ) : ?>
+			<section class="answer-block">
 				<p class="answer-intro"><?php echo esc_html( $answer_intro ); ?></p>
-			<?php endif; ?>
-			<?php spotlezz_stat_block( $stats ); ?>
-			<p class="answer-price-link">
-				<a href="<?php echo esc_url( home_url( '/veelgestelde-vragen/wat-bepaalt-de-prijs-van-schoonmaak/' ) ); ?>">
-					<?php esc_html_e( 'Wat bepaalt de prijs? Bekijk de zes factoren', 'spotlezz' ); ?>
-				</a>
-			</p>
-		</section>
+				<p class="answer-price-link">
+					<a href="<?php echo esc_url( home_url( '/veelgestelde-vragen/wat-bepaalt-de-prijs-van-schoonmaak/' ) ); ?>">
+						<?php esc_html_e( 'Wat bepaalt de prijs? Bekijk de zes factoren', 'spotlezz' ); ?>
+					</a>
+				</p>
+			</section>
+		<?php endif; ?>
+
+		<?php
+		/* ==================================================================
+		 * 3b. Intro / "waarom belangrijk" / "waarom Spotlezz" / "verschil
+		 *     in de details" — 1-op-1 van de referentie's .ks-text-image/
+		 *     .ks-importance, zie de uitleg bij spotlezz_pillar_narrative_
+		 *     blocks() in inc/components.php.
+		 * ================================================================== */
+		spotlezz_pillar_narrative_blocks( $post_id, get_the_title( $post_id ) );
+		?>
 
 		<?php
 		/* ==================================================================
@@ -157,10 +182,22 @@ while ( have_posts() ) :
 			2 => __( 'Het pand of de ruimte', 'spotlezz' ),
 			3 => __( 'Materiaal en producten', 'spotlezz' ),
 		);
+		/*
+		 * Fallback op de homepage's eigen photo_1/2/3 (dezelfde drie
+		 * categorieën: team/pand/materiaal — geen dienst-specifieke foto's,
+		 * dus algemeen genoeg om overal te hergebruiken) wanneer een pillar
+		 * zelf nog geen foto heeft. Voorkomt een lege grijze placeholder-
+		 * box terwijl er al een echte, bevestigde bedrijfsfoto bestaat.
+		 */
+		$home_page_id   = get_option( 'page_on_front' );
 		$photography    = array();
 		foreach ( $photo_defaults as $i => $default_caption ) {
+			$photo = spotlezz_field( "photo_{$i}", $post_id, null );
+			if ( ! is_array( $photo ) || empty( $photo['url'] ) ) {
+				$photo = spotlezz_field( "photo_{$i}", $home_page_id, null );
+			}
 			$photography[] = array(
-				'photo'   => spotlezz_field( "photo_{$i}", $post_id, null ),
+				'photo'   => $photo,
 				'caption' => spotlezz_field( "photo_{$i}_caption", $post_id, $default_caption ),
 			);
 		}
@@ -288,6 +325,37 @@ while ( have_posts() ) :
 		?>
 
 	</article>
+
+	<?php
+	/* ==================================================================
+	 * Zwevende snelofferte-popup — 1-op-1 van de referentie's
+	 * .sticky-snelofferte: op desktop een kaart rechtsonder, op mobiel
+	 * standaard ingeklapt tot alleen de kop (tik om te openen), zodat hij
+	 * nooit het scherm opeet. Puur visueel, zoals elk formulier in dit
+	 * theme (PHASE-4C-PLAN §5-beslissing 5, APPROVED): geen action/method,
+	 * onsubmit="return false".
+	 * ================================================================== */
+	?>
+	<div class="sticky-snelofferte" id="stickyQuote-<?php echo esc_attr( $post_id ); ?>">
+		<button type="button" class="sticky-snelofferte-header" aria-expanded="false" aria-controls="stickyQuote-body-<?php echo esc_attr( $post_id ); ?>">
+			<span><?php esc_html_e( 'Snelofferte aanvragen', 'spotlezz' ); ?></span>
+			<svg class="icon-caret" viewBox="0 0 12 8" width="12" height="8" aria-hidden="true" focusable="false"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+		</button>
+		<div class="sticky-snelofferte-body" id="stickyQuote-body-<?php echo esc_attr( $post_id ); ?>">
+			<form class="sp-form" onsubmit="return false;">
+				<div class="form-group">
+					<label for="snelofferte-<?php echo esc_attr( $post_id ); ?>-email"><?php esc_html_e( 'E-mailadres', 'spotlezz' ); ?></label>
+					<input type="email" id="snelofferte-<?php echo esc_attr( $post_id ); ?>-email" name="email" autocomplete="email" placeholder="naam@bedrijf.nl">
+				</div>
+				<div class="form-consent">
+					<input type="checkbox" id="snelofferte-<?php echo esc_attr( $post_id ); ?>-akkoord" name="akkoord">
+					<label for="snelofferte-<?php echo esc_attr( $post_id ); ?>-akkoord"><?php echo wp_kses_post( sprintf( /* translators: %s: link naar privacybeleid */ __( 'Akkoord met het %s.', 'spotlezz' ), '<a href="' . esc_url( home_url( '/privacybeleid/' ) ) . '">' . esc_html__( 'privacybeleid', 'spotlezz' ) . '</a>' ) ); ?></label>
+				</div>
+				<button type="submit" class="btn btn-orange"><?php esc_html_e( 'Offerte aanvragen', 'spotlezz' ); ?></button>
+			</form>
+		</div>
+	</div>
+
 	<?php
 
 	/* ======================================================================

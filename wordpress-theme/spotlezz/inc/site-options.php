@@ -166,10 +166,66 @@ function spotlezz_site_option_fields() {
 			'type'    => 'url',
 			'default' => '',
 		),
+		'social_instagram' => array(
+			'label'   => __( 'Instagram-URL (leeg = geen icoon tonen)', 'spotlezz' ),
+			'type'    => 'url',
+			'default' => 'https://www.instagram.com/spotlezz.nl/',
+		),
+		'social_linkedin'  => array(
+			'label'   => __( 'LinkedIn-bedrijfspagina-URL (leeg = geen icoon tonen)', 'spotlezz' ),
+			'type'    => 'url',
+			'default' => 'https://www.linkedin.com/company/spotlezz/',
+		),
+		'terms_pdf_url'    => array(
+			'label'   => __( 'Algemene voorwaarden — PDF-URL', 'spotlezz' ),
+			'type'    => 'url',
+			'default' => 'https://spotlezz.nl/wp-content/uploads/2026/07/Algemene-voorwaarden-Spotlezz-BV.pdf',
+		),
 		'form_endpoint'    => array(
 			'label'   => __( 'Form-endpoint (leeg = mailto-terugval)', 'spotlezz' ),
 			'type'    => 'url',
 			'default' => '',
+		),
+
+		/**
+		 * Page-hero-achtergronden (spotlezz_page_hero() in
+		 * inc/components.php): één gedeelde foto per paginatype, zelfde
+		 * patroon als op spotlezz.nl zelf — daar deelt elke dienst-
+		 * detailpagina, elke locatiepagina, en de klantcase-laag ook al
+		 * telkens één vaste achtergrondfoto, geen aparte foto per post.
+		 * Defaults wijzen naar de bevestigde, echte foto's die daar nu al
+		 * voor gebruikt worden; zodra dit op spotlezz.nl zelf draait is
+		 * dat same-origin, geen externe afhankelijkheid meer.
+		 */
+		'page_hero_pillar'         => array(
+			'label'   => __( "Page-hero — dienst-detailpagina's", 'spotlezz' ),
+			'type'    => 'url',
+			'default' => 'https://spotlezz.nl/wp-content/uploads/2026/01/66cf9f5b0c337de9e5a2c919_image1.webp-4-scaled.jpg',
+		),
+		'page_hero_diensten_cases' => array(
+			'label'   => __( "Page-hero — dienstenhub, klantcases-hub en klantcase-detailpagina's", 'spotlezz' ),
+			'type'    => 'url',
+			/*
+			 * De oude default (sr4-1024x665.jpg) bleek een kaart-thumbnail
+			 * met ingebakken tekst ("Kinderopvang schoonmaak →") en een
+			 * eigen afgeronde rand/schaduw te zijn — bedoeld als klein
+			 * branche-kaartje, niet als full-bleed hero-achtergrond. Op
+			 * checklist/offerte/contact/vacatures/klantcases zag je dus
+			 * die ingebakken rand als een "afgesneden" foto, plús een
+			 * tweede, verkeerde titel onder onze eigen H1. Vervangen door
+			 * dezelfde schone, ongecropte foto als page_hero_locaties.
+			 */
+			'default' => 'https://spotlezz.nl/wp-content/uploads/2026/02/professionele-schoonmaak.jpg',
+		),
+		'page_hero_locaties'       => array(
+			'label'   => __( "Page-hero — locatiepagina's en locatiehub", 'spotlezz' ),
+			'type'    => 'url',
+			'default' => 'https://spotlezz.nl/wp-content/uploads/2026/02/professionele-schoonmaak.jpg',
+		),
+		'page_hero_vragen'         => array(
+			'label'   => __( 'Page-hero — FAQ-hub en FAQ-detailpagina\'s', 'spotlezz' ),
+			'type'    => 'url',
+			'default' => 'https://spotlezz.nl/wp-content/uploads/2026/01/we-visit-your-office.jpg',
 		),
 
 		/**
@@ -180,6 +236,15 @@ function spotlezz_site_option_fields() {
 		 * een los ACF-veldenset per homepage (group_spotlezz_homepage);
 		 * verplaatst hierheen zodat andere paginatypes ze niet hoeven te
 		 * dupliceren. Bewust leeg als default — een review verzin je niet.
+		 */
+		/*
+		 * Foto-URL toont het klantlogo (Kobelco/Wilmar/Arena Gym) i.p.v.
+		 * een portret — er is geen bevestigd echt portret per reviewer,
+		 * wél een bevestigd echt klantlogo. Naam/functie staan daarom ook
+		 * op het bedrijf i.p.v. een persoonsnaam, zodat naam en getoonde
+		 * afbeelding bij elkaar passen. Bewust lege defaults — de echte
+		 * waarden staan in de database (Site Options-scherm), niet
+		 * hardcoded hier.
 		 */
 		'review_1_quote'   => array( 'label' => __( 'Review 1 — quote', 'spotlezz' ), 'type' => 'text', 'default' => '' ),
 		'review_1_name'    => array( 'label' => __( 'Review 1 — naam', 'spotlezz' ), 'type' => 'text', 'default' => '' ),

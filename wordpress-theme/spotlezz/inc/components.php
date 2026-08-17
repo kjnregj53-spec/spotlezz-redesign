@@ -16,6 +16,113 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * CSS-class voor het hoofdnavigatie-item van de sectie waar de bezoeker nu
+ * in zit — 1-op-1 van de referentie (`nav a.is-current { color: var(
+ * --accent-orange) }`). Een los stuk zodat header + mobiele nav nooit uit
+ * de pas kunnen lopen over welke pagina's bij welke hub horen.
+ *
+ * @param string $section Een van: diensten, klantcases, locaties, faq, over-ons, contact.
+ * @return string ' is-current' (met voorloop-spatie) of ''.
+ */
+function spotlezz_nav_is_current( $section ) {
+	switch ( $section ) {
+		case 'diensten':
+			$active = is_post_type_archive( 'pillar' ) || is_singular( 'pillar' );
+			break;
+		case 'klantcases':
+			$active = is_post_type_archive( 'case' ) || is_singular( 'case' );
+			break;
+		case 'locaties':
+			$active = is_post_type_archive( 'locatie' ) || is_singular( 'locatie' );
+			break;
+		case 'faq':
+			$active = is_post_type_archive( 'vraag' ) || is_singular( 'vraag' );
+			break;
+		case 'over-ons':
+			$active = is_page( 'over-ons' );
+			break;
+		case 'contact':
+			$active = is_page( 'contact' );
+			break;
+		default:
+			$active = false;
+	}
+	return $active ? ' is-current' : '';
+}
+
+/**
+ * De twee pillar-groepen ("Voor wie" / "Wat we doen") voor het Diensten-
+ * dropdownmenu (header + mobiele nav). Vaste slug-groepering — zelfde reden
+ * als in footer.php: de branche-taxonomie garandeert geen 1-op-1 scheiding
+ * "branche vs. taak", terwijl deze indeling exact de referentie volgt. Eén
+ * plek zodat header, mobiele nav en footer nooit uit de pas kunnen lopen.
+ * Elk item is alleen een echte, gepubliceerde pillar-post (harde regel 7/8).
+ *
+ * @return array{voor_wie: WP_Post[], wat_we_doen: WP_Post[]}
+ */
+function spotlezz_diensten_nav_groups() {
+	$slug_groups = array(
+		'voor_wie'    => array( 'kantoor-schoonmaak', 'hotel-schoonmaak', 'showroom-schoonmaak', 'sportschool-schoonmaak', 'kinderopvang-schoonmaak', 'vve-schoonmaak' ),
+		'wat_we_doen' => array( 'glasbewassing', 'vloeronderhoud', 'opleveringsschoonmaak', 'hygieneservice' ),
+	);
+
+	$groups = array();
+	foreach ( $slug_groups as $group_key => $slugs ) {
+		$groups[ $group_key ] = array();
+		foreach ( $slugs as $slug ) {
+			$pillar = get_page_by_path( $slug, OBJECT, 'pillar' );
+			if ( $pillar && 'publish' === $pillar->post_status ) {
+				$groups[ $group_key ][] = $pillar;
+			}
+		}
+	}
+	return $groups;
+}
+
+/**
+ * Page-hero: de volle-breedte foto-band met donkere overlay, met de
+ * breadcrumb en de witte H1 er bínnen — gebruikt op elk subpagina-type
+ * (pillar/case/locatie/vraag + hubs). Zelfde patroon als op spotlezz.nl
+ * (elk paginatype deelt daar één vaste achtergrondfoto per type, geen
+ * losse foto per post).
+ *
+ * De breadcrumb en de H1 renderen altijd, met of zonder foto — dit is de
+ * enige plek waar dit paginatype zijn H1 en zijn navigatie krijgt, dus
+ * die mogen nooit stilzwijgend verdwijnen als de Site-Option-foto ooit
+ * leeg raakt. Zonder foto valt de sectie terug op een effen donkere band
+ * (zelfde overlay-kleur), in plaats van niets te tonen.
+ *
+ * @param string $title    H1-tekst (meestal de posttitel).
+ * @param string $image_url Volledige URL van de achtergrondfoto (optioneel).
+ * @param string $kicker   Optioneel klein label boven de H1.
+ * @param string $intro    Optionele introzin onder de H1 — 1-op-1 van de
+ *        referentie, die op elke subpagina behalve de dienst-detail ook een
+ *        intro-alinea in de hero heeft staan (niet alleen breadcrumb+H1).
+ *        Zonder deze alinea bleef de sectie hier korter dan daar, waardoor
+ *        dezelfde achtergrondfoto krapper gecropt werd en er bovenin een
+ *        hoofd kon worden afgesneden — geen CSS-crop-bug, gewoon te weinig
+ *        inhoud om de foto de ruimte te geven die hij in de referentie krijgt.
+ */
+function spotlezz_page_hero( $title, $image_url = '', $kicker = '', $intro = '' ) {
+	$style = $image_url ? ' style="background-image:url(' . esc_url( $image_url ) . ')"' : '';
+	?>
+	<section class="page-hero<?php echo $image_url ? '' : ' page-hero-fallback'; ?>"<?php echo $style; // phpcs:ignore -- $style is built with esc_url() above. ?>>
+		<div class="page-hero-overlay"></div>
+		<div class="page-hero-content">
+			<?php spotlezz_breadcrumb(); ?>
+			<?php if ( $kicker ) : ?>
+				<p class="page-hero-kicker"><?php echo esc_html( $kicker ); ?></p>
+			<?php endif; ?>
+			<h1><?php echo esc_html( $title ); ?></h1>
+			<?php if ( $intro ) : ?>
+				<p class="page-hero-intro"><?php echo esc_html( $intro ); ?></p>
+			<?php endif; ?>
+		</div>
+	</section>
+	<?php
+}
+
+/**
  * Next-hop bar. Harde regel 5/8: exact 3 routes, elk met een geldige href.
  * Renderen met een afwijkend aantal is geen degradatie-optie — de functie
  * weigert te renderen en logt het probleem, zodat een misconfiguratie
@@ -67,13 +174,19 @@ function spotlezz_next_hop( array $routes ) {
  *        méér/minder wordt gerenderd maar is een contentfout, geen technische —
  *        anders dan next-hop is dit blok qua wireframe niet overal hard op 4
  *        vastgezet (sommige varianten tonen er incidenteel 3), dus geen harde block.
+ * @param bool $overlap Voeg de "over de hero-foto heen schuiven"-modifier toe
+ *        (.stat-block-overlap, negative margin-top). Alleen `true` doorgeven
+ *        op plekken waar met zekerheid niets anders vóór dit blok in dezelfde
+ *        sectie staat — anders schuift de kaart over die inhoud heen i.p.v.
+ *        over de hero.
  */
-function spotlezz_stat_block( array $stats ) {
+function spotlezz_stat_block( array $stats, $overlap = false ) {
 	if ( empty( $stats ) ) {
 		return;
 	}
+	$class = $overlap ? 'stat-block stat-block-overlap' : 'stat-block';
 	?>
-	<div class="stat-block">
+	<div class="<?php echo esc_attr( $class ); ?>">
 		<?php foreach ( $stats as $stat ) : ?>
 			<div class="stat">
 				<b><?php echo esc_html( $stat['value'] ); ?></b>
@@ -253,6 +366,8 @@ function spotlezz_reviews_block() {
 					<div class="review-author">
 						<?php if ( ! empty( $photo ) ) : ?>
 							<img src="<?php echo esc_url( $photo ); ?>" alt="<?php echo esc_attr( $name ); ?>" loading="lazy" decoding="async">
+						<?php elseif ( '' !== $name ) : ?>
+							<span class="review-avatar" aria-hidden="true"><?php echo esc_html( mb_substr( $name, 0, 1 ) ); ?></span>
 						<?php endif; ?>
 						<span>
 							<b><?php echo esc_html( $name ); ?></b>
@@ -325,36 +440,58 @@ function spotlezz_faq_block( $post_id, $field_name = 'featured_faqs' ) {
 
 	$faq_schema_items = array();
 	?>
+	<?php
+	/*
+	 * 1-op-1 van de referentie's .faq-section/.faq-container (tweekoloms:
+	 * kop+intro+CTA links, accordion-kaarten rechts, oranje rand-accent op
+	 * de open vraag) — verving de eerdere platte lijst. Blijft <details>/
+	 * <summary> (geen JS nodig) en blijft binnen .faq-block scoped zodat
+	 * dit de FAQ-hub (archive-vraag.php, die .faq-item ook gebruikt) niet
+	 * raakt.
+	 */
+	?>
 	<section class="faq-block">
-		<h2><?php esc_html_e( 'Veelgestelde vragen', 'spotlezz' ); ?></h2>
-		<div class="faq-list">
-			<?php foreach ( $featured_faqs as $faq ) : ?>
-				<?php $answer = get_the_excerpt( $faq ); ?>
-				<details class="faq-item">
-					<summary><?php echo esc_html( get_the_title( $faq ) ); ?></summary>
-					<?php if ( $answer ) : ?>
-						<p><?php echo esc_html( $answer ); ?></p>
-					<?php endif; ?>
-				</details>
-				<?php
-				if ( $answer ) {
-					$faq_schema_items[] = array(
-						'@type'          => 'Question',
-						'name'           => wp_strip_all_tags( get_the_title( $faq ) ),
-						'acceptedAnswer' => array(
-							'@type' => 'Answer',
-							'text'  => wp_strip_all_tags( $answer ),
-						),
-					);
-				}
-				?>
-			<?php endforeach; ?>
+		<div class="faq-container">
+			<div class="faq-left">
+				<h2><?php esc_html_e( 'Veelgestelde vragen', 'spotlezz' ); ?></h2>
+				<p><?php esc_html_e( 'Heb je nog vragen? Kijk dan bij onze veelgestelde vragen. Staat jouw vraag er niet bij? Neem dan gerust contact met ons op!', 'spotlezz' ); ?></p>
+				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-orange"><?php esc_html_e( 'Neem contact met ons op', 'spotlezz' ); ?></a>
+			</div>
+			<div class="faq-right">
+				<?php foreach ( $featured_faqs as $faq ) : ?>
+					<?php
+					$kort_antwoord = spotlezz_field( 'kort_antwoord', $faq->ID, '' );
+					$answer        = $kort_antwoord ? $kort_antwoord : get_the_excerpt( $faq );
+					?>
+					<details class="faq-item">
+						<summary>
+							<span><?php echo esc_html( get_the_title( $faq ) ); ?></span>
+							<span class="faq-icon" aria-hidden="true"></span>
+						</summary>
+						<?php if ( $answer ) : ?>
+							<p><?php echo esc_html( $answer ); ?></p>
+						<?php endif; ?>
+					</details>
+					<?php
+					if ( $answer ) {
+						$faq_schema_items[] = array(
+							'@type'          => 'Question',
+							'name'           => wp_strip_all_tags( get_the_title( $faq ) ),
+							'acceptedAnswer' => array(
+								'@type' => 'Answer',
+								'text'  => wp_strip_all_tags( $answer ),
+							),
+						);
+					}
+					?>
+				<?php endforeach; ?>
+				<p class="faq-more">
+					<a href="<?php echo esc_url( get_post_type_archive_link( 'vraag' ) ?: home_url( '/veelgestelde-vragen/' ) ); ?>">
+						<?php esc_html_e( 'Bekijk alle veelgestelde vragen', 'spotlezz' ); ?>
+					</a>
+				</p>
+			</div>
 		</div>
-		<p class="faq-more">
-			<a href="<?php echo esc_url( get_post_type_archive_link( 'vraag' ) ?: home_url( '/veelgestelde-vragen/' ) ); ?>">
-				<?php esc_html_e( 'Bekijk alle veelgestelde vragen', 'spotlezz' ); ?>
-			</a>
-		</p>
 	</section>
 	<?php
 	if ( ! empty( $faq_schema_items ) ) {
@@ -406,33 +543,63 @@ function spotlezz_werkwijze_vergelijking_block() {
 		return;
 	}
 	?>
+	<?php
+	/*
+	 * 1-op-1 van .ks-hiw-cards: elke stap krijgt een echte foto als
+	 * achtergrond i.p.v. een genummerde cirkel op wit. Dit blok is gedeeld
+	 * over alle pillar-pagina's (zelfde tekst overal), dus ook de foto's
+	 * zijn generiek/gedeeld — vier al bevestigde, echte Spotlezz-foto's
+	 * uit de mediabibliotheek, niets nieuws verzonnen.
+	 */
+	$step_photo_ids = array( 173, 114, 104, 172 ); // kantooroverleg, branche-kantoor-schoon, team-aan-het-werk-schoon, materiaal (stoomdweil)
+	?>
 	<section class="werkwijze-block">
 		<?php if ( ! empty( $stappen ) ) : ?>
 			<h2><?php esc_html_e( 'Zo werkt het', 'spotlezz' ); ?></h2>
 			<div class="werkwijze-steps">
 				<?php foreach ( $stappen as $index => $stap ) : ?>
-					<div class="werkwijze-step">
-						<b class="werkwijze-step-num"><?php echo (int) ( $index + 1 ); ?></b>
-						<?php if ( $stap['titel'] ) : ?><h3><?php echo esc_html( $stap['titel'] ); ?></h3><?php endif; ?>
-						<?php if ( $stap['tekst'] ) : ?><p><?php echo esc_html( $stap['tekst'] ); ?></p><?php endif; ?>
+					<?php
+					$step_photo_url = isset( $step_photo_ids[ $index ] ) ? wp_get_attachment_image_url( $step_photo_ids[ $index ], 'spotlezz-card' ) : '';
+					$step_style     = $step_photo_url ? ' style="background-image:url(' . esc_url( $step_photo_url ) . ')"' : '';
+					?>
+					<div class="werkwijze-step"<?php echo $step_style; // phpcs:ignore -- $step_style is built with esc_url() above. ?>>
+						<div class="werkwijze-step-content">
+							<b class="werkwijze-step-num"><?php echo (int) ( $index + 1 ); ?></b>
+							<?php if ( $stap['titel'] ) : ?><h3><?php echo esc_html( $stap['titel'] ); ?></h3><?php endif; ?>
+							<?php if ( $stap['tekst'] ) : ?><p><?php echo esc_html( $stap['tekst'] ); ?></p><?php endif; ?>
+						</div>
 					</div>
 				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if ( ! empty( $spotlezz_rows ) || ! empty( $anderen_rows ) ) : ?>
-			<div class="compare-grid">
-				<div class="compare-col compare-col-spotlezz">
+			<?php
+			/*
+			 * 1-op-1 van de homepage's .comparison-grid/.compare-card —
+			 * verving hier de oudere, losstaande .compare-grid/.compare-col
+			 * (donkere kaart, ander design) zodat de vergelijkingskaart er
+			 * op elke pillar-pagina hetzelfde uitziet als op de homepage en
+			 * in de referentie (waar dezelfde classnamen overal terugkomen).
+			 * De kop hieronder ontbrak eerder — de referentie's .ks-
+			 * comparison heeft er wél één ("Spotlezz versus andere
+			 * bedrijven"), en zonder kop oogde de vergelijkingskaart alsof
+			 * hij zomaar tegen de stappen erboven aan geplakt zat.
+			 */
+			?>
+			<h2 class="comparison-subheading"><?php esc_html_e( 'Spotlezz versus andere bedrijven', 'spotlezz' ); ?></h2>
+			<div class="comparison-grid">
+				<div class="compare-card compare-spotlezz">
 					<h3><?php esc_html_e( 'Spotlezz', 'spotlezz' ); ?></h3>
-					<ul>
+					<ul class="compare-list">
 						<?php foreach ( $spotlezz_rows as $row ) : ?>
 							<li><?php echo esc_html( $row ); ?></li>
 						<?php endforeach; ?>
 					</ul>
 				</div>
-				<div class="compare-col">
+				<div class="compare-card compare-others">
 					<h3><?php esc_html_e( 'Andere bedrijven', 'spotlezz' ); ?></h3>
-					<ul>
+					<ul class="compare-list">
 						<?php foreach ( $anderen_rows as $row ) : ?>
 							<li><?php echo esc_html( $row ); ?></li>
 						<?php endforeach; ?>
@@ -446,6 +613,95 @@ function spotlezz_werkwijze_vergelijking_block() {
 			<span class="mini"><?php esc_html_e( 'Vrijblijvend · reactie binnen 12 uur', 'spotlezz' ); ?></span>
 		</div>
 	</section>
+	<?php
+}
+
+/**
+ * Vier "tekst + foto"-secties tussen de trust-bar en het takenraster —
+ * 1-op-1 van de referentie's .ks-text-image/.ks-importance op elke
+ * dienst-pagina (intro, "waarom is dit belangrijk", "waarom Spotlezz",
+ * "het verschil zit in de details").
+ *
+ * Belangrijk: in de referentie zelf is dit al gedeelde, letterlijk
+ * identieke tekst op alle 10 dienst-pagina's (geverifieerd: kantoor-,
+ * hotel- en vve-schoonmaak bevatten woord-voor-woord dezelfde alinea's,
+ * inclusief een verwijzing naar "kantoorreiniging" op de VvE-pagina). Dit
+ * is dus geen nieuw verzonnen tekst maar 1-op-1 overgenomen, gedeelde
+ * referentie-copy — zelfde aanpak als spotlezz_werkwijze_vergelijking_
+ * block(). Alleen de H2-titel is hier dynamisch op de pilaarnaam gezet
+ * (i.p.v. altijd "kantoorreiniging" te tonen zoals de referentie doet),
+ * dat is een verbetering t.o.v. de referentie, geen contentwijziging.
+ *
+ * Foto's: de eigen, al bevestigde foto's van déze pillar-post
+ * (photo_1/2/3 — dezelfde drie die verderop ook "Eigen foto's" vullen),
+ * dus geen nieuwe generieke foto's nodig.
+ *
+ * @param int    $post_id      De huidige pillar-post.
+ * @param string $pillar_title De diensttitel (voor de dynamische H2's).
+ */
+function spotlezz_pillar_narrative_blocks( $post_id, $pillar_title ) {
+	$photo_1 = spotlezz_field( 'photo_1', $post_id, null );
+	$photo_2 = spotlezz_field( 'photo_2', $post_id, null );
+	$photo_3 = spotlezz_field( 'photo_3', $post_id, null );
+
+	$photo_1_url = is_array( $photo_1 ) ? ( $photo_1['url'] ?? '' ) : '';
+	$photo_2_url = is_array( $photo_2 ) ? ( $photo_2['url'] ?? '' ) : '';
+	$photo_3_url = is_array( $photo_3 ) ? ( $photo_3['url'] ?? '' ) : '';
+	?>
+	<?php if ( $photo_1_url ) : ?>
+		<section class="ks-text-image">
+			<div class="ks-ti-image">
+				<img src="<?php echo esc_url( $photo_1_url ); ?>" alt="<?php echo esc_attr( spotlezz_image_alt( $photo_1, $pillar_title ) ); ?>" loading="lazy" decoding="async">
+			</div>
+			<div class="ks-ti-content">
+				<h2><?php echo esc_html( $pillar_title ); ?></h2>
+				<p><strong><?php esc_html_e( 'Een schone omgeving is een productieve omgeving.', 'spotlezz' ); ?></strong></p>
+				<p><?php esc_html_e( 'Een schone werkplek is een productieve werkplek. Het is veel meer dan alleen een werkplek: een plek waar ideeën ontstaan, waar teams samenwerken en waar klanten een eerste indruk krijgen. Daarom is het niet zomaar een ruimte; het is een tweede thuis: fris, goed onderhouden en uitnodigend.', 'spotlezz' ); ?></p>
+			</div>
+		</section>
+	<?php endif; ?>
+
+	<section class="ks-importance">
+		<div class="ks-importance-top">
+			<h2><?php echo wp_kses_post( sprintf( /* translators: %s: dienstnaam */ __( 'Waarom is een goede %s zo belangrijk?', 'spotlezz' ), '<span class="text-blue">' . esc_html( $pillar_title ) . '</span>' ) ); ?></h2>
+			<p><?php esc_html_e( 'Een schone omgeving biedt tal van voordelen. Uit onderzoek blijkt dat mensen productiever zijn en zich beter kunnen concentreren in een schone, goed onderhouden ruimte. Het draagt bij aan een vermindering van stress en ziekteverzuim, doordat bacteriën en allergenen structureel worden verwijderd.', 'spotlezz' ); ?></p>
+		</div>
+		<div class="ks-importance-boxes">
+			<div class="ks-box">&#10003; <?php esc_html_e( '100% ecologische schoonmaak', 'spotlezz' ); ?></div>
+			<div class="ks-box">&#10003; <?php esc_html_e( 'Vast en getraind personeel', 'spotlezz' ); ?></div>
+			<div class="ks-box">&#10003; <?php esc_html_e( 'Altijd bereikbaar, 24/7 service', 'spotlezz' ); ?></div>
+		</div>
+	</section>
+
+	<?php if ( $photo_2_url ) : ?>
+		<section class="ks-text-image ks-reverse">
+			<div class="ks-ti-image">
+				<img src="<?php echo esc_url( $photo_2_url ); ?>" alt="<?php echo esc_attr( spotlezz_image_alt( $photo_2, __( 'Waarom Spotlezz', 'spotlezz' ) ) ); ?>" loading="lazy" decoding="async">
+			</div>
+			<div class="ks-ti-content">
+				<h2><?php esc_html_e( 'Waarom Spotlezz?', 'spotlezz' ); ?></h2>
+				<p><?php esc_html_e( 'We begrijpen dat de hygiëne van jouw bedrijf niet zomaar een taak is, maar een essentieel onderdeel van jouw uitstraling en werkcultuur. Bij Spotlezz gaan we verder dan oppervlakkig schoonmaken. Wij werken uitsluitend met milieuvriendelijke producten en navulverpakkingen om onze ecologische voetafdruk te minimaliseren.', 'spotlezz' ); ?></p>
+				<ul class="ks-checklist">
+					<li>&#10003; <?php esc_html_e( 'Altijd een persoonlijk schoonmaakplan op maat', 'spotlezz' ); ?></li>
+					<li>&#10003; <?php esc_html_e( 'Oog voor detail en liefde voor ons vak', 'spotlezz' ); ?></li>
+					<li>&#10003; <?php esc_html_e( 'Flexibel, geruisloos en efficiënt', 'spotlezz' ); ?></li>
+				</ul>
+			</div>
+		</section>
+	<?php endif; ?>
+
+	<?php if ( $photo_3_url ) : ?>
+		<section class="ks-text-image">
+			<div class="ks-ti-image">
+				<img src="<?php echo esc_url( $photo_3_url ); ?>" alt="<?php echo esc_attr( spotlezz_image_alt( $photo_3, __( 'Schoonmaak details', 'spotlezz' ) ) ); ?>" loading="lazy" decoding="async">
+			</div>
+			<div class="ks-ti-content">
+				<h2><?php esc_html_e( 'Het verschil zit in de details', 'spotlezz' ); ?></h2>
+				<p><?php esc_html_e( 'Bij Spotlezz kijken we verder dan wat op het eerste gezicht zichtbaar is. Wij werken volgens strikte werkprogramma\'s en voeren regelmatig kwaliteitscontroles uit, zodat de hoge standaard altijd gewaarborgd blijft.', 'spotlezz' ); ?></p>
+				<p><?php esc_html_e( 'We zorgen ervoor dat gedeelde faciliteiten, zoals toiletten en keukens, niet alleen schoon ogen, maar ook hygiënisch zijn. Van het bijvullen van dispensers tot het streeploos reinigen van glaswerk: wij nemen alles uit handen.', 'spotlezz' ); ?></p>
+			</div>
+		</section>
+	<?php endif; ?>
 	<?php
 }
 

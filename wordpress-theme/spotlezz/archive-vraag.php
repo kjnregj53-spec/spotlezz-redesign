@@ -16,10 +16,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
+/*
+ * 1-op-1 van de referentie's .hub-hero: géén foto op de FAQ-hub (i.p.v.
+ * de foto-hero die hier eerder onterecht stond).
+ */
+spotlezz_breadcrumb();
 ?>
-<div class="hub-page-header">
+<section class="hub-hero">
 	<h1><?php esc_html_e( 'Veelgestelde vragen', 'spotlezz' ); ?></h1>
-
+	<p class="pillar-lead"><?php esc_html_e( 'Alle vragen die wij krijgen over schoonmaak, offertes en samenwerken, gegroepeerd per thema. Staat uw vraag er niet bij, bel ons dan gerust.', 'spotlezz' ); ?></p>
+</section>
+<div class="hub-page-header">
 	<div class="faq-search">
 		<label class="screen-reader-text" for="faqSearch"><?php esc_html_e( 'Zoek een vraag', 'spotlezz' ); ?></label>
 		<input type="search" id="faqSearch" placeholder="<?php esc_attr_e( 'Zoek een vraag…', 'spotlezz' ); ?>">
@@ -45,6 +52,8 @@ if ( is_wp_error( $themas ) ) {
 	</div>
 	<?php endif; ?>
 </div>
+
+<p id="faqNoResults" class="faq-no-results" hidden><?php esc_html_e( 'Geen vraag gevonden. Probeer een ander woord of stel uw vraag rechtstreeks.', 'spotlezz' ); ?></p>
 
 <?php
 $faq_schema_items = array();
@@ -99,7 +108,7 @@ $ongegroepeerd    = get_posts(
 					$antwoord      = $kort_antwoord ? $kort_antwoord : get_the_excerpt( $vraag );
 					$heeft_detail  = $kort_antwoord ? true : false;
 					?>
-					<details class="faq-item" data-search-text="<?php echo esc_attr( mb_strtolower( get_the_title( $vraag ) ) ); ?>">
+					<details class="faq-item" data-search-text="<?php echo esc_attr( mb_strtolower( get_the_title( $vraag ) . ' ' . $antwoord ) ); ?>">
 						<summary>
 							<span><?php echo esc_html( get_the_title( $vraag ) ); ?></span>
 							<?php if ( $heeft_detail ) : ?>
@@ -145,7 +154,7 @@ $ongegroepeerd    = get_posts(
 				$antwoord      = $kort_antwoord ? $kort_antwoord : get_the_excerpt( $vraag );
 				$heeft_detail  = $kort_antwoord ? true : false;
 				?>
-				<details class="faq-item" data-search-text="<?php echo esc_attr( mb_strtolower( get_the_title( $vraag ) ) ); ?>">
+				<details class="faq-item" data-search-text="<?php echo esc_attr( mb_strtolower( get_the_title( $vraag ) . ' ' . $antwoord ) ); ?>">
 					<summary>
 						<span><?php echo esc_html( get_the_title( $vraag ) ); ?></span>
 						<?php if ( $heeft_detail ) : ?>

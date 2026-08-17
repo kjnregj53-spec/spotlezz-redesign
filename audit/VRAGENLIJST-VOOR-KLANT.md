@@ -9,20 +9,23 @@ haast, maar hoe eerder we dit weten, hoe eerder we de site met echte
 content kunnen vullen in plaats van placeholders.
 
 Waar mogelijk hebben we dingen zelf al uitgezocht (KVK-register,
-LinkedIn, Google Bedrijfsprofiel, de site zelf) — die vragen staan er dus
-niet meer bij. Dit zijn alleen de dingen die we écht niet zelf konden
-vaststellen.
+LinkedIn, Google Bedrijfsprofiel, de site zelf, en jullie eigen
+feedbackdocument op de wireframes) — die vragen staan er dus niet meer
+bij. Dit zijn alleen de dingen die we écht niet zelf konden vaststellen.
 
 ---
 
-## 1. Werkgebied — waar zijn jullie al écht actief?
+## 1. Werkgebied — klopt deze lijst?
 
-We hebben op de site zelf gevonden dat jullie in **Almere, Amsterdam en
-Lelystad** actief zijn. Klopt dat nog steeds?
+We hebben jullie feedbackdocument op de wireframes gebruikt om de
+locatiepagina's bij te werken: **Almere, Amsterdam, Utrecht, Weesp en
+Diemen**, plus **Flevoland**.
 
-- [ ] **Het Gooi** — is dit ook een echt, actueel werkgebied?
-- [ ] **Amersfoort** — is dit een echt of gepland werkgebied, of moeten we
-      dit (voorlopig) laten vervallen?
+- [ ] Klopt deze lijst nog steeds, of is er sindsdien iets veranderd?
+- [ ] **Flevoland** staat er als losse locatiepagina bij, maar dat is een
+      **provincie, geen stad**. Bedoelde je hiermee een aparte,
+      regio-brede pagina, of juist een specifieke plaats daarbinnen
+      (bijvoorbeeld Lelystad)?
 
 *Waarom we dit vragen: we bouwen een aparte pagina per stad. Een stad
 zonder echte activiteit daar zetten we liever niet live (dat is ook
@@ -33,15 +36,19 @@ bewijs verschijnt automatisch niet in Google).*
 
 ## 2. Diensten — kloppen deze namen?
 
-We hebben op jullie site gezien dat **glasbewassing** en
-**vloeronderhoud** al bestaande diensten zijn — die nemen we over.
+We hebben de twee namen die nergens terug te vinden waren
+("Opleveringsschoonmaak", "Hygiëneservice") vervangen door de namen uit
+jullie eigen feedbackdocument, met de tekst die daar al voor geschreven
+was:
 
-- [ ] **Opleveringsschoonmaak** — is dit een echte (geplande) dienst, of
-      heet dit misschien anders bij jullie?
-- [ ] **Hygiëneservice** — zelfde vraag.
-- [ ] **Gevelreiniging** — dit stond ook op jullie site als bestaande
-      dienst, maar heeft nog geen eigen pagina bij ons. Wil je dat we
-      hier een 11e dienstenpagina voor maken?
+- [ ] **Dieptereiniging** — klopt deze naam en de insteek?
+- [ ] **Specialistische reiniging** — in het feedbackdocument stond ook
+      de variant "Specialistisch onderhoud". Welke van de twee namen
+      heeft de voorkeur?
+- [ ] **Gevelreiniging** — dit staat in de geschreven tekst als
+      voorbeeld ónder "Specialistische reiniging". Moet dit toch een
+      eigen, losse dienstenpagina worden, of blijft het een onderdeel
+      van die pagina?
 
 ---
 
@@ -93,11 +100,11 @@ correct kunnen koppelen aan de site.
 
 Voor deze onderdelen bestaat op dit moment geen bruikbare foto:
 
-- [ ] Diensten: **opleveringsschoonmaak, hygiëneservice, glasbewassing,
-      vloeronderhoud** (0-1 foto per dienst is genoeg om te beginnen, 3
-      is ideaal)
-- [ ] Locaties buiten Almere (Amsterdam, Lelystad, en eventueel Het
-      Gooi/Amersfoort zodra bevestigd)
+- [ ] Diensten: **Dieptereiniging, Specialistische reiniging,
+      Glasbewassing, Vloeronderhoud** (0-1 foto per dienst is genoeg om
+      te beginnen, 3 is ideaal)
+- [ ] Locaties buiten Almere (Amsterdam, Utrecht, Weesp, Diemen,
+      Flevoland)
 - [ ] De drie klantcases (zie punt 3)
 
 Geen probleem als dit niet meteen allemaal klaar is — de site laat een
@@ -106,11 +113,15 @@ afbeelding.
 
 ---
 
-## 7. Eén ding dat we al zelf hebben opgelost
+## 7. Dingen die we al zelf hebben opgelost
 
-Je postcode ontbrak in onze gegevens — die hebben we uit het officiële
-KVK-register gehaald (**1319 DG**) en al toegevoegd. Geen actie nodig,
-puur ter info.
+- Je postcode ontbrak in onze gegevens — die hebben we uit het officiële
+  KVK-register gehaald (**1319 DG**) en al toegevoegd.
+- De dienst- en locatiestructuur is bijgewerkt naar jullie eigen
+  feedbackdocument op de wireframes (zie punt 1 en 2 hierboven voor de
+  twee dingen die daarin nog een laatste bevestiging nodig hebben).
+
+Geen actie nodig op dit punt, puur ter info.
 
 ---
 

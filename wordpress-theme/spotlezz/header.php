@@ -86,4 +86,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php get_template_part( 'template-parts/header/mobile-nav' ); ?>
 
 <main id="main">
-	<?php spotlezz_breadcrumb(); ?>
+	<?php
+	/**
+	 * De breadcrumb wordt hier bewust NIET meer automatisch getoond — hij
+	 * verhuisde in fase na-4C naar bínnen de page-hero-foto zelf
+	 * (spotlezz_page_hero() in inc/components.php), zodat hij niet meer
+	 * als aparte witte strook tussen header en hero-foto knelt. Op de
+	 * homepage is de trail toch al leeg (is_front_page()), dus daar
+	 * verandert er niets.
+	 */
+	?>

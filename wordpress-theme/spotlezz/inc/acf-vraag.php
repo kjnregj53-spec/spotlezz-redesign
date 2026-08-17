@@ -5,11 +5,13 @@
  *
  * ACF Free: geen repeater (prijsfactoren → 6 losse optionele slots), geen
  * gallery. `kort_antwoord` is een apart veld i.p.v. het native excerpt
- * (PHASE-4C-PLAN.md beslissing 4, APPROVED) — het excerpt blijft
- * onafhankelijk beschikbaar voor de homepage/pillar/locatie-FAQ-teasers
- * (`spotlezz_faq_block()` leest `get_the_excerpt()`), zodat een korte
- * teaser en een uitgebreider detail-antwoord nooit gedwongen dezelfde
- * lengte moeten hebben.
+ * (PHASE-4C-PLAN.md beslissing 4, APPROVED). De geplande aparte, kortere
+ * teasertekst in het native excerpt is er nooit gekomen — elk `post_content`
+ * bevat nog steeds de originele placeholder ("Testantwoord voor visuele QA
+ * — de echte tekst komt uit de FAQ-veldgroep in een latere fase"). Daarom
+ * lezen zowel archive-vraag.php als `spotlezz_faq_block()` nu `kort_antwoord`
+ * met `get_the_excerpt()` alleen nog als allerlaatste fallback wanneer een
+ * vraag per ongeluk geen `kort_antwoord` heeft.
  *
  * @package Spotlezz
  */

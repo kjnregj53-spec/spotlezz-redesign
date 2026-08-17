@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
+spotlezz_page_hero( __( 'Onze diensten', 'spotlezz' ), spotlezz_get_option( 'page_hero_diensten_cases' ) );
 ?>
-<div class="hub-page-header"><h1><?php esc_html_e( 'Onze diensten', 'spotlezz' ); ?></h1></div>
 
 <?php
 $all_pillars  = get_posts(

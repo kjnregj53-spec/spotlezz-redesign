@@ -39,9 +39,10 @@ while ( have_posts() ) :
 			return $p instanceof WP_Post && 'publish' === $p->post_status;
 		}
 	);
+
+	spotlezz_page_hero( get_the_title(), spotlezz_get_option( 'page_hero_vragen' ) );
 	?>
 	<article <?php post_class( 'vraag-single' ); ?> id="post-<?php the_ID(); ?>">
-		<h1><?php the_title(); ?></h1>
 
 		<!-- Rij 3: het korte antwoord -->
 		<?php if ( $kort_antwoord ) : ?>

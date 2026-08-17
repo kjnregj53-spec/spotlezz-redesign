@@ -287,6 +287,14 @@ function spotlezz_register_acf_homepage_fields() {
 					'name'  => 'founder_linkedin',
 					'type'  => 'url',
 				),
+				array(
+					'key'          => 'field_spotlezz_hp_founder_side_photo',
+					'label'        => __( 'Grote foto naast de kaart', 'spotlezz' ),
+					'name'         => 'founder_side_photo',
+					'type'         => 'image',
+					'return_format' => 'array',
+					'instructions' => __( 'Los van "Foto 2" (die staat ook in "Spotlezz in de praktijk") — deze foto is uitsluitend voor naast de oprichterskaart, zodat één wijziging niet meteen op twee plekken tegelijk verandert. Leeg = valt terug op Foto 2.', 'spotlezz' ),
+				),
 
 				// ---------- FAQ (wireframe-5-FINAL rij 10) — RELATIONSHIP ----------
 				array(
