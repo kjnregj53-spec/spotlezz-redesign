@@ -80,11 +80,12 @@ while ( have_posts() ) :
 		 * direct onder de hero-foto over de rand heen, dus moet hier staan —
 		 * als eerste in <article>, met niets ertussenin.
 		 * ================================================================== */
+		/*
+		 * Geen "zie FAQ"/prijsfactoren-stat meer als eerste tegel — op
+		 * klantfeedback verwijderd (dienstpagina's mogen net als
+		 * locatiepagina's niet meer doorlinken naar FAQ-artikelen).
+		 */
 		$stats = array(
-			array(
-				'value' => __( 'zie FAQ', 'spotlezz' ),
-				'label' => __( 'Prijsfactoren', 'spotlezz' ),
-			),
 			array(
 				'value' => spotlezz_field( 'stat_frequentie_value', $post_id, '' ),
 				'label' => spotlezz_field( 'stat_frequentie_label', $post_id, __( 'Frequentie', 'spotlezz' ) ),
@@ -111,11 +112,6 @@ while ( have_posts() ) :
 		<?php if ( $answer_intro ) : ?>
 			<section class="answer-block">
 				<p class="answer-intro"><?php echo esc_html( $answer_intro ); ?></p>
-				<p class="answer-price-link">
-					<a href="<?php echo esc_url( home_url( '/veelgestelde-vragen/wat-bepaalt-de-prijs-van-schoonmaak/' ) ); ?>">
-						<?php esc_html_e( 'Wat bepaalt de prijs? Bekijk de zes factoren', 'spotlezz' ); ?>
-					</a>
-				</p>
 			</section>
 		<?php endif; ?>
 
@@ -326,35 +322,7 @@ while ( have_posts() ) :
 
 	</article>
 
-	<?php
-	/* ==================================================================
-	 * Zwevende snelofferte-popup — 1-op-1 van de referentie's
-	 * .sticky-snelofferte: op desktop een kaart rechtsonder, op mobiel
-	 * standaard ingeklapt tot alleen de kop (tik om te openen), zodat hij
-	 * nooit het scherm opeet. Puur visueel, zoals elk formulier in dit
-	 * theme (PHASE-4C-PLAN §5-beslissing 5, APPROVED): geen action/method,
-	 * onsubmit="return false".
-	 * ================================================================== */
-	?>
-	<div class="sticky-snelofferte" id="stickyQuote-<?php echo esc_attr( $post_id ); ?>">
-		<button type="button" class="sticky-snelofferte-header" aria-expanded="false" aria-controls="stickyQuote-body-<?php echo esc_attr( $post_id ); ?>">
-			<span><?php esc_html_e( 'Snelofferte aanvragen', 'spotlezz' ); ?></span>
-			<svg class="icon-caret" viewBox="0 0 12 8" width="12" height="8" aria-hidden="true" focusable="false"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-		</button>
-		<div class="sticky-snelofferte-body" id="stickyQuote-body-<?php echo esc_attr( $post_id ); ?>">
-			<form class="sp-form" onsubmit="return false;">
-				<div class="form-group">
-					<label for="snelofferte-<?php echo esc_attr( $post_id ); ?>-email"><?php esc_html_e( 'E-mailadres', 'spotlezz' ); ?></label>
-					<input type="email" id="snelofferte-<?php echo esc_attr( $post_id ); ?>-email" name="email" autocomplete="email" placeholder="naam@bedrijf.nl">
-				</div>
-				<div class="form-consent">
-					<input type="checkbox" id="snelofferte-<?php echo esc_attr( $post_id ); ?>-akkoord" name="akkoord">
-					<label for="snelofferte-<?php echo esc_attr( $post_id ); ?>-akkoord"><?php echo wp_kses_post( sprintf( /* translators: %s: link naar privacybeleid */ __( 'Akkoord met het %s.', 'spotlezz' ), '<a href="' . esc_url( home_url( '/privacybeleid/' ) ) . '">' . esc_html__( 'privacybeleid', 'spotlezz' ) . '</a>' ) ); ?></label>
-				</div>
-				<button type="submit" class="btn btn-orange"><?php esc_html_e( 'Offerte aanvragen', 'spotlezz' ); ?></button>
-			</form>
-		</div>
-	</div>
+	<?php spotlezz_sticky_snelofferte( $post_id ); ?>
 
 	<?php
 

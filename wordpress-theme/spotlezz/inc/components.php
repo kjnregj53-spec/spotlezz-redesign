@@ -330,10 +330,11 @@ function spotlezz_reviews_block() {
 	$reviews = array();
 	foreach ( array( 1, 2, 3 ) as $i ) {
 		$reviews[] = array(
-			'quote'  => spotlezz_get_option( "review_{$i}_quote" ),
-			'name'   => spotlezz_get_option( "review_{$i}_name" ),
-			'role'   => spotlezz_get_option( "review_{$i}_role" ),
-			'photo'  => spotlezz_get_option( "review_{$i}_photo" ),
+			'quote'    => spotlezz_get_option( "review_{$i}_quote" ),
+			'name'     => spotlezz_get_option( "review_{$i}_name" ),
+			'role'     => spotlezz_get_option( "review_{$i}_role" ),
+			'photo'    => spotlezz_get_option( "review_{$i}_photo" ),
+			'linkedin' => spotlezz_get_option( "review_{$i}_linkedin" ),
 		);
 	}
 
@@ -352,10 +353,11 @@ function spotlezz_reviews_block() {
 		<div class="reviews-grid">
 			<?php foreach ( $reviews as $review ) : ?>
 				<?php
-				$quote = $review['quote'];
-				$name  = $review['name'];
-				$role  = $review['role'];
-				$photo = $review['photo'];
+				$quote    = $review['quote'];
+				$name     = $review['name'];
+				$role     = $review['role'];
+				$photo    = $review['photo'];
+				$linkedin = $review['linkedin'];
 				if ( '' === $quote && '' === $name ) {
 					continue; // Lege set overslaan, niets verzinnen.
 				}
@@ -372,6 +374,9 @@ function spotlezz_reviews_block() {
 						<span>
 							<b><?php echo esc_html( $name ); ?></b>
 							<?php if ( $role ) : ?><span class="review-role"><?php echo esc_html( $role ); ?></span><?php endif; ?>
+							<?php if ( $linkedin ) : ?>
+								<a class="review-linkedin" href="<?php echo esc_url( $linkedin ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'LinkedIn-profiel', 'spotlezz' ); ?></a>
+							<?php endif; ?>
 						</span>
 					</div>
 				</blockquote>
@@ -415,12 +420,18 @@ function spotlezz_reviews_block() {
  * Geëxtraheerd uit front-page.php (fase 4B); homepage-uitvoer blijft
  * pixel-identiek.
  *
- * @param int    $post_id    Post met het relationship-veld.
- * @param string $field_name Veldnaam van het relationship-veld — homepage
- *                            en pillar gebruiken `featured_faqs`, locatie
- *                            gebruikt het eigen `lokale_faqs` (fase 4C).
+ * @param int    $post_id        Post met het relationship-veld.
+ * @param string $field_name     Veldnaam van het relationship-veld — homepage
+ *                                en pillar gebruiken `featured_faqs`, locatie
+ *                                gebruikt het eigen `lokale_faqs` (fase 4C).
+ * @param bool   $show_more_link "Bekijk alle veelgestelde vragen"-link tonen
+ *                                onder de vragen. Op klantfeedback uit voor
+ *                                locatiepagina's (single-locatie.php): die
+ *                                mogen niet meer doorlinken naar FAQ-
+ *                                artikelen, elders (homepage/pillar) blijft
+ *                                de link staan.
  */
-function spotlezz_faq_block( $post_id, $field_name = 'featured_faqs' ) {
+function spotlezz_faq_block( $post_id, $field_name = 'featured_faqs', $show_more_link = true ) {
 	$featured_faqs = spotlezz_field( $field_name, $post_id, array() );
 	$featured_faqs = array_filter(
 		is_array( $featured_faqs ) ? $featured_faqs : array(),
@@ -485,11 +496,13 @@ function spotlezz_faq_block( $post_id, $field_name = 'featured_faqs' ) {
 					}
 					?>
 				<?php endforeach; ?>
-				<p class="faq-more">
-					<a href="<?php echo esc_url( get_post_type_archive_link( 'vraag' ) ?: home_url( '/veelgestelde-vragen/' ) ); ?>">
-						<?php esc_html_e( 'Bekijk alle veelgestelde vragen', 'spotlezz' ); ?>
-					</a>
-				</p>
+				<?php if ( $show_more_link ) : ?>
+					<p class="faq-more">
+						<a href="<?php echo esc_url( get_post_type_archive_link( 'vraag' ) ?: home_url( '/veelgestelde-vragen/' ) ); ?>">
+							<?php esc_html_e( 'Bekijk alle veelgestelde vragen', 'spotlezz' ); ?>
+						</a>
+					</p>
+				<?php endif; ?>
 			</div>
 		</div>
 	</section>
@@ -506,6 +519,44 @@ function spotlezz_faq_block( $post_id, $field_name = 'featured_faqs' ) {
 			}
 		);
 	}
+}
+
+/**
+ * Zwevende snelofferte-popup — 1-op-1 van de referentie's
+ * .sticky-snelofferte: op desktop een kaart rechtsonder, op mobiel
+ * standaard ingeklapt tot alleen de kop (tik om te openen), zodat hij
+ * nooit het scherm opeet. Puur visueel, zoals elk formulier in dit
+ * theme (PHASE-4C-PLAN §5-beslissing 5, APPROVED): geen action/method,
+ * onsubmit="return false". Was alleen op dienstpagina's; op
+ * klantfeedback ook op locatie- en sectorpagina's (single-locatie.php,
+ * single-pillar.php roepen dit nu allebei aan i.p.v. het te dupliceren).
+ */
+function spotlezz_sticky_snelofferte( $post_id ) {
+	?>
+	<div class="sticky-snelofferte" id="stickyQuote-<?php echo esc_attr( $post_id ); ?>">
+		<button type="button" class="sticky-snelofferte-header" aria-expanded="false" aria-controls="stickyQuote-body-<?php echo esc_attr( $post_id ); ?>">
+			<span><?php esc_html_e( 'Snelofferte aanvragen', 'spotlezz' ); ?></span>
+			<svg class="icon-caret" viewBox="0 0 12 8" width="12" height="8" aria-hidden="true" focusable="false"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+		</button>
+		<div class="sticky-snelofferte-body" id="stickyQuote-body-<?php echo esc_attr( $post_id ); ?>">
+			<form class="sp-form" onsubmit="return false;">
+				<div class="form-group">
+					<label for="snelofferte-<?php echo esc_attr( $post_id ); ?>-email"><?php esc_html_e( 'E-mailadres', 'spotlezz' ); ?></label>
+					<input type="email" id="snelofferte-<?php echo esc_attr( $post_id ); ?>-email" name="email" autocomplete="email" placeholder="naam@bedrijf.nl">
+				</div>
+				<div class="form-group">
+					<label for="snelofferte-<?php echo esc_attr( $post_id ); ?>-telefoon"><?php esc_html_e( 'Telefoonnummer', 'spotlezz' ); ?></label>
+					<input type="tel" id="snelofferte-<?php echo esc_attr( $post_id ); ?>-telefoon" name="telefoon" autocomplete="tel" placeholder="06 12345678">
+				</div>
+				<div class="form-consent">
+					<input type="checkbox" id="snelofferte-<?php echo esc_attr( $post_id ); ?>-akkoord" name="akkoord">
+					<label for="snelofferte-<?php echo esc_attr( $post_id ); ?>-akkoord"><?php echo wp_kses_post( sprintf( /* translators: %s: link naar privacybeleid */ __( 'Akkoord met het %s.', 'spotlezz' ), '<a href="' . esc_url( home_url( '/privacybeleid/' ) ) . '">' . esc_html__( 'privacybeleid', 'spotlezz' ) . '</a>' ) ); ?></label>
+				</div>
+				<button type="submit" class="btn btn-orange"><?php esc_html_e( 'Offerte aanvragen', 'spotlezz' ); ?></button>
+			</form>
+		</div>
+	</div>
+	<?php
 }
 
 /**

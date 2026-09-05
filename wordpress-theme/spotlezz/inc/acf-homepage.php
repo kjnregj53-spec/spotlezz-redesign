@@ -327,7 +327,7 @@ function spotlezz_register_acf_homepage_fields() {
 					'name'          => 'lead_magnet_title',
 					'type'          => 'text',
 					'default_value' => 'De Spotlezz-check',
-					'instructions'  => __( 'Precies één lead-magnet-blok op de homepage (WORDPRESS-BUILD-PLAN §3.1/§4) — dit veld bestaat maar één keer in deze veldgroep, dus een tweede exemplaar kan hier niet per ongeluk ontstaan.', 'spotlezz' ),
+					'instructions'  => __( 'Precies één lead-magnet-blok op de homepage (sectie "De Spotlezz-check", donkere foto-achtergrond + formulier) — de eerdere kleine losstaande CTA-kaart erboven is op klantfeedback verwijderd.', 'spotlezz' ),
 				),
 				array(
 					'key'   => 'field_spotlezz_hp_lead_description',

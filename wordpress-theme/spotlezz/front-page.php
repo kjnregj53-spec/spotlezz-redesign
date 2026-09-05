@@ -2,8 +2,8 @@
 /**
  * Homepage — fase 4B, herschikt (na-4C) om de sectievolgorde van
  * spotlezz.nl te volgen: Hero → USP → Diensten → Wat onze klanten zeggen →
- * Spotlezz-check → Kwaliteit-stats → Werkwijze/vergelijking → Werkgebied →
- * Eigen foto's → Reviews → Klantcases → Oprichter → FAQ.
+ * Werkwijze/vergelijking → Spotlezz-check → Eigen foto's → Reviews →
+ * Klantcases → Kwaliteit-stats → Oprichter → Werkgebied → FAQ → Contact.
  *
  * Volledige opbouw volgens wireframe-5-homepage-FINAL.html en
  * WORDPRESS-BUILD-PLAN.md §3.1. Navigatie, next-hop, schema-logica en
@@ -323,20 +323,39 @@ foreach ( $branche_fotos as $slug => $attachment_id ) {
 
 <?php
 /* ==================================================================
- * 6. Checklist-CTA — kleine, gecentreerde kaart, 1-op-1 van
- *    .checklist-cta-section op spotlezz.vercel.app.
+ * 5b. Grote checklist-banner — 1-op-1 van .lead-magnet-section
+ *    (id="check") op spotlezz.vercel.app: donkere foto-achtergrond,
+ *    tekst + e-mailform. Stond eerder als sectie 17 helemaal onderaan
+ *    de pagina — op klantfeedback direct onder de vergelijkingssectie
+ *    gezet i.p.v. verderop.
  * ================================================================== */
-$lead_title = spotlezz_field( 'lead_magnet_title', $page_id, __( 'Spotlezz Schoonmaak Checklist', 'spotlezz' ) );
-$lead_desc  = spotlezz_field( 'lead_magnet_description', $page_id, __( 'Ontdek de 10 verborgen plekken in je kantoor die de meeste bacteriën bevatten. Download onze gratis checklist en verhoog direct de hygiëne op de werkvloer.', 'spotlezz' ) );
-$lead_cta   = spotlezz_field( 'lead_magnet_cta_label', $page_id, __( 'Download de checklist', 'spotlezz' ) );
+$check_bg_id  = 118; // checklist-achtergrond.jpg (al eerder geimporteerd, echte foto)
+$check_bg_url = wp_get_attachment_image_url( $check_bg_id, 'full' );
 ?>
-<section class="checklist-cta-section">
-	<div class="checklist-cta-card">
-		<h2><?php echo esc_html( $lead_title ); ?></h2>
-		<?php if ( $lead_desc ) : ?>
-			<p><?php echo esc_html( $lead_desc ); ?></p>
-		<?php endif; ?>
-		<a class="btn btn-orange" href="<?php echo esc_url( home_url( '/checklist/' ) ); ?>"><?php echo esc_html( $lead_cta ); ?></a>
+<section id="check" class="lead-magnet-section"<?php echo $check_bg_url ? ' style="background-image:url(' . esc_url( $check_bg_url ) . ')"' : ''; ?>>
+	<div class="lead-magnet-overlay"></div>
+	<div class="lead-magnet-content">
+		<h2><?php echo esc_html( spotlezz_field( 'lead_magnet_title', $page_id, __( 'De Spotlezz-check', 'spotlezz' ) ) ); ?></h2>
+		<p><?php echo esc_html( spotlezz_field( 'lead_magnet_description', $page_id, __( 'Ontdek in 1 minuut of je huidige schoonmaak de juiste is. Vul je e-mail in en ontvang de checklist in je mailbox.', 'spotlezz' ) ) ); ?></p>
+		<form class="sp-form checklist-form" onsubmit="return false;">
+			<div class="form-group">
+				<label for="home-checklist-email"><?php esc_html_e( 'E-mailadres', 'spotlezz' ); ?></label>
+				<input type="email" id="home-checklist-email" name="email" autocomplete="email" required>
+			</div>
+			<div class="form-consent">
+				<input type="checkbox" id="home-checklist-akkoord" name="akkoord" required>
+				<label for="home-checklist-akkoord">
+					<?php
+					printf(
+						/* translators: %s: link naar privacybeleid */
+						esc_html__( 'Akkoord met het %s.', 'spotlezz' ),
+						'<a href="' . esc_url( home_url( '/privacybeleid/' ) ) . '">' . esc_html__( 'privacybeleid', 'spotlezz' ) . '</a>'
+					);
+					?>
+				</label>
+			</div>
+			<button type="submit" class="btn btn-orange"><?php echo esc_html( spotlezz_field( 'lead_magnet_cta_label', $page_id, __( 'Vraag de checklist aan', 'spotlezz' ) ) ); ?></button>
+		</form>
 	</div>
 </section>
 
@@ -726,43 +745,6 @@ $contact_bg_url = wp_get_attachment_image_url( $contact_bg_id, 'full' );
 				</form>
 			</div>
 		</div>
-	</div>
-</section>
-
-<?php
-/* ==================================================================
- * 17. Grote checklist-banner — 1-op-1 van .lead-magnet-section (id="check")
- *    op spotlezz.vercel.app: donkere foto-achtergrond, tekst + e-mailform.
- *    Aparte, grotere versie t.o.v. de kleine .checklist-cta-section
- *    hierboven — de referentie toont hem op de homepage ook tweemaal.
- * ================================================================== */
-$check_bg_id  = 118; // checklist-achtergrond.jpg (al eerder geimporteerd, echte foto)
-$check_bg_url = wp_get_attachment_image_url( $check_bg_id, 'full' );
-?>
-<section id="check" class="lead-magnet-section"<?php echo $check_bg_url ? ' style="background-image:url(' . esc_url( $check_bg_url ) . ')"' : ''; ?>>
-	<div class="lead-magnet-overlay"></div>
-	<div class="lead-magnet-content">
-		<h2><?php esc_html_e( 'De Spotlezz-check', 'spotlezz' ); ?></h2>
-		<p><?php esc_html_e( 'Ontdek in 1 minuut of je huidige schoonmaak de juiste is. Vul je e-mail in en ontvang de checklist in je mailbox.', 'spotlezz' ); ?></p>
-		<form class="sp-form checklist-form" onsubmit="return false;">
-			<div class="form-group">
-				<label for="home-checklist-email"><?php esc_html_e( 'E-mailadres', 'spotlezz' ); ?></label>
-				<input type="email" id="home-checklist-email" name="email" autocomplete="email" required>
-			</div>
-			<div class="form-consent">
-				<input type="checkbox" id="home-checklist-akkoord" name="akkoord" required>
-				<label for="home-checklist-akkoord">
-					<?php
-					printf(
-						/* translators: %s: link naar privacybeleid */
-						esc_html__( 'Akkoord met het %s.', 'spotlezz' ),
-						'<a href="' . esc_url( home_url( '/privacybeleid/' ) ) . '">' . esc_html__( 'privacybeleid', 'spotlezz' ) . '</a>'
-					);
-					?>
-				</label>
-			</div>
-			<button type="submit" class="btn btn-orange"><?php esc_html_e( 'Vraag de checklist aan', 'spotlezz' ); ?></button>
-		</form>
 	</div>
 </section>
 

@@ -31,6 +31,21 @@ while ( have_posts() ) :
 	$review_count = spotlezz_get_option( 'review_count' );
 	$phone        = spotlezz_get_option( 'phone' );
 
+	/*
+	 * Werkgebied-tekst hier al ophalen en in tweeën knippen: de eerste
+	 * alinea verhuist naar de hero (tussen de usp-pills en de knoppen),
+	 * zodat de hero niet meer zo kaal oogt — de rest blijft verderop
+	 * staan in "Ons werkgebied" (rij 6), nu wat korter i.p.v. de eerste
+	 * alinea daar te dupliceren.
+	 */
+	$werkgebied_full  = spotlezz_field( 'werkgebied_tekst', $post_id, '' );
+	$werkgebied_intro = '';
+	$werkgebied_rest  = $werkgebied_full;
+	if ( $werkgebied_full && preg_match( '/^(.*?<\/p>)(.*)$/s', trim( $werkgebied_full ), $matches ) ) {
+		$werkgebied_intro = $matches[1];
+		$werkgebied_rest  = trim( $matches[2] );
+	}
+
 	$locatie_titel = sprintf(
 		/* translators: %s: plaatsnaam */
 		__( 'Schoonmaakbedrijf %s', 'spotlezz' ),
@@ -61,6 +76,10 @@ while ( have_posts() ) :
 						<span class="pill-check">&#9733; <?php echo esc_html( $review_score ); ?>/5</span>
 					<?php endif; ?>
 				</div>
+
+				<?php if ( $werkgebied_intro ) : ?>
+					<div class="locatie-hero-intro"><?php echo wp_kses_post( $werkgebied_intro ); ?></div>
+				<?php endif; ?>
 
 				<div class="locatie-cta-row">
 					<a href="<?php echo esc_url( home_url( '/offerte-aanvragen/' ) ); ?>" class="btn btn-orange">
@@ -116,9 +135,12 @@ while ( have_posts() ) :
 
 		<!-- Rij 3: antwoordblok -->
 		<?php
-		$antwoord_stats = array(
-			array( 'value' => __( 'zie FAQ', 'spotlezz' ), 'label' => __( 'Prijsfactoren', 'spotlezz' ) ),
-		);
+		/*
+		 * Geen "zie FAQ"-stat + prijsfactoren-link meer hier — op
+		 * klantfeedback verwijderd (locatiepagina's mogen niet meer
+		 * doorlinken naar FAQ-artikelen).
+		 */
+		$antwoord_stats = array();
 		if ( $stat_reactietijd ) {
 			$antwoord_stats[] = array( 'value' => $stat_reactietijd, 'label' => __( 'Reactietijd', 'spotlezz' ) );
 		}
@@ -129,12 +151,11 @@ while ( have_posts() ) :
 			$antwoord_stats[] = array( 'value' => $review_count, 'label' => __( 'Beoordelingen', 'spotlezz' ) );
 		}
 		?>
-		<section class="locatie-antwoordblok">
-			<?php spotlezz_stat_block( $antwoord_stats ); ?>
-			<p class="answer-price-link">
-				<a href="<?php echo esc_url( home_url( '/veelgestelde-vragen/wat-kost-schoonmaak/' ) ); ?>"><?php esc_html_e( 'Bekijk de prijsfactoren', 'spotlezz' ); ?></a>
-			</p>
-		</section>
+		<?php if ( ! empty( $antwoord_stats ) ) : ?>
+			<section class="locatie-antwoordblok">
+				<?php spotlezz_stat_block( $antwoord_stats ); ?>
+			</section>
+		<?php endif; ?>
 
 		<!-- Rij 4: lokaal bewijs -->
 		<?php
@@ -152,10 +173,11 @@ while ( have_posts() ) :
 				return $c instanceof WP_Post && 'publish' === $c->post_status;
 			}
 		) : array();
-		$review_quote = spotlezz_field( 'lokale_review_quote', $post_id, '' );
-		$review_naam  = spotlezz_field( 'lokale_review_naam', $post_id, '' );
-		$review_rol   = spotlezz_field( 'lokale_review_rol', $post_id, '' );
-		$review_foto  = spotlezz_field( 'lokale_review_foto', $post_id, null );
+		$review_quote    = spotlezz_field( 'lokale_review_quote', $post_id, '' );
+		$review_naam     = spotlezz_field( 'lokale_review_naam', $post_id, '' );
+		$review_rol      = spotlezz_field( 'lokale_review_rol', $post_id, '' );
+		$review_foto     = spotlezz_field( 'lokale_review_foto', $post_id, null );
+		$review_linkedin = spotlezz_field( 'lokale_review_linkedin', $post_id, '' );
 		?>
 		<?php if ( ! empty( $logos ) || ! empty( $lokale_case ) || ( $review_quote && $review_naam ) ) : ?>
 			<section class="locatie-bewijs">
@@ -170,8 +192,16 @@ while ( have_posts() ) :
 
 				<div class="bewijs-split">
 					<?php if ( ! empty( $lokale_case ) ) : ?>
-						<?php $case = reset( $lokale_case ); ?>
+						<?php
+						$case      = reset( $lokale_case );
+						$case_logo = spotlezz_field( 'logo', $case->ID, null );
+						?>
 						<a class="case-card" href="<?php echo esc_url( get_permalink( $case ) ); ?>">
+							<?php if ( is_array( $case_logo ) && ! empty( $case_logo['url'] ) ) : ?>
+								<div class="case-card-logo">
+									<img src="<?php echo esc_url( $case_logo['url'] ); ?>" alt="<?php echo esc_attr( spotlezz_image_alt( $case_logo, get_the_title( $case ) ) ); ?>" loading="lazy" decoding="async">
+								</div>
+							<?php endif; ?>
 							<div class="case-card-body">
 								<h3><?php echo esc_html( get_the_title( $case ) ); ?></h3>
 								<p>
@@ -198,6 +228,9 @@ while ( have_posts() ) :
 								<span>
 									<b><?php echo esc_html( $review_naam ); ?></b>
 									<?php if ( $review_rol ) : ?><span class="review-role"><?php echo esc_html( $review_rol ); ?></span><?php endif; ?>
+									<?php if ( $review_linkedin ) : ?>
+										<a class="review-linkedin" href="<?php echo esc_url( $review_linkedin ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'LinkedIn-profiel', 'spotlezz' ); ?></a>
+									<?php endif; ?>
 								</span>
 							</div>
 						</blockquote>
@@ -220,6 +253,29 @@ while ( have_posts() ) :
 						?>
 					<?php endif; ?>
 				</div>
+			</section>
+		<?php else : ?>
+			<?php
+			/*
+			 * Eerlijke, publiek zichtbare overgangstekst i.p.v. de sectie
+			 * volledig verbergen — op klantverzoek zichtbaar voor iedere
+			 * bezoeker, maar zonder ooit een naam, quote, foto of case te
+			 * verzinnen (blijft de harde regel van dit theme). Zodra er
+			 * één echt bewijsstuk binnenkomt, toont de sectie hierboven
+			 * dat automatisch i.p.v. deze tekst.
+			 */
+			?>
+			<section class="locatie-bewijs locatie-bewijs-pending">
+				<h2><?php esc_html_e( 'Lokale klanten', 'spotlezz' ); ?></h2>
+				<p>
+					<?php
+					printf(
+						/* translators: %s: plaatsnaam */
+						esc_html__( 'Wij bouwen ons klantennetwerk in %s op dit moment op. Zodra wij hier een vaste klant hebben, delen wij die case met naam en toenaam — geen verzonnen reviews.', 'spotlezz' ),
+						esc_html( get_the_title() )
+					);
+					?>
+				</p>
 			</section>
 		<?php endif; ?>
 
@@ -268,11 +324,30 @@ while ( have_posts() ) :
 		<?php endif; ?>
 
 		<!-- Rij 6: werkgebied -->
-		<?php $werkgebied = spotlezz_field( 'werkgebied_tekst', $post_id, '' ); ?>
-		<?php if ( $werkgebied ) : ?>
+		<?php
+		/*
+		 * Ook dit resterende blok (na de eerste alinea die al in de hero
+		 * staat) is nog lang — op klantfeedback knippen we het verder: de
+		 * eerstvolgende alinea blijft direct zichtbaar, de rest gaat achter
+		 * een "Lees meer"-toggle (<details>, geen JS nodig).
+		 */
+		$werkgebied_visible = $werkgebied_rest;
+		$werkgebied_more    = '';
+		if ( $werkgebied_rest && preg_match( '/^(.*?<\/p>)(.*)$/s', trim( $werkgebied_rest ), $rest_matches ) ) {
+			$werkgebied_visible = $rest_matches[1];
+			$werkgebied_more    = trim( $rest_matches[2] );
+		}
+		?>
+		<?php if ( $werkgebied_visible ) : ?>
 			<section class="locatie-werkgebied">
 				<h2><?php esc_html_e( 'Ons werkgebied', 'spotlezz' ); ?></h2>
-				<div class="werkgebied-tekst"><?php echo wp_kses_post( $werkgebied ); ?></div>
+				<div class="werkgebied-tekst"><?php echo wp_kses_post( $werkgebied_visible ); ?></div>
+				<?php if ( $werkgebied_more ) : ?>
+					<details class="werkgebied-more">
+						<summary><?php esc_html_e( 'Lees meer', 'spotlezz' ); ?></summary>
+						<div class="werkgebied-tekst"><?php echo wp_kses_post( $werkgebied_more ); ?></div>
+					</details>
+				<?php endif; ?>
 			</section>
 		<?php endif; ?>
 
@@ -307,29 +382,68 @@ while ( have_posts() ) :
 
 		<!-- Rij 8: lokaal team -->
 		<?php
-		$team_naam     = spotlezz_field( 'lokaal_team_naam', $post_id, '' );
-		$team_foto     = spotlezz_field( 'lokaal_team_foto', $post_id, null );
-		if ( $team_naam ) :
+		$team_naam = spotlezz_field( 'lokaal_team_naam', $post_id, '' );
+		$team_foto = spotlezz_field( 'lokaal_team_foto', $post_id, null );
+		$team_rol  = spotlezz_field( 'lokaal_team_rol', $post_id, '' );
+		$team_quote = spotlezz_field( 'lokaal_team_quote', $post_id, '' );
+		if ( $team_naam && $team_quote ) :
+			/*
+			 * Zelfde tekst+foto-splitsectie als over-ons.php's "Medewerker
+			 * aan het woord" (.medewerker-split) — op klantfeedback een
+			 * echte foto rechts i.p.v. alleen de initiaal-avatar. Geen
+			 * bevestigde teamfoto per locatie, dus terugval op de al
+			 * bevestigde "team aan het werk"-foto van de homepage (zelfde
+			 * hergebruik-patroon als elders in dit theme), nooit een
+			 * verzonnen/stockfoto.
+			 */
+			$team_photo_url = is_array( $team_foto ) ? ( $team_foto['url'] ?? '' ) : '';
+			if ( ! $team_photo_url ) {
+				$home_photo_1   = spotlezz_field( 'photo_1', get_option( 'page_on_front' ), null );
+				$team_photo_url = is_array( $home_photo_1 ) ? ( $home_photo_1['url'] ?? '' ) : '';
+			}
 			?>
 			<section class="medewerker-block">
 				<h2><?php esc_html_e( 'Het team in deze regio', 'spotlezz' ); ?></h2>
-				<?php
-				spotlezz_person_card(
-					array(
-						'name'      => $team_naam,
-						'job_title' => spotlezz_field( 'lokaal_team_rol', $post_id, '' ),
-						'quote'     => spotlezz_field( 'lokaal_team_quote', $post_id, '' ),
-						'image_url' => is_array( $team_foto ) ? ( $team_foto['url'] ?? '' ) : '',
-						'linkedin'  => spotlezz_field( 'lokaal_team_linkedin', $post_id, '' ),
-						'id_suffix' => 'locatie-' . $post_id . '-team',
-					)
-				);
-				?>
+				<div class="medewerker-split">
+					<div class="medewerker-split-text">
+						<div class="medewerker-split-name">
+							<span class="person-avatar" aria-hidden="true"><?php echo esc_html( mb_substr( $team_naam, 0, 1 ) ); ?></span>
+							<span>
+								<?php echo esc_html( $team_naam ); ?>
+								<?php if ( $team_rol ) : ?><br><span class="medewerker-split-role"><?php echo esc_html( $team_rol ); ?></span><?php endif; ?>
+							</span>
+						</div>
+						<blockquote><?php echo esc_html( $team_quote ); ?></blockquote>
+					</div>
+					<?php if ( $team_photo_url ) : ?>
+						<div class="medewerker-split-photo" style="background-image:url('<?php echo esc_url( $team_photo_url ); ?>')" role="img" aria-label="<?php echo esc_attr( spotlezz_image_alt( is_array( $team_foto ) ? $team_foto : null, $team_naam ) ); ?>"></div>
+					<?php endif; ?>
+				</div>
+			</section>
+		<?php elseif ( ! $team_naam ) : ?>
+			<?php
+			/*
+			 * Zelfde eerlijke overgangstekst als bij "Lokale klanten" —
+			 * nooit een verzonnen teamlid tonen, wel de sectie zichtbaar
+			 * houden i.p.v. hem te verbergen.
+			 */
+			?>
+			<section class="medewerker-block medewerker-block-pending">
+				<h2><?php esc_html_e( 'Het team in deze regio', 'spotlezz' ); ?></h2>
+				<p>
+					<?php
+					printf(
+						/* translators: %s: plaatsnaam */
+						esc_html__( 'Wij stellen op dit moment een vast team samen voor %s. Zodra dat rond is, maken wij hier kennis met de teamleider — met een echte naam en foto.', 'spotlezz' ),
+						esc_html( get_the_title() )
+					);
+					?>
+				</p>
 			</section>
 		<?php endif; ?>
 
 		<!-- Rij 9: lokale FAQ -->
-		<?php spotlezz_faq_block( $post_id, 'lokale_faqs' ); ?>
+		<?php spotlezz_faq_block( $post_id, 'lokale_faqs', false ); ?>
 
 		<!-- Rij 10: andere locaties -->
 		<?php
@@ -374,6 +488,16 @@ while ( have_posts() ) :
 		);
 		?>
 	</article>
+
+	<?php
+	/*
+	 * Zwevende snelofferte-popup — zelfde component als dienstpagina's
+	 * (spotlezz_sticky_snelofferte() in inc/components.php), op
+	 * klantfeedback ook hier toegevoegd.
+	 */
+	spotlezz_sticky_snelofferte( $post_id );
+	?>
+
 	<?php
 
 	// Rij 11: next-hop — zijwaarts naar de lokale case als die er is, anders

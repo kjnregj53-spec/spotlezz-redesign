@@ -34,6 +34,7 @@ while ( have_posts() ) :
 	?>
 	<article <?php post_class( 'offerte-single' ); ?> id="post-<?php the_ID(); ?>">
 
+		<div class="offerte-hero-bg">
 		<section class="offerte-hero-plain">
 			<h1>
 				<?php echo esc_html( spotlezz_field( 'offerte_hero_prefix', $post_id, __( 'Ontvang een', 'spotlezz' ) ) ); ?>
@@ -121,6 +122,7 @@ while ( have_posts() ) :
 				<button type="submit" class="btn btn-orange"><?php esc_html_e( 'Offerte aanvragen', 'spotlezz' ); ?></button>
 				<p class="mini offerte-form-note"><?php esc_html_e( 'Vrijblijvend. Je ontvangt binnen 12 uur reactie van ons team.', 'spotlezz' ); ?></p>
 			</form>
+		</div>
 		</div>
 
 		<?php

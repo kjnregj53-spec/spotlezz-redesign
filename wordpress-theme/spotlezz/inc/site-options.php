@@ -116,6 +116,14 @@ function spotlezz_site_option_fields() {
 			'type'    => 'email',
 			'default' => 'info@spotlezz.nl',
 		),
+		/*
+		 * Op klantverzoek is de hoofdvestiging-plaats gewijzigd naar
+		 * Amsterdam, maar straat + postcode zijn nog steeds het oude
+		 * Almere-adres (Spinnakerplantsoen) — de klant heeft het echte
+		 * nieuwe Amsterdamse adres nog niet aangeleverd. Straat/postcode
+		 * bewust NIET verzonnen; zodra het echte adres binnen is, hier
+		 * bijwerken zodat NAP/schema weer volledig kloppend is.
+		 */
 		'address_street'   => array(
 			'label'   => __( 'Straat + huisnummer', 'spotlezz' ),
 			'type'    => 'text',
@@ -129,7 +137,7 @@ function spotlezz_site_option_fields() {
 		'address_city'     => array(
 			'label'   => __( 'Plaats (hoofdvestiging)', 'spotlezz' ),
 			'type'    => 'text',
-			'default' => 'Almere',
+			'default' => 'Amsterdam',
 		),
 		'kvk'              => array(
 			'label'   => __( 'KVK-nummer', 'spotlezz' ),
@@ -250,14 +258,17 @@ function spotlezz_site_option_fields() {
 		'review_1_name'    => array( 'label' => __( 'Review 1 — naam', 'spotlezz' ), 'type' => 'text', 'default' => '' ),
 		'review_1_role'    => array( 'label' => __( 'Review 1 — functie / bedrijf', 'spotlezz' ), 'type' => 'text', 'default' => '' ),
 		'review_1_photo'   => array( 'label' => __( 'Review 1 — foto-URL (optioneel)', 'spotlezz' ), 'type' => 'url', 'default' => '' ),
+		'review_1_linkedin' => array( 'label' => __( 'Review 1 — LinkedIn-URL (leeg = geen link)', 'spotlezz' ), 'type' => 'url', 'default' => '' ),
 		'review_2_quote'   => array( 'label' => __( 'Review 2 — quote', 'spotlezz' ), 'type' => 'text', 'default' => '' ),
 		'review_2_name'    => array( 'label' => __( 'Review 2 — naam', 'spotlezz' ), 'type' => 'text', 'default' => '' ),
 		'review_2_role'    => array( 'label' => __( 'Review 2 — functie / bedrijf', 'spotlezz' ), 'type' => 'text', 'default' => '' ),
 		'review_2_photo'   => array( 'label' => __( 'Review 2 — foto-URL (optioneel)', 'spotlezz' ), 'type' => 'url', 'default' => '' ),
+		'review_2_linkedin' => array( 'label' => __( 'Review 2 — LinkedIn-URL (leeg = geen link)', 'spotlezz' ), 'type' => 'url', 'default' => '' ),
 		'review_3_quote'   => array( 'label' => __( 'Review 3 — quote', 'spotlezz' ), 'type' => 'text', 'default' => '' ),
 		'review_3_name'    => array( 'label' => __( 'Review 3 — naam', 'spotlezz' ), 'type' => 'text', 'default' => '' ),
 		'review_3_role'    => array( 'label' => __( 'Review 3 — functie / bedrijf', 'spotlezz' ), 'type' => 'text', 'default' => '' ),
 		'review_3_photo'   => array( 'label' => __( 'Review 3 — foto-URL (optioneel)', 'spotlezz' ), 'type' => 'url', 'default' => '' ),
+		'review_3_linkedin' => array( 'label' => __( 'Review 3 — LinkedIn-URL (leeg = geen link)', 'spotlezz' ), 'type' => 'url', 'default' => '' ),
 
 		/**
 		 * Gedeelde werkwijze + vergelijkingstabel (fase 4C, beslissing 3,

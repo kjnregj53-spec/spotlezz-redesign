@@ -92,6 +92,74 @@
 	} );
 
 	/**
+	 * Offerte-kengetallen (.offerte-kengetal): telt op naar het eindgetal
+	 * en faded in met een stagger zodra de rij in beeld komt. Leest de
+	 * bestaande servertekst ("4,8/5", "87+", "94%") i.p.v. aparte
+	 * data-attributen, en herstelt die tekst exact na afloop zodat
+	 * afronding nooit kan afwijken van de echte waarde.
+	 */
+	ready( function () {
+		var items = document.querySelectorAll( '.offerte-kengetal' );
+		if ( ! items.length ) {
+			return;
+		}
+		var reduceMotion = window.matchMedia && window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
+
+		function animateValue( el ) {
+			var text  = el.textContent.trim();
+			var match = text.match( /^(\d+)(,(\d+))?/ );
+			if ( ! match ) {
+				return;
+			}
+			var suffix   = text.slice( match[0].length );
+			var hasDec   = undefined !== match[3];
+			var target   = hasDec ? parseFloat( match[1] + '.' + match[3] ) : parseInt( match[1], 10 );
+			var duration = 900;
+			var start    = null;
+
+			function step( timestamp ) {
+				if ( ! start ) {
+					start = timestamp;
+				}
+				var progress = Math.min( ( timestamp - start ) / duration, 1 );
+				var current  = target * progress;
+				el.textContent = ( hasDec ? current.toFixed( 1 ).replace( '.', ',' ) : Math.round( current ) ) + suffix;
+				if ( progress < 1 ) {
+					requestAnimationFrame( step );
+				} else {
+					el.textContent = text;
+				}
+			}
+			requestAnimationFrame( step );
+		}
+
+		if ( reduceMotion || ! ( 'IntersectionObserver' in window ) ) {
+			items.forEach( function ( item ) {
+				item.classList.add( 'in-view' );
+			} );
+			return;
+		}
+
+		var observer = new IntersectionObserver( function ( entries ) {
+			entries.forEach( function ( entry ) {
+				if ( ! entry.isIntersecting ) {
+					return;
+				}
+				entry.target.classList.add( 'in-view' );
+				var valueEl = entry.target.querySelector( '.offerte-kengetal-value' );
+				if ( valueEl ) {
+					animateValue( valueEl );
+				}
+				observer.unobserve( entry.target );
+			} );
+		}, { threshold: 0.4 } );
+
+		items.forEach( function ( item ) {
+			observer.observe( item );
+		} );
+	} );
+
+	/**
 	 * FAQ-hub zoekfilter (fase 4C, archive-vraag.php). Puur client-side
 	 * tekstmatch tegen `data-search-text` op elk `.faq-item`; een
 	 * `.faq-theme-group` verbergt zichzelf zodra geen van zijn vragen meer

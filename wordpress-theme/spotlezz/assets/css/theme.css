@@ -357,7 +357,12 @@ img {
    schuift de kaart over andere inhoud heen i.p.v. over de hero. */
 .stat-block {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	/* auto-fit i.p.v. een vaste repeat(4, 1fr): blokken met minder dan 4
+	   items (bv. het 3-koloms case-hero-statenblok: Branche/Locatie/
+	   Klant sinds) kregen anders een lege 4e kolom en werden de 3 echte
+	   kolommen te smal, waardoor lange woorden zoals "Sportschool" of
+	   "Amsterdam" midden in het woord afbraken. */
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 	gap: 0;
 	max-width: 1100px;
 	margin: 0 auto 24px;
@@ -376,7 +381,7 @@ img {
 	min-width: 0; /* laat het label wrappen i.p.v. de grid-track breder te duwen dan de viewport */
 }
 .stat:last-child { border-right: none; }
-.stat b { display: block; font-family: var(--spotlezz-font-heading); font-size: 22px; font-weight: 700; overflow-wrap: break-word; }
+.stat b { display: block; font-family: var(--spotlezz-font-heading); font-size: clamp(16px, 4vw, 22px); font-weight: 700; overflow-wrap: break-word; }
 .stat span { font-size: 11px; color: #6b7280; text-transform: uppercase; letter-spacing: .04em; overflow-wrap: break-word; }
 
 @media (max-width: 700px) {
@@ -558,6 +563,8 @@ img {
 	font-weight: 700;
 }
 .review-role { display: block; font-size: 12.5px; color: #6b7280; }
+.review-linkedin { display: inline-block; font-size: 12.5px; color: var(--spotlezz-blue); text-decoration: none; margin-top: 2px; }
+.review-linkedin:hover { text-decoration: underline; }
 .reviews-footnote { text-align: center; margin-top: 20px; font-size: 13.5px; color: #6b7280; }
 .reviews-footnote a { color: var(--spotlezz-blue); }
 
@@ -637,15 +644,6 @@ img {
 .compare-others .compare-list li { color: #555; font-weight: 400; }
 .compare-spotlezz .compare-list li::before { content: "\2713"; color: #fff; font-weight: 700; margin-right: 10px; }
 .compare-others .compare-list li::before { content: "\2014"; color: #94a3b8; font-weight: 700; margin-right: 10px; }
-
-/* ---------- checklist-cta (klein, gecentreerd) ---------- */
-.checklist-cta-section { padding: 40px 5%; background: var(--spotlezz-white); }
-.checklist-cta-card {
-	background: var(--spotlezz-white); text-align: center; border-radius: 16px; max-width: 900px; margin: 0 auto;
-	padding: 48px 30px; box-shadow: 0 10px 40px rgba(0,0,0,.06); border: 1px solid rgba(0,0,0,.03);
-}
-.checklist-cta-card h2 { color: var(--spotlezz-blue); font-size: clamp(20px, 2.7vw, 30px); margin-bottom: 14px; }
-.checklist-cta-card p { max-width: 620px; margin: 0 auto 26px; line-height: 1.6; color: var(--spotlezz-ink); }
 
 /* ---------- klantlogo-ticker (1-op-1) ---------- */
 .clients-ticker-section { padding: 40px 0; overflow: hidden; }
@@ -1044,18 +1042,31 @@ img {
 	.case-hero { grid-template-columns: 1fr; }
 }
 
-/* ---------- samengevoegde klantcases-pagina (/klantcases/) ----------
-   1-op-1-in-geest van de referentie's zachte canvas-achtergrond (body
-   style="background: var(--canvas)") — elke case wordt hier een eigen
-   witte kaart die zich aftekent tegen een lichtgrijze pagina-achtergrond,
-   i.p.v. wit-op-wit met alleen een dunne scheidingslijn. */
-.case-merged {
-	display: block; max-width: var(--spotlezz-max-width); margin: 0 auto 32px;
-	padding: 40px 0 8px; background: var(--spotlezz-white); border-radius: 20px;
-	box-shadow: 0 10px 40px rgba(0,0,0,.05); border: 1px solid var(--spotlezz-border);
+/* ---------- klantcases-overzicht (/klantcases/) — 1-op-1 van de
+   referentie's kaartenoverzicht: elke kaart linkt naar zijn eigen
+   single-case.php-detailpagina. ---------- */
+.klantcases-grid-section { max-width: 1200px; margin: 0 auto; padding: 44px 5% 80px; }
+.klantcases-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; }
+.klantcase-card {
+	display: block; text-decoration: none; color: inherit; background: var(--spotlezz-white);
+	border-radius: 12px; overflow: hidden; border: 1px solid var(--spotlezz-border);
+	box-shadow: 0 4px 15px rgba(0,0,0,.05); transition: transform .3s ease, box-shadow .3s ease;
 }
-.case-merged + .case-merged { margin-top: 32px; }
-.post-type-archive-case { background: var(--spotlezz-light); }
+.klantcase-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px rgba(0,0,0,.08); }
+.klantcase-card-image { height: 220px; overflow: hidden; }
+.klantcase-card-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.klantcase-card:hover .klantcase-card-image img { transform: scale(1.05); }
+.klantcase-card-body { padding: 28px; }
+.klantcase-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.klantcase-card-tag {
+	background: var(--spotlezz-light); color: #4b5563; font-size: 11px; font-weight: 700;
+	padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: .03em;
+}
+.klantcase-card-body h2 { font-size: 20px; font-weight: 700; margin-bottom: 12px; font-family: var(--spotlezz-font-heading); }
+.klantcase-card-body p { font-size: 14.5px; color: #555; line-height: 1.6; margin-bottom: 18px; }
+.klantcase-card-link { color: var(--spotlezz-blue); font-weight: 700; font-size: 13.5px; }
+.klantcase-card:hover .klantcase-card-link { color: var(--spotlezz-orange); }
+
 .case-hero-main h2 { font-size: clamp(24px, 3vw, 34px); margin: 12px 0 20px; }
 
 /* ---------- feitenbalk (hergebruikt .stat-block) ---------- */
@@ -1116,6 +1127,8 @@ img {
 }
 .locatie-hero-main { min-width: 0; }
 .locatie-hero h2 { font-size: clamp(24px, 3vw, 34px); }
+.locatie-hero-intro { margin-top: 16px; max-width: 65ch; color: #4b5563; font-size: 15.5px; line-height: 1.7; }
+.locatie-hero-intro p { margin: 0; }
 .locatie-cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 .locatie-hero-side { min-width: 0; display: flex; flex-direction: column; gap: 16px; }
 .locatie-kaart { border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.06); }
@@ -1142,6 +1155,12 @@ img {
 
 /* ---------- lokaal bewijs — "maakt of breekt de pagina" ---------- */
 .locatie-bewijs { max-width: var(--spotlezz-max-width); margin: 0 auto; padding: 36px 5%; }
+.locatie-bewijs-pending p,
+.medewerker-block-pending p {
+	max-width: 60ch; color: #6b7280; font-size: 15px; line-height: 1.7;
+	background: var(--spotlezz-light); border: 1px dashed var(--spotlezz-border);
+	border-radius: 10px; padding: 18px 20px;
+}
 .logo-grid {
 	display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin: 20px 0 28px;
 	align-items: center;
@@ -1154,6 +1173,17 @@ img {
 .bewijs-split .case-card { min-width: 0; }
 .bewijs-split .case-card-body { padding: 16px; }
 .bewijs-split .review-card { margin: 0; }
+.case-card-logo { padding: 20px 16px 0; }
+.case-card-logo img { display: block; max-height: 40px; width: auto; max-width: 100%; object-fit: contain; }
+
+/* ---------- werkgebied "Lees meer" (details/summary, geen JS) ---------- */
+.werkgebied-more { margin-top: 12px; }
+.werkgebied-more summary { cursor: pointer; color: var(--spotlezz-blue); font-weight: 700; font-size: 14px; list-style: none; }
+.werkgebied-more summary::-webkit-details-marker { display: none; }
+.werkgebied-more summary::after { content: ' \2193'; }
+.werkgebied-more[open] summary::after { content: ' \2191'; }
+.werkgebied-more summary:hover { color: var(--spotlezz-orange); }
+.werkgebied-more .werkgebied-tekst { margin-top: 10px; }
 
 @media (max-width: 700px) {
 	.logo-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1250,34 +1280,64 @@ img {
 .offerte-lead { max-width: var(--spotlezz-max-width); margin: 0 auto; padding: 36px 5% 0; text-align: center; }
 .offerte-lead-text { max-width: 60ch; margin: 0 auto 20px; color: #4b5563; font-size: 15px; }
 /* ---------- offerte-aanvragen: platte kop + kengetallen (1-op-1) ---------- */
-.offerte-hero-plain { max-width: 1000px; margin: 0 auto; padding: 20px 5% 30px; text-align: center; }
+.offerte-hero-bg { background: linear-gradient(180deg, #f8f9fb 0%, #eef1f5 100%); }
+.offerte-hero-plain { max-width: 1000px; margin: 0 auto; padding: 50px 5% 30px; text-align: center; }
 .offerte-hero-plain h1 { font-size: clamp(25px, 4vw, 48px); }
 .offerte-hero-plain h1 span { color: var(--spotlezz-blue); }
-.offerte-kengetallen { display: flex; flex-direction: column; gap: 32px; padding: 20px 0; min-width: 0; }
-.offerte-kengetal-value { font-size: clamp(29px, 4.7vw, 48px); font-weight: 700; color: var(--spotlezz-orange); line-height: 1; margin-bottom: 6px; overflow-wrap: break-word; }
-.offerte-kengetal-label { font-size: 15px; font-weight: 600; color: #4b5563; }
+.offerte-kengetallen { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; align-items: stretch; gap: 0; padding: 0; min-width: 0; }
+.offerte-kengetal {
+	text-align: center; padding: 0 36px; position: relative; min-width: 0;
+	opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease;
+}
+.offerte-kengetal.in-view { opacity: 1; transform: translateY(0); }
+.offerte-kengetal:nth-child(1) { transition-delay: 0s; }
+.offerte-kengetal:nth-child(2) { transition-delay: .12s; }
+.offerte-kengetal:nth-child(3) { transition-delay: .24s; }
+.offerte-kengetal + .offerte-kengetal::before { content: ""; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1px; background: var(--spotlezz-border); }
+.offerte-kengetal-value { font-size: clamp(20px, 4.7vw, 48px); font-weight: 700; color: var(--spotlezz-orange); line-height: 1; margin-bottom: 6px; overflow-wrap: break-word; white-space: nowrap; }
+.offerte-kengetal-label { font-size: 14px; font-weight: 600; color: #4b5563; }
+@media (max-width: 600px) {
+	.offerte-kengetal { padding: 0 14px; }
+}
+@media (max-width: 420px) {
+	.offerte-kengetallen { flex-wrap: wrap; }
+	.offerte-kengetal { flex: 1 1 100%; padding: 6px 0; }
+	.offerte-kengetal + .offerte-kengetal::before { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.offerte-kengetal { opacity: 1; transform: none; transition: none; }
+}
 .offerte-bel-cta { max-width: 1000px; margin: 0 auto; padding: 40px 5%; text-align: center; }
 .offerte-bel-cta-card { background: linear-gradient(135deg, #f8f9fa 0%, #eef1f5 100%); border-radius: 16px; padding: 50px; border: 1px solid var(--spotlezz-border); }
 .offerte-bel-cta-card h2 { font-size: clamp(20px, 2.7vw, 32px); margin-bottom: 12px; }
 .offerte-bel-cta-card p { color: #555; margin-bottom: 24px; }
 
 .offerte-split {
-	display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px;
-	max-width: var(--spotlezz-max-width); margin: 0 auto; padding: 20px 5% 36px; align-items: start;
+	display: flex; flex-direction: column; align-items: center; gap: 40px;
+	max-width: 760px; margin: 0 auto; padding: 20px 5% 60px;
 }
 .offerte-form {
-	background: #f4f6f8; border: 1px solid var(--spotlezz-border); border-radius: 16px;
-	padding: 28px; min-width: 0; display: flex; flex-direction: column; gap: 4px;
+	background: var(--spotlezz-white); border: 1px solid var(--spotlezz-border); border-radius: 20px;
+	padding: 40px; min-width: 0; width: 100%; display: flex; flex-direction: column; gap: 4px;
+	box-shadow: 0 20px 45px rgba(31,41,55,.08);
 }
-.offerte-form h2 { font-size: 18px; margin-bottom: 12px; }
-.offerte-form label { font-size: 12.5px; font-weight: 600; color: #374151; margin-top: 12px; margin-bottom: 4px; }
+.offerte-form h2 { font-size: 20px; margin-bottom: 4px; }
+.offerte-form label { font-size: 12.5px; font-weight: 600; color: #374151; margin-top: 14px; margin-bottom: 5px; }
 .offerte-form input, .offerte-form select, .offerte-form textarea {
-	width: 100%; padding: 10px 12px; border: 1px solid var(--spotlezz-border); border-radius: 6px;
-	font-size: 13.5px; font-family: inherit; min-width: 0;
+	width: 100%; padding: 11px 14px; border: 1px solid var(--spotlezz-border); border-radius: 8px;
+	font-size: 13.5px; font-family: inherit; min-width: 0; background: #fafbfc;
+	transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.offerte-form input:focus, .offerte-form select:focus, .offerte-form textarea:focus {
+	outline: none; border-color: var(--spotlezz-blue); background: var(--spotlezz-white);
+	box-shadow: 0 0 0 3px rgba(15,139,253,.12);
 }
 .offerte-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.offerte-form .btn { margin-top: 18px; border: none; cursor: pointer; text-align: center; }
-.offerte-form-note { text-align: center; margin-top: 8px; }
+.offerte-form .btn {
+	margin-top: 22px; border: none; cursor: pointer; text-align: center; width: 100%;
+	padding: 14px; font-size: 15px; box-shadow: 0 10px 25px rgba(255,145,0,.3);
+}
+.offerte-form-note { text-align: center; margin-top: 10px; }
 .offerte-side-card {
 	background: var(--spotlezz-ink); color: #fff; border-radius: 12px; padding: 24px;
 	display: flex; flex-direction: column; gap: 10px; min-width: 0;
@@ -1285,7 +1345,6 @@ img {
 .offerte-side-card h2 { font-size: 17px; color: #fff; }
 
 @media (max-width: 800px) {
-	.offerte-split { grid-template-columns: 1fr; }
 	.offerte-form-row { grid-template-columns: 1fr; }
 }
 
@@ -1294,10 +1353,10 @@ img {
 	display: flex; gap: 60px; flex-wrap: wrap; align-items: stretch;
 	max-width: 1400px; margin: 0 auto; padding: 44px 5%;
 }
-.contact-info { flex: 1; min-width: 300px; }
-.contact-info h2 { color: var(--spotlezz-blue); font-family: var(--spotlezz-font-heading); font-size: clamp(20px, 3.2vw, 38px); margin-bottom: 20px; }
-.contact-info > p { font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 40px; }
-.contact-info-cards { display: flex; flex-direction: column; gap: 20px; }
+.contact-layout .contact-info { flex: 1; min-width: 300px; }
+.contact-layout .contact-info h2 { color: var(--spotlezz-blue); font-family: var(--spotlezz-font-heading); font-size: clamp(20px, 3.2vw, 38px); margin-bottom: 20px; }
+.contact-layout .contact-info > p { font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 40px; }
+.contact-layout .contact-info-cards { display: flex; flex-direction: column; gap: 20px; }
 .contact-info-card {
 	display: flex; align-items: center; gap: 20px; background: var(--spotlezz-light);
 	padding: 25px; border-radius: 12px; border: 1px solid var(--spotlezz-border);
@@ -1395,6 +1454,7 @@ img {
 .medewerker-split-text { background: #fff; padding: 50px; }
 .medewerker-split-text .person-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--spotlezz-light); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--spotlezz-ink); flex-shrink: 0; }
 .medewerker-split-name { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; font-weight: 700; font-size: 16px; }
+.medewerker-split-role { font-size: 13px; font-weight: 400; color: #6b7280; }
 .medewerker-split-text blockquote { margin: 0; font-size: 18px; line-height: 1.7; font-style: italic; color: #4b5563; }
 .medewerker-split-photo { background-size: cover; background-position: center; min-height: 220px; }
 @media (max-width: 800px) {

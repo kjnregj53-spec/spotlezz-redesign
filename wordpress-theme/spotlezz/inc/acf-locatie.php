@@ -85,6 +85,7 @@ function spotlezz_register_acf_locatie_fields() {
 				),
 				array( 'key' => 'field_spotlezz_lc_review_naam', 'label' => __( 'Lokale review — naam', 'spotlezz' ), 'name' => 'lokale_review_naam', 'type' => 'text' ),
 				array( 'key' => 'field_spotlezz_lc_review_rol', 'label' => __( 'Lokale review — rol/bedrijf', 'spotlezz' ), 'name' => 'lokale_review_rol', 'type' => 'text' ),
+				array( 'key' => 'field_spotlezz_lc_review_linkedin', 'label' => __( 'Lokale review — LinkedIn-URL (leeg = geen link)', 'spotlezz' ), 'name' => 'lokale_review_linkedin', 'type' => 'url' ),
 				array(
 					'key'           => 'field_spotlezz_lc_review_foto',
 					'label'         => __( 'Lokale review — foto', 'spotlezz' ),
