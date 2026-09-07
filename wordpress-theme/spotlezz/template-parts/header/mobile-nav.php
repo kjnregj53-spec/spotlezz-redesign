@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="mobile-nav-links">
 		<a href="<?php echo esc_url( get_post_type_archive_link( 'pillar' ) ?: home_url( '/diensten/' ) ); ?>" class="<?php echo esc_attr( ltrim( spotlezz_nav_is_current( 'diensten' ) ) ); ?>"><?php esc_html_e( 'Diensten', 'spotlezz' ); ?></a>
 		<?php foreach ( array_merge( $diensten_nav_groups['voor_wie'], $diensten_nav_groups['wat_we_doen'] ) as $pillar ) : ?>
-			<a href="<?php echo esc_url( get_permalink( $pillar ) ); ?>" class="sub-link"><?php echo esc_html( get_the_title( $pillar ) ); ?></a>
+			<a href="<?php echo esc_url( get_permalink( $pillar ) ); ?>" class="sub-link<?php echo is_singular( 'pillar' ) && get_queried_object_id() === $pillar->ID ? ' is-current' : ''; ?>"><?php echo esc_html( get_the_title( $pillar ) ); ?></a>
 		<?php endforeach; ?>
 		<a href="<?php echo esc_url( get_post_type_archive_link( 'case' ) ?: home_url( '/klantcases/' ) ); ?>" class="<?php echo esc_attr( ltrim( spotlezz_nav_is_current( 'klantcases' ) ) ); ?>"><?php esc_html_e( 'Klantcases', 'spotlezz' ); ?></a>
 		<a href="<?php echo esc_url( get_post_type_archive_link( 'locatie' ) ?: home_url( '/locaties/' ) ); ?>" class="<?php echo esc_attr( ltrim( spotlezz_nav_is_current( 'locaties' ) ) ); ?>"><?php esc_html_e( 'Locaties', 'spotlezz' ); ?></a>

@@ -212,6 +212,11 @@ img {
 .mobile-nav-links a.sub-link { font-size: 15px; font-weight: 400; color: #d1d5db; padding-left: 15px; margin-top: -8px; }
 .mobile-nav-links a:hover { color: var(--spotlezz-orange); transform: translateX(8px); }
 .mobile-nav-links a.is-current { color: var(--spotlezz-orange); }
+/* sub-link staat standaard op font-weight 400 (lichter dan de hubs)
+   — bij is-current is dat te subtiel om op te vallen tussen de andere
+   diensten, dus vet 'm ook op (gemeld: geen zichtbare "je staat hier"
+   markering in het diensten-submenu). */
+.mobile-nav-links a.sub-link.is-current { font-weight: 700; }
 .mobile-nav-ctas { padding: 20px 0; border-top: 1px solid rgba(255,255,255,.1); }
 .mobile-nav-ctas .btn { width: 100%; justify-content: center; padding: 15px; font-size: 16px; }
 

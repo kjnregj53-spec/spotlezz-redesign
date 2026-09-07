@@ -25,13 +25,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php if ( $diensten_nav_groups['voor_wie'] ) : ?>
 						<span class="dropdown-heading"><?php esc_html_e( 'Voor wie', 'spotlezz' ); ?></span>
 						<?php foreach ( $diensten_nav_groups['voor_wie'] as $pillar ) : ?>
-							<a href="<?php echo esc_url( get_permalink( $pillar ) ); ?>"><?php echo esc_html( get_the_title( $pillar ) ); ?></a>
+							<a href="<?php echo esc_url( get_permalink( $pillar ) ); ?>"<?php echo is_singular( 'pillar' ) && get_queried_object_id() === $pillar->ID ? ' class="is-current"' : ''; ?>><?php echo esc_html( get_the_title( $pillar ) ); ?></a>
 						<?php endforeach; ?>
 					<?php endif; ?>
 					<?php if ( $diensten_nav_groups['wat_we_doen'] ) : ?>
 						<span class="dropdown-heading"><?php esc_html_e( 'Wat we doen', 'spotlezz' ); ?></span>
 						<?php foreach ( $diensten_nav_groups['wat_we_doen'] as $pillar ) : ?>
-							<a href="<?php echo esc_url( get_permalink( $pillar ) ); ?>"><?php echo esc_html( get_the_title( $pillar ) ); ?></a>
+							<a href="<?php echo esc_url( get_permalink( $pillar ) ); ?>"<?php echo is_singular( 'pillar' ) && get_queried_object_id() === $pillar->ID ? ' class="is-current"' : ''; ?>><?php echo esc_html( get_the_title( $pillar ) ); ?></a>
 						<?php endforeach; ?>
 					<?php endif; ?>
 				</div>
