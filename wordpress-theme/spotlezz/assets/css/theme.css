@@ -272,7 +272,10 @@ img {
 	min-height: 560px;
 	display: flex;
 	align-items: center;
-	background: var(--spotlezz-ink) center / cover no-repeat;
+	/* 15% i.p.v. center (50%), zelfde reden als .page-hero hierboven: op
+	   een smalle/lange mobiele viewport snijdt een echte center-crop het
+	   hoofd van de medewerker op de foto af. */
+	background: var(--spotlezz-ink) center 15% / cover no-repeat;
 	color: #fff;
 	padding: 60px 5%;
 	isolation: isolate;
