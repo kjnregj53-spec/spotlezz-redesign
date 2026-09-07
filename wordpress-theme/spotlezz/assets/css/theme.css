@@ -289,7 +289,12 @@ img {
 	background: linear-gradient(135deg, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .15) 100%);
 	z-index: 0;
 }
-.hero-content { position: relative; z-index: 1; max-width: 640px; }
+/* min-width: 0 is nodig omdat .hero-full-bleed een flex-container is —
+   zonder dit wint het default min-width:auto van een flex-item en kan
+   .hero-content (en daarmee de H1/USP-pills/knoppen erin) nooit smaller
+   worden dan de langste onbreekbare inhoud, wat op mobiel een horizontale
+   overflow van de hele hero veroorzaakte (gemeld op de dienstpagina's). */
+.hero-content { position: relative; z-index: 1; max-width: 640px; min-width: 0; width: 100%; }
 .hero-content h1 span { color: #5bc0eb; }
 .trust-badge {
 	display: inline-flex; align-items: center; margin-bottom: 14px;
