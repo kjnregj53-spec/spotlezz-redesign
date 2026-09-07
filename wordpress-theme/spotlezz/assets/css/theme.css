@@ -895,6 +895,15 @@ img {
 /* ---------- pillar-hero-full (1-op-1 van .ks-hero) ---------- */
 .pillar-hero-full .hero-content { max-width: 640px; }
 .pillar-hero-full .hero-intro { max-width: 60ch; color: #e2e8f0; margin: 10px 0 20px; }
+/* De (site-brede) page_hero_pillar-foto is een brede 2560×1015-panorama
+   met de medewerker rechts in beeld, links vooral een donkere plant/muur.
+   Op mobiel is de hero-sectie smal+lang t.o.v. die foto, dus cover laat
+   maar ~20% van de breedte zien — bij center (50%) viel dat precies
+   tussen de plant en de medewerker in (alleen een raam zichtbaar).
+   75% x-positie schuift het zichtbare deel naar de medewerker toe. Op
+   desktop is de hero juist breder dan de foto's verhouding, dus daar
+   toont cover sowieso de volledige breedte en verandert dit niets. */
+.pillar-hero-full { background-position: 75% 15%; }
 
 /* ---------- tekst+foto-secties + "waarom belangrijk" (1-op-1 van .ks-text-image/.ks-importance) ---------- */
 .text-blue { color: var(--spotlezz-blue); }
