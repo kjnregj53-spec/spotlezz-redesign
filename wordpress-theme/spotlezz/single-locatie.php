@@ -366,7 +366,6 @@ while ( have_posts() ) :
 		?>
 		<?php if ( ! empty( $photos ) ) : ?>
 			<section class="locatie-fotografie">
-				<h2><?php esc_html_e( "Eigen fotografie", 'spotlezz' ); ?></h2>
 				<div class="photography-grid">
 					<?php foreach ( $photos as $photo ) : ?>
 						<figure class="photography-item">
