@@ -47,6 +47,11 @@ h1, h2, h3, h4 {
 	font-family: var(--spotlezz-font-heading);
 	line-height: 1.2;
 	margin: 0 0 .5em;
+	/* Lange, aan-elkaar-geschreven Nederlandse samenstellingen (bv.
+	   "Showroomschoonmaak", "Kinderopvangschoonmaak") hebben geen spatie
+	   om op te breken — zonder dit liep zo'n woord op mobiel over de rand
+	   van zijn container heen i.p.v. te wrappen. */
+	overflow-wrap: break-word;
 }
 
 a {
@@ -310,7 +315,12 @@ img {
 .trust-badge:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(0,0,0,.22); }
 .trust-badge .review-stars { color: #facc15; }
 .hero-kicker { text-transform: uppercase; letter-spacing: 2px; font-size: 13px; color: #7dd3fc; font-weight: 700; margin-bottom: 8px; }
-.hero-content h1 { font-size: clamp(33px, 5.3vw, 64px); margin-bottom: 10px; }
+/* overflow-wrap: lange, aan-elkaar-geschreven Nederlandse samenstellingen
+   ("Showroomschoonmaak") hebben geen spatie om op te breken. Zonder dit
+   liet de browser zo'n woord over de rand heen lopen i.p.v. wrappen, en
+   sneed .hero-full-bleed's overflow:hidden het zichtbaar af (gemeld op
+   mobiel — Pixel 7-breedte, 412px). */
+.hero-content h1 { font-size: clamp(33px, 5.3vw, 64px); margin-bottom: 10px; overflow-wrap: break-word; }
 .hero-content h2 { font-size: clamp(18px, 2.4vw, 26px); font-weight: 600; margin-bottom: 16px; color: #fff; }
 .hero-intro { max-width: 55ch; color: #e2e8f0; margin-bottom: 24px; }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
