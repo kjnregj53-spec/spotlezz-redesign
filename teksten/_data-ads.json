@@ -1,0 +1,904 @@
+[
+ {
+  "kw": "schoonmaakbedrijf amsterdam",
+  "vol": 880,
+  "cpc": 13.4,
+  "comp": 52,
+  "maanden": [
+   480,
+   720,
+   720
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf in amsterdam",
+  "vol": 880,
+  "cpc": 13.4,
+  "comp": 52,
+  "maanden": [
+   480,
+   720,
+   720
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf almere",
+  "vol": 590,
+  "cpc": 5.13,
+  "comp": 12,
+  "maanden": [
+   1000,
+   480,
+   390
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf utrecht",
+  "vol": 590,
+  "cpc": 4.72,
+  "comp": 51,
+  "maanden": [
+   390,
+   480,
+   720
+  ]
+ },
+ {
+  "kw": "glazenwasser amsterdam",
+  "vol": 590,
+  "cpc": 3.58,
+  "comp": 53,
+  "maanden": [
+   480,
+   480,
+   590
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf in almere",
+  "vol": 590,
+  "cpc": 5.13,
+  "comp": 12,
+  "maanden": [
+   1000,
+   480,
+   390
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf amersfoort",
+  "vol": 260,
+  "cpc": 4.39,
+  "comp": 49,
+  "maanden": [
+   140,
+   110,
+   140
+  ]
+ },
+ {
+  "kw": "glazenwasser almere",
+  "vol": 260,
+  "cpc": 2.25,
+  "comp": 58,
+  "maanden": [
+   140,
+   210,
+   170
+  ]
+ },
+ {
+  "kw": "glazenwasser utrecht",
+  "vol": 260,
+  "cpc": 2.93,
+  "comp": 65,
+  "maanden": [
+   170,
+   210,
+   260
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf hilversum",
+  "vol": 210,
+  "cpc": 5.31,
+  "comp": 32,
+  "maanden": [
+   210,
+   170,
+   110
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf lelystad",
+  "vol": 170,
+  "cpc": 3.35,
+  "comp": 50,
+  "maanden": [
+   70,
+   110,
+   110
+  ]
+ },
+ {
+  "kw": "glazenwasser lelystad",
+  "vol": 170,
+  "cpc": 1.97,
+  "comp": 48,
+  "maanden": [
+   170,
+   170,
+   210
+  ]
+ },
+ {
+  "kw": "glazenwasser amersfoort",
+  "vol": 170,
+  "cpc": 2.52,
+  "comp": 74,
+  "maanden": [
+   140,
+   170,
+   140
+  ]
+ },
+ {
+  "kw": "glazenwasser hilversum",
+  "vol": 140,
+  "cpc": 1.7,
+  "comp": 59,
+  "maanden": [
+   110,
+   110,
+   170
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf huizen",
+  "vol": 110,
+  "cpc": 2.59,
+  "comp": 32,
+  "maanden": [
+   70,
+   90,
+   110
+  ]
+ },
+ {
+  "kw": "kantoor schoonmaak amsterdam",
+  "vol": 110,
+  "cpc": 9.61,
+  "comp": 66,
+  "maanden": [
+   40,
+   50,
+   90
+  ]
+ },
+ {
+  "kw": "glazenwasser zeewolde",
+  "vol": 90,
+  "cpc": 2.21,
+  "comp": 27,
+  "maanden": [
+   70,
+   50,
+   110
+  ]
+ },
+ {
+  "kw": "glazenwasser huizen",
+  "vol": 90,
+  "cpc": 1.49,
+  "comp": 57,
+  "maanden": [
+   110,
+   70,
+   110
+  ]
+ },
+ {
+  "kw": "glazenwasser amsterdam noord",
+  "vol": 90,
+  "cpc": 3.63,
+  "comp": 64,
+  "maanden": [
+   70,
+   50,
+   90
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf gezocht",
+  "vol": 90,
+  "cpc": 4.29,
+  "comp": 71,
+  "maanden": [
+   50,
+   90,
+   70
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf bussum",
+  "vol": 70,
+  "cpc": 4.29,
+  "comp": 59,
+  "maanden": [
+   40,
+   40,
+   70
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf amsterdam noord",
+  "vol": 70,
+  "cpc": 8.16,
+  "comp": 66,
+  "maanden": [
+   20,
+   10,
+   20
+  ]
+ },
+ {
+  "kw": "glazenwasser amsterdam west",
+  "vol": 70,
+  "cpc": 5.21,
+  "comp": 71,
+  "maanden": [
+   30,
+   50,
+   70
+  ]
+ },
+ {
+  "kw": "glazenwasser amsterdam oost",
+  "vol": 70,
+  "cpc": 3.43,
+  "comp": 71,
+  "maanden": [
+   30,
+   40,
+   50
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf offerte",
+  "vol": 70,
+  "cpc": 16.94,
+  "comp": 24,
+  "maanden": [
+   50,
+   50,
+   50
+  ]
+ },
+ {
+  "kw": "schoonmaak kantoorpand",
+  "vol": 70,
+  "cpc": 13.04,
+  "comp": 63,
+  "maanden": [
+   20,
+   20,
+   50
+  ]
+ },
+ {
+  "kw": "kantoorschoonmaak amsterdam",
+  "vol": 50,
+  "cpc": 3.89,
+  "comp": 50,
+  "maanden": [
+   30,
+   50,
+   50
+  ]
+ },
+ {
+  "kw": "glazenwasser bussum",
+  "vol": 50,
+  "cpc": 2.79,
+  "comp": 73,
+  "maanden": [
+   50,
+   50,
+   70
+  ]
+ },
+ {
+  "kw": "glazenwasser almere buiten",
+  "vol": 50,
+  "cpc": 1.68,
+  "comp": 61,
+  "maanden": [
+   30,
+   30,
+   50
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf inhuren",
+  "vol": 50,
+  "cpc": 3.53,
+  "comp": 84,
+  "maanden": [
+   30,
+   30,
+   50
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf prijzen",
+  "vol": 50,
+  "cpc": 2.53,
+  "comp": 58,
+  "maanden": [
+   10,
+   10,
+   20
+  ]
+ },
+ {
+  "kw": "glazenwasser amsterdam zuid",
+  "vol": 40,
+  "cpc": 3.34,
+  "comp": 81,
+  "maanden": [
+   10,
+   20,
+   20
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf voor bedrijven",
+  "vol": 40,
+  "cpc": 8.18,
+  "comp": 45,
+  "maanden": [
+   40,
+   20,
+   20
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf kosten",
+  "vol": 40,
+  "cpc": 3.26,
+  "comp": 60,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf weesp",
+  "vol": 30,
+  "cpc": 9.1,
+  "comp": 74,
+  "maanden": [
+   10,
+   20,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf diemen",
+  "vol": 30,
+  "cpc": null,
+  "comp": 38,
+  "maanden": [
+   10,
+   30,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf zeewolde",
+  "vol": 30,
+  "cpc": 2.64,
+  "comp": 59,
+  "maanden": [
+   20,
+   20,
+   30
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf naarden",
+  "vol": 30,
+  "cpc": 4.76,
+  "comp": 43,
+  "maanden": [
+   10,
+   20,
+   30
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf amsterdam west",
+  "vol": 30,
+  "cpc": null,
+  "comp": 43,
+  "maanden": [
+   10,
+   10,
+   20
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf amsterdam zuidoost",
+  "vol": 30,
+  "cpc": 26.26,
+  "comp": 49,
+  "maanden": [
+   20,
+   20,
+   10
+  ]
+ },
+ {
+  "kw": "glazenwasser weesp",
+  "vol": 30,
+  "cpc": 4.54,
+  "comp": 56,
+  "maanden": [
+   20,
+   20,
+   20
+  ]
+ },
+ {
+  "kw": "glazenwasser amsterdam centrum",
+  "vol": 30,
+  "cpc": 4.64,
+  "comp": 77,
+  "maanden": [
+   10,
+   30,
+   20
+  ]
+ },
+ {
+  "kw": "glazenwasser amsterdam zuidoost",
+  "vol": 30,
+  "cpc": 1.87,
+  "comp": 75,
+  "maanden": [
+   20,
+   20,
+   40
+  ]
+ },
+ {
+  "kw": "glazenwasser almere poort",
+  "vol": 30,
+  "cpc": 1.71,
+  "comp": 67,
+  "maanden": [
+   20,
+   20,
+   30
+  ]
+ },
+ {
+  "kw": "glasbewassing amsterdam",
+  "vol": 30,
+  "cpc": 7.96,
+  "comp": 67,
+  "maanden": [
+   20,
+   20,
+   20
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf in utrecht",
+  "vol": 30,
+  "cpc": 2.88,
+  "comp": 54,
+  "maanden": [
+   40,
+   20,
+   20
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf zakelijk",
+  "vol": 30,
+  "cpc": 3.97,
+  "comp": 26,
+  "maanden": [
+   30,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf amsterdam zuid",
+  "vol": 20,
+  "cpc": null,
+  "comp": 18,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf amsterdam oost",
+  "vol": 20,
+  "cpc": null,
+  "comp": 6,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "kantoor schoonmaak utrecht",
+  "vol": 20,
+  "cpc": 6.66,
+  "comp": 61,
+  "maanden": [
+   10,
+   10,
+   20
+  ]
+ },
+ {
+  "kw": "glazenwasser diemen",
+  "vol": 20,
+  "cpc": 1.42,
+  "comp": 76,
+  "maanden": [
+   10,
+   10,
+   20
+  ]
+ },
+ {
+  "kw": "glazenwasser naarden",
+  "vol": 20,
+  "cpc": 1.92,
+  "comp": 62,
+  "maanden": [
+   20,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "glazenwasser almere haven",
+  "vol": 20,
+  "cpc": 1.41,
+  "comp": 61,
+  "maanden": [
+   20,
+   10,
+   30
+  ]
+ },
+ {
+  "kw": "vve schoonmaak amsterdam",
+  "vol": 20,
+  "cpc": null,
+  "comp": 30,
+  "maanden": [
+   30,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf in amersfoort",
+  "vol": 20,
+  "cpc": 4.13,
+  "comp": 5,
+  "maanden": [
+   90,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "beste schoonmaakbedrijf",
+  "vol": 20,
+  "cpc": null,
+  "comp": 38,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf vve",
+  "vol": 20,
+  "cpc": 7.82,
+  "comp": 38,
+  "maanden": [
+   10,
+   20,
+   30
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf muiden",
+  "vol": 10,
+  "cpc": null,
+  "comp": null,
+  "maanden": [
+   0,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf utrecht overvecht",
+  "vol": 10,
+  "cpc": null,
+  "comp": 43,
+  "maanden": [
+   10,
+   0,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf almere buiten",
+  "vol": 10,
+  "cpc": 1.88,
+  "comp": 71,
+  "maanden": [
+   10,
+   10,
+   0
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf almere poort",
+  "vol": 10,
+  "cpc": null,
+  "comp": 86,
+  "maanden": [
+   10,
+   0,
+   10
+  ]
+ },
+ {
+  "kw": "kantoor schoonmaak amsterdam noord",
+  "vol": 10,
+  "cpc": null,
+  "comp": null,
+  "maanden": [
+   0,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "glazenwasser utrecht leidsche rijn",
+  "vol": 10,
+  "cpc": 4.74,
+  "comp": 71,
+  "maanden": [
+   10,
+   0,
+   10
+  ]
+ },
+ {
+  "kw": "glazenwasser almere stad",
+  "vol": 10,
+  "cpc": 2.09,
+  "comp": 86,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "glasbewassing almere",
+  "vol": 10,
+  "cpc": 1.91,
+  "comp": 24,
+  "maanden": [
+   10,
+   10,
+   20
+  ]
+ },
+ {
+  "kw": "glasbewassing utrecht",
+  "vol": 10,
+  "cpc": 3.38,
+  "comp": 66,
+  "maanden": [
+   10,
+   10,
+   20
+  ]
+ },
+ {
+  "kw": "glasbewassing diemen",
+  "vol": 10,
+  "cpc": null,
+  "comp": null,
+  "maanden": [
+   0,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "glasbewassing lelystad",
+  "vol": 10,
+  "cpc": null,
+  "comp": 50,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "glasbewassing amersfoort",
+  "vol": 10,
+  "cpc": 5.37,
+  "comp": 90,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "glasbewassing hilversum",
+  "vol": 10,
+  "cpc": 4.62,
+  "comp": 50,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "glasbewassing zeewolde",
+  "vol": 10,
+  "cpc": 0.53,
+  "comp": 54,
+  "maanden": [
+   10,
+   10,
+   20
+  ]
+ },
+ {
+  "kw": "glasbewassing naarden",
+  "vol": 10,
+  "cpc": null,
+  "comp": null,
+  "maanden": [
+   0,
+   0,
+   10
+  ]
+ },
+ {
+  "kw": "glasbewassing bussum",
+  "vol": 10,
+  "cpc": 1.48,
+  "comp": 61,
+  "maanden": [
+   10,
+   0,
+   10
+  ]
+ },
+ {
+  "kw": "glasbewassing huizen",
+  "vol": 10,
+  "cpc": null,
+  "comp": 0,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf in hilversum",
+  "vol": 10,
+  "cpc": 4.03,
+  "comp": 25,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaak bedrijfspand",
+  "vol": 10,
+  "cpc": 2.89,
+  "comp": 86,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakcontract",
+  "vol": 10,
+  "cpc": null,
+  "comp": 10,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaak uitbesteden",
+  "vol": 10,
+  "cpc": 0.62,
+  "comp": 52,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf vergelijken",
+  "vol": 10,
+  "cpc": null,
+  "comp": null,
+  "maanden": [
+   0,
+   10,
+   10
+  ]
+ },
+ {
+  "kw": "schoonmaakbedrijf hotel",
+  "vol": 10,
+  "cpc": 14.21,
+  "comp": 54,
+  "maanden": [
+   10,
+   0,
+   10
+  ]
+ },
+ {
+  "kw": "ecologisch schoonmaakbedrijf",
+  "vol": 10,
+  "cpc": null,
+  "comp": null,
+  "maanden": [
+   0,
+   0,
+   10
+  ]
+ },
+ {
+  "kw": "beste schoonmaakbedrijf amsterdam",
+  "vol": 10,
+  "cpc": 8.43,
+  "comp": 90,
+  "maanden": [
+   10,
+   10,
+   10
+  ]
+ }
+]

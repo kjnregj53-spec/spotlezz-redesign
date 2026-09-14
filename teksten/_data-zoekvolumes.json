@@ -1,0 +1,2326 @@
+[
+ {
+  "kw": "resultaten",
+  "vol": 4400,
+  "comp": "LOW",
+  "compIdx": 0,
+  "cpc": null,
+  "urls": [
+   "/klantcases/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "glasbewassing",
+  "vol": 1600,
+  "comp": "LOW",
+  "compIdx": 26,
+  "cpc": 2.44,
+  "urls": [
+   "/diensten/glasbewassing/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "kantoor schoonmaken",
+  "vol": 1300,
+  "comp": "MEDIUM",
+  "compIdx": 52,
+  "cpc": 5.35,
+  "urls": [
+   "/diensten/kantoor-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vloerbedekking reinigen",
+  "vol": 1300,
+  "comp": "HIGH",
+  "compIdx": 100,
+  "cpc": 1.12,
+  "urls": [
+   "/diensten/tapijtreiniging/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf amsterdam",
+  "vol": 880,
+  "comp": "MEDIUM",
+  "compIdx": 52,
+  "cpc": 13.4,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "tapijtreiniging",
+  "vol": 720,
+  "comp": "HIGH",
+  "compIdx": 100,
+  "cpc": 3.32,
+  "urls": [
+   "/diensten/tapijtreiniging/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf almere",
+  "vol": 590,
+  "comp": "LOW",
+  "compIdx": 12,
+  "cpc": 5.13,
+  "urls": [
+   "/",
+   "/locaties/schoonmaakbedrijf-almere/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "dieptereiniging",
+  "vol": 590,
+  "comp": "HIGH",
+  "compIdx": 95,
+  "cpc": 1.27,
+  "urls": [
+   "/diensten/dieptereiniging/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf in almere",
+  "vol": 590,
+  "comp": "LOW",
+  "compIdx": 12,
+  "cpc": 5.13,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf utrecht",
+  "vol": 590,
+  "comp": "MEDIUM",
+  "compIdx": 51,
+  "cpc": 4.72,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-utrecht/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "vacatures schoonmaak almere",
+  "vol": 390,
+  "comp": "HIGH",
+  "compIdx": 67,
+  "cpc": 1.22,
+  "urls": [
+   "/vacatures/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakschema",
+  "vol": 320,
+  "comp": "HIGH",
+  "compIdx": 98,
+  "cpc": 0.73,
+  "urls": [
+   "/veelgestelde-vragen/wat-is-een-schoonmaakprogramma/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vloeronderhoud",
+  "vol": 260,
+  "comp": "HIGH",
+  "compIdx": 92,
+  "cpc": 2.39,
+  "urls": [
+   "/diensten/vloeronderhoud/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf amersfoort",
+  "vol": 260,
+  "comp": "MEDIUM",
+  "compIdx": 49,
+  "cpc": 4.39,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaak hotel",
+  "vol": 210,
+  "comp": "MEDIUM",
+  "compIdx": 57,
+  "cpc": 2.61,
+  "urls": [
+   "/diensten/hotel-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "opleveringsschoonmaak",
+  "vol": 210,
+  "comp": "MEDIUM",
+  "compIdx": 58,
+  "cpc": 5.73,
+  "urls": [
+   "/diensten/opleveringsschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf hilversum",
+  "vol": 210,
+  "comp": "LOW",
+  "compIdx": 32,
+  "cpc": 5.31,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-hilversum/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "wie zijn wij",
+  "vol": 210,
+  "comp": "LOW",
+  "compIdx": 1,
+  "cpc": null,
+  "urls": [
+   "/over-ons/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vve schoonmaak",
+  "vol": 170,
+  "comp": "MEDIUM",
+  "compIdx": 37,
+  "cpc": 13.62,
+  "urls": [
+   "/diensten/vve-schoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "specialistische reiniging",
+  "vol": 170,
+  "comp": "MEDIUM",
+  "compIdx": 41,
+  "cpc": 5.67,
+  "urls": [
+   "/diensten/dieptereiniging/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf lelystad",
+  "vol": 170,
+  "comp": "MEDIUM",
+  "compIdx": 50,
+  "cpc": 3.35,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "interieurverzorger vacature",
+  "vol": 170,
+  "comp": "MEDIUM",
+  "compIdx": 36,
+  "cpc": 1.03,
+  "urls": [
+   "/vacatures/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf kantoor",
+  "vol": 140,
+  "comp": "LOW",
+  "compIdx": 25,
+  "cpc": 10.56,
+  "urls": [
+   "/diensten/kantoor-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "trappenhuis schoonmaak",
+  "vol": 140,
+  "comp": "MEDIUM",
+  "compIdx": 37,
+  "cpc": 5,
+  "urls": [
+   "/diensten/vve-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vloeren schrobben",
+  "vol": 140,
+  "comp": "HIGH",
+  "compIdx": 100,
+  "cpc": 0.46,
+  "urls": [
+   "/diensten/vloeronderhoud/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "ecologische schoonmaakmiddelen",
+  "vol": 140,
+  "comp": "HIGH",
+  "compIdx": 100,
+  "cpc": 1.64,
+  "urls": [
+   "/veelgestelde-vragen/werken-ecologische-schoonmaakmiddelen-echt/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "kantoorschoonmaak",
+  "vol": 110,
+  "comp": "MEDIUM",
+  "compIdx": 63,
+  "cpc": 8.68,
+  "urls": [
+   "/diensten/kantoor-schoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaak na verbouwing",
+  "vol": 110,
+  "comp": "HIGH",
+  "compIdx": 69,
+  "cpc": 4.91,
+  "urls": [
+   "/diensten/opleveringsschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "praktijkvoorbeelden",
+  "vol": 90,
+  "comp": "LOW",
+  "compIdx": 0,
+  "cpc": null,
+  "urls": [
+   "/klantcases/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "wat kost een schoonmaakbedrijf per uur",
+  "vol": 90,
+  "comp": "MEDIUM",
+  "compIdx": 42,
+  "cpc": 2.18,
+  "urls": [
+   "/veelgestelde-vragen/wat-kost-een-schoonmaakbedrijf-per-uur/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "zakelijke schoonmaak",
+  "vol": 70,
+  "comp": "HIGH",
+  "compIdx": 67,
+  "cpc": 16.09,
+  "urls": [
+   "/diensten/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak kinderdagverblijf",
+  "vol": 70,
+  "comp": "MEDIUM",
+  "compIdx": 43,
+  "cpc": 2.42,
+  "urls": [
+   "/diensten/kinderopvang-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak vve",
+  "vol": 70,
+  "comp": "MEDIUM",
+  "compIdx": 63,
+  "cpc": 22.33,
+  "urls": [
+   "/diensten/vve-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "glazenwasser bedrijf",
+  "vol": 70,
+  "comp": "MEDIUM",
+  "compIdx": 45,
+  "cpc": 1.64,
+  "urls": [
+   "/diensten/glasbewassing/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "bouwschoonmaak",
+  "vol": 70,
+  "comp": "MEDIUM",
+  "compIdx": 62,
+  "cpc": 5.12,
+  "urls": [
+   "/diensten/opleveringsschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "eenmalige schoonmaak",
+  "vol": 70,
+  "comp": "HIGH",
+  "compIdx": 75,
+  "cpc": 2.73,
+  "urls": [
+   "/diensten/eenmalige-schoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "klantverhalen",
+  "vol": 70,
+  "comp": "LOW",
+  "compIdx": 23,
+  "cpc": 14.27,
+  "urls": [
+   "/klantcases/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "offerte schoonmaakbedrijf",
+  "vol": 70,
+  "comp": "LOW",
+  "compIdx": 24,
+  "cpc": 16.94,
+  "urls": [
+   "/offerte-aanvragen/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf flevoland",
+  "vol": 50,
+  "comp": "LOW",
+  "compIdx": 27,
+  "cpc": 3.18,
+  "urls": [
+   "/",
+   "/locaties/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak evenement",
+  "vol": 50,
+  "comp": "MEDIUM",
+  "compIdx": 46,
+  "cpc": 107.35,
+  "urls": [
+   "/diensten/eenmalige-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "milieuvriendelijke schoonmaak",
+  "vol": 50,
+  "comp": "HIGH",
+  "compIdx": 100,
+  "cpc": 2.39,
+  "urls": [
+   "/veelgestelde-vragen/werken-ecologische-schoonmaakmiddelen-echt/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "kantoorschoonmaak amsterdam",
+  "vol": 50,
+  "comp": "MEDIUM",
+  "compIdx": 50,
+  "cpc": 3.89,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/kantoorschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "kristalliseren vloer",
+  "vol": 40,
+  "comp": "HIGH",
+  "compIdx": 95,
+  "cpc": 3.22,
+  "urls": [
+   "/diensten/vloeronderhoud/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "eindschoonmaak",
+  "vol": 40,
+  "comp": "LOW",
+  "compIdx": 7,
+  "cpc": 3.33,
+  "urls": [
+   "/diensten/opleveringsschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "hygieneservice",
+  "vol": 40,
+  "comp": "HIGH",
+  "compIdx": 67,
+  "cpc": 4.1,
+  "urls": [
+   "/diensten/sanitair-en-hygieneservice/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakplan bedrijf",
+  "vol": 40,
+  "comp": "HIGH",
+  "compIdx": 86,
+  "cpc": 5.93,
+  "urls": [
+   "/veelgestelde-vragen/wat-is-een-schoonmaakprogramma/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "duurzaam schoonmaakbedrijf",
+  "vol": 40,
+  "comp": "HIGH",
+  "compIdx": 78,
+  "cpc": 2.72,
+  "urls": [
+   "/over-ons/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "uurtarief schoonmaakbedrijf",
+  "vol": 30,
+  "comp": "LOW",
+  "compIdx": 27,
+  "cpc": 3.43,
+  "urls": [
+   "/veelgestelde-vragen/wat-kost-een-schoonmaakbedrijf-per-uur/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf zeewolde",
+  "vol": 30,
+  "comp": "MEDIUM",
+  "compIdx": 59,
+  "cpc": 2.64,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-zeewolde/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf diemen",
+  "vol": 30,
+  "comp": "MEDIUM",
+  "compIdx": 38,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-diemen/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "kantoorreiniging",
+  "vol": 20,
+  "comp": "MEDIUM",
+  "compIdx": 54,
+  "cpc": null,
+  "urls": [
+   "/diensten/kantoor-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak sportschool",
+  "vol": 20,
+  "comp": "MEDIUM",
+  "compIdx": 48,
+  "cpc": null,
+  "urls": [
+   "/diensten/fitnesscentrum-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakprogramma",
+  "vol": 20,
+  "comp": "LOW",
+  "compIdx": 21,
+  "cpc": 12.22,
+  "urls": [
+   "/veelgestelde-vragen/wat-is-een-schoonmaakprogramma/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "vve schoonmaak amsterdam",
+  "vol": 20,
+  "comp": "LOW",
+  "compIdx": 30,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/vve-schoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaker gezocht almere",
+  "vol": 20,
+  "comp": "HIGH",
+  "compIdx": 70,
+  "cpc": 1.16,
+  "urls": [
+   "/vacatures/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "zakelijk schoonmaakbedrijf",
+  "vol": 10,
+  "comp": "HIGH",
+  "compIdx": 69,
+  "cpc": null,
+  "urls": [
+   "/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "hotelschoonmaak",
+  "vol": 10,
+  "comp": "LOW",
+  "compIdx": 10,
+  "cpc": null,
+  "urls": [
+   "/diensten/hotel-schoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "hotel schoonmaakbedrijf",
+  "vol": 10,
+  "comp": "HIGH",
+  "compIdx": 71,
+  "cpc": null,
+  "urls": [
+   "/diensten/hotel-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "rivm richtlijnen schoonmaak",
+  "vol": 10,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/kinderopvang-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "ramen wassen kantoor",
+  "vol": 10,
+  "comp": "HIGH",
+  "compIdx": 100,
+  "cpc": null,
+  "urls": [
+   "/diensten/glasbewassing/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "oplevering bedrijfspand",
+  "vol": 10,
+  "comp": "LOW",
+  "compIdx": 14,
+  "cpc": null,
+  "urls": [
+   "/diensten/opleveringsschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "tapijtreiniging bedrijf",
+  "vol": 10,
+  "comp": "HIGH",
+  "compIdx": 93,
+  "cpc": null,
+  "urls": [
+   "/diensten/tapijtreiniging/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "sanitaire voorzieningen bedrijf",
+  "vol": 10,
+  "comp": "LOW",
+  "compIdx": 0,
+  "cpc": null,
+  "urls": [
+   "/diensten/sanitair-en-hygieneservice/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "hygiene sportschool",
+  "vol": 10,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/arena-gym-sportschoolschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf vergelijken",
+  "vol": 10,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/hoe-kies-je-een-schoonmaakbedrijf/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak uitbesteden",
+  "vol": 10,
+  "comp": "MEDIUM",
+  "compIdx": 52,
+  "cpc": 0.62,
+  "urls": [
+   "/veelgestelde-vragen/schoonmaak-uitbesteden-of-zelf-in-dienst/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "werkprogramma schoonmaak",
+  "vol": 10,
+  "comp": "MEDIUM",
+  "compIdx": 56,
+  "cpc": 7.55,
+  "urls": [
+   "/veelgestelde-vragen/wat-is-een-schoonmaakprogramma/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "opzegtermijn schoonmaakcontract",
+  "vol": 10,
+  "comp": "LOW",
+  "compIdx": 8,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/opzegtermijn-schoonmaakcontract/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakcontract opzeggen",
+  "vol": 10,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/opzegtermijn-schoonmaakcontract/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf almere buiten",
+  "vol": 10,
+  "comp": "HIGH",
+  "compIdx": 71,
+  "cpc": 1.88,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-buiten/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf almere poort",
+  "vol": 10,
+  "comp": "HIGH",
+  "compIdx": 86,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-poort/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "kantoor schoonmaakbedrijf amsterdam",
+  "vol": 10,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/kantoorschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "hotelschoonmaak amsterdam",
+  "vol": 10,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/hotelschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "hotel schoonmaakbedrijf amsterdam",
+  "vol": 10,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/hotelschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak offerte aanvragen",
+  "vol": 10,
+  "comp": "HIGH",
+  "compIdx": 86,
+  "cpc": 9.62,
+  "urls": [
+   "/offerte-aanvragen/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "checklist schoonmaak kantoor",
+  "vol": 10,
+  "comp": "LOW",
+  "compIdx": 0,
+  "cpc": null,
+  "urls": [
+   "/checklist/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "bedrijfsschoonmaak almere",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/",
+   "/locaties/schoonmaakbedrijf-almere/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakdiensten bedrijven",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "bedrijfsschoonmaak diensten",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "wat doet spotlezz",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "bedrijfsschoonmaak kantoor",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/kantoor-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "housekeeping uitbesteden",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/hotel-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "showroom schoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/showroom-schoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "showroom reinigen",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/showroom-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf showroom",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/showroom-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "glasheldere showroom",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/showroom-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "sportschool schoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/fitnesscentrum-schoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "fitnesscentrum schoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/fitnesscentrum-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "gym schoonmaakbedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/fitnesscentrum-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "kinderopvang schoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/kinderopvang-schoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "kdv schoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/kinderopvang-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "portiekreiniging",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/vve-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak gemeenschappelijke ruimtes",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/vve-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "glasbewassing zakelijk",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/glasbewassing/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "glasbewassing abonnement",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/glasbewassing/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vloer reinigen bedrijfspand",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/vloeronderhoud/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vloeronderhoud bedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/vloeronderhoud/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "periodieke dieptereiniging",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/dieptereiniging/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "grote schoonmaak bedrijfspand",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/dieptereiniging/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "tapijt reinigen kantoor",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/tapijtreiniging/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "dispensers en verbruiksartikelen",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/sanitair-en-hygieneservice/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "toiletservice bedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/sanitair-en-hygieneservice/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "incidentele schoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/eenmalige-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "verhuisschoonmaak bedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/diensten/eenmalige-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "klantcases schoonmaakbedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "referenties schoonmaakbedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "kantoorschoonmaak almere referentie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/kobelco-kantoorschoonmaak-almere/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf kobelco",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/kobelco-kantoorschoonmaak-almere/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "kantoorschoonmaak industrie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/kobelco-kantoorschoonmaak-almere/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "referentie kantoorschoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/kobelco-kantoorschoonmaak-almere/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "showroomschoonmaak referentie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/kuchentreff-showroomschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaak showroom keukens",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/kuchentreff-showroomschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "referentie showroomschoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/kuchentreff-showroomschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "sportschoolschoonmaak referentie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/arena-gym-sportschoolschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaak gym referentie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/arena-gym-sportschoolschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak vergaderlocatie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/event-atelier-vergaderlocatie/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaak evenementenlocatie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/event-atelier-vergaderlocatie/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "wekelijkse schoonmaak vergaderruimte",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/event-atelier-vergaderlocatie/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "opleveringsschoonmaak referentie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/woonstudio-joy-opleveringsschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "showroom laten shinen",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/woonstudio-joy-opleveringsschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "eenmalige dieptereiniging referentie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/woonstudio-joy-opleveringsschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "kantoorschoonmaak duurzaam referentie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/burgman-duurzame-kantoorschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "duurzame schoonmaak kantoor",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/burgman-duurzame-kantoorschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "ecologische schoonmaakmiddelen referentie",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/klantcases/burgman-duurzame-kantoorschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "veelgestelde vragen schoonmaakbedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "faq schoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vragen bedrijfsschoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak uitbesteden vragen",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "wat kost een schoonmaakbedrijf in almere",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/wat-kost-een-schoonmaakbedrijf-in-almere/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf almere prijzen",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/wat-kost-een-schoonmaakbedrijf-in-almere/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "tarieven schoonmaakbedrijf almere",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/wat-kost-een-schoonmaakbedrijf-in-almere/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak tarieven zakelijk",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/wat-kost-een-schoonmaakbedrijf-per-uur/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "prijs per m2 schoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/wat-kost-een-schoonmaakbedrijf-per-uur/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "hoe kies je een schoonmaakbedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/hoe-kies-je-een-schoonmaakbedrijf/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "goed schoonmaakbedrijf herkennen",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/hoe-kies-je-een-schoonmaakbedrijf/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "waar let je op schoonmaakbedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/hoe-kies-je-een-schoonmaakbedrijf/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "hoe vaak kantoor schoonmaken",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/hoe-vaak-kantoor-schoonmaken/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakfrequentie kantoor",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/hoe-vaak-kantoor-schoonmaken/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "hoe vaak schoonmaken bedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/hoe-vaak-kantoor-schoonmaken/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaker in dienst nemen",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/schoonmaak-uitbesteden-of-zelf-in-dienst/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak uitbesteden voordelen",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/schoonmaak-uitbesteden-of-zelf-in-dienst/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "zelf schoonmaken of uitbesteden",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/schoonmaak-uitbesteden-of-zelf-in-dienst/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "contractvoorwaarden schoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/opzegtermijn-schoonmaakcontract/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "duurzaam schoonmaken bedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/werken-ecologische-schoonmaakmiddelen-echt/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "groene schoonmaakproducten",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/veelgestelde-vragen/werken-ecologische-schoonmaakmiddelen-echt/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "werkgebied schoonmaakbedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf regio almere",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "werkgebied spotlezz",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "zakelijk schoonmaakbedrijf almere",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf almere stad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-stad/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "kantoorschoonmaak almere stad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-stad/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak centrum almere",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-stad/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak bedrijventerrein almere buiten",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-buiten/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "kinderopvang schoonmaak almere buiten",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-buiten/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf almere haven",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-haven/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaak horeca almere haven",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-haven/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vve schoonmaak almere haven",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-haven/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak bedrijfspand almere poort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-poort/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "sportschool schoonmaak almere poort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-almere/almere-poort/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "bedrijfsschoonmaak amsterdam",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "zakelijk schoonmaakbedrijf amsterdam",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf kantoorschoonmaak amsterdam",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/kantoorschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf hotelschoonmaak amsterdam",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/hotelschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "trappenhuis schoonmaak amsterdam",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/vve-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf vve schoonmaak amsterdam",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amsterdam/vve-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "bedrijfsschoonmaak lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "zakelijk schoonmaakbedrijf lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "kantoorschoonmaak lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/kantoorschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "kantoor schoonmaakbedrijf lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/kantoorschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf kantoorschoonmaak lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/kantoorschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "hotelschoonmaak lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/hotelschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "hotel schoonmaakbedrijf lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/hotelschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf hotelschoonmaak lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/hotelschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vve schoonmaak lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/vve-schoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "trappenhuis schoonmaak lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/vve-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf vve schoonmaak lelystad",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-lelystad/vve-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "bedrijfsschoonmaak amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "zakelijk schoonmaakbedrijf amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "kantoorschoonmaak amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/kantoorschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "kantoor schoonmaakbedrijf amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/kantoorschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf kantoorschoonmaak amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/kantoorschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "hotelschoonmaak amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/hotelschoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "hotel schoonmaakbedrijf amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/hotelschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf hotelschoonmaak amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/hotelschoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vve schoonmaak amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/vve-schoonmaak/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "trappenhuis schoonmaak amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/vve-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaakbedrijf vve schoonmaak amersfoort",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-amersfoort/vve-schoonmaak/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "bedrijfsschoonmaak hilversum",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-hilversum/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "zakelijk schoonmaakbedrijf hilversum",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-hilversum/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "bedrijfsschoonmaak zeewolde",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-zeewolde/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "zakelijk schoonmaakbedrijf zeewolde",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-zeewolde/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "bedrijfsschoonmaak utrecht",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-utrecht/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "zakelijk schoonmaakbedrijf utrecht",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-utrecht/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "bedrijfsschoonmaak diemen",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-diemen/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "zakelijk schoonmaakbedrijf diemen",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/locaties/schoonmaakbedrijf-diemen/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "over spotlezz",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/over-ons/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf almere over ons",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/over-ons/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "team spotlezz",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/over-ons/team/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "onze schoonmakers",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/over-ons/team/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "interieurverzorgers almere",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/over-ons/team/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "vast schoonmaakteam",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/over-ons/team/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "spotlezz reviews",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/reviews/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "ervaringen spotlezz",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/reviews/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "beoordelingen schoonmaakbedrijf almere",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/reviews/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "contact spotlezz",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/contact/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "schoonmaakbedrijf almere contact",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/contact/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "telefoonnummer schoonmaakbedrijf almere",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/contact/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "gratis offerte schoonmaak",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/offerte-aanvragen/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "prijsopgave schoonmaakbedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/offerte-aanvragen/"
+  ],
+  "primair": false
+ },
+ {
+  "kw": "schoonmaak checklist bedrijf",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/checklist/"
+  ],
+  "primair": true
+ },
+ {
+  "kw": "spotlezz check",
+  "vol": null,
+  "comp": null,
+  "compIdx": null,
+  "cpc": null,
+  "urls": [
+   "/checklist/"
+  ],
+  "primair": false
+ }
+]
