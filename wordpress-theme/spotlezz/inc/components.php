@@ -63,7 +63,7 @@ function spotlezz_nav_is_current( $section ) {
 function spotlezz_diensten_nav_groups() {
 	$slug_groups = array(
 		'voor_wie'    => array( 'kantoor-schoonmaak', 'hotel-schoonmaak', 'showroom-schoonmaak', 'sportschool-schoonmaak', 'kinderopvang-schoonmaak', 'vve-schoonmaak' ),
-		'wat_we_doen' => array( 'glasbewassing', 'vloeronderhoud', 'opleveringsschoonmaak', 'hygieneservice' ),
+		'wat_we_doen' => array( 'schoonmaakonderhoud', 'vloeronderhoud', 'specialistisch-onderhoud', 'dieptereiniging', 'glasbewassing' ),
 	);
 
 	$groups = array();

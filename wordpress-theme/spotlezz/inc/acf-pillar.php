@@ -3,7 +3,7 @@
  * Pillar (dienst-detail) ACF-veldgroep — WORDPRESS-BUILD-PLAN.md §3.2 /
  * PHASE-4C-PLAN.md §2.1, wireframe-1-dienst-detail-FINAL.html.
  *
- * Geldt voor beide assen: de zes branche-pillars én de vier dienst-
+ * Geldt voor beide assen: de zes branche-pillars én de vijf dienst-
  * pillars — zelfde CPT `pillar`, zelfde veldgroep, het onderscheid zit in
  * de `branche`-taxonomie (zie front-page.php's tweeassen-query).
  *

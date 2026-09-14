@@ -61,6 +61,16 @@ while ( have_posts() ) :
 			<div class="ks-ti-content">
 				<h2><?php echo esc_html( spotlezz_field( 'checklist_form_heading', $content_id, __( 'Doe nu de Spotlezz-check', 'spotlezz' ) ) ); ?></h2>
 				<p><?php echo esc_html( spotlezz_field( 'checklist_form_intro', $content_id, __( 'Kijk met onze frisse blik naar jouw bedrijfsschoonmaak. Vul je e-mailadres in en ontvang de checklist binnen 1 minuut in je inbox.', 'spotlezz' ) ) ); ?></p>
+				<ul class="ks-checklist checklist-steps">
+					<li>
+						<strong><?php echo esc_html( spotlezz_field( 'checklist_step1_title', $content_id, __( 'Kijk door de ogen van onze schoonmakers', 'spotlezz' ) ) ); ?></strong>
+						<span><?php echo esc_html( spotlezz_field( 'checklist_step1_text', $content_id, __( 'Kijk met onze frisse blik naar jouw bedrijfsschoonmaak', 'spotlezz' ) ) ); ?></span>
+					</li>
+					<li>
+						<strong><?php echo esc_html( spotlezz_field( 'checklist_step2_title', $content_id, __( 'Ontdek of jouw bedrijf Spotlezz is', 'spotlezz' ) ) ); ?></strong>
+						<span><?php echo esc_html( spotlezz_field( 'checklist_step2_text', $content_id, __( 'Bekijk je score en ontdek of je bedrijf voldoet aan onze standaard.', 'spotlezz' ) ) ); ?></span>
+					</li>
+				</ul>
 				<div class="checklist-form-box">
 					<form class="sp-form" onsubmit="return false;">
 						<div class="form-group">
@@ -80,6 +90,75 @@ while ( have_posts() ) :
 					<img src="<?php echo esc_url( $img_preview ); ?>" alt="<?php esc_attr_e( 'Doe de check', 'spotlezz' ); ?>" loading="lazy" decoding="async">
 				</div>
 			<?php endif; ?>
+		</section>
+
+		<section class="prose-block">
+			<h2><?php echo esc_html( spotlezz_field( 'checklist_approach_heading', $content_id, __( 'Schoon kan altijd schoner', 'spotlezz' ) ) ); ?></h2>
+			<p><?php echo esc_html( spotlezz_field( 'checklist_approach_p1', $content_id, __( 'De belangrijkste reden voor het succes van Spotlezz is onze unieke aanpak. Want bedrijfsschoonmaak mag nooit routine worden. Jouw bedrijfspand verdient elke dag opnieuw dezelfde liefde en aandacht. Door onze checklist te delen helpen wij ondernemers, facilitair managers en vastgoedbeheerders om met onze frisse blik naar bedrijfsschoonmaak te kijken. Want schoon kan altijd schoner.', 'spotlezz' ) ) ); ?></p>
+			<p><?php echo esc_html( spotlezz_field( 'checklist_approach_p2', $content_id, __( 'Ben je klaar voor de overtreffende trap van schoon? Vraag vandaag nog een offerte aan en wij nemen zo snel mogelijk contact met je op.', 'spotlezz' ) ) ); ?></p>
+			<a href="<?php echo esc_url( home_url( '/offerte-aanvragen/' ) ); ?>" class="btn btn-orange"><?php esc_html_e( 'Offerte aanvragen', 'spotlezz' ); ?></a>
+			<blockquote class="quote-large">
+				<p>&ldquo;<?php echo esc_html( spotlezz_field( 'checklist_quote', $content_id, __( 'Als je denkt dat gewoon schoon ook schoon is, dan heb je het mis.', 'spotlezz' ) ) ); ?>&rdquo;</p>
+			</blockquote>
+		</section>
+
+		<section class="checklist-cta-banner">
+			<h2><?php echo esc_html( spotlezz_field( 'checklist_cta_heading', $content_id, __( 'De Spotlezz-check', 'spotlezz' ) ) ); ?></h2>
+			<p><?php echo esc_html( spotlezz_field( 'checklist_cta_text', $content_id, __( 'Spotlezz zijn is één ding, maar Spotlezz blijven is misschien nog wel belangrijker. Daarom voeren we regelmatig verschillende controles uit en hebben we onze Spotlezz-checklist ontwikkeld. Benieuwd of jouw bedrijf Spotlezz is? Doe de check!', 'spotlezz' ) ) ); ?></p>
+			<a href="#checklist-email" class="btn btn-orange"><?php esc_html_e( 'Ontvang de Spotlezz-checklist', 'spotlezz' ); ?></a>
+			<p class="mini"><?php esc_html_e( '*Binnen 1 minuut in je inbox', 'spotlezz' ); ?></p>
+		</section>
+
+		<section class="faq-block checklist-faq">
+			<div class="faq-container">
+				<div class="faq-left">
+					<h2><?php echo esc_html( spotlezz_field( 'checklist_faq_heading', $content_id, __( 'Veelgestelde vragen', 'spotlezz' ) ) ); ?></h2>
+					<p><?php echo esc_html( spotlezz_field( 'checklist_faq_intro', $content_id, __( 'Heeft je nog vragen? Lees dan onze veelgestelde vragen hieronder. Staat jouw vraag er niet bij? Neem dan gerust contact met ons op!', 'spotlezz' ) ) ); ?></p>
+					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-orange"><?php esc_html_e( 'Neem contact met ons op', 'spotlezz' ); ?></a>
+				</div>
+				<div class="faq-right">
+					<?php
+					$faq_defaults = array(
+						1 => array(
+							'q' => __( 'Mijn bedrijf valt in geen van uw categorieën. Wat nu?', 'spotlezz' ),
+							'a' => __( 'Geen probleem! We streven ernaar om zoveel mogelijk bedrijven SPOTLEZZ-vriendelijk te maken en helpen u graag verder. Neem contact met ons op via de contactpagina!', 'spotlezz' ),
+						),
+						2 => array(
+							'q' => __( 'Verricht u ook schoonmaakwerkzaamheden voor particulieren?', 'spotlezz' ),
+							'a' => __( 'SPOTLEZZ richt zich volledig op zakelijke klanten. Hierdoor kunnen wij onze kwaliteit, planning en service optimaal afstemmen op bedrijven en organisaties.', 'spotlezz' ),
+						),
+						3 => array(
+							'q' => __( 'Zou u ook af en toe willen schoonmaken?', 'spotlezz' ),
+							'a' => __( 'Geen probleem! Wij bieden ook eenmalige of incidentele schoonmaak aan, bijvoorbeeld bij evenementen, verhuizingen of extra onderhoudsmomenten.', 'spotlezz' ),
+						),
+						4 => array(
+							'q' => __( 'Ruiken uw ecologische schoonmaakproducten net zo lekker?', 'spotlezz' ),
+							'a' => __( 'Zeker! Onze ecologische schoonmaakmiddelen hebben een frisse, natuurlijke geur en bevatten geen schadelijke stoffen, wat zorgt voor een prettige en gezonde werkomgeving.', 'spotlezz' ),
+						),
+						5 => array(
+							'q' => __( 'Maakt u ook buiten kantooruren schoon?', 'spotlezz' ),
+							'a' => __( 'Geen probleem! Wij maken ook buiten kantooruren schoon, zodat uw dagelijkse werkzaamheden ongestoord kunnen doorgaan en uw bedrijf altijd schoon blijft.', 'spotlezz' ),
+						),
+					);
+					for ( $i = 1; $i <= 5; $i++ ) :
+						$vraag_tekst    = spotlezz_field( "checklist_faq_q{$i}", $content_id, $faq_defaults[ $i ]['q'] );
+						$antwoord_tekst = spotlezz_field( "checklist_faq_a{$i}", $content_id, $faq_defaults[ $i ]['a'] );
+						if ( '' === $vraag_tekst ) {
+							continue;
+						}
+						?>
+						<details class="faq-item">
+							<summary>
+								<span><?php echo esc_html( $vraag_tekst ); ?></span>
+								<span class="faq-icon" aria-hidden="true"></span>
+							</summary>
+							<?php if ( '' !== $antwoord_tekst ) : ?>
+								<p><?php echo esc_html( $antwoord_tekst ); ?></p>
+							<?php endif; ?>
+						</details>
+					<?php endfor; ?>
+				</div>
+			</div>
 		</section>
 
 		<?php spotlezz_reviews_block(); ?>

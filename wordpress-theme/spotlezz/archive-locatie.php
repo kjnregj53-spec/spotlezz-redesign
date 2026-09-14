@@ -3,9 +3,9 @@
  * Locaties-hub (/locaties/) — 1-op-1 van spotlezz.vercel.app/locaties/:
  * .hub-hero (al goed), daarna een tekstkaarten-grid van de hoofdlocaties
  * (`.loc-grid`/`.loc-card`, geen foto's — de referentie gebruikt hier
- * bewust tekstkaarten, niet de foto-tegels van .services-grid), een
- * pillenrij naar de stadsdelen van elke hoofdlocatie die er één heeft, en
+ * bewust tekstkaarten, niet de foto-tegels van .services-grid), en
  * de "Waarom wij niet overal werken"-alinea (1-op-1 overgenomen tekst).
+ * De stadsdelen-pillenrij is op klantverzoek verwijderd.
  *
  * @package Spotlezz
  */
@@ -66,55 +66,7 @@ $steden = get_posts(
 		</div>
 	</section>
 
-	<?php
-	/*
-	 * Stadsdelen — dynamisch: elke hoofdlocatie die zelf kind-locaties heeft
-	 * (in de praktijk alleen Almere) krijgt hier een eigen pillenrij, i.p.v.
-	 * "Almere" hard te coderen zoals de referentie doet.
-	 */
-	foreach ( $steden as $stad ) :
-		$wijken = get_posts(
-			array(
-				'post_type'      => 'locatie',
-				'post_status'    => 'publish',
-				'post_parent'    => $stad->ID,
-				'posts_per_page' => -1,
-				'orderby'        => 'title',
-				'order'          => 'ASC',
-				'no_found_rows'  => true,
-			)
-		);
-		if ( empty( $wijken ) ) {
-			continue;
-		}
-		?>
-		<section class="work-block">
-			<h2>
-				<?php
-				printf(
-					/* translators: %s: plaatsnaam */
-					esc_html__( 'Stadsdelen in %s', 'spotlezz' ),
-					esc_html( get_the_title( $stad ) )
-				);
-				?>
-			</h2>
-			<p>
-				<?php
-				printf(
-					/* translators: %s: plaatsnaam */
-					esc_html__( '%s is te groot om vanuit één punt te bedienen. Wij rijden vaste routes, één per stadsdeel.', 'spotlezz' ),
-					esc_html( get_the_title( $stad ) )
-				);
-				?>
-			</p>
-			<div class="pill-row">
-				<?php foreach ( $wijken as $wijk ) : ?>
-					<a href="<?php echo esc_url( get_permalink( $wijk ) ); ?>" class="pill"><?php echo esc_html( get_the_title( $wijk ) ); ?></a>
-				<?php endforeach; ?>
-			</div>
-		</section>
-	<?php endforeach; ?>
-<?php elseif ( current_user_can( 'edit_theme_options' ) ) : ?>
+	<?php elseif ( current_user_can( 'edit_theme_options' ) ) : ?>
 	<p class="placeholder-note content-placeholder"><?php esc_html_e( 'Nog geen locaties gepubliceerd.', 'spotlezz' ); ?></p>
 <?php endif; ?>
 
